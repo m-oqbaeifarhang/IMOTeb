@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="QuestionArrayy">
+        <!--    QuestionsArray-->
+        <item>عرق کردن بدن یا دست و پا؟</item>
+        <item>ریزش آب از دهان روی بالش؟</item>
+        <item>تمرکز کم و جا گداشتن وسایل؟</item>
+        <item>تشنگی  زیاد؟</item>
+        <item>عصبانیت سریع؟</item>
+        <item>ترش کردن؟</item>
+        <item>گرگرفتگی/حرارت درون؟</item>
+        <item>عجله در انجام کارها؟</item>
+        <item>درد یا زخم معده؟</item>
+        <item>تیرگی  مدفوع؟</item>
+        <item>نظم و و طمأنینه در کارها؟</item>
+        <item>یبوست و دفع مزاج سخت؟</item>
+        <item>اضطراب وترس؟</item>
+        <item>تردید و وسواس؟</item>
+        <item>خشکی پوست؟</item>
+        <item>در فکر فرو رفتن؟</item>
+        <item>گرفتگی و درد عضلات؟</item>
+        <item>کم خوابی؟</item>
+        <item>احساس خواب آلودگی زیاد؟</item>
+        <item>احساس راه رفتن حشره ؟</item>
+        <item>میل زیاد به لذت و شهوت؟</item>
+        <item>خارش زیاد بدن؟ </item>
+        <item>سرگیجه؟</item>
+        <item>قدرت ریسک بالا؟</item>
+        <item>جوش و دمل ؟</item>
+        <item>خواب رفتن دست و پا؟</item>
+        <item>سنگینی و بی حسی اندام؟</item>
+    </string-array>
+</resources>

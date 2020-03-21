@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">IMOTeb</string>
+
+    <!--    Navigation Menu Item-->
+    <string name="about">درباره ما</string>
+    <string name="Rate_the_app">امتیاز دادن به برنامه</string>
+    <string name="share">معرفی به دوستان</string>
+
+    <!--    content main titles-->
+    <string name="darbareye_mazaj">درباره مزاج ها</string>
+
+    <string name="help">لطفا سوالات را با حوصله و دقت تمام جواب بدهید</string>
+
+    <string name="text_btn_start">شروع</string>
+
+
+    <!--    Radio Button-->
+    <string name="rb_hargez">هرگز</string>
+    <string name="rb_gahi_ogat">گاهی اوقات</string>
+    <string name="rb_hamishe">همیشه</string>
+
+
+
+    <!--    Questions-->
+    <string name="soal_1">عرق کردن بدن یا دست و پا؟</string>
+    <string name="soal_2">ریزش آب از دهان روی بالش؟</string>
+    <string name="soal_3">تمرکز کم و جا گداشتن وسایل؟</string>
+    <string name="soal_4">تشنگی  زیاد؟</string>
+    <string name="soal_5">عصبانیت سریع؟</string>
+    <string name="soal_6">ترش کردن؟</string>
+    <string name="soal_7">گرگرفتگی/حرارت درون؟</string>
+    <string name="soal_8">عجله در انجام کارها؟</string>
+    <string name="soal_9">درد یا زخم معده؟</string>
+    <string name="soal_10">تیرگی  مدفوع؟</string>
+    <string name="soal_11">نظم و و طمأنینه در کارها؟</string>
+    <string name="soal_12">یبوست و دفع مزاج سخت؟</string>
+    <string name="soal_13">اضطراب وترس؟</string>
+    <string name="soal_14">تردید و وسواس؟</string>
+    <string name="soal_15">خشکی پوست؟</string>
+    <string name="soal_16">در فکر فرو رفتن؟</string>
+    <string name="soal_17">گرفتگی و درد عضلات؟</string>
+    <string name="soal_18">کم خوابی؟</string>
+    <string name="soal_19">احساس خواب آلودگی زیاد؟</string>
+    <string name="soal_20">احساس راه رفتن حشره ؟</string>
+    <string name="soal_21">میل زیاد به لذت و شهوت؟</string>
+    <string name="soal_22">خارش زیاد بدن؟ </string>
+    <string name="soal_23">سرگیجه؟</string>
+    <string name="soal_24">قدرت ریسک بالا؟</string>
+    <string name="soal_25">جوش و دمل ؟</string>
+    <string name="soal_26">خواب رفتن دست و پا؟</string>
+    <string name="soal_27">سنگینی و بی حسی اندام؟</string>
+    <string name="result">مشاهده نتیجه</string>
+</resources>
