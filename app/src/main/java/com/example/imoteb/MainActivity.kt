@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+        
+
+
         val drawerLayout = drawer
         btn_menu.setOnClickListener { drawerLayout.openDrawer(Gravity.RIGHT) }
 
