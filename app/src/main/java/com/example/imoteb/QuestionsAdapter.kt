@@ -48,7 +48,7 @@ class QuestionsAdapter(var context: Context, var model: Model) :
     {
         val wordtoSpan = SpannableString(model.titleQuestionsList[position])
         if(wordtoSpan[0].toString()=="*")
-        wordtoSpan.setSpan(ForegroundColorSpan(Color.RED), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            wordtoSpan.setSpan(ForegroundColorSpan(Color.RED), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         holder.questionTitle.setText(wordtoSpan)
         when(model.Answers[position])
         {
