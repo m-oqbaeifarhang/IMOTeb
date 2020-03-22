@@ -30,7 +30,7 @@
         android:id="@+id/rv_questions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/btn_result"
+        android:layout_above="@+id/btn_result"
         android:layout_below="@+id/second_toolbar"
         android:orientation="vertical" />
 
@@ -38,6 +38,7 @@
         android:id="@+id/btn_result"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:text="@string/result"
         android:textSize="20sp"
