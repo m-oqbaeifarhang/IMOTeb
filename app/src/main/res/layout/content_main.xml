@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/darbareye_mazaj"
         android:textSize="16sp"
-        android:textColor="@color/text_color"/>
+        android:textColor="@color/text_color_titr"/>
     <Space
         android:id="@+id/space_1"
         android:layout_width="match_parent"
@@ -38,8 +39,8 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:elevation="3dp"
-                android:background="@drawable/btn_spring">
+                android:elevation="5dp"
+                android:background="@drawable/stroke_background_btn">
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -52,13 +53,13 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:elevation="3dp"
-                android:background="@drawable/btn_summer">
+                android:elevation="5dp"
+                android:background="@drawable/stroke_background_btn">
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_autumn"/>
+                    android:src="@drawable/ic_automn"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -66,8 +67,8 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:elevation="3dp"
-                android:background="@drawable/btn_autumn">
+                android:elevation="5dp"
+                android:background="@drawable/stroke_background_btn">
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -80,8 +81,8 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:elevation="3dp"
-                android:background="@drawable/btn_snow">
+                android:elevation="5dp"
+                android:background="@drawable/stroke_background_btn">
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -99,27 +100,27 @@
         android:layout_below="@+id/rv_seasons"/>
 
     <RelativeLayout
+        android:id="@+id/txt_info"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="50dp"
         android:layout_below="@id/space_2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_centerInParent="true"
+            android:textColor="@color/text_color"
             android:text="@string/help"/>
     </RelativeLayout>
 
     <Button
         android:id="@+id/btn_start_TestMazaj"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:background="@color/start"
         android:text="@string/text_btn_start"
         android:textStyle="bold"
-        android:layout_margin="4dp"
-        android:elevation="2dp"
         android:textColor="@color/white"
         android:textSize="20sp"/>
 

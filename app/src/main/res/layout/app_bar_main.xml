@@ -10,7 +10,6 @@
     android:layoutDirection="rtl"
     tools:context=".MainActivity">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layoutDirection="rtl"
@@ -35,7 +34,6 @@
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
-
 
     <include
         layout="@layout/content_main"

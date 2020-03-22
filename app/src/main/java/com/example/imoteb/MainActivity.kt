@@ -18,14 +18,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         btn_start_TestMazaj.setOnClickListener {
 
-         val intent = Intent(this,Test_Mazaj_Activity::class.java)
-           startActivity(intent)
+            val intent = Intent(this,Test_Mazaj_Activity::class.java)
+            startActivity(intent)
         }
-
-        var aaaa:Int = 0
 
         val drawerLayout = drawer
         btn_menu.setOnClickListener { drawerLayout.openDrawer(Gravity.RIGHT) }

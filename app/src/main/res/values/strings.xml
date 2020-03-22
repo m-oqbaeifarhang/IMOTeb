@@ -5,14 +5,12 @@
     <string name="about">درباره ما</string>
     <string name="Rate_the_app">امتیاز دادن به برنامه</string>
     <string name="share">معرفی به دوستان</string>
-
+    <string name="communication_ways">راه های ارتباطی</string>
+    <string name="call_us">تماس با ما</string>
     <!--    content main titles-->
     <string name="darbareye_mazaj">درباره مزاج ها</string>
-
     <string name="help">لطفا سوالات را با حوصله و دقت تمام جواب بدهید</string>
-
     <string name="text_btn_start">شروع</string>
-
 
     <!--    Radio Button-->
     <string name="rb_hargez">هرگز</string>

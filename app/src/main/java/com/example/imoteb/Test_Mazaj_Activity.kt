@@ -14,6 +14,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
 import androidx.core.view.get
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_test_mazaj.*
@@ -28,16 +29,23 @@ class Test_Mazaj_Activity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_mazaj)
+
+        val dividerItemDecoration = DividerItemDecoration(this,DividerItemDecoration.VERTICAL)
+        dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.recyclerview_divider))
+
+
         btn_back.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
         val titleQuestions = resources.getStringArray(R.array.QuestionArrayy)
         rv_questions.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(titleQuestions.size)
         var model = Model(titleQuestions)
         model.titleQuestionsList = titleQuestions
         val questionAapter = QuestionsAdapter(this, model)
+        rv_questions.addItemDecoration(dividerItemDecoration)
         rv_questions.adapter = questionAapter
 
 

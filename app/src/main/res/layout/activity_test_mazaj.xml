@@ -30,23 +30,19 @@
         android:id="@+id/rv_questions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btn_result"
+        android:layout_above="@id/btn_result"
         android:layout_below="@+id/second_toolbar"
         android:orientation="vertical" />
 
     <Button
         android:id="@+id/btn_result"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:text="@string/result"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:background="@color/btn_snow"
-        android:layout_margin="4dp"
-        android:elevation="2dp"/>
-
-
+        android:background="@color/start" />
 
 </RelativeLayout>

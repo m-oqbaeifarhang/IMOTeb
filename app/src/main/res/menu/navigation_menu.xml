@@ -5,11 +5,10 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-
         <item
             android:id="@+id/nav_rate"
-            android:icon="@drawable/ic_rate"
-            android:title="@string/Rate_the_app"/>
+            android:icon="@drawable/ic_thumb_up24dp"
+            android:title="@string/Rate_the_app" />
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_share"
@@ -18,7 +17,15 @@
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_about"
             android:title="@string/about"/>
-
     </group>
+
+    <item android:title="@string/communication_ways">
+        <menu>
+            <item
+                android:id="@+id/call_us"
+                android:icon="@drawable/ic_phone"
+                android:title="@string/call_us" />
+        </menu>
+    </item>
 
 </menu>

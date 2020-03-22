@@ -29,8 +29,6 @@ class QuestionsAdapter(var context: Context, var model: Model) :
         var radioButton1 = itemView.findViewById<RadioButton>(R.id.rb_0)
         var radioButton2 = itemView.findViewById<RadioButton>(R.id.rb_1)
         var radioButton3 = itemView.findViewById<RadioButton>(R.id.rb_2)
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -61,10 +59,7 @@ class QuestionsAdapter(var context: Context, var model: Model) :
             model.Answers[position] = group.checkedRadioButtonId.checkedRadioIndex()
             notifyItemChanged(position, group)
         }
-
-
     }
-
 }
 
 fun Int.checkedRadioIndex(): Int
