@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
            startActivity(intent)
         }
 
+        var aaaa:Int = 0
 
         val drawerLayout = drawer
         btn_menu.setOnClickListener { drawerLayout.openDrawer(Gravity.RIGHT) }
