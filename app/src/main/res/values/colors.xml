@@ -5,7 +5,8 @@
     <color name="colorAccent">#78CA1B</color>
 
     <color name="white">#fff</color>
-    <color name="gray">#FFFFFF</color>
+    <color name="gray">#EFEFEF</color>
+    <color name="gray1">#F1F1F1</color>
     <color name="text_color_titr">#616161</color>
     <color name="text_color">#757575</color>
     <color name="nav_header_main">#9902B1E8</color>

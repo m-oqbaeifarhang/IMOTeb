@@ -30,33 +30,30 @@ class Test_Mazaj_Activity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_mazaj)
 
-        val dividerItemDecoration = DividerItemDecoration(this,DividerItemDecoration.VERTICAL)
-        dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.recyclerview_divider))
-
+       // val dividerItemDecoration = DividerItemDecoration(this,DividerItemDecoration.VERTICAL)
+       // dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.recyclerview_divider))
 
         btn_back.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
         val titleQuestions = resources.getStringArray(R.array.QuestionArrayy)
         rv_questions.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(titleQuestions.size)
         var model = Model(titleQuestions)
         model.titleQuestionsList = titleQuestions
         val questionAapter = QuestionsAdapter(this, model)
-        rv_questions.addItemDecoration(dividerItemDecoration)
+        //rv_questions.addItemDecoration(dividerItemDecoration)
         rv_questions.adapter = questionAapter
-
 
         btn_result.setOnClickListener {
             val list = mutableListOf<Int>()
             var counter = 0
-            if(model.Answers.contains(0))
+            if(model.Answers.contains(-1))
             {
 
                 (model.Answers).forEach {
-                    if(it == 0)
+                    if(it == -1)
                     {
                         val text = model.titleQuestionsList[counter].replace("* ","")
                         model.titleQuestionsList[counter]="* "+text

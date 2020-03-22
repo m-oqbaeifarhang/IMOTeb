@@ -23,12 +23,8 @@ class QuestionsAdapter(var context: Context, var model: Model) :
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-
         var questionTitle = itemView.findViewById<TextView>(R.id.txt_question)
         var radiogroup = itemView.findViewById<RadioGroup>(R.id.radioGroup)
-        var radioButton1 = itemView.findViewById<RadioButton>(R.id.rb_0)
-        var radioButton2 = itemView.findViewById<RadioButton>(R.id.rb_1)
-        var radioButton3 = itemView.findViewById<RadioButton>(R.id.rb_2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -45,30 +41,26 @@ class QuestionsAdapter(var context: Context, var model: Model) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
         val wordtoSpan = SpannableString(model.titleQuestionsList[position])
-        if(wordtoSpan[0].toString()=="*")
-            wordtoSpan.setSpan(ForegroundColorSpan(Color.RED), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        if(wordtoSpan[0].toString() == "*") wordtoSpan.setSpan(ForegroundColorSpan(Color.RED),
+            0,
+            1,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         holder.questionTitle.setText(wordtoSpan)
         when(model.Answers[position])
         {
-            1 -> holder.radioButton1.setChecked(true)
-            2 -> holder.radioButton2.setChecked(true)
-            3 -> holder.radioButton3.setChecked(true)
+            0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).setChecked(true)
+            1 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).setChecked(true)
+            2 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).setChecked(true)
         }
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
             model.titleQuestionsList[position] = model.titleQuestionsList[position].replace("*", "")
-            model.Answers[position] = group.checkedRadioButtonId.checkedRadioIndex()
-            notifyItemChanged(position, group)
+            val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
+            val idx = holder.radiogroup.indexOfChild(rdb)
+            model.Answers[position] = idx
+            // Log.i("mi",model.Answers[position].toString())
+
+               notifyItemChanged(position, group)
         }
     }
 }
 
-fun Int.checkedRadioIndex(): Int
-{
-    when(this)
-    {
-        2131296423 -> return 1
-        2131296424 -> return 2
-        2131296425 -> return 3
-    }
-    return 0
-}
