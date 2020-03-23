@@ -30,8 +30,6 @@ class Test_Mazaj_Activity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_mazaj)
 
-       // val dividerItemDecoration = DividerItemDecoration(this,DividerItemDecoration.VERTICAL)
-       // dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.recyclerview_divider))
 
         btn_back.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -43,7 +41,6 @@ class Test_Mazaj_Activity : AppCompatActivity()
         var model = Model(titleQuestions)
         model.titleQuestionsList = titleQuestions
         val questionAapter = QuestionsAdapter(this, model)
-        //rv_questions.addItemDecoration(dividerItemDecoration)
         rv_questions.adapter = questionAapter
 
         btn_result.setOnClickListener {

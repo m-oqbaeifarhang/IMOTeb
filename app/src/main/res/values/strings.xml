@@ -2,6 +2,7 @@
     <string name="app_name">IMOTeb</string>
 
     <!--    Navigation Menu Item-->
+    <string name="home">خانه</string>
     <string name="about">درباره ما</string>
     <string name="Rate_the_app">امتیاز دادن به برنامه</string>
     <string name="share">معرفی به دوستان</string>
@@ -16,7 +17,6 @@
     <string name="rb_hargez">هرگز</string>
     <string name="rb_gahi_ogat">گاهی اوقات</string>
     <string name="rb_hamishe">همیشه</string>
-
 
 
     <!--    Questions-->
@@ -48,4 +48,8 @@
     <string name="soal_26">خواب رفتن دست و پا؟</string>
     <string name="soal_27">سنگینی و بی حسی اندام؟</string>
     <string name="result">مشاهده نتیجه</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
