@@ -1,5 +1,6 @@
 package com.example.imoteb
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.text.Spannable
@@ -12,10 +13,11 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 
 
-class QuestionsAdapter(var context: Context, var model: Model) :
+class QuestionsAdapter(var context: Context?, var model: Model) :
 
     RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
 {

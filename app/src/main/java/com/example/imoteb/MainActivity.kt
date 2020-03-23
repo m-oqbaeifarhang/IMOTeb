@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     lateinit var shareFragment: ShareFragment
     lateinit var aboutFragment: AboutFragment
     lateinit var call_usFragment: Call_usFragment
+    lateinit var testMezajfragment: Test_MezajFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +69,13 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                 call_usFragment = Call_usFragment()
                 supportFragmentManager.beginTransaction()
                     .replace(frame_layout,call_usFragment)
+                    .setTransition(FragmentTransaction
+                        .TRANSIT_FRAGMENT_OPEN).commit()
+            }
+            nav_test ->{
+                testMezajfragment = Test_MezajFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(frame_layout,testMezajfragment)
                     .setTransition(FragmentTransaction
                         .TRANSIT_FRAGMENT_OPEN).commit()
             }
