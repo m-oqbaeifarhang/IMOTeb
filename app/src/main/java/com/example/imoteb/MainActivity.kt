@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 
-class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(){
 
     lateinit var homeFragment: HomeFragment
     lateinit var pointFragment: PointFragment
@@ -24,66 +24,13 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation_view.setNavigationItemSelectedListener(this)
+//       navigation_view.setNavigationItemSelectedListener(this)
+//
+//
 
         homeFragment = HomeFragment()
-        supportFragmentManager.beginTransaction().replace(frame_layout,homeFragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout,homeFragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
     }
 
-    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean
-    {
-        when(menuItem.itemId){
-            nav_home ->{
-                homeFragment = HomeFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(frame_layout,homeFragment)
-                    .setTransition(FragmentTransaction
-                        .TRANSIT_FRAGMENT_OPEN).commit()
-            }
-            nav_rate ->{
-                pointFragment = PointFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(frame_layout,pointFragment)
-                    .setTransition(FragmentTransaction
-                        .TRANSIT_FRAGMENT_OPEN).commit()
-            }
-            nav_share ->{
-                shareFragment = ShareFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(frame_layout,shareFragment)
-                    .setTransition(FragmentTransaction
-                        .TRANSIT_FRAGMENT_OPEN).commit()
-            }
-            nav_about ->{
-                aboutFragment = AboutFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(frame_layout,aboutFragment)
-                    .setTransition(FragmentTransaction
-                        .TRANSIT_FRAGMENT_OPEN).commit()
-            }
-            call_us ->{
-                call_usFragment = Call_usFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(frame_layout,call_usFragment)
-                    .setTransition(FragmentTransaction
-                        .TRANSIT_FRAGMENT_OPEN).commit()
-            }
-            nav_test ->{
-                testMezajfragment = Test_MezajFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(frame_layout,testMezajfragment)
-                    .setTransition(FragmentTransaction
-                        .TRANSIT_FRAGMENT_OPEN).commit()
-            }
-            else ->{
-                homeFragment = HomeFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(frame_layout,homeFragment)
-                    .setTransition(FragmentTransaction
-                        .TRANSIT_FRAGMENT_OPEN).commit()
-            }
-        }
 
-        return true
-    }
 }

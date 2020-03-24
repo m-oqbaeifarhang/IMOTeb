@@ -9,7 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_test_mezaj.*
 
@@ -72,6 +75,17 @@ class Test_MezajFragment : Fragment()
 
                     }
                 }
+
+        btn_back.setOnClickListener {
+            val fragment: Fragment = HomeFragment()
+            val fragmentManager: FragmentManager = activity!!.supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.frame_layout, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+
+        }
+
     }
 
     @SuppressLint("WrongConstant")
