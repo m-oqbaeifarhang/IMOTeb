@@ -1,10 +1,19 @@
 package com.example.imoteb
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.utils.ColorTemplate
+
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,7 +31,7 @@ class Test_mezaj_resultFragment : Fragment()
     private var param1: String? = null
     private var param2: String? = null
 
-    
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -40,17 +49,59 @@ class Test_mezaj_resultFragment : Fragment()
         return inflater.inflate(R.layout.fragment_test_mezaj_result, container, false)
     }
 
+
+    var chart: BarChart? = null
+    var BARENTRY: ArrayList<BarEntry>? = null
+    var BarEntryLabels: ArrayList<String>? = null
+    var Bardataset: BarDataSet? = null
+    var BARDATA: BarData? = null
+    override fun onActivityCreated(savedInstanceState: Bundle?)
+    {
+        super.onActivityCreated(savedInstanceState)
+
+        BARENTRY = ArrayList()
+
+        BarEntryLabels = ArrayList()
+
+        AddValuesToBARENTRY()
+
+        AddValuesToBarEntryLabels()
+
+        Bardataset = BarDataSet(BARENTRY, "Projects")
+
+        BARDATA = BarData( Bardataset)
+
+        Bardataset!!.setColors(*ColorTemplate.COLORFUL_COLORS)
+
+        chart!!.data = BARDATA
+
+        chart!!.animateY(3000)
+
+    }
+    fun AddValuesToBARENTRY()
+    {
+        BARENTRY!!.add(BarEntry(2f, 0.toFloat()))
+        BARENTRY!!.add(BarEntry(4f, 1.toFloat()))
+        BARENTRY!!.add(BarEntry(6f, 2.toFloat()))
+        BARENTRY!!.add(BarEntry(8f, 3.toFloat()))
+        BARENTRY!!.add(BarEntry(7f, 4.toFloat()))
+        BARENTRY!!.add(BarEntry(3f, 5.toFloat()))
+    }
+
+    fun AddValuesToBarEntryLabels()
+    {
+        BarEntryLabels!!.add("January")
+        BarEntryLabels!!.add("February")
+        BarEntryLabels!!.add("March")
+        BarEntryLabels!!.add("April")
+        BarEntryLabels!!.add("May")
+        BarEntryLabels!!.add("June")
+    }
+
+
+
     companion object
     {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Test_mezaj_resultFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) = Test_mezaj_resultFragment().apply {
             arguments = Bundle().apply {
