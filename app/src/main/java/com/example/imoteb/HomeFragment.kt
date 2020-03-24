@@ -4,14 +4,16 @@ package com.example.imoteb
 
 import android.os.Build
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -33,16 +35,17 @@ class HomeFragment : Fragment()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
 
     }
+
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
         btn_start_TestMazaj.setOnClickListener {
-            Toast.makeText(activity,"hello",Toast.LENGTH_SHORT).show()
             val fragment: Fragment = Test_MezajFragment()
             val fragmentManager: FragmentManager = activity!!.supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -50,6 +53,12 @@ class HomeFragment : Fragment()
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
+
+        val drawerLayout = drawer
+        btn_menu.setOnClickListener {
+          drawerLayout.openDrawer(Gravity.RIGHT)
+        }
+
     }
 
 
@@ -60,7 +69,6 @@ override fun onCreateView(inflater: LayoutInflater,
     // Inflate the layout for this fragment
 
     val result= inflater.inflate(R.layout.fragment_home, container, false)
-
   return  result
 }
 
@@ -76,7 +84,6 @@ companion object
         }
     }
 }
-
 
 
 

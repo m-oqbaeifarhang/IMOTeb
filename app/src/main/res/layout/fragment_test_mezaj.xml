@@ -8,7 +8,7 @@
     android:layoutDirection="rtl"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
+<!--    <androidx.appcompat.widget.Toolbar
         android:id="@+id/second_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -24,14 +24,13 @@
                 android:layout_height="23dp"
                 android:src="@drawable/ic_back"/>
         </RelativeLayout>
-    </androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_questions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btn_result"
-        android:layout_below="@+id/second_toolbar"
         android:orientation="vertical" />
 
     <Button

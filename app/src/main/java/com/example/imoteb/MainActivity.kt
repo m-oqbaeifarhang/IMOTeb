@@ -24,10 +24,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val drawerLayout = drawer
-        btn_menu.setOnClickListener { drawerLayout.openDrawer(Gravity.RIGHT) }
-
         navigation_view.setNavigationItemSelectedListener(this)
 
         homeFragment = HomeFragment()
