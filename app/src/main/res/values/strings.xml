@@ -12,6 +12,7 @@
     <!--    content main titles-->
     <string name="darbareye_mazaj">درباره مزاج ها</string>
     <string name="help">لطفا سوالات را با حوصله و دقت تمام جواب بدهید</string>
+    <string name="txt_result">نتیجه تست مزاج شما :</string>
     <string name="text_btn_start">شروع</string>
 
     <!--    Radio Button-->

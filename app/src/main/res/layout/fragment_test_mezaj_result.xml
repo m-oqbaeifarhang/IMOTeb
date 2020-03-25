@@ -4,35 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="rtl"
     tools:context=".Test_mezaj_resultFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/second_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/gray"
+        android:elevation="3dp">
+        <RelativeLayout
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="23dp"
+                android:src="@drawable/ic_back"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@id/second_toolbar">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
             <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/chart"
+                android:id="@+id/chart1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp" />
+                android:layout_margin="15dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/btn_spring">
+            android:orientation="vertical"
+            android:background="@color/gray">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/txt_result"
+                android:textSize="18sp"
+                android:textColor="@color/text_color_titr"/>
             <TextView
                 android:id="@+id/txt_result"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:background="@color/white"
                 android:layout_margin="10dp"
+                android:elevation="2dp"
+                android:padding="10dp"
                 android:textSize="18sp"
+                android:text="شنتردش رشنر سیرنسذیرش سیرشسیر سیرهس رسیرهس یرسی سیرعاشهسیعراهسشعیرا سیرعاسهیعرا سیر"
                 android:textColor="@color/text_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_bookmark"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_download"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_share"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

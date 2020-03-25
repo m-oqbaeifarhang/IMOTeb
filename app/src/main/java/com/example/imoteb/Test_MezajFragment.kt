@@ -58,7 +58,7 @@ class Test_MezajFragment : Fragment()
         rv_questions.adapter = questionAapter
 
         btn_result.setOnClickListener {
-            val list = mutableListOf<Int>()
+            //val list = mutableListOf<Int>()
             var counter = 0
             if(model.Answers.contains(-1))
             {
@@ -75,20 +75,24 @@ class Test_MezajFragment : Fragment()
 
             } else
             {
+
                 btn_result.setOnClickListener {
+                    val bundle = Bundle()
+                    bundle.putIntArray("model",model.Answers)
                     val fragment: Fragment = Test_mezaj_resultFragment()
-                    val fragmentManager: FragmentManager = activity!!.supportFragmentManager
+                    fragment.arguments=bundle
+                    val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                     val fragmentTransaction: FragmentTransaction =
                         fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.frame_layout, fragment)
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()
-                }
+               }
             }
 
             btn_back.setOnClickListener {
                 val fragment: Fragment = HomeFragment()
-                val fragmentManager: FragmentManager = activity!!.supportFragmentManager
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                 fragmentTransaction.replace(R.id.frame_layout, fragment)
                 fragmentTransaction.addToBackStack(null)

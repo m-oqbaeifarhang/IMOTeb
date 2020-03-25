@@ -1,18 +1,21 @@
 package com.example.imoteb
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.components.LimitLine
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
-
-
-
+import kotlinx.android.synthetic.main.fragment_test_mezaj.*
+import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,55 +53,64 @@ class Test_mezaj_resultFragment : Fragment()
     }
 
 
-    var chart: BarChart? = null
-    var BARENTRY: ArrayList<BarEntry>? = null
-    var BarEntryLabels: ArrayList<String>? = null
-    var Bardataset: BarDataSet? = null
-    var BARDATA: BarData? = null
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
-
-        BARENTRY = ArrayList()
-
-        BarEntryLabels = ArrayList()
-
-        AddValuesToBARENTRY()
-
-        AddValuesToBarEntryLabels()
-
-        Bardataset = BarDataSet(BARENTRY, "Projects")
-
-        BARDATA = BarData( Bardataset)
-
-        Bardataset!!.setColors(*ColorTemplate.COLORFUL_COLORS)
-
-        chart!!.data = BARDATA
-
-        chart!!.animateY(3000)
+        val answer = arguments?.getIntArray("model")
+        var barDataSet: BarDataSet = BarDataSet(getData(answer), "راهنما")
+        barDataSet.barBorderWidth = 0f
+        barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
+        var bardata: BarData = BarData(barDataSet)
+        var xAxis: XAxis = chart1.xAxis
+        xAxis.position = XAxis.XAxisPosition.BOTTOM_INSIDE
+        val Mezajs = arrayOf("بلغم", "سودا", "صفرا", "دم")
+        val formatter = IndexAxisValueFormatter(Mezajs)
+        xAxis.setGranularity(1f)
+        xAxis.setValueFormatter(formatter)
+        chart1.data = bardata
+        chart1.setFitBars(true)
+        chart1.axisLeft.axisMinimum = 0f
+        chart1.axisRight.axisMinimum = 0f
+        chart1.axisRight.axisMaximum = 10f
+        chart1.axisLeft.axisMaximum = 10f
+        chart1.axisLeft.labelCount = 10
+        chart1.axisRight.labelCount = 10
+        val ll = LimitLine(5f, "خط اعتدال")
+        ll.lineColor = Color.RED
+        ll.lineWidth = 3f
+        ll.textColor = Color.BLACK
+        ll.textSize = 15f
+        chart1.axisLeft.addLimitLine(ll)
+        chart1.animateXY(2000, 2000);
+        chart1.invalidate();
 
     }
-    fun AddValuesToBARENTRY()
+
+    private fun getData(answer: IntArray?): ArrayList<BarEntry>
     {
-        BARENTRY!!.add(BarEntry(2f, 0.toFloat()))
-        BARENTRY!!.add(BarEntry(4f, 1.toFloat()))
-        BARENTRY!!.add(BarEntry(6f, 2.toFloat()))
-        BARENTRY!!.add(BarEntry(8f, 3.toFloat()))
-        BARENTRY!!.add(BarEntry(7f, 4.toFloat()))
-        BARENTRY!!.add(BarEntry(3f, 5.toFloat()))
+        var dam: Float = 0f
+        var safra: Float = 0f
+        var soda: Float = 0f
+        var balgham: Float = 0f
+        var counter = 0
+        val entries: ArrayList<BarEntry> = ArrayList()
+        (answer)?.forEach {
+            if(counter in 0..8) safra += it
+            if(counter in 9..17) soda += it
+            if(counter in 18..26) dam += it
+            if(counter in 27..35) balgham += it
+            counter++
+        }
+        dam = (10 * dam) / 18
+        safra = (10 * safra) / 18
+        soda = (10 * soda) / 18
+        balgham = (10 * balgham) / 18
+        entries.add(BarEntry(0f, balgham))
+        entries.add(BarEntry(1f, soda))
+        entries.add(BarEntry(2f, safra))
+        entries.add(BarEntry(3f, dam))
+        return entries
     }
-
-    fun AddValuesToBarEntryLabels()
-    {
-        BarEntryLabels!!.add("January")
-        BarEntryLabels!!.add("February")
-        BarEntryLabels!!.add("March")
-        BarEntryLabels!!.add("April")
-        BarEntryLabels!!.add("May")
-        BarEntryLabels!!.add("June")
-    }
-
-
 
     companion object
     {
@@ -111,3 +123,4 @@ class Test_mezaj_resultFragment : Fragment()
         }
     }
 }
+
