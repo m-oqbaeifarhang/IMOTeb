@@ -20,11 +20,12 @@
         android:id="@+id/navigation_view"
         android:layout_width="220dp"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
+        app:itemTextAppearance="@style/IranSansFont"
         app:menu="@menu/navigation_menu"
-        app:itemIconTint="@color/itemIconTint_color"
-        app:itemTextColor="@color/text_color" />
+        app:itemIconTint="@color/itemIconTint_color"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

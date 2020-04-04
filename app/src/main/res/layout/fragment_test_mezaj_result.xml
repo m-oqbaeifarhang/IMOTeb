@@ -4,47 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="rtl"
     tools:context=".Test_mezaj_resultFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/second_toolbar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentTop="true"
-        android:background="@color/gray"
-        android:elevation="3dp">
-        <RelativeLayout
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="23dp"
-                android:src="@drawable/ic_back"/>
-        </RelativeLayout>
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="wrap_content"
+        android:id="@+id/app_bar">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_test_mezaj_resultFragmaent"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:layoutDirection="rtl"
+            android:background="@color/gray"
+            app:title=" "
+            android:elevation="3dp"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="2"
+        android:weightSum="5"
         android:orientation="vertical"
-        android:layout_below="@id/second_toolbar">
+        android:layout_below="@id/app_bar">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:background="@drawable/background_textview">
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/chart1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"/>
+                android:elevation="3dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:orientation="vertical"
             android:background="@color/gray">
             <TextView
@@ -52,45 +52,59 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="18dp"
+                android:fontFamily="@font/iransans"
                 android:text="@string/txt_result"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/text_color_titr"/>
-            <TextView
-                android:id="@+id/txt_result"
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="7"
-                android:background="@color/white"
-                android:layout_margin="10dp"
-                android:elevation="2dp"
-                android:padding="10dp"
-                android:textSize="18sp"
-                android:text="شنتردش رشنر سیرنسذیرش سیرشسیر سیرهس رسیرهس یرسی سیرعاشهسیعراهسشعیرا سیرعاسهیعرا سیر"
-                android:textColor="@color/text_color"/>
+                android:layout_weight="10"
+                android:background="@drawable/background_textview"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <include layout="@layout/description"/>
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:gravity="center"
                 android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_bookmark"/>
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/ic_download"/>
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/ic_share"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="0.56dp"
+                    android:fontFamily="@font/iransans"
+                    android:textStyle="bold"
+                    android:text="ذخیره در گوشی"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_style"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="0.5dp"
+                    android:fontFamily="@font/iransans"
+                    android:textStyle="bold"
+                    android:text="اشتراک"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_stylee"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

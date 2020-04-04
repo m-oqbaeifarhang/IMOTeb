@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="1dp"
     android:layoutDirection="rtl"
     android:background="@color/gray">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layoutDirection="rtl"
-        android:layout_margin="9dp"
-        app:cardElevation="6dp"
-        app:cardCornerRadius="20dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="13.5dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginLeft="9dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="18dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,10 +35,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
+                    android:fontFamily="@font/iransans"
+                    android:textStyle="bold"
                     android:text="@string/soal_1"
                     android:textColor="@color/text_color_titr"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:layout_marginRight="8dp"
+                    android:textSize="16sp" />
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rl"
@@ -53,6 +60,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/iransans_l"
                         android:text="@string/rb_hargez"
                         android:textColor="@color/text_color"
                         android:textSize="15sp"/>
@@ -61,6 +69,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/iransans_l"
                         android:text="@string/rb_gahi_ogat"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>
@@ -69,6 +78,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/iransans_l"
                         android:text="@string/rb_hamishe"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>

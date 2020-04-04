@@ -10,4 +10,8 @@
     <dimen name="icon_padding">8dp</dimen>
     <dimen name="card_height">250dip</dimen>
     <dimen name="text_size">18sp</dimen>
+
+<!--    Toolbar Icon Size-->
+    <dimen name="ic_toolbar_width">25dp</dimen>
+    <dimen name="ic_toolbar_height">23dp</dimen>
 </resources>

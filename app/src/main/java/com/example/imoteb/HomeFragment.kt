@@ -1,20 +1,32 @@
 package com.example.imoteb
 
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.transition.TransitionInflater
+import android.util.Pair
 import android.view.*
+import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlin.system.exitProcess
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,38 +56,53 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
-
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            Toast.makeText(requireContext(),"exit",Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onAttach(context: Context)
     {
         super.onAttach(context)
-
         myContext = context as FragmentActivity
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
+
         btn_start_TestMazaj.setOnClickListener {
             val fragment: Fragment = Test_MezajFragment()
-            val fragmentManager: FragmentManager = activity!!.supportFragmentManager
+//            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.frame_layout, fragment)
+            fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
-
         }
-
-        val drawerLayout = drawer
-        btn_menu.setOnClickListener {
-            drawerLayout.openDrawer(Gravity.RIGHT)
+        /*set Toolbar*/
+        if(activity is AppCompatActivity){
+            (activity as AppCompatActivity).setSupportActionBar(toolbar)
+//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+            initDrawer()
         }
-        navigation_view.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
-            onNavigationItemSelected(it)
-        })
+        card_dam.setOnClickListener {
+            val pairs: Array<Pair<View, String>?> = arrayOfNulls(2)
+            pairs[0] = Pair<View, String>(img_dam, "imageTransition")
+            pairs[1] = Pair<View, String>(title_dam, "nameTransition")
+            val fragment1: Fragment = Mezaj_damFragment()
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                .addSharedElement(img_dam,img_dam.transitionName)
+                .replace(R.id.frame_layout, fragment1)
+                .addToBackStack(null)
+                fragmentTransaction.commit()
+        }
+//        SupportFragmentManager().beginTransaction().addSharedElement(sharedElement, transitionName)
+//            .replace(R.id.container, newFragment)
+//            .addToBackStack(null)
+//            .commit()
     }
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -83,11 +110,9 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         savedInstanceState: Bundle?): View?
     {
         // Inflate the layout for this fragment
-
         val result = inflater.inflate(R.layout.fragment_home, container, false)
         return result
     }
-
 
     companion object
     {
@@ -101,55 +126,71 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         }
     }
 
+    private fun initDrawer(){
+        val toggle = ActionBarDrawerToggle(Activity(),drawer,toolbar,R.string.nav_open,R.string.nav_close)
+        drawer.addDrawerListener(toggle)
+        toggle.syncState()
+        navigation_view.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
+            onNavigationItemSelected(it)
+        })
+    }
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean
     {
         val fragManager = myContext!!.supportFragmentManager
         when(menuItem.itemId)
         {
-            R.id.nav_home ->
+            R.id.nav_signup ->
             {
                 homeFragment = HomeFragment()
-                fragManager.beginTransaction().replace(R.id.frame_layout, homeFragment)
+                fragManager.beginTransaction().setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                    ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, homeFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
             }
             R.id.nav_rate ->
             {
                 pointFragment = PointFragment()
-                fragManager.beginTransaction().replace(R.id.frame_layout, pointFragment)
+                fragManager.beginTransaction().setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                    ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, pointFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
             }
             R.id.nav_share ->
             {
                 shareFragment = ShareFragment()
-                fragManager.beginTransaction().replace(R.id.frame_layout, shareFragment)
+                fragManager.beginTransaction().setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                    ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, shareFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
             }
             R.id.nav_about ->
             {
                 aboutFragment = AboutFragment()
-                fragManager.beginTransaction().replace(R.id.frame_layout, aboutFragment)
+                fragManager.beginTransaction().setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                    ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, aboutFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
             }
             R.id.call_us ->
             {
                 call_usFragment = Call_usFragment()
-                fragManager.beginTransaction().replace(R.id.frame_layout, call_usFragment)
+                fragManager.beginTransaction().setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                    ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, call_usFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
             }
             R.id.nav_test ->
             {
                 testMezajfragment = Test_MezajFragment()
-                fragManager.beginTransaction().replace(R.id.frame_layout, testMezajfragment)
+                fragManager.beginTransaction().setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                    ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, testMezajfragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
             }
             else ->
             {
                 homeFragment = HomeFragment()
-                fragManager.beginTransaction().replace(R.id.frame_layout, homeFragment)
+                fragManager.beginTransaction().setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
+                    ,R.anim.enter_left_to_right,R.anim.exit_left_to_right).replace(R.id.frame_layout, homeFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit()
             }
         }
-
+        drawer.closeDrawer(GravityCompat.START)
         return true
     }
 }

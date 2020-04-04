@@ -9,11 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_point.*
 import kotlinx.android.synthetic.main.fragment_test_mezaj.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,14 +39,9 @@ class Test_MezajFragment : Fragment()
             param2 = it.getString(ARG_PARAM2)
 
         }
-//        btn_back.setOnClickListener {
-//            val intent = Intent(btn_start_TestMazaj.context, btn_start_TestMazaj::class.java)
-//            startActivity(intent)
-//        }
-
-
-
-
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+        }
     }
 
     @SuppressLint("WrongConstant")
@@ -82,24 +81,22 @@ class Test_MezajFragment : Fragment()
                     val fragment: Fragment = Test_mezaj_resultFragment()
                     fragment.arguments=bundle
                     val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                    val fragmentTransaction: FragmentTransaction =
-                        fragmentManager.beginTransaction()
+                    val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.frame_layout, fragment)
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()
                }
             }
-
-            btn_back.setOnClickListener {
-                val fragment: Fragment = HomeFragment()
-                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.frame_layout, fragment)
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
-
-            }
-
+        }
+        /*set Toolbar*/
+        if(activity is AppCompatActivity){
+            (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezajFragment)
+            (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
+//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+        }
+        toolbar_test_mezajFragment.setNavigationOnClickListener {
+            startActivity(Intent(requireContext(),MainActivity::class.java))
         }
     }
 

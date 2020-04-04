@@ -1,11 +1,15 @@
 package com.example.imoteb
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.XAxis
@@ -23,11 +27,6 @@ import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Test_mezaj_resultFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Test_mezaj_resultFragment : Fragment()
 {
     // TODO: Rename and change types of parameters
@@ -83,6 +82,16 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.axisLeft.addLimitLine(ll)
         chart1.animateXY(2000, 2000);
         chart1.invalidate();
+
+        /*set Toolbar*/
+        if(activity is AppCompatActivity){
+            (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
+            toolbar_test_mezaj_resultFragmaent.navigationIcon= AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+        }
+        toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
+            startActivity(Intent(requireContext(),MainActivity::class.java))
+        }
 
     }
 
