@@ -37,7 +37,6 @@ class Test_MezajFragment : Fragment()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
         }
         val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
             startActivity(Intent(requireContext(), MainActivity::class.java))
@@ -59,9 +58,9 @@ class Test_MezajFragment : Fragment()
         btn_result.setOnClickListener {
             //val list = mutableListOf<Int>()
             var counter = 0
+            //اگر داخل آرایه جواب ها منفی یک بود یعنی کاربر به آن سوال جواب نداده و اول سوال ستاره قرمز قرار میگیرد.
             if(model.Answers.contains(-1))
             {
-
                 (model.Answers).forEach {
                     if(it == -1)
                     {
@@ -106,18 +105,10 @@ class Test_MezajFragment : Fragment()
         savedInstanceState: Bundle?): View?
     {
         // Inflate the layout for this fragment
-
-
-
         return inflater.inflate(R.layout.fragment_test_mezaj, container, false)
-
-
     }
-
-
     companion object
     {
-
         @JvmStatic
         fun newInstance(param1: String, param2: String) = Test_MezajFragment().apply {
             arguments = Bundle().apply {

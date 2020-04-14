@@ -37,7 +37,7 @@
                     android:gravity="center_vertical"
                     android:fontFamily="@font/iransans"
                     android:textStyle="bold"
-                    android:text="@string/soal_1"
+                    android:text="@string/txt_result"
                     android:textColor="@color/text_color_titr"
                     android:layout_marginRight="8dp"
                     android:textSize="16sp" />
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:weightSum="3"
+                    android:weightSum="4"
                     android:orientation="horizontal"
                     android:layout_marginRight="10dp">
                     <RadioButton
@@ -63,18 +63,27 @@
                         android:fontFamily="@font/iransans_l"
                         android:text="@string/rb_hargez"
                         android:textColor="@color/text_color"
-                        android:textSize="15sp"/>
+                        android:textSize="17sp"/>
                     <RadioButton
                         android:id="@+id/rb_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/iransans_l"
-                        android:text="@string/rb_gahi_ogat"
+                        android:text="@string/rb_gahi"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>
                     <RadioButton
                         android:id="@+id/rb_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/iransans_l"
+                        android:text="@string/rb_aghlab"
+                        android:textColor="@color/text_color"
+                        android:textSize="17sp"/>
+                    <RadioButton
+                        android:id="@+id/rb_3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

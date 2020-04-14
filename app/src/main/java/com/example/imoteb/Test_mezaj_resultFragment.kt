@@ -84,13 +84,15 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.invalidate();
 
         /*set Toolbar*/
-        if(activity is AppCompatActivity){
+        if(activity is AppCompatActivity)
+        {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
-            toolbar_test_mezaj_resultFragmaent.navigationIcon= AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
-//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+            toolbar_test_mezaj_resultFragmaent.navigationIcon =
+                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+            //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
-            startActivity(Intent(requireContext(),MainActivity::class.java))
+            startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
     }
@@ -104,16 +106,82 @@ class Test_mezaj_resultFragment : Fragment()
         var counter = 0
         val entries: ArrayList<BarEntry> = ArrayList()
         (answer)?.forEach {
-            if(counter in 0..8) safra += it
-            if(counter in 9..17) soda += it
-            if(counter in 18..26) dam += it
-            if(counter in 27..35) balgham += it
-            counter++
+//در این قسمت جواب سوال های دو گذینه ای بررسی میشود و اگر بله بود در آرایه answre مثدار3  قرار میگیرد ولی اگر جواب خیر یا رادیو باتن 1 بود در answer مقدار 0 قرار میگیرد.
+            when(counter)
+            {
+                0, 31, 40 ->
+                {
+                   when(answer[counter])
+                   {
+                       0->answer[counter]=3
+                       1->answer[counter]=0
+                   }
+                }
+            }
+            if(counter in 0..9)
+            {
+
+                dam += when(it) //اعمال ضریب 2 جواب های با ضریب 2
+                {
+                    1, 5 ->
+                    {
+                        (it * 2)
+                    }
+                    else ->
+                    {
+                        it
+                    }
+                }
+
+            }
+            if(counter in 10..24)
+            {
+                safra += when(it) //اعمال ضریب 2 جواب های با ضریب 2
+                {
+                    18 ->
+                    {
+                        (it * 2)
+                    }
+                    else ->
+                    {
+                        it
+                    }
+                }
+                if(counter in 25..34)
+                {
+                    soda += when(it) //اعمال ضریب 2 جواب های با ضریب 2
+                    {
+                        25 ->
+                        {
+                            (it * 2)
+                        }
+                        else ->
+                        {
+                            it
+                        }
+                    }
+                }
+                if(counter in 35..47)
+                {
+                    balgham += when(it) //اعمال ضریب 2 جواب های با ضریب 2
+                    {
+                        35, 41, 42 ->
+                        {
+                            (it * 2)
+                        }
+                        else ->
+                        {
+                            it
+                        }
+                    }
+                }
+                counter++
+            }
         }
-        dam = (10 * dam) / 18
-        safra = (10 * safra) / 18
-        soda = (10 * soda) / 18
-        balgham = (10 * balgham) / 18
+        dam = (10 * dam) / 9
+        safra = (10 * safra) / 14
+        soda = (10 * soda) / 9
+        balgham = (10 * balgham) / 12
         entries.add(BarEntry(0f, balgham))
         entries.add(BarEntry(1f, soda))
         entries.add(BarEntry(2f, safra))

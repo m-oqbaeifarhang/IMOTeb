@@ -13,8 +13,10 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import java.time.temporal.ValueRange
 
 
 class QuestionsAdapter(var context: Context?, var model: Model) :
@@ -31,7 +33,7 @@ class QuestionsAdapter(var context: Context?, var model: Model) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
-        var v = LayoutInflater.from(context).inflate(R.layout.questions_model, parent, false)
+        val v = LayoutInflater.from(context).inflate(R.layout.questions_model, parent, false)
         return ViewHolder(v)
     }
 
@@ -48,20 +50,31 @@ class QuestionsAdapter(var context: Context?, var model: Model) :
             1,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         holder.questionTitle.setText(wordtoSpan)
+
         when(model.Answers[position])
         {
-            0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).setChecked(true)
-            1 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).setChecked(true)
-            2 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).setChecked(true)
+            0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked = true
+            1 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true
+            2 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked = true
+            3 -> holder.itemView.findViewById<RadioButton>(R.id.rb_3).isChecked = true
+        }
+        //در اینجا سوالاتی که جوابش بله خیر است مشخص شده و جواب تبدیل به بله خیر میشود
+        when(position)
+        {
+            0, 31, 40 ->
+            {
+                holder.itemView.findViewById<RadioButton>(R.id.rb_0).text = "بله"
+                holder.itemView.findViewById<RadioButton>(R.id.rb_1).text = "خیر"
+                holder.itemView.findViewById<RadioButton>(R.id.rb_2).visibility = View.INVISIBLE
+                holder.itemView.findViewById<RadioButton>(R.id.rb_3).visibility = View.INVISIBLE
+            }
         }
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
             model.titleQuestionsList[position] = model.titleQuestionsList[position].replace("*", "")
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
             val idx = holder.radiogroup.indexOfChild(rdb)
             model.Answers[position] = idx
-            // Log.i("mi",model.Answers[position].toString())
-
-               notifyItemChanged(position, group)
+            notifyItemChanged(position, group)
         }
     }
 }
