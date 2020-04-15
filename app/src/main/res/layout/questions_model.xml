@@ -5,15 +5,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="1dp"
     android:layoutDirection="rtl"
-    android:background="@color/gray">
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
         android:layoutDirection="rtl"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="13.5dp"
         android:layout_marginRight="9dp"
         android:layout_marginLeft="9dp"
@@ -39,7 +38,7 @@
                     android:textStyle="bold"
                     android:text="@string/txt_result"
                     android:textColor="@color/text_color_titr"
-                    android:layout_marginRight="8dp"
+                    android:padding="6dp"
                     android:textSize="16sp" />
             </RelativeLayout>
             <RelativeLayout

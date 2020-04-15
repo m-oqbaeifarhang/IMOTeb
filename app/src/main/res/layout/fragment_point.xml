@@ -15,7 +15,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:layoutDirection="rtl"
-        android:background="@color/gray"
+        android:background="@color/white"
         app:title=" "
         android:elevation="3dp"/>
 

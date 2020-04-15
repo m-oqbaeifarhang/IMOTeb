@@ -23,19 +23,21 @@
 
     <!--    Radio Button-->
     <string name="rb_hargez">هرگز</string>
+    <string name="rb_hamishe">همیشه</string>
     <string name="rb_gahi">گاهی</string>
     <string name="rb_aghlab">اغلب</string>
-    <string name="rb_hamishe">همیشه</string>
 
-    <string name="teexxt">مزاج خشک موجب لاغری و گرما موجب عضله سازی در بدن می شود. پس فرد صفراوی لاغر اندام، عضلانی و قدرتمند است. قد بلند و چهار شانه بوده، استخوان بندی درشت و مفاصل برجسته ای دارند. لاغر استخوانی نیستند، ولی چاق هم نمی شوند و استعداد چاقی ندارند. قفسه سینه پهن، کمر باریک، مچ دست پهن و اندامهای خشكی دارند. ساق پای باریکی داشته، اما اگر خلاف این بود می تواند نشان تجمع بلغم باشد. صفرا چربیهای بدن رو می سوزاند. به دلیل این چربی سوزی صفراوی ها لاغر هستند و به اصطلاح هر چه می خورند چاق نمی شوند</string>
+    <!--fragment base question-->
+    <string name="tavajjoh">توجه !</string>
+    <string name="text">این تست برای بانوان باردار صادق نیست </string>
+    <string name="sale_tavallod">سال تولد شما</string>
+    <string name="marhaleye_baad">مرحله بعد</string>
+    <string name="hint_edit_text">وارد کنید ... </string>
+    <string name="mesal">مثال : 1355</string>
 
+    <!--fragment test mezaj-->
+    <string name="moshahede_natijeh">مشاهده نتیجه</string>
 
-
-
-    <string name="result">مشاهده نتیجه</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

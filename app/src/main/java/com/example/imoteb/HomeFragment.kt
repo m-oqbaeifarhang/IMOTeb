@@ -72,8 +72,8 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         super.onActivityCreated(savedInstanceState)
 
         btn_start_TestMazaj.setOnClickListener {
-            val fragment: Fragment = Test_MezajFragment()
-//            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+            val fragment: Fragment = Base_questionFragment()
+/*            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)*/
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left
@@ -84,7 +84,7 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         /*set Toolbar*/
         if(activity is AppCompatActivity){
             (activity as AppCompatActivity).setSupportActionBar(toolbar)
-//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+/*            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)*/
             initDrawer()
         }
         card_dam.setOnClickListener {
@@ -99,10 +99,10 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
                 .addToBackStack(null)
                 fragmentTransaction.commit()
         }
-//        SupportFragmentManager().beginTransaction().addSharedElement(sharedElement, transitionName)
-//            .replace(R.id.container, newFragment)
-//            .addToBackStack(null)
-//            .commit()
+/*        SupportFragmentManager().beginTransaction().addSharedElement(sharedElement, transitionName)
+            .replace(R.id.container, newFragment)
+            .addToBackStack(null)
+            .commit()*/
     }
 
     override fun onCreateView(inflater: LayoutInflater,
