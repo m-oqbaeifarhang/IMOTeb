@@ -1,4 +1,4 @@
-package com.example.imoteb
+package bikar
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
+import com.example.imoteb.MainActivity
+import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_about.*
-import kotlinx.android.synthetic.main.fragment_test_mezaj.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,7 +55,8 @@ class AboutFragment : Fragment()
 //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_aboutFragment.setNavigationOnClickListener {
-            startActivity(Intent(requireContext(),MainActivity::class.java))
+            startActivity(Intent(requireContext(),
+                MainActivity::class.java))
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.imoteb
+package bikar
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.app_bar_main.*
+import com.example.imoteb.MainActivity
+import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_point.*
-import javax.security.auth.callback.Callback
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,14 +50,15 @@ class PointFragment : Fragment()
         super.onActivityCreated(savedInstanceState)
 
         /*set Toolbar*/
-        if(activity is AppCompatActivity){
+        if(activity is AppCompatActivity)
+        {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_pointFragment)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
             //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_pointFragment.setNavigationOnClickListener {
-            startActivity(Intent(requireContext(),MainActivity::class.java))
+            startActivity(Intent(requireContext(), MainActivity::class.java))
         }
     }
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:layoutDirection="rtl"
-    tools:context=".AboutFragment">
+    tools:context="bikar.AboutFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_pointFragment"

@@ -3,6 +3,8 @@ package com.example.imoteb
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.JsonReader
+import android.view.Display
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -48,25 +50,27 @@ class Test_MezajFragment : Fragment()
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
+        Toast.makeText(requireContext(), Model.Age.toString(), Toast.LENGTH_SHORT).show()
         val titleQuestions = resources.getStringArray(R.array.QuestionArrayy)
         rv_questions.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(titleQuestions.size)
-        var model = Model(titleQuestions)
-        model.titleQuestionsList = titleQuestions
-        val questionAapter = QuestionsAdapter(context, model)
+        Model.QuestionTitle = titleQuestions
+        // var model = Model(titleQuestions)
+        // model.titleQuestionsList = titleQuestions
+        val questionAapter = QuestionsAdapter(context)
         rv_questions.adapter = questionAapter
 
         btn_moshahedeh_natije.setOnClickListener {
             //val list = mutableListOf<Int>()
             var counter = 0
-            if(model.Answers.contains(-1))
+            if(Model.Answers.contains(-1))
             {
 
-                (model.Answers).forEach {
+                (Model.Answers).forEach {
                     if(it == -1)
                     {
-                        val text = model.titleQuestionsList[counter].replace("* ", "")
-                        model.titleQuestionsList[counter] = "* " + text
+                        val text = titleQuestions[counter].replace("* ", "")
+                        titleQuestions[counter] = "* " + text
                         rv_questions.adapter = questionAapter
                     }
                     counter++
@@ -76,27 +80,29 @@ class Test_MezajFragment : Fragment()
             {
 
                 btn_moshahedeh_natije.setOnClickListener {
-                    val bundle = Bundle()
-                    bundle.putIntArray("model",model.Answers)
+                  // val bundle = Bundle()
+                    //                    bundle.putIntArray("model",Model.Answers)
                     val fragment: Fragment = Test_mezaj_resultFragment()
-                    fragment.arguments=bundle
+                   // fragment.arguments = bundle
                     val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                    val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                    val fragmentTransaction: FragmentTransaction =
+                        fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.frame_layout, fragment)
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()
-               }
+                }
             }
         }
         /*set Toolbar*/
-        if(activity is AppCompatActivity){
+        if(activity is AppCompatActivity)
+        {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezajFragment)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+            //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezajFragment.setNavigationOnClickListener {
-            startActivity(Intent(requireContext(),MainActivity::class.java))
+            startActivity(Intent(requireContext(), MainActivity::class.java))
         }
     }
 
@@ -109,10 +115,8 @@ class Test_MezajFragment : Fragment()
         return inflater.inflate(R.layout.fragment_test_mezaj, container, false)
     }
 
-
     companion object
     {
-
         @JvmStatic
         fun newInstance(param1: String, param2: String) = Test_MezajFragment().apply {
             arguments = Bundle().apply {

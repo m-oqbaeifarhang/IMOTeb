@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
@@ -18,7 +16,6 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
-import kotlinx.android.synthetic.main.fragment_test_mezaj.*
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 
 
@@ -32,7 +29,6 @@ class Test_mezaj_resultFragment : Fragment()
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -51,16 +47,14 @@ class Test_mezaj_resultFragment : Fragment()
         return inflater.inflate(R.layout.fragment_test_mezaj_result, container, false)
     }
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
-        val answer = arguments?.getIntArray("model")
-        var barDataSet: BarDataSet = BarDataSet(getData(answer), "راهنما")
+        val barDataSet: BarDataSet = BarDataSet(getData(Model.Answers), "راهنما")
         barDataSet.barBorderWidth = 0f
         barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
-        var bardata: BarData = BarData(barDataSet)
-        var xAxis: XAxis = chart1.xAxis
+        val bardata: BarData = BarData(barDataSet)
+        val xAxis: XAxis = chart1.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM_INSIDE
         val Mezajs = arrayOf("بلغم", "سودا", "صفرا", "دم")
         val formatter = IndexAxisValueFormatter(Mezajs)
@@ -82,7 +76,6 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.axisLeft.addLimitLine(ll)
         chart1.animateXY(2000, 2000);
         chart1.invalidate();
-
         /*set Toolbar*/
         if(activity is AppCompatActivity)
         {
@@ -94,100 +87,44 @@ class Test_mezaj_resultFragment : Fragment()
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
-
     }
 
     private fun getData(answer: IntArray?): ArrayList<BarEntry>
     {
-        var dam: Float = 0f
-        var safra: Float = 0f
-        var soda: Float = 0f
-        var balgham: Float = 0f
         var counter = 0
         val entries: ArrayList<BarEntry> = ArrayList()
         (answer)?.forEach {
-//در این قسمت جواب سوال های دو گذینه ای بررسی میشود و اگر بله بود در آرایه answre مثدار3  قرار میگیرد ولی اگر جواب خیر یا رادیو باتن 1 بود در answer مقدار 0 قرار میگیرد.
             when(counter)
             {
                 0, 31, 40 ->
                 {
-                   when(answer[counter])
-                   {
-                       0->answer[counter]=3
-                       1->answer[counter]=0
-                   }
+                    //در این قسمت جواب سوال های دو گذینه ای بررسی میشود و اگر بله بود در آرایه answre مثدار3  قرار میگیرد ولی اگر جواب خیر یا رادیو باتن 1 بود در answer مقدار 0 قرار میگیرد.
+                    when(answer[counter])
+                    {
+                        0 -> answer[counter] = 3
+                        1 -> answer[counter] = 0
+                    }
                 }
             }
-            if(counter in 0..9)
+            when(counter) //اعمال ضریب 2 جواب های با ضریب 2
             {
-
-                dam += when(it) //اعمال ضریب 2 جواب های با ضریب 2
+                1, 2, 18, 25, 35, 41, 42 ->
                 {
-                    1, 5 ->
-                    {
-                        (it * 2)
-                    }
-                    else ->
-                    {
-                        it
-                    }
+                    answer[counter] = it * 2
                 }
-
             }
-            if(counter in 10..24)
-            {
-                safra += when(it) //اعمال ضریب 2 جواب های با ضریب 2
-                {
-                    18 ->
-                    {
-                        (it * 2)
-                    }
-                    else ->
-                    {
-                        it
-                    }
-                }
-                if(counter in 25..34)
-                {
-                    soda += when(it) //اعمال ضریب 2 جواب های با ضریب 2
-                    {
-                        25 ->
-                        {
-                            (it * 2)
-                        }
-                        else ->
-                        {
-                            it
-                        }
-                    }
-                }
-                if(counter in 35..47)
-                {
-                    balgham += when(it) //اعمال ضریب 2 جواب های با ضریب 2
-                    {
-                        35, 41, 42 ->
-                        {
-                            (it * 2)
-                        }
-                        else ->
-                        {
-                            it
-                        }
-                    }
-                }
-                counter++
-            }
+            counter++
         }
-        dam = (10 * dam) / 9
-        safra = (10 * safra) / 14
-        soda = (10 * soda) / 9
-        balgham = (10 * balgham) / 12
-        entries.add(BarEntry(0f, balgham))
-        entries.add(BarEntry(1f, soda))
-        entries.add(BarEntry(2f, safra))
-        entries.add(BarEntry(3f, dam))
+        //val CMR = answer?.let { ComputeMezajs(it) }
+        val CMR = CalculationMezaj.Calculate(answer)
+        entries.add(BarEntry(0f, CMR.balgham))
+        entries.add(BarEntry(1f, CMR.soda))
+        entries.add(BarEntry(2f, CMR.safra))
+        entries.add(BarEntry(3f, CMR.dam))
         return entries
     }
+
+
 
     companion object
     {

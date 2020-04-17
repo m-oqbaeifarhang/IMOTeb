@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.time.temporal.ValueRange
 
 
-class QuestionsAdapter(var context: Context?, var model: Model) :
+class QuestionsAdapter(var context: Context?) :
 
     RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
 {
@@ -39,19 +39,19 @@ class QuestionsAdapter(var context: Context?, var model: Model) :
 
     override fun getItemCount(): Int
     {
-        return model.titleQuestionsList.size
+        return Model.QuestionTitle.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        val wordtoSpan = SpannableString(model.titleQuestionsList[position])
+        val wordtoSpan = SpannableString(Model.QuestionTitle[position])
         if(wordtoSpan[0].toString() == "*") wordtoSpan.setSpan(ForegroundColorSpan(Color.RED),
             0,
             1,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         holder.questionTitle.setText(wordtoSpan)
 
-        when(model.Answers[position])
+        when(Model.Answers[position])
         {
             0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked = true
             1 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true
@@ -70,10 +70,10 @@ class QuestionsAdapter(var context: Context?, var model: Model) :
             }
         }
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
-            model.titleQuestionsList[position] = model.titleQuestionsList[position].replace("*", "")
+            Model.QuestionTitle[position] = Model.QuestionTitle[position].replace("*", "")
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
             val idx = holder.radiogroup.indexOfChild(rdb)
-            model.Answers[position] = idx
+            Model.Answers[position] = idx
             notifyItemChanged(position, group)
         }
     }

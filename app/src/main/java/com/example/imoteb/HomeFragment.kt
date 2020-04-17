@@ -2,12 +2,9 @@ package com.example.imoteb
 
 
 import android.app.Activity
-import android.app.ActivityOptions
 import android.content.Context
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.transition.TransitionInflater
 import android.util.Pair
 import android.view.*
 import android.widget.Toast
@@ -15,18 +12,19 @@ import androidx.activity.addCallback
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuView
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import bikar.AboutFragment
+import bikar.Call_usFragment
+import bikar.PointFragment
+import bikar.ShareFragment
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlin.system.exitProcess
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -71,6 +69,7 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     {
         super.onActivityCreated(savedInstanceState)
 
+        Model.Age=25
         btn_start_TestMazaj.setOnClickListener {
             val fragment: Fragment = Base_questionFragment()
 /*            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)*/
