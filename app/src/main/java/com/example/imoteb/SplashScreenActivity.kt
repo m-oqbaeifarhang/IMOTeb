@@ -19,6 +19,6 @@ class SplashScreenActivity : AppCompatActivity()
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
-        },3000) // delaying 3 seconds to open MainActivity
+        },1000) // delaying 3 seconds to open MainActivity
     }
 }

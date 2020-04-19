@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
-    android:background="@color/white"
+    android:background="@color/main_background"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -21,7 +21,7 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_alignParentTop="true"
             android:layoutDirection="rtl"
-            android:background="@color/white"
+            android:background="@color/toolbar_background"
             app:title=" "
             app:elevation="0dp"/>
     </com.google.android.material.appbar.AppBarLayout>
@@ -29,22 +29,26 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/app_bar_fg_test_mezaj">
+        android:layout_below="@+id/app_bar_fg_test_mezaj"
+        android:background="@color/main_background">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/main_background">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_questions"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/main_background"
             android:layout_above="@+id/btn_moshahedeh_natije"
             android:layout_below="@+id/app_bar_fg_test_mezaj" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="70dp"/>
+            android:layout_height="70dp"
+            android:background="@color/main_background"/>
 
         </LinearLayout>
 

@@ -4,7 +4,17 @@
     <color name="colorPrimaryDark">#4D4E4E</color>
     <color name="colorAccent">#EC807E</color>
 
+    <color name="main_background">#FAFAFA</color>
+    <color name="toolbar_background">#FAFAFA</color>
+    <color name="text_color_titr">#6C6C6C</color>
+    <color name="text_color">#7C7C7C</color>
+    <color name="nav_header_main">#9902B1E8</color>
+    <color name="edit_text_hint">#7C7C7C</color>
+    <color name="itemIconTint_color">#9C9C9C</color>
+
+
     <color name="white">#FFFFFF</color>
+    <color name="purple">#999C27B0</color>
     <color name="gray_very_light">#EAEAEA</color>
     <color name="gray_light">#FAFAFA</color>
     <color name="gray_dark">#DCDCDC</color>
@@ -14,18 +24,12 @@
     <color name="red">#ef5350</color>
     <color name="red_light">#F1B9B8</color>
     <color name="green">#66BB6A</color>
-    <color name="text_color_titr">#6C6C6C</color>
-    <color name="text_color">#7C7C7C</color>
-    <color name="nav_header_main">#9902B1E8</color>
-    <color name="edit_text_hint">#7C7C7C</color>
-
     <color name="btn_snow">#02B1E8</color>
     <color name="btn_snow1">#028EBA</color>
     <color name="btn_spring">#B3D92C</color>
     <color name="btn_summer">#FFCF09</color>
     <color name="btn_autumn">#E86016</color>
-
     <color name="btn_start">#6602B1E8</color>
-    <color name="itemIconTint_color">#9C9C9C</color>
+
 
 </resources>

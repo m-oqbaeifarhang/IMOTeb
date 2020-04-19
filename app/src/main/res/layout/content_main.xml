@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
-    android:background="@color/white">
+    android:background="@color/main_background">
 
     <TextView
         android:id="@+id/title_1"
@@ -22,181 +22,144 @@
         android:textSize="16sp"
         android:textColor="@color/text_color_titr"/>
 
-    <RelativeLayout
-        android:id="@+id/rv_seasons"
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title_1"
-        android:padding="5dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="4">
-            <RelativeLayout
-                android:id="@+id/card_dam"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:elevation="7dp"
-                android:background="@drawable/stroke_background_btn">
-                <ImageView
-                    android:id="@+id/img_dam"
-                    android:transitionName="imageTransition"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_spring"/>
-                <TextView
-                    android:id="@+id/title_dam"
-                    android:transitionName="titleTransition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/title_card_dam"
-                    android:textSize="8sp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="10dp"/>
-            </RelativeLayout>
+        android:layout_below="@+id/title_1"
+        android:fadingEdge="vertical"
+        android:scrollIndicators="top">
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:elevation="7dp"
-                android:background="@drawable/stroke_background_btn">
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_summer"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="تابستان صفرا گرم وخشک"
-                    android:textSize="8sp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="10dp"/>
-            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/card_dam"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="6dp"
+                    android:elevation="3dp"
+                    android:background="@drawable/stroke_background_btn">
+                    <ImageView
+                        android:id="@+id/img_dam"
+                        android:transitionName="imageTransition"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_spring"/>
+                    <TextView
+                        android:id="@+id/title_dam"
+                        android:transitionName="titleTransition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_card_dam"
+                        android:textSize="8sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"/>
+                </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:elevation="7dp"
-                android:background="@drawable/stroke_background_btn">
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_automn"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="پاییز سودا سرد وخشک"
-                    android:textSize="8sp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="10dp"/>
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="6dp"
+                    android:elevation="3dp"
+                    android:background="@drawable/stroke_background_btn">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_summer"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تابستان صفرا گرم وخشک"
+                        android:textSize="8sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"/>
+                </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:elevation="7dp"
-                android:background="@drawable/stroke_background_btn">
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_snow"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="زمستان بلغم سرد وتر"
-                    android:textSize="8sp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="10dp"/>
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="6dp"
+                    android:elevation="3dp"
+                    android:background="@drawable/stroke_background_btn">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_automn"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="پاییز سودا سرد وخشک"
+                        android:textSize="8sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"/>
+                </RelativeLayout>
 
-        </LinearLayout>
-    </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="6dp"
+                    android:elevation="3dp"
+                    android:background="@drawable/stroke_background_btn">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_snow"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="زمستان بلغم سرد وتر"
+                        android:textSize="8sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+    </HorizontalScrollView>
 
     <Space
         android:id="@+id/space_2"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_below="@+id/rv_seasons"/>
+        android:layout_below="@+id/horizontal_scroll_view"/>
 
-<!--    <RelativeLayout-->
-<!--        android:id="@+id/txt_info"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:background="@drawable/background_textview"-->
-<!--        android:layout_below="@id/space_2">-->
-<!--        <TextView-->
-<!--            android:id="@+id/tt1"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:textColor="@color/text_color"-->
-<!--            android:fontFamily="@font/iransans"-->
-<!--            android:textSize="16sp"-->
-<!--            android:text="@string/help"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/tt2"-->
-<!--            android:layout_below="@+id/tt1"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:textColor="@color/text_color"-->
-<!--            android:fontFamily="@font/iransans_l"-->
-<!--            android:textSize="16sp"-->
-<!--            android:text="@string/help"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/tt3"-->
-<!--            android:layout_below="@+id/tt2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:textColor="@color/text_color"-->
-<!--            android:fontFamily="@font/iransans_u"-->
-<!--            android:textSize="16sp"-->
-<!--            android:text="@string/help"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/tt4"-->
-<!--            android:layout_below="@+id/tt3"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:textColor="@color/text_color"-->
-<!--            android:fontFamily="@font/iransans_m"-->
-<!--            android:textSize="16sp"-->
-<!--            android:text="@string/help"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/tt5"-->
-<!--            android:layout_below="@+id/tt4"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:textColor="@color/text_color"-->
-<!--            android:fontFamily="@font/iransans_b"-->
-<!--            android:textSize="16sp"-->
-<!--            android:text="@string/help"/>-->
-<!--    </RelativeLayout>-->
+        <RelativeLayout
+            android:id="@+id/card_bishtar_bedanid"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:elevation="3dp"
+            android:layout_below="@+id/space_2"
+            android:background="@drawable/purple_bg">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="بیشتر بدانید ... "
+                android:fontFamily="@font/iransans"
+                android:textSize="20sp"
+                android:textColor="@color/text_color_titr"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/white"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_mezaj"
+                android:layout_margin="5dp"/>
+        </RelativeLayout>
 
     <Button
         android:id="@+id/btn_start_TestMazaj"

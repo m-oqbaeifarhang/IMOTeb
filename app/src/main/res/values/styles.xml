@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowActivityTransitions">true</item>
         <!--status bar color-->
-        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/main_background</item>
         <item name="android:windowLightStatusBar">true</item>
 <!--        <item name="statusBarScrim">@color/red</item>-->
 <!--        <item name="android:windowTranslucentStatus">true</item>-->
@@ -20,7 +20,7 @@
         <item name="fontFamily">@font/iransans</item>
         <item name="android:textSize">14sp</item><!-- text size in menu-->
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/gray_very_dark</item>
+        <item name="android:textColor">@color/text_color_titr</item>
     </style>
 
 </resources>
