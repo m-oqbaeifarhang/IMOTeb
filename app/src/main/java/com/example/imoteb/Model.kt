@@ -6,13 +6,20 @@ class Model()
 {
     companion object
     {
-        var Answers: IntArray = IntArray(48) { -1 }
+       var DefultAnswerArraysize:Int=48
+        var Answers: IntArray?=null /*= IntArray(AnswerArraysize) { -1 }*/
         var Age: Int = 0
         var KamKhuni = false
-        lateinit var QuestionTitle: Array<String>
-        var DamCount: Int = 9
-        var SafraCount: Int = 14
-        var SodaCount: Int = 9
-        var BalghamCount: Int = 12
+        lateinit var QuestionTitle: MutableList<String>
+        var DamQuestionCount: Int = 10
+        var SafraQuestionCount: Int = 15
+        var SodaQuestionCount: Int = 10
+        var BalghamQuestionCount: Int = 13
+
+        var MaxOfDamAnswerSize:Int=36
+        var MaxOfSafraAnswerSize:Int=48
+        var MaxOfSodaAnswerSize:Int=33
+        var MaxOfBalghamAnswerSize:Int=48
+
     }
 }

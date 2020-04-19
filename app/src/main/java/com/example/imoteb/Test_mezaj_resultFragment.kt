@@ -87,6 +87,7 @@ class Test_mezaj_resultFragment : Fragment()
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
+
     }
 
     private fun getData(answer: IntArray?): ArrayList<BarEntry>
@@ -121,6 +122,7 @@ class Test_mezaj_resultFragment : Fragment()
         entries.add(BarEntry(1f, CMR.soda))
         entries.add(BarEntry(2f, CMR.safra))
         entries.add(BarEntry(3f, CMR.dam))
+        Model.Answers= null
         return entries
     }
 

@@ -51,22 +51,25 @@ class Test_MezajFragment : Fragment()
     {
         super.onActivityCreated(savedInstanceState)
         Toast.makeText(requireContext(), Model.Age.toString(), Toast.LENGTH_SHORT).show()
-        val titleQuestions = resources.getStringArray(R.array.QuestionArrayy)
+        val titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
         rv_questions.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(titleQuestions.size)
-        Model.QuestionTitle = titleQuestions
+        val titleQuestionList =
+            ConfigurationQuestionsAndAnswers.ConfigurationQuestion(titleQuestions,Model.Age)
+        Model.QuestionTitle = titleQuestionList
         // var model = Model(titleQuestions)
         // model.titleQuestionsList = titleQuestions
+
         val questionAapter = QuestionsAdapter(context)
         rv_questions.adapter = questionAapter
 
         btn_moshahedeh_natije.setOnClickListener {
             //val list = mutableListOf<Int>()
             var counter = 0
-            if(Model.Answers.contains(-1))
+            if(Model.Answers!!.contains(-1))
             {
 
-                (Model.Answers).forEach {
+                (Model.Answers)!!.forEach {
                     if(it == -1)
                     {
                         val text = titleQuestions[counter].replace("* ", "")
@@ -80,10 +83,10 @@ class Test_MezajFragment : Fragment()
             {
 
                 btn_moshahedeh_natije.setOnClickListener {
-                  // val bundle = Bundle()
+                    // val bundle = Bundle()
                     //                    bundle.putIntArray("model",Model.Answers)
                     val fragment: Fragment = Test_mezaj_resultFragment()
-                   // fragment.arguments = bundle
+                    // fragment.arguments = bundle
                     val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                     val fragmentTransaction: FragmentTransaction =
                         fragmentManager.beginTransaction()

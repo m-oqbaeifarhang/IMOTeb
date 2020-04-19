@@ -51,7 +51,7 @@ class QuestionsAdapter(var context: Context?) :
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         holder.questionTitle.setText(wordtoSpan)
 
-        when(Model.Answers[position])
+        when(Model.Answers?.get(position))
         {
             0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked = true
             1 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true
@@ -73,7 +73,7 @@ class QuestionsAdapter(var context: Context?) :
             Model.QuestionTitle[position] = Model.QuestionTitle[position].replace("*", "")
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
             val idx = holder.radiogroup.indexOfChild(rdb)
-            Model.Answers[position] = idx
+            Model.Answers?.set(position, idx)
             notifyItemChanged(position, group)
         }
     }

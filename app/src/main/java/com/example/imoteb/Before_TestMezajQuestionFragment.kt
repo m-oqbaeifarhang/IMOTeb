@@ -62,21 +62,12 @@ class Base_questionFragment : Fragment()
         super.onActivityCreated(savedInstanceState)
         btn_next.setOnClickListener {
             Model.Age = txt_GetAge.text.toString().toInt()
-            //برخی سوالات برای گروه سنی خواصی است در این قسمت تعداد سوالات مشخص میشود
-            if(Model.Age < 35)
-            {
-                Model.DamCount += 1
-                Model.SafraCount += 1
-            } else if(Model.Age > 55)
-            {
-                Model.BalghamCount += 1
-            }
             //در این قسمت model.Answer خالی میشود.
             var counter = 0
-            Model.Answers.forEach {
-                Model.Answers[counter] = -1
-                counter++
-            }
+//            Model.Answers.forEach {
+//                Model.Answers[counter] = -1
+//                counter++
+//            }
             val fragment: Fragment = Test_MezajFragment()
             /*            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)*/
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager

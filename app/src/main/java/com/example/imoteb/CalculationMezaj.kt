@@ -9,30 +9,40 @@ class CalculationMezaj
         fun Calculate(answer: IntArray?): ComputeMezajsResult
         {
             val CMR = ComputeMezajsResult()
-            var counter = 0
+            var counter = 1
+            var temp: Int = 0
+            var flag = "safra"
             (answer)?.forEach {
-                if(counter in 0..9)
+                if(counter in 1..Model.DamQuestionCount)
                 {
+                    temp = counter
                     CMR.dam += it
-                }
-                if(counter in 10..24)
+                } else if(counter in temp..(Model.SafraQuestionCount + temp) && flag == "safra")
                 {
                     CMR.safra += it
-                }
-                if(counter in 25..34)
+                    if(counter + 1 !in temp..(Model.SafraQuestionCount + temp))
+                    {
+                        temp = counter
+                        flag = "soda"
+                    }
+                } else if(counter in temp..(Model.SodaQuestionCount + temp) && flag == "soda")
                 {
                     CMR.soda += it
-                }
-                if(counter in 35..47)
+                    if(counter + 1 !in temp..(Model.SodaQuestionCount + temp))
+                    {
+                        temp = counter
+                        flag = "balgham"
+                    }
+                } else if(counter in temp..(Model.BalghamQuestionCount + temp) && flag == "balgham")
                 {
                     CMR.balgham += it
                 }
                 counter++
             }
-            CMR.dam = (7.5f * CMR.dam) / 10
-            CMR.safra = (7.5f * CMR.safra) / 15
-            CMR.soda = (7.5f * CMR.soda) / 10
-            CMR.balgham = (7.5f * CMR.balgham) / 13
+            CMR.dam = (7.5f * CMR.dam) / Model.MaxOfDamAnswerSize
+            CMR.safra = (7.5f * CMR.safra) / Model.MaxOfSafraAnswerSize
+            CMR.soda = (7.5f * CMR.soda) / Model.MaxOfSodaAnswerSize
+            CMR.balgham = (7.5f * CMR.balgham) / Model.MaxOfBalghamAnswerSize
 
             val age = Model.Age
             when(age)
@@ -48,14 +58,14 @@ class CalculationMezaj
                 in 31..45 ->
                 {
                     val safra = 45 - age
-                    val soda=15-safra
+                    val soda = 15 - safra
                     CMR.safra += (2.5f * safra) / 15
-                    CMR.soda += (2.5f * (15 - safra)) / 15
+                    CMR.soda += (2.5f * soda) / 15
                 }
                 in 46..55 ->
                 {
-                    val soda=55-age
-                    val balgham=10-soda
+                    val soda = 55 - age
+                    val balgham = 10 - soda
                     CMR.soda += (2.5f * soda) / 10
                     CMR.balgham += (2.5f * balgham) / 10
                 }
@@ -77,3 +87,4 @@ class CalculationMezaj
 
     }
 }
+

@@ -68,8 +68,6 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
-
-        Model.Age=25
         btn_start_TestMazaj.setOnClickListener {
             val fragment: Fragment = Base_questionFragment()
 /*            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)*/
@@ -86,18 +84,18 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
 /*            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)*/
             initDrawer()
         }
-        card_dam.setOnClickListener {
-            val pairs: Array<Pair<View, String>?> = arrayOfNulls(2)
-            pairs[0] = Pair<View, String>(img_dam, "imageTransition")
-            pairs[1] = Pair<View, String>(title_dam, "nameTransition")
-            val fragment1: Fragment = Mezaj_damFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                .addSharedElement(img_dam,img_dam.transitionName)
-                .replace(R.id.frame_layout, fragment1)
-                .addToBackStack(null)
-                fragmentTransaction.commit()
-        }
+//        card_dam.setOnClickListener {
+//            val pairs: Array<Pair<View, String>?> = arrayOfNulls(2)
+//            pairs[0] = Pair<View, String>(img_dam, "imageTransition")
+//            pairs[1] = Pair<View, String>(title_dam, "nameTransition")
+//            val fragment1: Fragment = Mezaj_damFragment()
+//            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+//            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+//                .addSharedElement(img_dam,img_dam.transitionName)
+//                .replace(R.id.frame_layout, fragment1)
+//                .addToBackStack(null)
+//                fragmentTransaction.commit()
+//        }
 /*        SupportFragmentManager().beginTransaction().addSharedElement(sharedElement, transitionName)
             .replace(R.id.container, newFragment)
             .addToBackStack(null)
