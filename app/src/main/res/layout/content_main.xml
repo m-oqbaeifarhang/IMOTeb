@@ -9,157 +9,103 @@
     android:layoutDirection="rtl"
     android:background="@color/main_background">
 
-    <TextView
-        android:id="@+id/title_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/iransans"
-        android:textStyle="bold"
-        android:text="@string/darbareye_mazaj"
-        android:textSize="16sp"
-        android:textColor="@color/text_color_titr"/>
-
-    <HorizontalScrollView
-        android:id="@+id/horizontal_scroll_view"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title_1"
-        android:fadingEdge="vertical"
-        android:scrollIndicators="top">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RelativeLayout
-                    android:id="@+id/card_dam"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="6dp"
-                    android:elevation="3dp"
-                    android:background="@drawable/stroke_background_btn">
-                    <ImageView
-                        android:id="@+id/img_dam"
-                        android:transitionName="imageTransition"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ic_spring"/>
-                    <TextView
-                        android:id="@+id/title_dam"
-                        android:transitionName="titleTransition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/title_card_dam"
-                        android:textSize="8sp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="6dp"
-                    android:elevation="3dp"
-                    android:background="@drawable/stroke_background_btn">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ic_summer"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="تابستان صفرا گرم وخشک"
-                        android:textSize="8sp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="6dp"
-                    android:elevation="3dp"
-                    android:background="@drawable/stroke_background_btn">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ic_automn"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="پاییز سودا سرد وخشک"
-                        android:textSize="8sp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="6dp"
-                    android:elevation="3dp"
-                    android:background="@drawable/stroke_background_btn">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ic_snow"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="زمستان بلغم سرد وتر"
-                        android:textSize="8sp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"/>
-                </RelativeLayout>
-
-            </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <Space
-        android:id="@+id/space_2"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_below="@+id/horizontal_scroll_view"/>
-
-        <RelativeLayout
-            android:id="@+id/card_bishtar_bedanid"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
-            android:elevation="3dp"
-            android:layout_below="@+id/space_2"
-            android:background="@drawable/purple_bg">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="بیشتر بدانید ... "
-                android:fontFamily="@font/iransans"
-                android:textSize="20sp"
-                android:textColor="@color/text_color_titr"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                app:civ_border_width="1dp"
-                app:civ_border_color="@color/white"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_mezaj"
-                android:layout_margin="5dp"/>
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/title_mezaj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/iransans"
+                    android:textStyle="bold"
+                    android:text="@string/darbareye_mazaj"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_color_titr"/>
+
+                <Space
+                    android:id="@+id/space_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@+id/title_mezaj"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_mezaj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/main_background"
+                    android:layout_below="@id/space_1" />
+
+                <Space
+                    android:id="@+id/space_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@+id/rv_mezaj"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_tabligh"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/space_2"
+                    app:cardBackgroundColor="@color/purple"
+                    android:layout_margin="8dp"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            style="@style/title_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="box"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/title_daroo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/card_tabligh"
+                    android:fontFamily="@font/iransans"
+                    android:textStyle="bold"
+                    android:text="@string/foods"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_color_titr"/>
+
+                <Space
+                    android:id="@+id/space_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@+id/title_daroo"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_daroo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/main_background"
+                    android:layout_below="@id/space_3" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
     <Button
         android:id="@+id/btn_start_TestMazaj"

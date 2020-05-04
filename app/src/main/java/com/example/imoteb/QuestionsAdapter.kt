@@ -19,9 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.time.temporal.ValueRange
 
 
-class QuestionsAdapter(var context: Context?) :
-
-    RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
+class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
 {
     private val lastCheckedPosition = -1
 

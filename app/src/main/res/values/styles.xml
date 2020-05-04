@@ -23,4 +23,17 @@
         <item name="android:textColor">@color/text_color_titr</item>
     </style>
 
+    <style name="title_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_color_titr</item>
+        <item name="fontFamily">@font/iransans</item>
+    </style>
+
+    <style name="text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="fontFamily">@font/iransans</item>
+    </style>
+
 </resources>

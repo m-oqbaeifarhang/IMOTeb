@@ -3,12 +3,12 @@ package com.example.imoteb
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -18,26 +18,8 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class Test_mezaj_resultFragment : Fragment()
 {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,6 +32,18 @@ class Test_mezaj_resultFragment : Fragment()
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
+        /*set Toolbar*/
+        if(activity is AppCompatActivity)
+        {
+            (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
+            toolbar_test_mezaj_resultFragmaent.navigationIcon =
+                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+        }
+        toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+        }
+
         val barDataSet: BarDataSet = BarDataSet(getData(Model.Answers), "راهنما")
         barDataSet.barBorderWidth = 0f
         barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
@@ -76,18 +70,6 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.axisLeft.addLimitLine(ll)
         chart1.animateXY(2000, 2000);
         chart1.invalidate();
-        /*set Toolbar*/
-        if(activity is AppCompatActivity)
-        {
-            (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
-            toolbar_test_mezaj_resultFragmaent.navigationIcon =
-                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
-            //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
-        }
-        toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
-            startActivity(Intent(requireContext(), MainActivity::class.java))
-        }
-
     }
 
     private fun getData(answer: IntArray?): ArrayList<BarEntry>
@@ -126,17 +108,4 @@ class Test_mezaj_resultFragment : Fragment()
         return entries
     }
 
-
-
-    companion object
-    {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) = Test_mezaj_resultFragment().apply {
-            arguments = Bundle().apply {
-                putString(ARG_PARAM1, param1)
-                putString(ARG_PARAM2, param2)
-            }
-        }
-    }
 }
-

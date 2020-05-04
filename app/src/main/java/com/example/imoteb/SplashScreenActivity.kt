@@ -7,12 +7,13 @@ import android.os.Handler
 
 class SplashScreenActivity : AppCompatActivity()
 {
+
     lateinit var handler: Handler
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aplash_screen)
+        setContentView(R.layout.activity_splash_screen)
 
         handler = Handler()
         handler.postDelayed({
@@ -20,5 +21,6 @@ class SplashScreenActivity : AppCompatActivity()
             startActivity(intent)
             finish()
         },1000) // delaying 3 seconds to open MainActivity
+
     }
 }

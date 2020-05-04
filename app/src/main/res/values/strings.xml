@@ -20,6 +20,11 @@
     <string name="txt_result">نتیجه تست مزاج شما :</string>
     <string name="text_btn_start">شروع تست</string>
     <string name="title_card_dam">بهار دم گرم وتر</string>
+    <string name="name_mezaj">نام مزاج</string>
+    <string name="desc_mezaj">توضیحات مزاج</string>
+    <string name="name_daroo">نام دارو</string>
+    <string name="foods">غذاها</string>
+
 
     <!--    Radio Button-->
     <string name="rb_hargez">هرگز</string>
@@ -27,17 +32,17 @@
     <string name="rb_gahi">گاهی</string>
     <string name="rb_aghlab">اغلب</string>
 
-    <!--fragment base question-->
+    <!--fragment before test mezaj-->
     <string name="tavajjoh">توجه !</string>
     <string name="text">این تست برای بانوان باردار صادق نیست </string>
     <string name="sale_tavallod">سال تولد شما</string>
     <string name="marhaleye_baad">مرحله بعد</string>
     <string name="hint_edit_text">وارد کنید ... </string>
     <string name="mesal">مثال : 1355</string>
+    <string name="sen_input">سن خود را وارد کنید</string>
 
     <!--fragment test mezaj-->
     <string name="moshahede_natijeh">مشاهده نتیجه</string>
-
 
 
 </resources>

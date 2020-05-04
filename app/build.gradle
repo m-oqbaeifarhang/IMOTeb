@@ -48,7 +48,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version_ktx"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version_ktx"
 
-    def material_version = "1.2.0-alpha06"
+    def material_version = "1.2.0-alpha02"
+    //noinspection GradleDependency
     implementation "com.google.android.material:material:$material_version"
+
 
 }

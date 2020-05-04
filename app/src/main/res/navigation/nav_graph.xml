@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.imoteb.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_before_TestMezajQuestionFragment"
+            app:destination="@id/before_TestMezajQuestionFragment"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/before_TestMezajQuestionFragment"
+        android:name="com.example.imoteb.Before_TestMezajQuestionFragment"
+        android:label="fragment_before__test_mezaj_question"
+        tools:layout="@layout/fragment_before__test_mezaj_question" >
+        <action
+            android:id="@+id/action_before_TestMezajQuestionFragment_to_mezaj_QueriesFragment"
+            app:destination="@id/mezaj_QueriesFragment"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/test_mezaj_resultFragment"
+        android:name="com.example.imoteb.Test_mezaj_resultFragment"
+        android:label="fragment_test_mezaj_result"
+        tools:layout="@layout/fragment_test_mezaj_result" />
+
+    <fragment
+        android:id="@+id/mezaj_QueriesFragment"
+        android:name="com.example.imoteb.Mezaj_QueriesFragment"
+        android:label="fragment_mezaj_queries"
+        tools:layout="@layout/fragment_mezaj_queries" >
+        <action
+            android:id="@+id/action_mezaj_QueriesFragment_to_test_mezaj_resultFragment"
+            app:destination="@id/test_mezaj_resultFragment"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+</navigation>
