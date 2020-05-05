@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/iransans_l"
-                        android:text="@string/rb_hargez"
+                        android:text="@string/rb_Yes"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>
                     <RadioButton
@@ -69,25 +69,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/iransans_l"
-                        android:text="@string/rb_gahi"
-                        android:textColor="@color/text_color"
-                        android:textSize="17sp"/>
-                    <RadioButton
-                        android:id="@+id/rb_2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/iransans_l"
-                        android:text="@string/rb_aghlab"
-                        android:textColor="@color/text_color"
-                        android:textSize="17sp"/>
-                    <RadioButton
-                        android:id="@+id/rb_3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/iransans_l"
-                        android:text="@string/rb_hamishe"
+                        android:text="@string/rb_No"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>
                 </RadioGroup>

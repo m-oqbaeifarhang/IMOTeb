@@ -27,10 +27,8 @@
 
 
     <!--    Radio Button-->
-    <string name="rb_hargez">هرگز</string>
-    <string name="rb_hamishe">همیشه</string>
-    <string name="rb_gahi">گاهی</string>
-    <string name="rb_aghlab">اغلب</string>
+    <string name="rb_Yes">بله</string>
+    <string name="rb_No">خیر</string>
 
     <!--fragment before test mezaj-->
     <string name="tavajjoh">توجه !</string>

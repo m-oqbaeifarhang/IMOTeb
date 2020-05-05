@@ -62,49 +62,27 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.axisLeft.axisMaximum = 10f
         chart1.axisLeft.labelCount = 10
         chart1.axisRight.labelCount = 10
-        val ll = LimitLine(5f, "خط اعتدال")
+        val ll = LimitLine(3f, "خط اعتدال")
         ll.lineColor = Color.RED
         ll.lineWidth = 3f
         ll.textColor = Color.BLACK
         ll.textSize = 15f
         chart1.axisLeft.addLimitLine(ll)
         chart1.animateXY(2000, 2000);
-        chart1.invalidate();
+        chart1.invalidate()
     }
 
-    private fun getData(answer: IntArray?): ArrayList<BarEntry>
+    private fun getData(answer: MutableList<Int>): ArrayList<BarEntry>
     {
         var counter = 0
         val entries: ArrayList<BarEntry> = ArrayList()
-        (answer)?.forEach {
-            when(counter)
-            {
-                0, 31, 40 ->
-                {
-                    //در این قسمت جواب سوال های دو گذینه ای بررسی میشود و اگر بله بود در آرایه answre مثدار3  قرار میگیرد ولی اگر جواب خیر یا رادیو باتن 1 بود در answer مقدار 0 قرار میگیرد.
-                    when(answer[counter])
-                    {
-                        0 -> answer[counter] = 3
-                        1 -> answer[counter] = 0
-                    }
-                }
-            }
-            when(counter) //اعمال ضریب 2 جواب های با ضریب 2
-            {
-                1, 2, 18, 25, 35, 41, 42 ->
-                {
-                    answer[counter] = it * 2
-                }
-            }
-            counter++
-        }
         //val CMR = answer?.let { ComputeMezajs(it) }
-        val CMR = CalculationMezaj.Calculate(answer)
+        val CMR = MohasebehMezaj.Calculate(answer)
         entries.add(BarEntry(0f, CMR.balgham))
         entries.add(BarEntry(1f, CMR.soda))
         entries.add(BarEntry(2f, CMR.safra))
         entries.add(BarEntry(3f, CMR.dam))
-        Model.Answers= null
+        //  Model.Answers = null
         return entries
     }
 

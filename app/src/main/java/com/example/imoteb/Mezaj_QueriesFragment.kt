@@ -45,16 +45,17 @@ class Mezaj_QueriesFragment : Fragment() , View.OnClickListener
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
-        // مقداردهی Question Adapter و نمایش
         Toast.makeText(requireContext(), Model.Age.toString(), Toast.LENGTH_SHORT).show()
-        titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
+        val titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
         rv_questions.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(titleQuestions.size)
-        val titleQuestionList = ConfigurationQuestionsAndAnswers.ConfigurationQuestion(titleQuestions,Model.Age)
+        val titleQuestionList =
+            ConfigurationQuestionsAndAnswers.ConfigurationQuestionAndAnswer(titleQuestions,Model.Age)
         Model.QuestionTitle = titleQuestionList
         // var model = Model(titleQuestions)
         // model.titleQuestionsList = titleQuestions
-        questionAapter = QuestionsAdapter(context)
+
+        val questionAapter = QuestionsAdapter(context)
         rv_questions.adapter = questionAapter
     }
 
@@ -72,9 +73,9 @@ class Mezaj_QueriesFragment : Fragment() , View.OnClickListener
         {
             R.id.btn_moshahedeh_natije ->
             //val list = mutableListOf<Int>()
-            if(Model.Answers!!.contains(-1))
+            if(Model.Answers.contains(-1))
             {
-                (Model.Answers)!!.forEach {
+                (Model.Answers).forEach {
                     if(it == -1)
                     {
                         val text = titleQuestions[counter].replace("* ", "")
