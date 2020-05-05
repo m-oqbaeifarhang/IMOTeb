@@ -20,6 +20,6 @@ class Model()
         var MaxOfSafraAnswerSize:Int=48
         var MaxOfSodaAnswerSize:Int=33
         var MaxOfBalghamAnswerSize:Int=48
-
+        var NaderMohammad:Int=2
     }
 }
