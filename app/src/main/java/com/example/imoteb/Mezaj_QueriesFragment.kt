@@ -15,11 +15,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 
-class Mezaj_QueriesFragment : Fragment() , View.OnClickListener
+class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
 {
-    var navController : NavController? = null
-    lateinit var titleQuestions : MutableList<String>
-    lateinit var questionAapter : QuestionsAdapter
+    var navController: NavController? = null
+    lateinit var titleQuestions: MutableList<String>
+    lateinit var questionAapter: QuestionsAdapter
 
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,23 +39,24 @@ class Mezaj_QueriesFragment : Fragment() , View.OnClickListener
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezajFragment)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
+            //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezajFragment.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
         Toast.makeText(requireContext(), Model.Age.toString(), Toast.LENGTH_SHORT).show()
-        val titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
+        titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
         rv_questions.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(titleQuestions.size)
-        val titleQuestionList =
-            ConfigurationQuestionsAndAnswers.ConfigurationQuestionAndAnswer(titleQuestions,Model.Age)
+        val titleQuestionList = ConfigurationQuestionsAndAnswers.ConfigurationQuestionAndAnswer(
+            titleQuestions,
+            Model.Age)
         Model.QuestionTitle = titleQuestionList
         // var model = Model(titleQuestions)
         // model.titleQuestionsList = titleQuestions
 
-        val questionAapter = QuestionsAdapter(context)
+        questionAapter = QuestionsAdapter(context)
         rv_questions.adapter = questionAapter
     }
 
@@ -72,22 +73,22 @@ class Mezaj_QueriesFragment : Fragment() , View.OnClickListener
         when(v!!.id)
         {
             R.id.btn_moshahedeh_natije ->
-            //val list = mutableListOf<Int>()
-            if(Model.Answers.contains(-1))
-            {
-                (Model.Answers).forEach {
-                    if(it == -1)
-                    {
-                        val text = titleQuestions[counter].replace("* ", "")
-                        titleQuestions[counter] = "* " + text
-                        rv_questions.adapter = questionAapter
+                //val list = mutableListOf<Int>()
+                if(Model.Answers.contains(-1))
+                {
+                    (Model.Answers).forEach {
+                        if(it == -1)
+                        {
+                            val text = titleQuestions[counter].replace("* ", "")
+                            titleQuestions[counter] = "* " + text
+                            rv_questions.adapter = questionAapter
+                        }
+                        counter++
                     }
-                    counter++
+                } else
+                {
+                    navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
                 }
-            } else
-            {
-                navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
-            }
         }
     }
 
