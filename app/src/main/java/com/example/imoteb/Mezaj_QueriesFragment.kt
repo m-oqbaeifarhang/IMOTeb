@@ -45,7 +45,6 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
-        Toast.makeText(requireContext(), Model.Age.toString(), Toast.LENGTH_SHORT).show()
         titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
         rv_questions.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(titleQuestions.size)
