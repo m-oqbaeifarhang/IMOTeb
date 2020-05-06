@@ -35,9 +35,14 @@
     <string name="text">این تست برای بانوان باردار صادق نیست </string>
     <string name="sale_tavallod">سال تولد شما</string>
     <string name="marhaleye_baad">مرحله بعد</string>
-    <string name="hint_edit_text">وارد کنید ... </string>
     <string name="mesal">مثال : 1355</string>
-    <string name="sen_input">سن خود را وارد کنید</string>
+    <string name="sen_input">لطفا سن خود را وارد کنید</string>
+    <string name="vaziyat_tahhol">وضعیت تاهل ؟</string>
+    <string name="jensiyyat">جنسیت ؟</string>
+    <string name="mojarrad">مجرد</string>
+    <string name="motaahel">متاهل</string>
+    <string name="mard">مرد</string>
+    <string name="zan">زن</string>
 
     <!--fragment test mezaj-->
     <string name="moshahede_natijeh">مشاهده نتیجه</string>

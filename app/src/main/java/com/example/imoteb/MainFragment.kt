@@ -71,6 +71,8 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         mezaj_model?.add(Mezaj_Model("مزاج صفراوی","گرم و خشک",R.drawable.ic_summer))
         mezaj_model?.add(Mezaj_Model("مزاج سوداوی","سرد و خشک",R.drawable.ic_autumn))
         mezaj_model?.add(Mezaj_Model("مزاج بلغمی","سرد و تر",R.drawable.ic_snow))
+        mezaj_model?.add(Mezaj_Model("مزاج خون","گرم و تر",R.drawable.ic_spring))
+        mezaj_model?.add(Mezaj_Model("مزاج ریح","سرد و تر",R.drawable.ic_summer))
         rv_mezaj.layoutManager = LinearLayoutManager(context,LinearLayout.HORIZONTAL,false)
         mezajAdapter = MezajAdapter(mezaj_model!!)
         rv_mezaj.adapter = mezajAdapter

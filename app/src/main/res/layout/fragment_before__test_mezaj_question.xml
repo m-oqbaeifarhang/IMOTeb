@@ -23,7 +23,57 @@
             android:layoutDirection="rtl"
             android:background="@color/toolbar_background"
             app:title=" "
-            app:elevation="0dp"/>
+            app:elevation="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                android:layoutDirection="ltr">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/title_imoteb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/dephiana_en"
+                        android:text="@string/app_name"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_splash_screen"
+                        android:layout_toEndOf="@+id/title_imoteb"/>
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
@@ -34,91 +84,244 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/iransans"
-                android:text="@string/tavajjoh"
-                android:textColor="@color/red"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/bg_textview_red">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="8dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/iransans"
-                    android:text="@string/text"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:text="@string/tavajjoh"
+                        android:fontFamily="@font/iransans"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/red"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text"
+                        style="@style/title_text_medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text"
+                        style="@style/title_text_medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text"
+                        style="@style/title_text_medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text"
+                        style="@style/title_text_medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text"
+                        style="@style/title_text_medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text"
+                        style="@style/title_text_medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text"
+                        style="@style/title_text_medium"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/iransans"
-                android:text="@string/sale_tavallod"
-                android:textColor="@color/text_color_titr"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/iransans"
-                android:text="@string/mesal"
-                android:textColor="@color/text_color"
-                android:textSize="14sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:id="@+id/txt_GetAge"
+            <RelativeLayout
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/bg_edit_text"
-                android:fontFamily="@font/iransans"
-                android:inputType="number"
-                android:textColor="@color/text_color"
-                android:hint="@string/hint_edit_text"
-                android:paddingRight="20dp"
-                android:textColorHint="@color/edit_text_hint"
-                android:textSize="16sp" />
+                android:background="@drawable/bg_edit_text">
+                <EditText
+                    android:id="@+id/txt_GetAge"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/iransans"
+                    android:inputType="number"
+                    android:background="@drawable/bg_edit_text"
+                    android:textColor="@color/text_color"
+                    android:autofillHints="@string/sen_input"
+                    android:hint="@string/sen_input"
+                    android:padding="10dp"
+                    android:textColorHint="@color/edit_text_hint"
+                    android:textSize="16sp" />
+            </RelativeLayout>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp" />
+                android:layout_height="20dp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:layout_margin="8dp"
+                android:padding="8dp">
+                <TextView
+                    android:id="@+id/vaziyyat_tahhol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    style="@style/title_text_large"
+                    android:text="@string/vaziyat_tahhol"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/vaziyyat_tahhol">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:gravity="center_horizontal">
+                        <LinearLayout
+                            android:id="@+id/ll_mojarrad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layoutDirection="rtl"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/cb_mojarrad"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:checked="false"
+                                android:buttonTint="@color/red" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mojarrad"
+                                style="@style/title_text_large"/>
+                        </LinearLayout>
+                        <Space
+                            android:id="@+id/space_a"
+                            android:layout_toLeftOf="@+id/ll_mojarrad"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"/>
+                        <LinearLayout
+                            android:id="@+id/ll_motahhel"
+                            android:layout_width="wrap_content"
+                            android:layout_toLeftOf="@+id/space_a"
+                            android:layout_height="wrap_content"
+                            android:layoutDirection="rtl"
+                            android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/cb_motaahel"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:checked="false"
+                                android:buttonTint="@color/red" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/motaahel"
+                                style="@style/title_text_large"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:layout_margin="8dp"
+                android:padding="8dp">
+                <TextView
+                    android:id="@+id/jensiyyat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    style="@style/title_text_large"
+                    android:text="@string/jensiyyat"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/jensiyyat">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:gravity="center_horizontal">
+                        <LinearLayout
+                            android:id="@+id/ll_mard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layoutDirection="rtl"
+                            android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/cb_mard"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:checked="false"
+                                android:buttonTint="@color/red" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mard"
+                                style="@style/title_text_large"/>
+                        </LinearLayout>
+                        <Space
+                            android:id="@+id/space_b"
+                            android:layout_toLeftOf="@+id/ll_mard"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"/>
+                        <LinearLayout
+                            android:id="@+id/ll_zan"
+                            android:layout_width="wrap_content"
+                            android:layout_toLeftOf="@+id/space_b"
+                            android:layout_height="wrap_content"
+                            android:layoutDirection="rtl"
+                            android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/cb_zan"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:checked="false"
+                                android:buttonTint="@color/red" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/zan"
+                                style="@style/title_text_large"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
         </LinearLayout>
     </ScrollView>
 
