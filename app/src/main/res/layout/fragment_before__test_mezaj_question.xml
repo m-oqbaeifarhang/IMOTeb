@@ -200,49 +200,33 @@
                         android:layout_height="wrap_content"
                         android:layoutDirection="rtl"
                         android:gravity="center_horizontal">
-                        <LinearLayout
-                            android:id="@+id/ll_mojarrad"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layoutDirection="rtl"
-                            android:layout_centerVertical="true"
-                            android:orientation="horizontal">
-                            <CheckBox
-                                android:id="@+id/cb_mojarrad"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:checked="false"
-                                android:buttonTint="@color/red" />
-                            <TextView
-                                android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:id="@+id/rg_vaziyat_tahhol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:weightSum="3"
+                            android:orientation="horizontal"
+                            android:layout_marginRight="20dp">
+                            <RadioButton
+                                android:id="@+id/rb_mojarrad"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1.5"
+                                android:fontFamily="@font/iransans_l"
                                 android:text="@string/mojarrad"
-                                style="@style/title_text_large"/>
-                        </LinearLayout>
-                        <Space
-                            android:id="@+id/space_a"
-                            android:layout_toLeftOf="@+id/ll_mojarrad"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"/>
-                        <LinearLayout
-                            android:id="@+id/ll_motahhel"
-                            android:layout_width="wrap_content"
-                            android:layout_toLeftOf="@+id/space_a"
-                            android:layout_height="wrap_content"
-                            android:layoutDirection="rtl"
-                            android:orientation="horizontal">
-                            <CheckBox
-                                android:id="@+id/cb_motaahel"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:checked="false"
-                                android:buttonTint="@color/red" />
-                            <TextView
-                                android:layout_width="wrap_content"
+                                android:textColor="@color/text_color"
+                                android:textSize="17sp"/>
+                            <RadioButton
+                                android:id="@+id/rb_motahhel"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1.5"
+                                android:fontFamily="@font/iransans_l"
                                 android:text="@string/motaahel"
-                                style="@style/title_text_large"/>
-                        </LinearLayout>
+                                android:textColor="@color/text_color"
+                                android:textSize="17sp"/>
+                        </RadioGroup>
                     </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>
@@ -268,54 +252,33 @@
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/jensiyyat">
-                    <RelativeLayout
+                    <RadioGroup
+                        android:id="@+id/rg_jensiyyat"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layoutDirection="rtl"
-                        android:gravity="center_horizontal">
-                        <LinearLayout
-                            android:id="@+id/ll_mard"
-                            android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:weightSum="3"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="20dp">
+                        <RadioButton
+                            android:id="@+id/rb_mard"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="rtl"
-                            android:orientation="horizontal">
-                            <CheckBox
-                                android:id="@+id/cb_mard"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:checked="false"
-                                android:buttonTint="@color/red" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/mard"
-                                style="@style/title_text_large"/>
-                        </LinearLayout>
-                        <Space
-                            android:id="@+id/space_b"
-                            android:layout_toLeftOf="@+id/ll_mard"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"/>
-                        <LinearLayout
-                            android:id="@+id/ll_zan"
-                            android:layout_width="wrap_content"
-                            android:layout_toLeftOf="@+id/space_b"
+                            android:layout_weight="1.5"
+                            android:fontFamily="@font/iransans_l"
+                            android:text="@string/mard"
+                            android:textColor="@color/text_color"
+                            android:textSize="17sp"/>
+                        <RadioButton
+                            android:id="@+id/rb_zan"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="rtl"
-                            android:orientation="horizontal">
-                            <CheckBox
-                                android:id="@+id/cb_zan"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:checked="false"
-                                android:buttonTint="@color/red" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/zan"
-                                style="@style/title_text_large"/>
-                        </LinearLayout>
-                    </RelativeLayout>
+                            android:layout_weight="1.5"
+                            android:fontFamily="@font/iransans_l"
+                            android:text="@string/zan"
+                            android:textColor="@color/text_color"
+                            android:textSize="17sp"/>
+                    </RadioGroup>
                 </RelativeLayout>
             </RelativeLayout>
 
