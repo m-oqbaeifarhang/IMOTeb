@@ -1,6 +1,7 @@
 package com.example.imoteb
 
 import android.content.res.Resources
+import java.security.KeyStore
 
 
 class Model()
@@ -18,6 +19,8 @@ class Model()
         var Answers: MutableList<Int> = MutableList(32) { -1 }
         var Age: Int = 0
         var KamKhuni = false
+        var Sex=false
+        var Tahol=false
         lateinit var QuestionTitle: MutableList<String>
         var DamQuestionCount: Int = 7
         var SafraQuestionCount: Int = 9

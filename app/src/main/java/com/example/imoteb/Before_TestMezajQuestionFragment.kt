@@ -7,16 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
+import kotlinx.android.synthetic.main.questions_model.*
 
-class Before_TestMezajQuestionFragment : Fragment() , View.OnClickListener
+class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
 {
-    var navController : NavController? = null
+    var navController: NavController? = null
 
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,13 +43,13 @@ class Before_TestMezajQuestionFragment : Fragment() , View.OnClickListener
             {
                 if(txt_GetAge.length() == 0)
                 {
-                    val toast = Toast.makeText(requireContext(), R.string.sen_input, Toast.LENGTH_LONG)
+                    val toast =
+                        Toast.makeText(requireContext(), R.string.sen_input, Toast.LENGTH_LONG)
                     val view: View = toast.view
-//                    view.findViewById(android.R.id.message).setTextColor(Color.YELLOW)
+                    //                    view.findViewById(android.R.id.message).setTextColor(Color.YELLOW)
                     view.setBackgroundResource(R.color.blue_dark)
                     toast.show()
-                }
-                else
+                } else
                 {
                     Model.Age = txt_GetAge.text.toString().toInt()
                     //در این قسمت model.Answer خالی میشود.
@@ -66,13 +68,22 @@ class Before_TestMezajQuestionFragment : Fragment() , View.OnClickListener
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
-        /*set Toolbar*/
+
+        rg_jensiyyat.setOnCheckedChangeListener { group, _ ->
+            val rdb = rg_jensiyyat.findViewById<RadioButton>(group.checkedRadioButtonId)
+            Model.Sex = rg_jensiyyat.indexOfChild(rdb).toString().toBoolean()
+        }
+
+        rg_vaziyat_tahhol.setOnCheckedChangeListener { group, _ ->
+            val rdb = rg_vaziyat_tahhol.findViewById<RadioButton>(group.checkedRadioButtonId)
+            Model.Tahol = rg_vaziyat_tahhol.indexOfChild(rdb).toString().toBoolean()
+        }
+
         if(activity is AppCompatActivity)
         {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_before_test_mezaj_question)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-//            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_before_test_mezaj_question.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
