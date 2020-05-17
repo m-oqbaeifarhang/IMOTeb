@@ -10,22 +10,23 @@
             android:icon="@drawable/ic_person"
             android:title="@string/signup" />
         <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_share"
-            android:title="@string/share"/>
+            android:id="@+id/nav_test"
+            android:icon="@drawable/ic_about"
+            android:title="@string/test_mezaj"/>
         <item
             android:id="@+id/nav_rate"
             android:icon="@drawable/ic_thumb_up24dp"
             android:title="@string/Rate_the_app" />
-        <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/ic_about"
-            android:title="@string/about"/>
-        <item
-            android:id="@+id/nav_test"
-            android:icon="@drawable/ic_about"
-            android:title="@string/test_mezaj"/>
     </group>
+
+    <item android:title="@string/eshterak">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="@string/share"/>
+        </menu>
+    </item>
 
     <item android:title="@string/communication_ways">
         <menu>

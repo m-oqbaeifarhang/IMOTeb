@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="150dp"
+    android:layoutDirection="ltr"
+    android:gravity="center"
+    tools:ignore="UseCompoundDrawables">
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/ic_attachment"/>
+        <TextView
+            android:id="@+id/title_splash_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:fontFamily="@font/dephiana_en"
+            android:text="@string/app_name"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_splash_screen" />
+
+</LinearLayout>

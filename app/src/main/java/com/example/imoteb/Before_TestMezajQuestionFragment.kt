@@ -43,8 +43,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
             {
                 if(txt_GetAge.length() == 0)
                 {
-                    val toast =
-                        Toast.makeText(requireContext(), R.string.sen_input, Toast.LENGTH_LONG)
+                    val toast = Toast.makeText(requireContext(), R.string.sen_input, Toast.LENGTH_LONG)
                     val view: View = toast.view
                     //                    view.findViewById(android.R.id.message).setTextColor(Color.YELLOW)
                     view.setBackgroundResource(R.color.blue_dark)
@@ -61,7 +60,6 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
                     navController!!.navigate(R.id.action_before_TestMezajQuestionFragment_to_mezaj_QueriesFragment)
                 }
             }
-
         }
     }
 

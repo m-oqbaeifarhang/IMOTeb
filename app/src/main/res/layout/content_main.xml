@@ -57,18 +57,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_below="@+id/space_2"
-                    app:cardBackgroundColor="@color/purple"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="8dp"
                     app:cardElevation="5dp"
                     app:cardCornerRadius="10dp">
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/logo_daroo">
                         <TextView
                             style="@style/title_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="box"
+                            android:text="اطلاعات دارویی"
                             android:layout_centerInParent="true"
                             android:textColor="@color/white" />
                     </RelativeLayout>

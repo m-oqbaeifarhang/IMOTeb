@@ -18,6 +18,13 @@
             app:popExitAnim="@anim/slide_out_left"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_damaviFragment"
+            app:destination="@id/damaviFragment"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -53,5 +60,10 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"/>
     </fragment>
+    <fragment
+        android:id="@+id/damaviFragment"
+        android:name="com.example.imoteb.DamaviFragment"
+        android:label="fragment_damavi"
+        tools:layout="@layout/fragment_damavi" />
 
 </navigation>

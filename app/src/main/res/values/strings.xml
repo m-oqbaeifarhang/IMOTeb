@@ -8,6 +8,7 @@
     <string name="signup">ورود / ثبت نام</string>
     <string name="Rate_the_app">امتیاز دادن به برنامه</string>
     <string name="share">معرفی به دوستان</string>
+    <string name="eshterak">اشتراک</string>
     <string name="communication_ways">راه های ارتباطی</string>
     <string name="call_us">تماس با ما</string>
     <string name="test_mezaj">تست مزاج</string>
@@ -25,7 +26,6 @@
     <string name="name_daroo">نام دارو</string>
     <string name="foods">غذاها</string>
 
-
     <!--    Radio Button-->
     <string name="rb_Yes">بله</string>
     <string name="rb_No">خیر</string>
@@ -36,7 +36,8 @@
     <string name="sale_tavallod">سال تولد شما</string>
     <string name="marhaleye_baad">مرحله بعد</string>
     <string name="mesal">مثال : 1355</string>
-    <string name="sen_input">لطفا سن خود را وارد کنید</string>
+    <string name="sen_input">لطفا سن خود را در کادر زیر وارد کنید</string>
+    <string name="edit_txt_hint">کلیک کنید</string>
     <string name="vaziyat_tahhol">وضعیت تاهل ؟</string>
     <string name="jensiyyat">جنسیت ؟</string>
     <string name="mojarrad">مجرد</string>
@@ -46,6 +47,17 @@
 
     <!--fragment test mezaj-->
     <string name="moshahede_natijeh">مشاهده نتیجه</string>
+
+<!--    fragment damavi-->
+    <string name="txt_dam_1">مزاج دموی چیست؟ مزاج دموی یک مزاج گرم و تر است. دم در بدن همان خونی‌ست که در رگ‌ها جریان داشته و وظایف مختلفی دارد. انسان‌های دموی خصوصیات خاص خودشان را دارند و برای ابتلا به یک سری بیماری‌ها مستعدتر هستند.</string>
+    <string name="txt_dam_2">اگر در پوست غلبه دم اتفاق بیفتد پوست گرم می‌شود و عرق گرم تولید می‌شود. در دموی‌ها آکنه‌هایی که به وجود می‌آید سرسیاه و درشت در صورت، شانه و سینه است (در شانه بیشتر) و بعضا دمل هم وجود دارد. این حالات در دوران جوانی بیشتر است. چون جوانی اوج دوره غلبه دم است و رگ‌ها پرخون می‌شوند و کهیر به وجود می‌آید.</string>
+    <string name="txt_dam_3">اگر خلط دم در سر غلبه کند اول در صورت نمایان می‌شود. از این جهت اول سر را گرم می‌کند، لذا سردرد میگرنی گرم پدید می‌آید و کل سر را فرا می‌گیرد. غذای گرم و عطر‌های گرم این درد را تشدید می‌کنند. این درد در شب آرام می‌شود. اگر این گرمی زیاد شود اول مو‌های وسط سر می‌ریزند.
+اگر دم در معده زیاد شود شخص تمایل به ترشی فراوان پیدا می‌کند. هر چه این دم افزایش بیشتری پیدا کند اشتهای شخص کمتر می‌شود. پس اگر بخواهیم اشتها را زیاد کنیم باید معده و کبد را مقداری هم سرد بکنیم که این کار با خوردن آبلیمو، سرکه، آبغوره و ترشی‌ها انجام‌پذیر است.</string>
+    <string name="mezaje_damavi">مزاج دموی</string>
+    <string name="neshaneha">نشانه ها</string>
+    <string name="raftar">خلق و خوی</string>
+    <string name="bimariha">بیماری ها</string>
+
 
 
 </resources>

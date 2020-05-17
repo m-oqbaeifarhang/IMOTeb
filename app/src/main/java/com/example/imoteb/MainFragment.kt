@@ -22,19 +22,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_damavi.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigationItemSelectedListener
+class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigationItemSelectedListener,MezajAdapter.mezajItemClickListener
 {
     var navController : NavController? = null
     private var myContext: FragmentActivity? = null
     lateinit var beforeTestmezajquestionfragment: Before_TestMezajQuestionFragment
     var mezaj_model: ArrayList<Mezaj_Model>? = null
-    var mezajAdapter: MezajAdapter? =null
+    var mezajAdapter: MezajAdapter? = null
 
-    override fun onCreateView(inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?): View?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false)
@@ -74,8 +73,24 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         mezaj_model?.add(Mezaj_Model("مزاج خون","گرم و تر",R.drawable.ic_spring))
         mezaj_model?.add(Mezaj_Model("مزاج ریح","سرد و تر",R.drawable.ic_summer))
         rv_mezaj.layoutManager = LinearLayoutManager(context,LinearLayout.HORIZONTAL,false)
-        mezajAdapter = MezajAdapter(mezaj_model!!)
+        mezajAdapter = MezajAdapter(mezaj_model!!,this)
         rv_mezaj.adapter = mezajAdapter
+    }
+
+    //افزودن کلیک برای آیتم های ریسایکلر ویوی مزاج
+    override fun onItemClick(items: Mezaj_Model, position: Int)
+    {
+//        Toast.makeText(requireContext(),items.mezaj_title,Toast.LENGTH_SHORT).show()
+
+        when(position)
+        {
+            0 ->  navController!!.navigate(R.id.action_mainFragment_to_damaviFragment)
+            1 ->  navController!!.navigate(R.id.action_mainFragment_to_damaviFragment)
+            2 ->  navController!!.navigate(R.id.action_mainFragment_to_damaviFragment)
+            3 ->  navController!!.navigate(R.id.action_mainFragment_to_damaviFragment)
+            4 ->  navController!!.navigate(R.id.action_mainFragment_to_damaviFragment)
+            5 ->  navController!!.navigate(R.id.action_mainFragment_to_damaviFragment)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
