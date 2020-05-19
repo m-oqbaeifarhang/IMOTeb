@@ -19,8 +19,8 @@ class Model()
         var Answers: MutableList<Int> = MutableList(32) { -1 }
         var Age: Int = 0
         var KamKhuni = false
-        var Sex=false
-        var Tahol=false
+        var Sex = false
+        var Tahol = false
         lateinit var QuestionTitle: MutableList<String>
         var DamQuestionCount: Int = 7
         var SafraQuestionCount: Int = 9
@@ -31,6 +31,25 @@ class Model()
         var MaxOfSafraAnswerSize: Float = 11.5f
         var MaxOfSodaAnswerSize: Float = 12f
         var MaxOfBalghamAnswerSize: Float = 9f
+
+        fun MeghadDehiMotaghayerHa(): Unit
+        {
+            Answers= MutableList(32) { -1 }
+            Age = 0
+            KamKhuni = false
+            Sex = false
+            Tahol = false
+            DamQuestionCount = 7
+            SafraQuestionCount = 9
+            SodaQuestionCount = 9
+            BalghamQuestionCount = 7
+
+            MaxOfDamAnswerSize = 9.5f
+            MaxOfSafraAnswerSize = 11.5f
+            MaxOfSodaAnswerSize = 12f
+            MaxOfBalghamAnswerSize = 9f
+            MakeEmtiyazSolatMutableList()
+        }
 
         fun MakeEmtiyazSolatMutableList(): Unit
         {

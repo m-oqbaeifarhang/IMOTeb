@@ -60,21 +60,18 @@ class MohasebehMezaj
                 MezajCounter++
                 counter++;
             }
-            CMR.dam = (5.25f * CMR.dam) / Model.MaxOfDamAnswerSize
-            CMR.safra = (5.25f * CMR.safra) / Model.MaxOfSafraAnswerSize
-            CMR.soda = (5.25f * CMR.soda) / Model.MaxOfSodaAnswerSize
-            CMR.balgham = (5.25f * CMR.balgham) / Model.MaxOfBalghamAnswerSize
-
             val age = Model.Age
             when(age)
             {
                 in 0..16 ->
                 {
                     CMR.dam += 1.75f
+                    Model.MaxOfDamAnswerSize += 1.75f
                 }
                 in 17..30 ->
                 {
                     CMR.safra += 1.75f
+                    Model.MaxOfSafraAnswerSize += 1.75f
                 }
                 in 31..45 ->
                 {
@@ -82,6 +79,8 @@ class MohasebehMezaj
                     val soda = 15 - safra
                     CMR.safra += (1.75f * safra) / 15
                     CMR.soda += (1.75f * soda) / 15
+                    Model.MaxOfSafraAnswerSize += (1.75f * safra) / 15
+                    Model.MaxOfSodaAnswerSize += (1.75f * soda) / 15
                 }
                 in 46..55 ->
                 {
@@ -89,13 +88,22 @@ class MohasebehMezaj
                     val balgham = 10 - soda
                     CMR.soda += (1.75f * soda) / 10
                     CMR.balgham += (1.75f * balgham) / 10
+                    Model.MaxOfSodaAnswerSize += (1.75f * soda) / 10
+                    Model.MaxOfBalghamAnswerSize += (1.75f * balgham) / 10
                 }
                 else ->
                 {
                     CMR.balgham += 1.75f
+                    Model.MaxOfBalghamAnswerSize +=1.75f
                 }
 
             }
+            CMR.dam = (5.25f * CMR.dam) / Model.MaxOfDamAnswerSize
+            CMR.safra = (5.25f * CMR.safra) / Model.MaxOfSafraAnswerSize
+            CMR.soda = (5.25f * CMR.soda) / Model.MaxOfSodaAnswerSize
+            CMR.balgham = (5.25f * CMR.balgham) / Model.MaxOfBalghamAnswerSize
+
+
             CMR.dam += 3f
             CMR.safra += 3f
             CMR.soda += 3f

@@ -24,6 +24,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
         container: ViewGroup?,
         savedInstanceState: Bundle?): View?
     {
+       Model.MeghadDehiMotaghayerHa()
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_before__test_mezaj_question, container, false)
     }
@@ -31,6 +32,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
+
         navController = Navigation.findNavController(view)
         btn_marhaleye_baad.setOnClickListener(this)
     }
@@ -43,7 +45,8 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
             {
                 if(txt_GetAge.length() == 0)
                 {
-                    val toast = Toast.makeText(requireContext(), R.string.sen_input, Toast.LENGTH_LONG)
+                    val toast =
+                        Toast.makeText(requireContext(), R.string.sen_input, Toast.LENGTH_LONG)
                     val view: View = toast.view
                     //                    view.findViewById(android.R.id.message).setTextColor(Color.YELLOW)
                     view.setBackgroundResource(R.color.blue_dark)
