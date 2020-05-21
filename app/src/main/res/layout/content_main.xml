@@ -24,13 +24,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    style="@style/title_text_large"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/iransans"
-                    android:textStyle="bold"
-                    android:text="@string/darbareye_mazaj"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_color_titr"/>
+                    android:text="@string/darbareye_mazaj" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/ic_arrow"/>
 
                 <Space
                     android:id="@+id/space_1"
@@ -75,38 +80,48 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/title_daroo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/card_tabligh"
-                    android:fontFamily="@font/iransans"
-                    android:textStyle="bold"
-                    android:text="@string/foods"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_color_titr"/>
-
-                <Space
-                    android:id="@+id/space_3"
+                <RelativeLayout
+                    android:id="@+id/relative_food"
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_below="@+id/title_daroo"/>
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/card_tabligh">
+                    <TextView
+                        android:id="@+id/title_daroo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="18dp"
+                        android:text="@string/foods"
+                        style="@style/title_text_large" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="18dp"
+                        android:src="@drawable/ic_arrow"/>
+                </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_daroo"
+                    android:id="@+id/rv_food"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
                     android:background="@color/main_background"
-                    android:layout_below="@id/space_3" />
+                    android:layout_below="@id/relative_food" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/rv_food"/>
+
 
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
-
 
     <Button
         android:id="@+id/btn_start_TestMazaj"

@@ -3,10 +3,8 @@ package com.example.imoteb
 import android.content.res.Resources
 import java.security.KeyStore
 
-
 class Model()
 {
-
     companion object
     {
         var EmtiyazSoalat = MutableList<Float>(32) { 1f }
@@ -26,7 +24,6 @@ class Model()
         var SafraQuestionCount: Int = 9
         var SodaQuestionCount: Int = 9
         var BalghamQuestionCount: Int = 7
-
         var MaxOfDamAnswerSize: Float = 9.5f
         var MaxOfSafraAnswerSize: Float = 11.5f
         var MaxOfSodaAnswerSize: Float = 12f
@@ -43,7 +40,6 @@ class Model()
             SafraQuestionCount = 9
             SodaQuestionCount = 9
             BalghamQuestionCount = 7
-
             MaxOfDamAnswerSize = 9.5f
             MaxOfSafraAnswerSize = 11.5f
             MaxOfSodaAnswerSize = 12f

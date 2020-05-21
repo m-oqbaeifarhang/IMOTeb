@@ -1,6 +1,6 @@
 package com.example.imoteb
 
-class Mezaj_Model(mezaj_title: String , mezaj_description: String , image : Int)
+class Mezaj_Model (mezaj_title: String , mezaj_description: String , image : Int)
 {
     var mezaj_title : String = ""
     var mezaj_description : String = ""
