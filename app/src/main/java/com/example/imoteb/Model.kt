@@ -24,10 +24,11 @@ class Model()
         var SafraQuestionCount: Int = 9
         var SodaQuestionCount: Int = 9
         var BalghamQuestionCount: Int = 7
-        var MaxOfDamAnswerSize: Float = 9.5f
-        var MaxOfSafraAnswerSize: Float = 11.5f
-        var MaxOfSodaAnswerSize: Float = 12f
-        var MaxOfBalghamAnswerSize: Float = 9f
+
+        var MaxOfDamAnswerSize: Float = 19f
+        var MaxOfSafraAnswerSize: Float = 23f
+        var MaxOfSodaAnswerSize: Float = 24f
+        var MaxOfBalghamAnswerSize: Float = 18f
 
         fun MeghadDehiMotaghayerHa(): Unit
         {
@@ -40,10 +41,11 @@ class Model()
             SafraQuestionCount = 9
             SodaQuestionCount = 9
             BalghamQuestionCount = 7
-            MaxOfDamAnswerSize = 9.5f
-            MaxOfSafraAnswerSize = 11.5f
-            MaxOfSodaAnswerSize = 12f
-            MaxOfBalghamAnswerSize = 9f
+
+            MaxOfDamAnswerSize = 19f
+            MaxOfSafraAnswerSize = 23f
+            MaxOfSodaAnswerSize = 24f
+            MaxOfBalghamAnswerSize = 18f
             MakeEmtiyazSolatMutableList()
         }
 

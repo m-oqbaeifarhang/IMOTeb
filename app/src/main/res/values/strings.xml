@@ -29,6 +29,7 @@
     <!--    Radio Button-->
     <string name="rb_Yes">بله</string>
     <string name="rb_No">خیر</string>
+    <string name="rb_SomeTimes">گاهی</string>
 
     <!--fragment before test mezaj-->
     <string name="tavajjoh">توجه !</string>

@@ -35,7 +35,6 @@ class FoodsAdapter (food_items : ArrayList<Foods_Model> ) : RecyclerView.Adapter
          val item = items?.get(position)
          holder.title.text = item?.food_name
          holder.image.setImageResource(item?.food_img!!)
-
          holder.itemView.setOnClickListener {
              Toast.makeText(myContext,holder.title.text,Toast.LENGTH_SHORT).show()
          }

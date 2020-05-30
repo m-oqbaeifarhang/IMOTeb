@@ -60,6 +60,15 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/iransans_l"
+                        android:text="@string/rb_SomeTimes"
+                        android:textColor="@color/text_color"
+                        android:textSize="17sp"/>
+                    <RadioButton
+                        android:id="@+id/rb_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/iransans_l"
                         android:text="@string/rb_No"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>

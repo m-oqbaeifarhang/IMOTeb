@@ -1,22 +1,18 @@
 package com.example.imoteb
 
-import android.app.Activity
 import android.content.Context
 import android.graphics.Color
+import android.opengl.Visibility
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import java.time.temporal.ValueRange
 
 
 class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
@@ -53,8 +49,10 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         {
             0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked = true
             1 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true
+            2 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked = true
         }
 
+        var emtiyaz: Int = 0
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
             Model.QuestionTitle[position] = Model.QuestionTitle[position].replace("*", "")
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)

@@ -18,7 +18,19 @@ class MohasebehMezaj
             var counter = 0
             var mezaj: Mezajha = Mezajha.dam
             (answer).forEach {
-                val value = it xor 1
+                var value = 0
+                when(it)
+                {
+                    0 ->
+                    {
+                        value = 2
+                    }
+                    1 ->
+                    {
+                        value=1
+                    }
+                }
+
                 when(mezaj)
                 {
                     Mezajha.dam ->
@@ -65,36 +77,36 @@ class MohasebehMezaj
             {
                 in 0..16 ->
                 {
-                    CMR.dam += 1.75f
-                    Model.MaxOfDamAnswerSize += 1.75f
+                    CMR.dam += 2f
+                    Model.MaxOfDamAnswerSize += 2f
                 }
                 in 17..30 ->
                 {
-                    CMR.safra += 1.75f
-                    Model.MaxOfSafraAnswerSize += 1.75f
+                    CMR.safra +=2f
+                    Model.MaxOfSafraAnswerSize += 2f
                 }
                 in 31..45 ->
                 {
                     val safra = 45 - age
                     val soda = 15 - safra
-                    CMR.safra += (1.75f * safra) / 15
-                    CMR.soda += (1.75f * soda) / 15
-                    Model.MaxOfSafraAnswerSize += (1.75f * safra) / 15
-                    Model.MaxOfSodaAnswerSize += (1.75f * soda) / 15
+                    CMR.safra += (2f * safra) / 15
+                    CMR.soda += (2f * soda) / 15
+                    Model.MaxOfSafraAnswerSize += (2f * safra) / 15
+                    Model.MaxOfSodaAnswerSize += (2f * soda) / 15
                 }
                 in 46..55 ->
                 {
                     val soda = 55 - age
                     val balgham = 10 - soda
-                    CMR.soda += (1.75f * soda) / 10
-                    CMR.balgham += (1.75f * balgham) / 10
-                    Model.MaxOfSodaAnswerSize += (1.75f * soda) / 10
-                    Model.MaxOfBalghamAnswerSize += (1.75f * balgham) / 10
+                    CMR.soda += (2f * soda) / 10
+                    CMR.balgham += (2f * balgham) / 10
+                    Model.MaxOfSodaAnswerSize += (2f * soda) / 10
+                    Model.MaxOfBalghamAnswerSize += (2f * balgham) / 10
                 }
                 else ->
                 {
-                    CMR.balgham += 1.75f
-                    Model.MaxOfBalghamAnswerSize +=1.75f
+                    CMR.balgham +=2f
+                    Model.MaxOfBalghamAnswerSize +=2f
                 }
 
             }

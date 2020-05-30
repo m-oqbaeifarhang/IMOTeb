@@ -23,25 +23,25 @@ class ConfigurationQuestionsAndAnswers
                 Model.Answers[1] = -2
                 Model.Answers[11] = -2
 
-                Model.EmtiyazSoalat[0] = -2f
-                Model.EmtiyazSoalat[1] = -2f
-                Model.EmtiyazSoalat[11] = -2f
-
                 Model.DamQuestionCount -= 2
                 Model.SafraQuestionCount -= 1
 
-                Model.MaxOfDamAnswerSize -= 3.5f //این عدد همان ضریب سوال است که از جمع امتیاز پاسخ ها کم میشه در پایینی ها هم همین معنی رو داره
-                Model.MaxOfSafraAnswerSize -= 1.5f
+                Model.MaxOfDamAnswerSize -= (Model.EmtiyazSoalat[0] + Model.EmtiyazSoalat[1])*2 //این عدد همان ضریب سوال است که از جمع امتیاز پاسخ ها کم میشه در پایینی ها هم همین معنی رو داره
+                Model.MaxOfSafraAnswerSize -= Model.EmtiyazSoalat[11]*2
+
+                Model.EmtiyazSoalat[0] = -2f
+                Model.EmtiyazSoalat[1] = -2f
+                Model.EmtiyazSoalat[11] = -2f
                 if(age > 50)
                 {
                     list[9] = "-"
                     Model.Answers[9] = -2
 
-                    Model.EmtiyazSoalat[9] = -2f
-
                     Model.SafraQuestionCount -= 1
 
-                    Model.MaxOfSafraAnswerSize -= 1.5f
+                    Model.MaxOfSafraAnswerSize -= Model.EmtiyazSoalat[9]*2
+
+                    Model.EmtiyazSoalat[9] = -2f
                 }
 
             }
@@ -51,33 +51,33 @@ class ConfigurationQuestionsAndAnswers
 
                 Model.Answers[26] = -2
 
-                Model.EmtiyazSoalat[26] = -2f
-
                 Model.BalghamQuestionCount -= 1
 
-                Model.MaxOfBalghamAnswerSize -= 1
+                Model.MaxOfBalghamAnswerSize -=  Model.EmtiyazSoalat[26]*2
+
+                Model.EmtiyazSoalat[26] = -2f
             }
-            if(Model.Tahol==false)
+            if(Model.Tahol == false)
             {
                 list[12] = "-"
                 Model.Answers[12] = -2
 
+                Model.SafraQuestionCount -= 1
+
+                Model.MaxOfSafraAnswerSize -= Model.EmtiyazSoalat[12]*2
+
                 Model.EmtiyazSoalat[12] = -2f
-
-                Model.SafraQuestionCount-=1
-
-                Model.MaxOfSafraAnswerSize-=1
             }
-            if(Model.Sex==false)
+            if(Model.Sex == false)
             {
                 list[24] = "-"
                 Model.Answers[24] = -2
 
-                Model.EmtiyazSoalat[24] = -2f
-
                 Model.SodaQuestionCount -= 1
 
-                Model.MaxOfSodaAnswerSize -= 2f
+                Model.MaxOfSodaAnswerSize -= Model.EmtiyazSoalat[24]*2
+
+                Model.EmtiyazSoalat[24] = -2f
             }
             var size1 = Model.Answers.size
             Model.Answers.removeAll {
