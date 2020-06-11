@@ -51,31 +51,37 @@
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="18dp"
+                android:layout_marginStart="18dp"
                 android:fontFamily="@font/iransans"
                 android:text="@string/txt_result"
                 android:textSize="16sp"
                 android:textColor="@color/text_color_titr"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/natayejTablayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="10"
+                android:layout_height="match_parent"
                 android:background="@drawable/background_textview"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="5dp"
                 android:padding="5dp"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <include layout="@layout/description"/>
-                </RelativeLayout>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/natayejViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"/>
+                </LinearLayout>
             </androidx.core.widget.NestedScrollView>
-            <LinearLayout
+<!--            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
@@ -106,7 +112,7 @@
                     android:textSize="16sp"
                     android:textColor="@color/white"
                     android:background="@drawable/btn_stylee"/>
-            </LinearLayout>
+            </LinearLayout>-->
         </LinearLayout>
     </LinearLayout>
 

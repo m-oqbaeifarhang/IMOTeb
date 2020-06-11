@@ -1,25 +1,28 @@
 package com.example.imoteb
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import com.github.mikephil.charting.components.LimitLine
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
+import com.example.imoteb.Adapter.NatayejViewPagerAdapter
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 
 class Test_mezaj_resultFragment : Fragment()
 {
+    var natayejTablayout: TabLayout? = null
+    var natayejViewPager: ViewPager? = null
 
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,6 +30,32 @@ class Test_mezaj_resultFragment : Fragment()
     {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_test_mezaj_result, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
+    {
+        super.onViewCreated(view, savedInstanceState)
+        super.onCreate(savedInstanceState)
+
+        natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
+        natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
+        natayejTablayout!!.addTab(natayejTablayout!!.newTab().setText("توصیه های پزشکی"))
+        natayejTablayout!!.addTab(natayejTablayout!!.newTab().setText("خصوصیات اخلاقی"))
+        natayejTablayout!!.tabGravity = TabLayout.GRAVITY_FILL
+        val adapter = NatayejViewPagerAdapter(requireActivity().getSupportFragmentManager())
+        natayejViewPager!!.adapter = adapter
+        natayejViewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(natayejTablayout))
+
+        /*natayejTablayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener
+        {
+            override fun onTabSelected(tab: TabLayout.Tab)
+            {
+                natayejViewPager!!.currentItem = tab.position
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })*/
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
