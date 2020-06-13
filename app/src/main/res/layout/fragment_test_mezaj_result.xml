@@ -61,7 +61,9 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/natayejTablayout"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="50dp"
+                app:tabIndicatorColor="@color/red"
+                app:tabTextAppearance="@style/tab_text"/>
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -78,7 +80,8 @@
                     <androidx.viewpager.widget.ViewPager
                         android:id="@+id/natayejViewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"/>
+                        android:layout_height="400dp"
+                        android:layoutDirection="rtl"/>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
 <!--            <LinearLayout

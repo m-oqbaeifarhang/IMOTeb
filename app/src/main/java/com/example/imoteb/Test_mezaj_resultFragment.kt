@@ -21,8 +21,8 @@ import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 
 class Test_mezaj_resultFragment : Fragment()
 {
-    var natayejTablayout: TabLayout? = null
-    var natayejViewPager: ViewPager? = null
+//    var natayejTablayout: TabLayout? = null
+//    var natayejViewPager: ViewPager? = null
 
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,16 +37,17 @@ class Test_mezaj_resultFragment : Fragment()
         super.onViewCreated(view, savedInstanceState)
         super.onCreate(savedInstanceState)
 
-        natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
-        natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
+//        natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
+//        natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
         natayejTablayout!!.addTab(natayejTablayout!!.newTab().setText("توصیه های پزشکی"))
         natayejTablayout!!.addTab(natayejTablayout!!.newTab().setText("خصوصیات اخلاقی"))
+        natayejTablayout!!.addTab(natayejTablayout!!.newTab().setText("خصوصیات"))
         natayejTablayout!!.tabGravity = TabLayout.GRAVITY_FILL
         val adapter = NatayejViewPagerAdapter(requireActivity().getSupportFragmentManager())
         natayejViewPager!!.adapter = adapter
         natayejViewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(natayejTablayout))
 
-        /*natayejTablayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener
+        natayejTablayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener
         {
             override fun onTabSelected(tab: TabLayout.Tab)
             {
@@ -54,7 +55,7 @@ class Test_mezaj_resultFragment : Fragment()
             }
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
-        })*/
+        })
 
     }
 
