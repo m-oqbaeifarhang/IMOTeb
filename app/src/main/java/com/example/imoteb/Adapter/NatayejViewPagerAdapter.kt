@@ -9,33 +9,38 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.imoteb.TosiyehayePezeshkiFragment
 import com.example.imoteb.KhususiyatAkhlagiFragment
 
-internal class NatayejViewPagerAdapter( fm: FragmentManager) : FragmentPagerAdapter(fm)
+internal class NatayejViewPagerAdapter( fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager)
 {
+
+    private val fragments : ArrayList<Fragment>
+    private  val titles : ArrayList<String>
+
+    init
+    {
+        fragments = ArrayList<Fragment>()
+        titles = ArrayList<String>()
+    }
+
     override fun getItem(position: Int): Fragment
     {
-        return when (position)
-        {
-            0 -> { TosiyehayePezeshkiFragment() }
-            1 -> { KhususiyatAkhlagiFragment() }
-            else -> { TosiyehayePezeshkiFragment() }
-        }
+        return fragments[position]
     }
 
     override fun getCount(): Int
     {
-        return 3
+        return fragments.size
     }
 
-//    override fun getPageTitle(position: Int): CharSequence?
-//    {
-//        when(position)
-//        {
-//            0 -> return "aaaaaa"
-//            1 -> return "bbbbbb"
-//        }
-//        return null
-//    }
+    fun addFragment(fragment: Fragment , title: String)
+    {
+        fragments.add(fragment)
+        titles.add(title)
+    }
 
-
+    override fun getPageTitle(position: Int): CharSequence?
+    {
+        return titles[position]
+    }
 
 }
+
