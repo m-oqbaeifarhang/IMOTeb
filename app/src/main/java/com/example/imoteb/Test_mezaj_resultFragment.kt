@@ -47,6 +47,7 @@ class Test_mezaj_resultFragment : Fragment()
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
+
         super.onActivityCreated(savedInstanceState)
         /*set Toolbar*/
         if(activity is AppCompatActivity)

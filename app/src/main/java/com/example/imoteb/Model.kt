@@ -1,20 +1,27 @@
 package com.example.imoteb
 
 import android.content.res.Resources
+import android.provider.ContactsContract
+import android.service.autofill.Dataset
+import com.github.mikephil.charting.data.DataSet
 import java.security.KeyStore
+import java.util.jar.Attributes
 
 class Model()
 {
     companion object
     {
         var EmtiyazSoalat = MutableList<Float>(32) { 1f }
-
+        var bbb= mutableListOf<AAA>()
         init
         {
             MakeEmtiyazSolatMutableList()
         }
 
         var Answers: MutableList<Int> = MutableList(32) { -1 }
+
+
+
         var Age: Int = 0
         var KamKhuni = false
         var Sex = false
@@ -32,7 +39,7 @@ class Model()
 
         fun MeghadDehiMotaghayerHa(): Unit
         {
-            Answers= MutableList(32) { -1 }
+            Answers = MutableList(32) { -1 }
             Age = 0
             KamKhuni = false
             Sex = false
@@ -66,6 +73,14 @@ class Model()
             EmtiyazSoalat[24] = 2f
             EmtiyazSoalat[25] = 2f
             EmtiyazSoalat[30] = 2f
+           // val ggg:AAA= AAA(Name = "salam",lastName = "dd",Age = 25)
+            bbb.add(AAA(Name = "salam",lastName = "dd",Age = 25))
+           
         }
     }
+}
+
+data class AAA(var Name: String, var lastName: String, var Age: Int)
+{
+
 }
