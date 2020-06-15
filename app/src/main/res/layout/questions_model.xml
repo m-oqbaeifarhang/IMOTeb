@@ -7,6 +7,7 @@
     android:layout_height="115dp"
     android:layoutDirection="rtl"
     android:background="@color/main_background"
+    app:cardBackgroundColor="@color/main_background"
     android:layout_margin="8dp"
     app:cardElevation="8dp"
     app:cardCornerRadius="18dp">
@@ -78,102 +79,3 @@
         </LinearLayout>
 
 </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-    <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:orientation="vertical"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layoutDirection="rtl"
-android:background="@color/main_background">
-
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="110dp"
-    android:layoutDirection="rtl"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="13.5dp"
-    android:layout_marginRight="9dp"
-    android:layout_marginLeft="9dp"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="18dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white"
-        android:layoutDirection="rtl">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginRight="10dp">
-            <TextView
-                android:id="@+id/txt_question"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:fontFamily="@font/iransans"
-                android:textStyle="bold"
-                android:text="@string/txt_result"
-                android:textColor="@color/text_color_titr"
-                android:padding="6dp"
-                android:textSize="16sp" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/rl"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:weightSum="4"
-                android:orientation="horizontal"
-                android:layout_marginRight="10dp">
-                <RadioButton
-                    android:id="@+id/rb_0"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/iransans_l"
-                    android:text="@string/rb_Yes"
-                    android:textColor="@color/text_color"
-                    android:textSize="17sp"/>
-                <RadioButton
-                    android:id="@+id/rb_1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/iransans_l"
-                    android:text="@string/rb_No"
-                    android:textColor="@color/text_color"
-                    android:textSize="17sp"/>
-            </RadioGroup>
-
-        </RelativeLayout>
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
-
-</RelativeLayout>-->

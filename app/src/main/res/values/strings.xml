@@ -19,12 +19,12 @@
     <string name="darbareye_mazaj">درباره مزاج ها</string>
     <string name="help">لطفا سوالات را با حوصله و دقت تمام جواب بدهید</string>
     <string name="txt_result">نتیجه تست مزاج شما :</string>
-    <string name="text_btn_start">شروع تست</string>
+    <string name="text_btn_start">شروع تست مزاج</string>
     <string name="title_card_dam">بهار دم گرم وتر</string>
     <string name="name_mezaj">نام مزاج</string>
     <string name="desc_mezaj">توضیحات مزاج</string>
     <string name="name_daroo">نام دارو</string>
-    <string name="foods">غذاها</string>
+    <string name="foods">غذاها و خوراکی ها</string>
 
     <!--    Radio Button-->
     <string name="rb_Yes">بله</string>
@@ -32,8 +32,9 @@
     <string name="rb_SomeTimes">گاهی</string>
 
     <!--fragment before test mezaj-->
-    <string name="tavajjoh">توجه !</string>
-    <string name="text">این تست برای بانوان باردار صادق نیست </string>
+    <string name="tavajjoh">توجه به نکات زیر بسیار مهم است !</string>
+    <string name="text_bardar">این تست برای بانوان باردار صادق نیست و همچنین برای افراد زیر 10 سال که قادر به ارائه شرح حال دقیق نمی باشند صادق نیست . </string>
+    <string name="text_feshar_khoon">این تست برای افرادی که دچار فشار خون و دیابت هستند صادق نیست .</string>
     <string name="sale_tavallod">سال تولد شما</string>
     <string name="marhaleye_baad">مرحله بعد</string>
     <string name="mesal">مثال : 1355</string>

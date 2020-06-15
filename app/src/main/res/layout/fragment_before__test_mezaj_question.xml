@@ -76,7 +76,7 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/app_bar_fg_before_test_mezaj_question">
@@ -86,66 +86,63 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="10dp"
-                android:layout_margin="8dp"
-                app:cardElevation="8dp">
-                <LinearLayout
+                android:orientation="vertical">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:orientation="vertical"
-                    android:padding="8dp">
+                    android:background="@color/red_light"
+                    android:padding="5dp"
+                    android:layoutDirection="rtl">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_margin="5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
                         android:text="@string/tavajjoh"
                         android:fontFamily="@font/iransans"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:textColor="@color/red"/>
+                        android:textColor="@color/white"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layoutDirection="rtl">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/text"
+                        android:text="@string/text_bardar"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="20dp"
+                        android:layout_toStartOf="@id/vertical_line"
                         style="@style/title_text_medium"/>
+
+                    <View
+                        android:id="@+id/vertical_line"
+                        android:layout_width="0.5dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:background="@color/gray_dark" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/text"
+                        android:text="@string/text_feshar_khoon"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="20dp"
+                        android:layout_toEndOf="@id/vertical_line"
                         style="@style/title_text_medium"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text"
-                        style="@style/title_text_medium"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text"
-                        style="@style/title_text_medium"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text"
-                        style="@style/title_text_medium"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text"
-                        style="@style/title_text_medium"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text"
-                        style="@style/title_text_medium"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_margin="8dp"
+                android:background="@color/red_light"/>
 
             <Space
                 android:layout_width="match_parent"
@@ -177,6 +174,7 @@
                     android:background="@drawable/bg_edit_text"
                     android:fontFamily="@font/iransans"
                     android:textColor="@color/text_color"
+                    android:layout_marginBottom="8dp"
                     android:textSize="16sp"
                     android:textColorHint="@color/edit_text_hint"
                     android:hint="@string/edit_txt_hint"
@@ -310,7 +308,7 @@
                 android:layout_height="100dp"/>
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <Button
         android:id="@+id/btn_marhaleye_baad"
@@ -319,7 +317,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/bg_button_blue"
         android:fontFamily="@font/iransans"
         android:text="@string/marhaleye_baad"
         android:textColor="@color/white"

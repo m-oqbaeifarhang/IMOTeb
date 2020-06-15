@@ -53,8 +53,7 @@ class Test_mezaj_resultFragment : Fragment()
         if(activity is AppCompatActivity)
         {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
-            toolbar_test_mezaj_resultFragmaent.navigationIcon =
-                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+            toolbar_test_mezaj_resultFragmaent.navigationIcon = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
             //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
