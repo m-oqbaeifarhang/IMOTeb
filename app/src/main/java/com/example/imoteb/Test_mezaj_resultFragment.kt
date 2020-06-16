@@ -16,8 +16,11 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
+import kotlinx.android.synthetic.main.question_dialog_layout.*
 
 class Test_mezaj_resultFragment : Fragment()
 {
@@ -37,12 +40,22 @@ class Test_mezaj_resultFragment : Fragment()
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
         val natayejViewPagerAdapter = NatayejViewPagerAdapter(requireActivity().supportFragmentManager)
-        natayejViewPagerAdapter.addFragment(KhususiyatAkhlagiFragment(), "خصوصیات اخلاقی")
         natayejViewPagerAdapter.addFragment(TosiyehayePezeshkiFragment(), "توصیه های پزشکی")
+        natayejViewPagerAdapter.addFragment(KhususiyatAkhlagiFragment(), "خصوصیات اخلاقی")
         natayejTablayout.tabGravity = TabLayout.GRAVITY_FILL
-
         natayejViewPager.adapter = natayejViewPagerAdapter
         natayejTablayout.setupWithViewPager(natayejViewPager)
+
+//        btn_ask_question.setOnClickListener{
+//            val dialog = BottomSheetDialog(requireContext())
+//            val dialog_view = layoutInflater.inflate(R.layout.question_dialog_layout,null)
+//            btn_close.setOnClickListener{
+//                dialog.dismiss()
+//            }
+////            dialog.setCancelable(false)
+//            dialog.setContentView(dialog_view)
+//            dialog.show()
+//        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?)

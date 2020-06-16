@@ -11,8 +11,9 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         app:elevation="0dp"
-        android:id="@+id/app_bar">
+        android:id="@+id/app_bar_fragment_mezaj_result">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_test_mezaj_resultFragmaent"
             android:layout_width="match_parent"
@@ -24,35 +25,27 @@
             app:elevation="0dp"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="5"
-        android:orientation="vertical"
-        android:layout_below="@id/app_bar">
+        android:layout_above="@+id/btn_ask_question"
+        android:layout_below="@+id/app_bar_fragment_mezaj_result">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:layout_margin="5dp"
-            android:background="@drawable/background_textview">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/chart1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="8dp"
                 android:elevation="3dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:orientation="vertical"
-            android:background="@color/white">
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_margin="8dp"
                 android:layout_marginStart="18dp"
                 android:fontFamily="@font/iransans"
                 android:text="@string/txt_result"
@@ -64,59 +57,26 @@
                 android:layout_height="50dp"
                 app:tabIndicatorColor="@color/red"
                 app:tabTextAppearance="@style/tab_text"/>
-            <androidx.core.widget.NestedScrollView
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/natayejViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/background_textview"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="5dp"
-                android:padding="5dp"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/natayejViewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="400dp"
-                        android:layoutDirection="rtl"/>
-                </LinearLayout>
-            </androidx.core.widget.NestedScrollView>
-<!--            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="0.56dp"
-                    android:fontFamily="@font/iransans"
-                    android:textStyle="bold"
-                    android:text="ذخیره در گوشی"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    android:background="@drawable/btn_style"/>
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="0.5dp"
-                    android:fontFamily="@font/iransans"
-                    android:textStyle="bold"
-                    android:text="اشتراک"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    android:background="@drawable/btn_stylee"/>
-            </LinearLayout>-->
+                android:layout_height="500dp"
+                android:layoutDirection="rtl"/>
         </LinearLayout>
-    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_ask_question"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_button_blue"
+        android:text="@string/moshahede_natijeh"
+        style="@style/title_text_large"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

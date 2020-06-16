@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="rtl">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:id="@+id/txt_get_question"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint="@string/txt_question_input"
+        android:textColorHint="@color/edit_text_hint"
+        android:layout_below="@+id/btn_close"
+        android:padding="8dp"
+        android:inputType="textLongMessage"
+        style="@style/title_text_medium"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_get_question"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_button_blue"
+        android:text="@string/btn_send_question"
+        style="@style/title_text_large"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

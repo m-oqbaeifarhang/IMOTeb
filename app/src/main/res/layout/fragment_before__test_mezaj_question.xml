@@ -111,37 +111,47 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layoutDirection="rtl">
+                    android:layoutDirection="rtl"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="center">
                     <TextView
+                        android:id="@+id/txt_bardar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="@string/text_bardar"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="20dp"
-                        android:layout_toStartOf="@id/vertical_line"
                         style="@style/title_text_medium"/>
-
-                    <View
-                        android:id="@+id/vertical_line"
-                        android:layout_width="0.5dp"
-                        android:layout_height="100dp"
-                        android:layout_centerInParent="true"
-                        android:background="@color/gray_dark" />
                     <TextView
+                        android:id="@+id/txt_koodakan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_feshar_khoon"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="20dp"
-                        android:layout_toEndOf="@id/vertical_line"
+                        android:layout_below="@id/txt_bardar"
+                        android:text="@string/text_koodakan"
                         style="@style/title_text_medium"/>
+                    <TextView
+                        android:id="@+id/feshrKhoon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_koodakan"
+                        android:text="@string/text_feshar_khoon"
+                        style="@style/title_text_medium"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:background="@drawable/bg_button_blue"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/feshrKhoon"
+                        android:layout_margin="8dp"
+                        android:text="@string/more"
+                        style="@style/title_text_medium"
+                        android:textColor="@color/white"/>
                 </RelativeLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
+                android:layout_height="1dp"
                 android:layout_margin="8dp"
                 android:background="@color/red_light"/>
 
@@ -173,10 +183,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edit_text"
-                    android:fontFamily="@font/iransans"
-                    android:textColor="@color/text_color"
                     android:layout_marginBottom="8dp"
-                    android:textSize="16sp"
                     android:textColorHint="@color/edit_text_hint"
                     android:hint="@string/edit_txt_hint"
                     android:padding="8dp"
@@ -319,9 +326,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         android:background="@drawable/bg_button_blue"
-        android:fontFamily="@font/iransans"
-        android:text="@string/marhaleye_baad"
+        style="@style/title_text_large"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/marhaleye_baad" />
 </RelativeLayout>
