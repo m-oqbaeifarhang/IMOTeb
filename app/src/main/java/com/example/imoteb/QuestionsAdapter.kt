@@ -2,8 +2,6 @@ package com.example.imoteb
 
 import android.content.Context
 import android.graphics.Color
-import android.opengl.Visibility
-import android.service.autofill.Dataset
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -46,21 +44,23 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         holder.questionTitle.setText(wordtoSpan)
 
-        when(Model.Answers[position])
+        when(Model.questionTableList[position].score)
         {
-            0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked = true
-            1 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true
-            2 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked = true
+            0.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked = true
+            1.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true
+            2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked = true
         }
 
         var emtiyaz: Int = 0
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
             Model.QuestionTitle[position] = Model.QuestionTitle[position].replace("*", "")
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
-            val idx = holder.radiogroup.indexOfChild(rdb)
-            Model.Answers[position] = idx
+            val score = rdb.contentDescription[0]
+            Model.questionTableList[position].score = score.toDouble()
             notifyItemChanged(position, group)
         }
     }
+
+
 }
 

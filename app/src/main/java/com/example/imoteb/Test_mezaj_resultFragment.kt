@@ -39,23 +39,24 @@ class Test_mezaj_resultFragment : Fragment()
 
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
-        val natayejViewPagerAdapter = NatayejViewPagerAdapter(requireActivity().supportFragmentManager)
+        val natayejViewPagerAdapter =
+            NatayejViewPagerAdapter(requireActivity().supportFragmentManager)
         natayejViewPagerAdapter.addFragment(TosiyehayePezeshkiFragment(), "توصیه های پزشکی")
         natayejViewPagerAdapter.addFragment(KhususiyatAkhlagiFragment(), "خصوصیات اخلاقی")
         natayejTablayout.tabGravity = TabLayout.GRAVITY_FILL
         natayejViewPager.adapter = natayejViewPagerAdapter
         natayejTablayout.setupWithViewPager(natayejViewPager)
 
-//        btn_ask_question.setOnClickListener{
-//            val dialog = BottomSheetDialog(requireContext())
-//            val dialog_view = layoutInflater.inflate(R.layout.question_dialog_layout,null)
-//            btn_close.setOnClickListener{
-//                dialog.dismiss()
-//            }
-////            dialog.setCancelable(false)
-//            dialog.setContentView(dialog_view)
-//            dialog.show()
-//        }
+        //        btn_ask_question.setOnClickListener{
+        //            val dialog = BottomSheetDialog(requireContext())
+        //            val dialog_view = layoutInflater.inflate(R.layout.question_dialog_layout,null)
+        //            btn_close.setOnClickListener{
+        //                dialog.dismiss()
+        //            }
+        ////            dialog.setCancelable(false)
+        //            dialog.setContentView(dialog_view)
+        //            dialog.show()
+        //        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
@@ -66,14 +67,15 @@ class Test_mezaj_resultFragment : Fragment()
         if(activity is AppCompatActivity)
         {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
-            toolbar_test_mezaj_resultFragmaent.navigationIcon = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+            toolbar_test_mezaj_resultFragmaent.navigationIcon =
+                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
             //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
-        val barDataSet: BarDataSet = BarDataSet(getData(Model.Answers), "راهنما")
+        val barDataSet: BarDataSet = BarDataSet(getData(Model.questionTableList), "راهنما")
         barDataSet.barBorderWidth = 0f
         barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
         val bardata: BarData = BarData(barDataSet)
@@ -91,7 +93,7 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.axisLeft.axisMaximum = 10f
         chart1.axisLeft.labelCount = 10
         chart1.axisRight.labelCount = 10
-        val CMR = MohasebehMezaj.Calculate(Model.Answers)
+        val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
         //        val miangin=(CMR.dam+CMR.safra+CMR.soda+CMR.balgham)/4f
         //        val ll = LimitLine(miangin, "خط اعتدال")
         //        ll.lineColor = Color.RED
@@ -106,12 +108,12 @@ class Test_mezaj_resultFragment : Fragment()
 
     }
 
-    private fun getData(answer: MutableList<Int>): ArrayList<BarEntry>
+    private fun getData(questionTable: MutableList<QuestionTable>): ArrayList<BarEntry>
     {
         var counter = 0
         val entries: ArrayList<BarEntry> = ArrayList()
         //val CMR = answer?.let { ComputeMezajs(it) }
-        val CMR = MohasebehMezaj.Calculate(answer)
+        val CMR = MohasebehMezaj.Calculate(questionTable)
         entries.add(BarEntry(0f, CMR.balgham))
         entries.add(BarEntry(1f, CMR.soda))
         entries.add(BarEntry(2f, CMR.safra))

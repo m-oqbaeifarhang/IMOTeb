@@ -69,26 +69,43 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
     override fun onClick(v: View?)
     {
         var counter = 0
-        when(v!!.id)
+        //        when(v!!.id)
+        //        {
+        if(v!!.id == R.id.btn_moshahedeh_natije)
         {
-            R.id.btn_moshahedeh_natije ->
-                //val list = mutableListOf<Int>()
-                if(Model.Answers.contains(-1))
-                {
-                    (Model.Answers).forEach {
-                        if(it == -1)
-                        {
-                            val text = titleQuestions[counter].replace("* ", "")
-                            titleQuestions[counter] = "* " + text
-                            rv_questions.adapter = questionAapter
-                        }
-                        counter++
-                    }
-                } else
-                {
-                    navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
+            val unCheckedQuestion = Model.questionTableList.filter { a -> a.score == -1.0 }
+            if(unCheckedQuestion.any())
+            {
+                unCheckedQuestion.forEach {
+                    val text = titleQuestions[counter].replace("* ", "")
+                    titleQuestions[counter] = "* " + text
+                    rv_questions.adapter = questionAapter
+                    counter++
                 }
+            }
+            else
+            {
+                navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
+            }
         }
+        //val list = mutableListOf<Int>()
+
+//        if(Model.questionTableList.any { a -> a.score == -1 })
+//        {
+//            (Model.questionTableList).forEach {
+//                if(it.score == -1)
+//                {
+//                    val text = titleQuestions[counter].replace("* ", "")
+//                    titleQuestions[counter] = "* " + text
+//                    rv_questions.adapter = questionAapter
+//                }
+//                counter++
+//            }
+//        } else
+//        {
+//            navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
+//        }
+        // }
     }
 
 }

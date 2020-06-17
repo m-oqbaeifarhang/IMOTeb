@@ -1,5 +1,6 @@
 package com.example.imoteb
 
+import android.text.style.ForegroundColorSpan
 import android.view.Display
 
 class MohasebehMezaj
@@ -11,79 +12,49 @@ class MohasebehMezaj
 
     companion object
     {
-        fun Calculate(answer: MutableList<Int>): ComputeMezajsResult
+
+        fun Calculate(scores: MutableList<QuestionTable>): ComputeMezajsResult
         {
             val CMR = ComputeMezajsResult()
-            var MezajCounter = 1
-            var counter = 0
-            var mezaj: Mezajha = Mezajha.dam
-            (answer).forEach {
-                var value = 0
-                when(it)
-                {
-                    0 ->
-                    {
-                        value = 2
-                    }
-                    1 ->
-                    {
-                        value=1
-                    }
-                }
+            var MaxOfDamAnswerSize = Model.questionTableList.filter { a -> a.active }
+                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
+            var MaxOfSafraAnswerSize = Model.questionTableList.filter { a -> a.active }
+                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
+            var MaxOfSodaAnswerSize = Model.questionTableList.filter { a -> a.active }
+                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
+            var MaxOfBalghamAnswerSize = Model.questionTableList.filter { a -> a.active }
+                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
 
-                when(mezaj)
-                {
-                    Mezajha.dam ->
-                    {
-                        CMR.dam += value * Model.EmtiyazSoalat[counter]
-                        if(MezajCounter == Model.DamQuestionCount)
-                        {
-                            mezaj = Mezajha.safra
-                            MezajCounter = 0
-                        }
-                    }
-                    Mezajha.safra ->
-                    {
-                        CMR.safra += value * Model.EmtiyazSoalat[counter]
-                        if(MezajCounter == Model.SafraQuestionCount)
-                        {
-                            mezaj = Mezajha.soda
-                            MezajCounter = 0
-                        }
-                    }
-                    Mezajha.soda ->
-                    {
-                        CMR.soda += value * Model.EmtiyazSoalat[counter]
-                        if(MezajCounter == Model.SodaQuestionCount)
-                        {
-                            mezaj = Mezajha.balgham
-                            MezajCounter = 0
-                        }
-                    }
-                    Mezajha.balgham ->
-                    {
-                        CMR.balgham += value * Model.EmtiyazSoalat[counter]
-                        if(MezajCounter == Model.BalghamQuestionCount)
-                        {
-                            MezajCounter = 0
-                        }
-                    }
-                }
-                MezajCounter++
-                counter++;
+            val questionTableList = scores.filter { a -> a.active == true }
+            //در این قسمت ضریب سوالات به جواب سوالات ضرب میشود و در جواب سوالات قرار میگیرد
+            questionTableList.forEachIndexed { index, questionTable ->
+                Model.questionTableList[index].score =
+                    questionTable.score * questionTable.coefficient
             }
+            CMR.dam =
+                Model.questionTableList.filter { a -> a.active && a.questionType == Globals.Companion.MezajhaEnum.dam }
+                    .sumByDouble { a -> a.score }.toFloat()
+            CMR.safra =
+                Model.questionTableList.filter { a -> a.active && a.questionType == Globals.Companion.MezajhaEnum.safra }
+                    .sumByDouble { a -> a.score }.toFloat()
+            CMR.soda =
+                Model.questionTableList.filter { a -> a.active && a.questionType == Globals.Companion.MezajhaEnum.soda }
+                    .sumByDouble { a -> a.score }.toFloat()
+            CMR.balgham =
+                Model.questionTableList.filter { a -> a.active && a.questionType == Globals.Companion.MezajhaEnum.balgham }
+                    .sumByDouble { a -> a.score }.toFloat()
             val age = Model.Age
             when(age)
             {
                 in 0..16 ->
                 {
                     CMR.dam += 2f
-                    Model.MaxOfDamAnswerSize += 2f
+                    MaxOfDamAnswerSize += 2.0
                 }
                 in 17..30 ->
                 {
-                    CMR.safra +=2f
-                    Model.MaxOfSafraAnswerSize += 2f
+                    CMR.safra += 2f
+                    MaxOfSafraAnswerSize += 2.0
                 }
                 in 31..45 ->
                 {
@@ -91,8 +62,8 @@ class MohasebehMezaj
                     val soda = 15 - safra
                     CMR.safra += (2f * safra) / 15
                     CMR.soda += (2f * soda) / 15
-                    Model.MaxOfSafraAnswerSize += (2f * safra) / 15
-                    Model.MaxOfSodaAnswerSize += (2f * soda) / 15
+                    MaxOfSafraAnswerSize += (2.0 * safra) / 15
+                    MaxOfSodaAnswerSize += (2.0 * soda) / 15
                 }
                 in 46..55 ->
                 {
@@ -100,20 +71,20 @@ class MohasebehMezaj
                     val balgham = 10 - soda
                     CMR.soda += (2f * soda) / 10
                     CMR.balgham += (2f * balgham) / 10
-                    Model.MaxOfSodaAnswerSize += (2f * soda) / 10
-                    Model.MaxOfBalghamAnswerSize += (2f * balgham) / 10
+                    MaxOfSodaAnswerSize += (2.0 * soda) / 10
+                    MaxOfBalghamAnswerSize += (2.0 * balgham) / 10
                 }
                 else ->
                 {
-                    CMR.balgham +=2f
-                    Model.MaxOfBalghamAnswerSize +=2f
+                    CMR.balgham += 2f
+                    MaxOfBalghamAnswerSize += 2.0
                 }
 
             }
-            CMR.dam = (5.25f * CMR.dam) / Model.MaxOfDamAnswerSize
-            CMR.safra = (5.25f * CMR.safra) / Model.MaxOfSafraAnswerSize
-            CMR.soda = (5.25f * CMR.soda) / Model.MaxOfSodaAnswerSize
-            CMR.balgham = (5.25f * CMR.balgham) / Model.MaxOfBalghamAnswerSize
+            CMR.dam = ((5.25 *CMR.dam) / MaxOfDamAnswerSize).toFloat()
+            CMR.safra = ((5.25 * CMR.safra) / MaxOfSafraAnswerSize).toFloat()
+            CMR.soda = ((5.25* CMR.soda) / MaxOfSodaAnswerSize).toFloat()
+            CMR.balgham = ((5.25 * CMR.balgham) / MaxOfBalghamAnswerSize).toFloat()
 
 
             CMR.dam += 3f
