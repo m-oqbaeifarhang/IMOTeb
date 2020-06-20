@@ -7,11 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.NumberPicker
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.transition.AutoTransition
+import androidx.transition.TransitionManager
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
 import kotlinx.android.synthetic.main.questions_model.*
@@ -32,6 +35,24 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
+
+        btn_bishtar_bekhanid.setOnClickListener{
+            if(more_information_view.visibility == View.GONE) {
+                TransitionManager.beginDelayedTransition(cardView , AutoTransition())
+                more_information_view.visibility = View.VISIBLE
+                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_up)
+                motaleye_bishtar.text = "بستن"
+            } else {
+                TransitionManager.beginDelayedTransition(cardView , AutoTransition())
+                more_information_view.visibility = View.GONE
+                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_down)
+                motaleye_bishtar.text = "مطالعه بیشتر"
+            }
+        }
+
+        numberPicker.minValue = 1320
+        numberPicker.maxValue = 1388
+        numberPicker.wrapSelectorWheel = true
 
         navController = Navigation.findNavController(view)
         btn_marhaleye_baad.setOnClickListener(this)

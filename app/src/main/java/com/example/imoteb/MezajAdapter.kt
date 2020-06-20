@@ -29,7 +29,6 @@ class MezajAdapter(items: ArrayList<Mezaj_Model> , var clickListener: mezajItemC
     override fun getItemCount(): Int
     {
         return this.items!!.size
-
     }
 
     override fun onBindViewHolder(holder: MezajAdapter.ViewHolder, position: Int)

@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.imoteb.Adapter.NatayejViewPagerAdapter
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -99,7 +100,6 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         foodAdapter = FoodsAdapter(foods_model!!)
         rv_food.adapter = foodAdapter
     }
-
     //افزودن کلیک برای آیتم های ریسایکلر ویوی مزاج
     override fun onItemClick(items: Mezaj_Model, position: Int)
     {

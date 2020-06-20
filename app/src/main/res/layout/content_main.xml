@@ -31,6 +31,7 @@
                     android:text="@string/darbareye_mazaj" />
 
                 <ImageView
+                    android:id="@+id/iv_horizontal_show_rv_mezaj"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -154,8 +155,8 @@
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
                     android:layout_below="@+id/rv_food">
-                </RelativeLayout>
 
+                </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
