@@ -15,6 +15,13 @@
 <!--        <item name="android:enforceStatusBarContrast">true</item>-->
 <!--        <item name="statusBarBackground">@color/red</item>-->
     </style>
+    
+    <style name="RadioButtonStyle" parent="Theme.AppCompat.Light">
+        <!--color of radio button-->
+        <item name="colorAccent">@android:color/holo_red_light</item>
+        <!--defult color of radio button-->
+        <item name="android:textColorPrimary">@android:color/darker_gray</item>
+    </style>
 
     <style name="IranSansFont">
         <item name="fontFamily">@font/iransans</item>

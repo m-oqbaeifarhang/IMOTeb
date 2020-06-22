@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.fragment_damavi.*
 
-class DamaviFragment : Fragment()
+class MezajDetailFragment : Fragment()
 {
 
     override fun onCreateView(inflater: LayoutInflater,

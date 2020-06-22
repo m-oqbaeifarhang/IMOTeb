@@ -1,13 +1,8 @@
 package com.example.imoteb.MezajsTest
 
 
-import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
-import net.danlew.android.joda.JodaTimeAndroid
-import java.time.Instant
-import java.time.LocalDate
-import java.time.LocalDateTime
 import java.util.*
 
 class CalculationOfAge

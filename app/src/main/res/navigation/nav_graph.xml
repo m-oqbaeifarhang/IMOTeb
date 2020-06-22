@@ -62,7 +62,7 @@
     </fragment>
     <fragment
         android:id="@+id/damaviFragment"
-        android:name="com.example.imoteb.DamaviFragment"
+        android:name="com.example.imoteb.MezajDetailFragment"
         android:label="fragment_damavi"
         tools:layout="@layout/fragment_damavi" />
 

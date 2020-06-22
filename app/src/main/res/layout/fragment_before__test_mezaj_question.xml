@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_light"
+    android:background="@color/main_background"
     android:layoutDirection="rtl"
     tools:context=".Before_TestMezajQuestionFragment">
 
@@ -82,20 +83,19 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/app_bar_fg_before_test_mezaj_question"
-        android:background="@color/gray_light">
+        android:layout_below="@+id/app_bar_fg_before_test_mezaj_question">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/gray_light"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layoutDirection="rtl">
+                android:layoutDirection="rtl"
+                android:elevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -217,144 +217,167 @@
                             android:background="@drawable/ic_arrow_down" />
                     </RelativeLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:background="@color/main_background"
+                android:padding="16dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/white"
                     android:layoutDirection="rtl">
 
-                    <RelativeLayout
-                        android:id="@+id/rl_age"
+                    <TextView
+                        android:id="@+id/tv_tarikh_tavallod"
+                        style="@style/title_text_large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layoutDirection="rtl"
-                        android:padding="8dp">
-
-                        <TextView
-                            style="@style/title_text_large"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:text="@string/sen_input" />
-                    </RelativeLayout>
+                        android:layout_alignParentStart="true"
+                        android:text="@string/sen_input"/>
 
                     <NumberPicker
                         android:id="@+id/numberPicker"
                         style="@style/title_text_large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/rl_age"
+                        android:layout_below="@+id/tv_tarikh_tavallod"
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@color/red"
-                        android:backgroundTintMode="add"
+                        android:backgroundTintMode="screen"
+                        android:layout_margin="4dp"
                         android:divider="@color/blue_light_alpha" />
+
                 </RelativeLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/white"
-                    android:layoutDirection="rtl"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:layoutDirection="rtl">
 
                     <TextView
-                        android:id="@+id/vaziyyat_tahhol"
+                        android:id="@+id/tv_vaziyyat_tahhol"
                         style="@style/title_text_large"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:padding="8dp"
                         android:text="@string/vaziyat_tahhol" />
 
-                    <RadioGroup
-                        android:id="@+id/rg_vaziyat_tahhol"
-                        android:layout_width="0dp"
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/blue_dark"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="2"
-                        android:orientation="horizontal"
-                        android:padding="8dp"
-                        android:weightSum="2">
+                        android:layout_centerInParent="true"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/rb_mojarrad"
-                            style="@style/title_text_medium"
-                            android:layout_width="0dp"
+                        <RadioGroup
+                            android:id="@+id/rg_vaziyat_tahhol"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/mojarrad" />
+                            android:orientation="vertical"
+                            android:weightSum="2">
 
-                        <RadioButton
-                            android:id="@+id/rb_motahhel"
-                            style="@style/title_text_medium"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/motaahel" />
-                    </RadioGroup>
-                </LinearLayout>
+                            <RadioButton
+                                android:id="@+id/rb_mojarrad"
+                                style="@style/title_text_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:theme="@style/RadioButtonStyle"
+                                android:padding="5dp"
+                                android:text="@string/mojarrad" />
 
-                <LinearLayout
+                            <RadioButton
+                                android:id="@+id/rb_motahhel"
+                                style="@style/title_text_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:theme="@style/RadioButtonStyle"
+                                android:padding="5dp"
+                                android:text="@string/motaahel" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/white"
-                    android:layoutDirection="rtl"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:layoutDirection="rtl">
 
                     <TextView
                         android:id="@+id/jensiyyat"
                         style="@style/title_text_large"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:padding="8dp"
                         android:text="@string/jensiyyat" />
 
-                    <RadioGroup
-                        android:id="@+id/rg_jensiyyat"
-                        android:layout_width="0dp"
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/blue_dark"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="2"
-                        android:orientation="horizontal"
-                        android:padding="8dp"
-                        android:weightSum="2">
+                        android:layout_centerInParent="true"
+                        android:layout_margin="16dp">
 
-                        <RadioButton
-                            android:id="@+id/rb_mard"
-                            style="@style/title_text_medium"
-                            android:layout_width="0dp"
+                        <RadioGroup
+                            android:id="@+id/rg_jensiyyat"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/mard" />
+                            android:orientation="vertical"
+                            android:weightSum="2">
 
-                        <RadioButton
-                            android:id="@+id/rb_zan"
-                            style="@style/title_text_medium"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/zan" />
-                    </RadioGroup>
-                </LinearLayout>
+                            <RadioButton
+                                android:id="@+id/rb_mard"
+                                style="@style/title_text_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:button="@drawable/custom_radio_button"
+                                android:padding="5dp"
+                                android:text="@string/mard" />
+
+                            <RadioButton
+                                android:id="@+id/rb_zan"
+                                style="@style/title_text_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:button="@drawable/custom_radio_button"
+                                android:padding="5dp"
+                                android:text="@string/zan" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
 
                 <Space
                     android:layout_width="match_parent"
@@ -378,3 +401,7 @@
         android:textColor="@color/white" />
 
 </RelativeLayout>
+
+
+
+

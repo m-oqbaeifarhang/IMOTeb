@@ -27,9 +27,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
 {
     var navController: NavController? = null
 
-    override fun onCreateView(inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?): View?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
        Model.MeghadDehiMotaghayerHa()
         // Inflate the layout for this fragment
@@ -61,14 +59,14 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
         btn_marhaleye_baad.setOnClickListener(this)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+//    @RequiresApi(Build.VERSION_CODES.O)
     override fun onClick(v: View?)
     {
         when(v!!.id)
         {
             R.id.btn_marhaleye_baad ->
             {
-                    Model.Age =CalculationOfAge.Calculate(numberPicker.value)
+//                    Model.Age =CalculationOfAge.Calculate(numberPicker.value)
                     navController!!.navigate(R.id.action_before_TestMezajQuestionFragment_to_mezaj_QueriesFragment)
             }
         }

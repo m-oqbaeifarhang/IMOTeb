@@ -4,13 +4,15 @@
     <color name="colorPrimaryDark">#4D4E4E</color>
     <color name="colorAccent">#ED5D5A</color>
 
-    <color name="main_background">#FFFFFF</color>
-    <color name="toolbar_background">#FFFFFF</color>
+    <color name="main_background">#FBFBFB</color>
+    <color name="toolbar_background">#FBFBFB</color>
     <color name="text_color_titr">#6C6C6C</color>
     <color name="text_color_titr_dark">#606060</color>
     <color name="text_color">#7C7C7C</color>
     <color name="text_color_light">#9A9A9A</color>
     <color name="nav_header_main">#9902B1E8</color>
+    <color name="purple_very_light">#d4cbe5</color>
+    <color name="yellow_light">#F1E9CE</color>
     <color name="edit_text_hint">#9A9A9A</color>
     <color name="itemIconTint_color">#9C9C9C</color>
     <color name="gray_alpha">#994D4E4E</color>
