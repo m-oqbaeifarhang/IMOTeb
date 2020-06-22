@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Before_TestMezajQuestionFragment"
     android:background="@color/gray_light"
-    android:layoutDirection="rtl">
+    android:layoutDirection="rtl"
+    tools:context=".Before_TestMezajQuestionFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_fg_before_test_mezaj_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        app:elevation="0dp"
-        android:id="@+id/app_bar_fg_before_test_mezaj_question">
+        app:elevation="0dp">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_before_test_mezaj_question"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_alignParentTop="true"
-            android:layoutDirection="rtl"
             android:background="@color/toolbar_background"
-            app:title=" "
-            app:elevation="0dp">
+            android:layoutDirection="rtl"
+            app:elevation="0dp"
+            app:title=" ">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layoutDirection="ltr"
                 android:orientation="horizontal"
-                android:weightSum="4"
-                android:layoutDirection="ltr">
+                android:weightSum="4">
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
+
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
+
                     <TextView
                         android:id="@+id/title_imoteb"
                         android:layout_width="wrap_content"
@@ -62,15 +65,15 @@
                         android:layout_height="18dp"
                         android:layout_centerInParent="true"
                         android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/title_imoteb"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_splash_screen"
-                        android:layout_toEndOf="@+id/title_imoteb"/>
+                        android:src="@drawable/ic_splash_screen" />
                 </RelativeLayout>
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -79,125 +82,138 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray_light"
-        android:layout_below="@+id/app_bar_fg_before_test_mezaj_question">
+        android:layout_below="@+id/app_bar_fg_before_test_mezaj_question"
+        android:background="@color/gray_light">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/gray_light">
+            android:background="@color/gray_light"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/main_background"
                     android:layoutDirection="rtl"
                     android:orientation="vertical">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/red_light"
-                        android:padding="5dp"
-                        android:layoutDirection="rtl">
+                        android:layoutDirection="rtl"
+                        android:padding="5dp">
+
                         <TextView
+                            style="@style/title_text_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="15dp"
                             android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layoutDirection="rtl"
+                        android:layout_gravity="center"
                         android:layout_margin="8dp"
-                        android:layout_gravity="center">
+                        android:layoutDirection="rtl">
+
                         <TextView
                             android:id="@+id/txt_bardar"
+                            style="@style/title_text_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="@string/text_bardar"
-                            style="@style/title_text_large"/>
+                            android:text="@string/text_bardar" />
+
                         <TextView
                             android:id="@+id/feshrKhoon"
+                            style="@style/title_text_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
                             android:layout_below="@+id/txt_bardar"
-                            android:text="@string/text_feshar_khoon"
-                            style="@style/title_text_large"/>
+                            android:layout_marginTop="8dp"
+                            android:text="@string/text_feshar_khoon" />
                     </RelativeLayout>
+
                     <LinearLayout
                         android:id="@+id/more_information_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:layout_margin="16dp"
-                        android:visibility="gone"
-                        android:layoutDirection="rtl">
+                        android:layoutDirection="rtl"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
                         <TextView
+                            style="@style/title_text_medium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_motaleye_bishtar_a"
-                            style="@style/title_text_medium"/>
+                            android:text="@string/text_motaleye_bishtar_a" />
+
                         <TextView
+                            style="@style/title_text_medium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="@string/text_motaleye_bishtar_b"
-                            style="@style/title_text_medium"/>
-<!--                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-                            <View
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:background="@drawable/ic_star"/>
-                            <View
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:background="@drawable/ic_star"/>
-                            <View
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:background="@drawable/ic_star"/>
-                            <View
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:background="@drawable/ic_star"/>
-                        </LinearLayout>-->
+                            android:text="@string/text_motaleye_bishtar_b" />
+                        <!--                        <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="10dp"
+                                                    android:orientation="horizontal">
+                                                    <View
+                                                        android:layout_width="15dp"
+                                                        android:layout_height="15dp"
+                                                        android:background="@drawable/ic_star"/>
+                                                    <View
+                                                        android:layout_width="15dp"
+                                                        android:layout_height="15dp"
+                                                        android:background="@drawable/ic_star"/>
+                                                    <View
+                                                        android:layout_width="15dp"
+                                                        android:layout_height="15dp"
+                                                        android:background="@drawable/ic_star"/>
+                                                    <View
+                                                        android:layout_width="15dp"
+                                                        android:layout_height="15dp"
+                                                        android:background="@drawable/ic_star"/>
+                                                </LinearLayout>-->
                     </LinearLayout>
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_margin="8dp">
+
                         <TextView
                             android:id="@+id/motaleye_bishtar"
+                            style="@style/title_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/more"
-                            style="@style/title_text"
-                            android:textColor="@color/text_color_light"/>
+                            android:textColor="@color/text_color_light" />
+
                         <Button
                             android:id="@+id/btn_bishtar_bekhanid"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
+                            android:layout_below="@+id/motaleye_bishtar"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/motaleye_bishtar"
                             android:background="@drawable/ic_arrow_down" />
                     </RelativeLayout>
                 </LinearLayout>
@@ -212,145 +228,137 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
+                    android:layout_marginTop="8dp"
                     android:background="@color/white"
-                    android:layout_marginTop="8dp">
+                    android:layoutDirection="rtl">
+
                     <RelativeLayout
                         android:id="@+id/rl_age"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layoutDirection="rtl"
                         android:layout_marginStart="8dp"
+                        android:layoutDirection="rtl"
                         android:padding="8dp">
+
                         <TextView
+                            style="@style/title_text_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
-                            style="@style/title_text_large"
-                            android:text="@string/sen_input"/>
+                            android:text="@string/sen_input" />
                     </RelativeLayout>
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layoutDirection="rtl"
-                        android:layout_toEndOf="@+id/rl_age"
-                        android:layout_marginStart="8dp"
-                        android:padding="8dp">
-                        <EditText
-                            android:id="@+id/txt_GetAge"
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_edit_text"
-                            android:layout_marginBottom="8dp"
-                            android:textColorHint="@color/edit_text_hint"
-                            android:hint="@string/edit_txt_hint"
-                            android:padding="8dp"
-                            android:inputType="number"
-                            style="@style/title_text_large" />
-                    </RelativeLayout>
+
                     <NumberPicker
                         android:id="@+id/numberPicker"
+                        style="@style/title_text_large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/title_text_large"
-                        android:divider="@color/blue_light_alpha"
+                        android:layout_below="@+id/rl_age"
+                        android:layout_centerHorizontal="true"
                         android:backgroundTint="@color/red"
                         android:backgroundTintMode="add"
-                        android:layout_below="@+id/rl_age"
-                        android:layout_centerHorizontal="true" />
+                        android:divider="@color/blue_light_alpha" />
                 </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
                     android:layout_marginTop="8dp"
-                    android:weightSum="3"
+                    android:background="@color/white"
+                    android:layoutDirection="rtl"
                     android:orientation="horizontal"
-                    android:background="@color/white">
+                    android:weightSum="3">
+
                     <TextView
                         android:id="@+id/vaziyyat_tahhol"
+                        style="@style/title_text_large"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="8dp"
+                        android:layout_weight="1"
                         android:padding="8dp"
-                        style="@style/title_text_large"
-                        android:text="@string/vaziyat_tahhol"/>
+                        android:text="@string/vaziyat_tahhol" />
+
                     <RadioGroup
                         android:id="@+id/rg_vaziyat_tahhol"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_marginStart="8dp"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
                         android:padding="8dp"
-                        android:weightSum="2"
-                        android:orientation="horizontal">
+                        android:weightSum="2">
+
                         <RadioButton
                             android:id="@+id/rb_mojarrad"
+                            style="@style/title_text_medium"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/mojarrad"
-                            style="@style/title_text_medium"/>
+                            android:text="@string/mojarrad" />
+
                         <RadioButton
                             android:id="@+id/rb_motahhel"
+                            style="@style/title_text_medium"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/motaahel"
-                            style="@style/title_text_medium"/>
+                            android:text="@string/motaahel" />
                     </RadioGroup>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:weightSum="3"
+                    android:background="@color/white"
+                    android:layoutDirection="rtl"
                     android:orientation="horizontal"
-                    android:background="@color/white">
+                    android:weightSum="3">
+
                     <TextView
                         android:id="@+id/jensiyyat"
+                        style="@style/title_text_large"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="8dp"
+                        android:layout_weight="1"
                         android:padding="8dp"
-                        style="@style/title_text_large"
-                        android:text="@string/jensiyyat"/>
+                        android:text="@string/jensiyyat" />
+
                     <RadioGroup
                         android:id="@+id/rg_jensiyyat"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_marginStart="8dp"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
                         android:padding="8dp"
-                        android:weightSum="2"
-                        android:orientation="horizontal">
+                        android:weightSum="2">
+
                         <RadioButton
                             android:id="@+id/rb_mard"
+                            style="@style/title_text_medium"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/mard"
-                            style="@style/title_text_medium"/>
+                            android:text="@string/mard" />
+
                         <RadioButton
                             android:id="@+id/rb_zan"
+                            style="@style/title_text_medium"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/zan"
-                            style="@style/title_text_medium"/>
+                            android:text="@string/zan" />
                     </RadioGroup>
                 </LinearLayout>
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
+                    android:layout_height="100dp" />
 
             </LinearLayout>
 
@@ -359,14 +367,14 @@
 
     <Button
         android:id="@+id/btn_marhaleye_baad"
+        style="@style/title_text_large"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_margin="15dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
         android:background="@drawable/bg_button_blue"
-        style="@style/title_text_large"
-        android:textColor="@color/white"
-        android:text="@string/marhaleye_baad" />
+        android:text="@string/marhaleye_baad"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

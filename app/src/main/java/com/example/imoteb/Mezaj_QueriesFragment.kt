@@ -54,8 +54,9 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
         Model.QuestionTitle = titleQuestionList
         // var model = Model(titleQuestions)
         // model.titleQuestionsList = titleQuestions
+        var qqq=Model.questionTableList.filter { a->a.active }
 
-        questionAapter = QuestionsAdapter(context)
+       // questionAapter = QuestionsAdapter(context,questionTable = qqq )
         rv_questions.adapter = questionAapter
     }
 
@@ -76,11 +77,10 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
             val unCheckedQuestion = Model.questionTableList.filter { a -> a.score == -1.0 }
             if(unCheckedQuestion.any())
             {
-                unCheckedQuestion.forEach {
-                    val text = titleQuestions[counter].replace("* ", "")
+                unCheckedQuestion.forEachIndexed { index, questionTable ->
+                    val text = titleQuestions[index].replace("* ", "")
                     titleQuestions[counter] = "* " + text
                     rv_questions.adapter = questionAapter
-                    counter++
                 }
             }
             else

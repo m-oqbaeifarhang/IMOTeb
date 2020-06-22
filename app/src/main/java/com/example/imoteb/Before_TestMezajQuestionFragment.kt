@@ -2,6 +2,7 @@ package com.example.imoteb
 
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +11,14 @@ import android.view.ViewGroup
 import android.widget.NumberPicker
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
+import com.example.imoteb.MezajsTest.CalculationOfAge
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
 import kotlinx.android.synthetic.main.questions_model.*
@@ -53,36 +57,19 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
         numberPicker.minValue = 1320
         numberPicker.maxValue = 1388
         numberPicker.wrapSelectorWheel = true
-
         navController = Navigation.findNavController(view)
         btn_marhaleye_baad.setOnClickListener(this)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onClick(v: View?)
     {
         when(v!!.id)
         {
             R.id.btn_marhaleye_baad ->
             {
-                if(txt_GetAge.length() == 0)
-                {
-                    val toast =
-                        Toast.makeText(requireContext(), R.string.sen_input, Toast.LENGTH_LONG)
-                    val view: View = toast.view
-                    //                    view.findViewById(android.R.id.message).setTextColor(Color.YELLOW)
-                    view.setBackgroundResource(R.color.blue_dark)
-                    toast.show()
-                } else
-                {
-                    Model.Age = txt_GetAge.text.toString().toInt()
-                    //در این قسمت model.Answer خالی میشود.
-                    var counter = 0
-                    //            Model.Answers.forEach {
-                    //                Model.Answers[counter] = -1
-                    //                counter++
-                    //            }
+                    Model.Age =CalculationOfAge.Calculate(numberPicker.value)
                     navController!!.navigate(R.id.action_before_TestMezajQuestionFragment_to_mezaj_QueriesFragment)
-                }
             }
         }
     }

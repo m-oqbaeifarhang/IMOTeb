@@ -12,18 +12,20 @@ class Model()
 {
     companion object
     {
-        var EmtiyazSoalat = MutableList<Float>(32) { 1f }
+        //var EmtiyazSoalat = MutableList<Float>(32) { 1f }
         var questionTableList = mutableListOf<QuestionTable>()
+
         init
         {
             MakeEmtiyazSolatMutableList()
         }
+
         var Age: Int = 0
         var KamKhuni = false
         var Sex = false
         var Tahol = false
         lateinit var QuestionTitle: MutableList<String>
-        var TheHighestScore:Int=2
+        var TheHighestScore: Int = 2
         fun MeghadDehiMotaghayerHa(): Unit
         {
             Age = 0
@@ -32,35 +34,30 @@ class Model()
             Tahol = false
             MakeEmtiyazSolatMutableList()
         }
+
         fun MakeEmtiyazSolatMutableList(): Unit
         {
-            var counter = 0
             for(i in 0..31)
             {
                 when
                 {
-                    counter in 0..6 ->
+                    i in 0..6 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.dam,
-                            score = -1.0))
+                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.dam))
                     }
-                    counter in 7..15 ->
+                    i in 7..15 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.safra,
-                            score = -1.0))
+                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.safra))
                     }
-                    counter in 16..24 ->
+                    i in 16..24 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.soda,
-                            score = -1.0))
+                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.soda))
                     }
-                    counter in 25..31 ->
+                    i in 25..31 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.balgham,
-                            score = -1.0))
+                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.balgham))
                     }
                 }
-                counter++
             }
             questionTableList[0].coefficient = 2.0
             questionTableList[1].coefficient = 1.5
@@ -83,8 +80,9 @@ class Model()
 
 data class QuestionTable(var questionType: Globals.Companion.MezajhaEnum,
     var answerType: Globals.Companion.AnswerType = Globals.Companion.AnswerType.YesSomeTimeNo,
-    var score: Double,
-    var coefficient: Double = 1.0,var active:Boolean=true)
+    var score: Double = -1.0,
+    var coefficient: Double = 1.0,
+    var active: Boolean = true)
 {
 
 }

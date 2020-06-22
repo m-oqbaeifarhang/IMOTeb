@@ -14,7 +14,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
+class QuestionsAdapter(var context: Context?,questionList:MutableList<String>,var answerList:List<QuestionTable>) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
 {
     private val lastCheckedPosition = -1
 
@@ -33,10 +33,12 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
     override fun getItemCount(): Int
     {
         return Model.QuestionTitle.size
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
+
         val wordtoSpan = SpannableString(Model.QuestionTitle[position])
         if(wordtoSpan[0].toString() == "*") wordtoSpan.setSpan(ForegroundColorSpan(Color.RED),
             0,
@@ -50,9 +52,9 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
             1.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true
             2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked = true
         }
-
         var emtiyaz: Int = 0
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
+
             Model.QuestionTitle[position] = Model.QuestionTitle[position].replace("*", "")
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
             val score = rdb.contentDescription[0]
