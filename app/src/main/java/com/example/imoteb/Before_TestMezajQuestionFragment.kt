@@ -30,6 +30,8 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
        Model.MeghadDehiMotaghayerHa()
+        val titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
+        Model.SetQuestionTitle(titleQuestions)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_before__test_mezaj_question, container, false)
     }
@@ -60,13 +62,14 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
     }
 
 //    @RequiresApi(Build.VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onClick(v: View?)
     {
         when(v!!.id)
         {
             R.id.btn_marhaleye_baad ->
             {
-//                    Model.Age =CalculationOfAge.Calculate(numberPicker.value)
+                   Model.Age =CalculationOfAge.Calculate(numberPicker.value)
                     navController!!.navigate(R.id.action_before_TestMezajQuestionFragment_to_mezaj_QueriesFragment)
             }
         }

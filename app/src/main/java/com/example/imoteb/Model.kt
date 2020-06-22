@@ -1,13 +1,5 @@
 package com.example.imoteb
 
-import android.content.res.Resources
-import android.provider.ContactsContract
-import android.service.autofill.Dataset
-import androidx.core.app.NotificationCompatSideChannelService
-import com.github.mikephil.charting.data.DataSet
-import java.security.KeyStore
-import java.util.jar.Attributes
-
 class Model()
 {
     companion object
@@ -17,14 +9,15 @@ class Model()
 
         init
         {
-            MakeEmtiyazSolatMutableList()
+            MakeQueastionTable()
         }
 
         var Age: Int = 0
         var KamKhuni = false
         var Sex = false
         var Tahol = false
-        lateinit var QuestionTitle: MutableList<String>
+
+        //lateinit var QuestionTitle: MutableList<String>
         var TheHighestScore: Int = 2
         fun MeghadDehiMotaghayerHa(): Unit
         {
@@ -32,28 +25,36 @@ class Model()
             KamKhuni = false
             Sex = false
             Tahol = false
-            MakeEmtiyazSolatMutableList()
+            if(questionTableList.any()) questionTableList.removeAll{a->!a.Deleted}
+            MakeQueastionTable()
         }
 
-        fun MakeEmtiyazSolatMutableList(): Unit
+        fun SetQuestionTitle(questionTitleList: List<String>): Unit
+        {
+            questionTitleList.forEachIndexed { index, s ->
+                questionTableList[index].questionTitle = s
+            }
+        }
+
+        fun MakeQueastionTable(): Unit
         {
             for(i in 0..31)
             {
-                when
+                when(i)
                 {
-                    i in 0..6 ->
+                    in 0..6 ->
                     {
                         questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.dam))
                     }
-                    i in 7..15 ->
+                    in 7..15 ->
                     {
                         questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.safra))
                     }
-                    i in 16..24 ->
+                    in 16..24 ->
                     {
                         questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.soda))
                     }
-                    i in 25..31 ->
+                    in 25..31 ->
                     {
                         questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.balgham))
                     }
@@ -78,11 +79,11 @@ class Model()
     }
 }
 
-data class QuestionTable(var questionType: Globals.Companion.MezajhaEnum,
+data class QuestionTable(var questionTitle: String = "",
+    var questionType: Globals.Companion.MezajhaEnum = Globals.Companion.MezajhaEnum.dam,
     var answerType: Globals.Companion.AnswerType = Globals.Companion.AnswerType.YesSomeTimeNo,
     var score: Double = -1.0,
-    var coefficient: Double = 1.0,
-    var active: Boolean = true)
+    var coefficient: Double = 1.0,var Deleted:Boolean=false)
 {
 
 }

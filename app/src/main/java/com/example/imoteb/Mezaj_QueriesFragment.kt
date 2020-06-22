@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -18,7 +17,8 @@ import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
 {
     var navController: NavController? = null
-    lateinit var titleQuestions: MutableList<String>
+
+    //lateinit var titleQuestions: MutableList<String>
     lateinit var questionAapter: QuestionsAdapter
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -39,24 +39,16 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezajFragment)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-            //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezajFragment.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
-        titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
         rv_questions.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-        rv_questions.setItemViewCacheSize(titleQuestions.size)
-        val titleQuestionList = ConfigurationQuestionsAndAnswers.ConfigurationQuestionAndAnswer(
-            titleQuestions,
-            Model.Age)
-        Model.QuestionTitle = titleQuestionList
-        // var model = Model(titleQuestions)
-        // model.titleQuestionsList = titleQuestions
-        var qqq=Model.questionTableList.filter { a->a.active }
-
-       // questionAapter = QuestionsAdapter(context,questionTable = qqq )
+        rv_questions.setItemViewCacheSize(32)
+        val titleQuestionList =
+            ConfigurationQuestionsAndAnswers.ConfigurationQuestionByAge(Model.Age)
+        questionAapter = QuestionsAdapter(context)
         rv_questions.adapter = questionAapter
     }
 
@@ -69,43 +61,25 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
 
     override fun onClick(v: View?)
     {
-        var counter = 0
-        //        when(v!!.id)
-        //        {
         if(v!!.id == R.id.btn_moshahedeh_natije)
         {
-            val unCheckedQuestion = Model.questionTableList.filter { a -> a.score == -1.0 }
+            val unCheckedQuestion =
+                Model.questionTableList.filter { a -> a.score == -1.0  }
             if(unCheckedQuestion.any())
             {
-                unCheckedQuestion.forEachIndexed { index, questionTable ->
-                    val text = titleQuestions[index].replace("* ", "")
-                    titleQuestions[counter] = "* " + text
-                    rv_questions.adapter = questionAapter
+                Model.questionTableList.forEachIndexed { index, questionTable ->
+                    if(Model.questionTableList[index].score==-1.0)
+                    {
+                        val text = Model.questionTableList[index].questionTitle.replace("* ", "")
+                        Model.questionTableList[index].questionTitle = "* " + text
+                        rv_questions.adapter = questionAapter
+                    }
                 }
-            }
-            else
+            } else
             {
                 navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
             }
         }
-        //val list = mutableListOf<Int>()
-
-//        if(Model.questionTableList.any { a -> a.score == -1 })
-//        {
-//            (Model.questionTableList).forEach {
-//                if(it.score == -1)
-//                {
-//                    val text = titleQuestions[counter].replace("* ", "")
-//                    titleQuestions[counter] = "* " + text
-//                    rv_questions.adapter = questionAapter
-//                }
-//                counter++
-//            }
-//        } else
-//        {
-//            navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
-//        }
-        // }
     }
 
 }
