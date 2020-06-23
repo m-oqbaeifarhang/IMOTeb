@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#4D4E4E</color>
     <color name="colorAccent">#ED5D5A</color>
 
-    <color name="main_background">#FBFBFB</color>
-    <color name="toolbar_background">#FBFBFB</color>
+    <color name="main_background">#f2f5f8</color>
+    <color name="toolbar_background">#f2f5f8</color>
     <color name="text_color_titr">#6C6C6C</color>
     <color name="text_color_titr_dark">#606060</color>
     <color name="text_color">#7C7C7C</color>
@@ -16,6 +16,12 @@
     <color name="edit_text_hint">#9A9A9A</color>
     <color name="itemIconTint_color">#9C9C9C</color>
     <color name="gray_alpha">#994D4E4E</color>
+
+
+    <color name="card1">#d4cbe5</color>
+    <color name="card2">#7adccf</color>
+    <color name="card3">#f7c59f</color>
+    <color name="card4">#b8d7f5</color>
 
 
     <color name="white">#FFFFFF</color>

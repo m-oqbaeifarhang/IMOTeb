@@ -25,6 +25,10 @@
     <string name="desc_mezaj">توضیحات مزاج</string>
     <string name="name_daroo">نام دارو</string>
     <string name="foods">غذاها و خوراکی ها</string>
+    <string name="txt_mezaj_dam">مزاج گرم و تر - دموی</string>
+    <string name="txt_mezaj_safra">مزاج گرم و خشک - صفراوی</string>
+    <string name="txt_mezaj_soda">مزاج سرد وخشک - سوداوی </string>
+    <string name="txt_mezaj_balgham">مزاج سرد و تر - بلغمی</string>
 
     <!--    Radio Button-->
     <string name="rb_Yes">بله</string>

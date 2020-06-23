@@ -12,153 +12,177 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <RelativeLayout
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/title_mezaj"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    style="@style/title_text_large"
-                    android:textColor="@android:color/black"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/darbareye_mazaj" />
-
-                <ImageView
-                    android:id="@+id/iv_horizontal_show_rv_mezaj"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="18dp"
-                    android:src="@drawable/ic_arrow"/>
-
-                <Space
-                    android:id="@+id/space_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_below="@+id/title_mezaj"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_mezaj"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@color/main_background"
-                    android:layout_below="@id/space_1" />
-
-                <Space
-                    android:id="@+id/space_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_below="@+id/rv_mezaj"/>
-
-                <LinearLayout
-                    android:id="@+id/card_tabligh"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/space_2"
-                    android:orientation="vertical"
-                    android:background="@color/gray_light">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layoutDirection="rtl"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/white">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            style="@style/title_text_medium"
-                            android:layout_marginStart="20dp"
-                            android:layout_centerVertical="true"
-                            android:text="خواص و اطلاعات دارویی"
-                            android:layout_centerInParent="true"
-                            android:textColor="@color/gray_very_dark" />
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="18dp"
-                            android:src="@drawable/ic_arrow"/>
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layoutDirection="rtl"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="@color/white">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/title_text_medium"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="20dp"
-                            android:text="مزاج چیست ؟ و تشخیص مزاج چگونه انجام می گیرد ؟"
-                            android:layout_centerInParent="true"
-                            android:textColor="@color/gray_very_dark" />
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="18dp"
-                            android:src="@drawable/ic_arrow"/>
-                    </RelativeLayout>
-                </LinearLayout>
-
-                <RelativeLayout
-                    android:id="@+id/relative_food"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/card_tabligh">
-                    <TextView
-                        android:id="@+id/title_daroo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="18dp"
-                        android:text="@string/foods"
-                        style="@style/title_text_large"
-                        android:textColor="@android:color/black"/>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="18dp"
-                        android:src="@drawable/ic_arrow"/>
-                </RelativeLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_food"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/main_background"
-                    android:layout_below="@id/relative_food" />
+                android:layout_height="400dp"
+                android:weightSum="2"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/rv_food">
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:background="@color/white"
+                                android:layout_margin="10dp"
+                                android:elevation="8dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"/>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_mezaj_dam"
+                                style="@style/title_text_large"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:background="@color/white"
+                                android:layout_margin="10dp"
+                                android:elevation="8dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"/>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_mezaj_safra"
+                                style="@style/title_text_large"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </RelativeLayout>
-            </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:background="@color/white"
+                                android:layout_margin="10dp"
+                                android:elevation="8dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"/>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_mezaj_soda"
+                                style="@style/title_text_large"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:background="@color/white"
+                                android:layout_margin="10dp"
+                                android:elevation="8dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerInParent="true"/>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_mezaj_balgham"
+                                style="@style/title_text_large"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
     <Button
@@ -168,9 +192,28 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_button_blue"
-       style="@style/title_text_large"
+        style="@style/title_text_large"
         android:text="@string/text_btn_start"
         android:layout_margin="15dp"
         android:textColor="@color/white"/>
 
 </RelativeLayout>
+
+
+
+
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_mezaj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/main_background"
+        android:layout_below="@id/space_1" />-->
+
+    <!--                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_food"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/main_background"/>-->
