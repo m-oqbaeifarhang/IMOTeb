@@ -20,8 +20,6 @@ import java.security.acl.Group
 
 class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
 {
-    private val onBind = false
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
         var questionTitle = itemView.findViewById<TextView>(R.id.txt_question)
@@ -40,21 +38,8 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         return Model.questionTableList.size
     }
 
-    fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean)
-    {
-        if(!onBind)
-        {
-            // your process when checkBox changed
-            // ...
-            notifyDataSetChanged()
-        }
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        //  var aaa= PhotoDecodeRunnable(position)
-
-
         val wordtoSpan = SpannableString(Model.questionTableList[position].questionTitle)
         if(wordtoSpan[0].toString() == "*")
         {
@@ -66,9 +51,12 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         holder.questionTitle.text = wordtoSpan
         when(Model.questionTableList[position].score)
         {
-            0.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked = true//contentDescription=0
-            1.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked = true//contentDescription=1
-            2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked = true//contentDescription=2
+            0.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked =
+                true //contentDescription=0
+            1.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked =
+                true //contentDescription=1
+            2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked =
+                true //contentDescription=2
         }
 
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
