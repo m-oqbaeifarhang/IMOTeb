@@ -75,6 +75,14 @@ class Model()
             questionTableList[25].coefficient = 2.0
             questionTableList[30].coefficient = 2.0
 
+            questionTableList[1].answerType=Globals.Companion.AnswerType.YesNo
+            questionTableList[2].answerType=Globals.Companion.AnswerType.YesNo
+            questionTableList[4].answerType=Globals.Companion.AnswerType.YesNo
+            questionTableList[7].answerType=Globals.Companion.AnswerType.YesNo
+
+
+
+
         }
     }
 }
