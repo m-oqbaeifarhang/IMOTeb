@@ -80,6 +80,43 @@
                 </RadioGroup>
 
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_two"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:gravity="center_vertical"
+                android:layout_weight="1">
+                <RadioGroup
+                    android:id="@+id/radioGroup_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp">
+                    <RadioButton
+                        android:id="@+id/rb_bale"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/iransans_l"
+                        android:text="@string/rb_Yes"
+                        android:textColor="@color/text_color"
+                        android:textSize="17sp"/>
+                    <RadioButton
+                        android:id="@+id/rb_kheir"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/iransans_l"
+                        android:text="@string/rb_SomeTimes"
+                        android:textColor="@color/text_color"
+                        android:textSize="17sp"/>
+
+                </RadioGroup>
+
+            </RelativeLayout>
         </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -5,6 +5,9 @@
     <color name="colorAccent">#ED5D5A</color>
 
     <color name="main_background">#f2f5f8</color>
+    <color name="second_background">#37354A</color>
+    <color name="second_background_light">#272935</color>
+    <color name="third_background_light">#161923</color>
     <color name="toolbar_background">#f2f5f8</color>
     <color name="text_color_titr">#6C6C6C</color>
     <color name="text_color_titr_dark">#606060</color>

@@ -20,10 +20,13 @@ import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.transition.AutoTransition
+import androidx.transition.TransitionManager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
 import kotlinx.android.synthetic.main.fragment_damavi.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -42,6 +45,7 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
     {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false)
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -123,6 +127,21 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btn_start_TestMazaj.setOnClickListener(this)
+
+        btn_bishtar_bekhanid1.setOnClickListener{
+            if(more_information_view1.visibility == View.GONE) {
+                TransitionManager.beginDelayedTransition(cardView1 , AutoTransition())
+                more_information_view1.visibility = View.VISIBLE
+                btn_bishtar_bekhanid1.setBackgroundResource(R.drawable.ic_arrow_up)
+                motaleye_bishtar1.text = "بستن"
+            } else {
+                TransitionManager.beginDelayedTransition(cardView1 , AutoTransition())
+                more_information_view1.visibility = View.GONE
+                btn_bishtar_bekhanid1.setBackgroundResource(R.drawable.ic_arrow_down)
+                motaleye_bishtar1.text = "مطالعه بیشتر"
+            }
+        }
+
     }
 
     override fun onClick(v: View?)

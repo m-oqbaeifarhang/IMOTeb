@@ -17,7 +17,8 @@
 
     <!--    content main titles-->
     <string name="darbareye_mazaj">درباره مزاج ها</string>
-    <string name="help">لطفا سوالات را با حوصله و دقت تمام جواب بدهید</string>
+    <string name="txt_tozihat">توضیحات</string>
+    <string name="text_mezaj_chist">مزاج چیست ؟ و مزاج شناسی چگونه انجام میگیرد</string>
     <string name="txt_result">نتیجه تست مزاج شما :</string>
     <string name="text_btn_start">شروع تست مزاج</string>
     <string name="title_card_dam">بهار دم گرم وتر</string>
@@ -25,10 +26,10 @@
     <string name="desc_mezaj">توضیحات مزاج</string>
     <string name="name_daroo">نام دارو</string>
     <string name="foods">غذاها و خوراکی ها</string>
-    <string name="txt_mezaj_dam">مزاج گرم و تر - دموی</string>
-    <string name="txt_mezaj_safra">مزاج گرم و خشک - صفراوی</string>
-    <string name="txt_mezaj_soda">مزاج سرد وخشک - سوداوی </string>
-    <string name="txt_mezaj_balgham">مزاج سرد و تر - بلغمی</string>
+    <string name="txt_mezaj_dam">دم - گرم و تر</string>
+    <string name="txt_mezaj_safra">صفرا - گرم و خشک</string>
+    <string name="txt_mezaj_soda">سودا - سرد و خشک</string>
+    <string name="txt_mezaj_balgham">بلغم - سرد و تر</string>
 
     <!--    Radio Button-->
     <string name="rb_Yes">بله</string>
