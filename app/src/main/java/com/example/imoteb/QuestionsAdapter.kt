@@ -1,21 +1,15 @@
 package com.example.imoteb
 
-import android.app.Activity
 import android.content.Context
-import android.graphics.Color
-import android.text.Spannable
+import android.os.Build
 import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.description.view.*
-import java.security.acl.Group
 
 
 class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
@@ -24,6 +18,10 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
     {
         var questionTitle = itemView.findViewById<TextView>(R.id.txt_question)
         var radiogroup = itemView.findViewById<RadioGroup>(R.id.radioGroup)
+        var RadioGroupYesNo = itemView.findViewById<RadioGroup>(R.id.radioGroup_two)
+        var linearLayout = itemView.findViewById<LinearLayout>(R.id.linearLayout)
+        var cardView = itemView.findViewById<CardView>(R.id.cardView)
+var rv=itemView.findViewById<RecyclerView>(R.id.rv_questions)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -38,36 +36,67 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         return Model.questionTableList.size
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        val wordtoSpan = SpannableString(Model.questionTableList[position].questionTitle)
-        if(wordtoSpan[0].toString() == "*")
+        if(Model.questionTableList.any { a -> a.Choosed })
         {
-            wordtoSpan.setSpan(ForegroundColorSpan(Color.RED),
-                0,
-                1,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        }
-        holder.questionTitle.text = wordtoSpan
-        when(Model.questionTableList[position].score)
-        {
-            0.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked =
-                true //contentDescription=0
-            1.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked =
-                true //contentDescription=1
-            2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked =
-                true //contentDescription=2
-        }
+            if(!Model.questionTableList[position].Choosed)
+            {
+                holder.linearLayout.setBackgroundColor(context!!.resources.getColor(R.color.red_light))
+              // holder.linearLayout.scrollTo (5,6)
 
+            }
+        }
+        holder.questionTitle.text =(position+1).toString()+"- "+ Model.questionTableList[position].questionTitle
+        val answerType = Model.questionTableList[position].answerType
+        if(answerType == Globals.Companion.AnswerType.YesSomeTimeNo)
+        {
+            holder.radiogroup.visibility = View.VISIBLE
+            when(Model.questionTableList[position].score)
+            {
+                0.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_2).isChecked =
+                    true //contentDescription=0
+                1.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_1).isChecked =
+                    true //contentDescription=1
+                2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked =
+                    true //contentDescription=2
+            }
+        } else if(answerType == Globals.Companion.AnswerType.YesNo)
+        {
+            holder.RadioGroupYesNo.visibility = View.VISIBLE
+            when(Model.questionTableList[position].score)
+            {
+                0.0 -> holder.itemView.findViewById<RadioButton>(R.id.rg2_rb_1).isChecked =
+                    true //contentDescription=0
+
+                2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rg2_rb_0).isChecked =
+                    true //contentDescription=2
+            }
+        }
+        holder.RadioGroupYesNo.setOnCheckedChangeListener { group, checkedId ->
+            holder.rv.scrollToPosition(20)
+            val rdb = holder.RadioGroupYesNo.findViewById<RadioButton>(group.checkedRadioButtonId)
+            SetScoreAndQuestionTitle(position, group, holder, rdb)
+        }
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
-            Model.questionTableList[position].questionTitle =
-                Model.questionTableList[position].questionTitle.replace("*", "")
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
-            val score = rdb.contentDescription[0].toString()
-            Model.questionTableList[position].score = score.toDouble()
-            holder.questionTitle.text = Model.questionTableList[position].questionTitle
-
+            SetScoreAndQuestionTitle(position, group, holder, rdb)
+            var radio = holder.radiogroup
         }
+    }
+
+
+    private fun SetScoreAndQuestionTitle(position: Int,
+        group: RadioGroup,
+        holder: ViewHolder,
+        rdb: RadioButton): Unit
+    {
+        holder.linearLayout.setBackgroundColor(context!!.resources.getColor(R.color.white))
+        Model.questionTableList[position].Choosed = true
+        val score = rdb.contentDescription[0].toString()
+        Model.questionTableList[position].score = score.toDouble()
+        holder.questionTitle.text =(position+1).toString()+"- "+ Model.questionTableList[position].questionTitle
     }
 }
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -63,18 +64,17 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
     {
         if(v!!.id == R.id.btn_moshahedeh_natije)
         {
-            val unCheckedQuestion =
-                Model.questionTableList.filter { a -> a.score == -1.0  }
-            if(unCheckedQuestion.any())
+            if(Model.questionTableList.any { a -> a.Choosed == false })
             {
-                Model.questionTableList.forEachIndexed { index, questionTable ->
-                    if(Model.questionTableList[index].score==-1.0)
-                    {
-                        val text = Model.questionTableList[index].questionTitle.replace("* ", "")
-                        Model.questionTableList[index].questionTitle = "* " + text
-                        rv_questions.adapter = questionAapter
-                    }
+                if(Model.questionTableList.any { a -> a.Choosed })
+                {
+                    Toast.makeText(context,"لطفا به سوالات قرمز شده پاسخ دهید.",Toast.LENGTH_SHORT).show()
+                } else
+                {
+                    Toast.makeText(context,"لطفا به سوالات پاسخ دهید.",Toast.LENGTH_SHORT).show()
                 }
+                rv_questions.adapter = questionAapter
+
             } else
             {
                 navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)

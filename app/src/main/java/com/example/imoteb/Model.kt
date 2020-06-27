@@ -91,7 +91,7 @@ data class QuestionTable(var questionTitle: String = "",
     var questionType: Globals.Companion.MezajhaEnum = Globals.Companion.MezajhaEnum.dam,
     var answerType: Globals.Companion.AnswerType = Globals.Companion.AnswerType.YesSomeTimeNo,
     var score: Double = -1.0,
-    var coefficient: Double = 1.0,var Deleted:Boolean=false)
+    var coefficient: Double = 1.0,var Deleted:Boolean=false,var Choosed:Boolean=false)
 {
 
 }

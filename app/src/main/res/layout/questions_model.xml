@@ -13,6 +13,7 @@
     app:cardCornerRadius="18dp">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -35,12 +36,14 @@
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rl"
+
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:gravity="center_vertical"
                 android:layout_weight="1">
                 <RadioGroup
                     android:id="@+id/radioGroup"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="3"
@@ -85,18 +88,20 @@
                 android:id="@+id/rl_two"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:visibility="gone"
+
                 android:gravity="center_vertical"
                 android:layout_weight="1">
                 <RadioGroup
                     android:id="@+id/radioGroup_two"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="3"
                     android:orientation="horizontal"
                     android:layout_marginStart="10dp">
                     <RadioButton
-                        android:id="@+id/rb_bale"
+                        android:id="@+id/rg2_rb_0"
+                        android:contentDescription="2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -105,12 +110,13 @@
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>
                     <RadioButton
-                        android:id="@+id/rb_kheir"
+                        android:id="@+id/rg2_rb_1"
+                        android:contentDescription="0"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/iransans_l"
-                        android:text="@string/rb_SomeTimes"
+                        android:text="@string/rb_Yes"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>
 
