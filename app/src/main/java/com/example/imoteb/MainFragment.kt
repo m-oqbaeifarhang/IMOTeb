@@ -16,6 +16,7 @@ import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -128,19 +129,16 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         navController = Navigation.findNavController(view)
         btn_start_TestMazaj.setOnClickListener(this)
 
-        btn_bishtar_bekhanid1.setOnClickListener{
-            if(more_information_view1.visibility == View.GONE) {
-                TransitionManager.beginDelayedTransition(cardView1 , AutoTransition())
-                more_information_view1.visibility = View.VISIBLE
-                btn_bishtar_bekhanid1.setBackgroundResource(R.drawable.ic_arrow_up)
-                motaleye_bishtar1.text = "بستن"
-            } else {
-                TransitionManager.beginDelayedTransition(cardView1 , AutoTransition())
-                more_information_view1.visibility = View.GONE
-                btn_bishtar_bekhanid1.setBackgroundResource(R.drawable.ic_arrow_down)
-                motaleye_bishtar1.text = "مطالعه بیشتر"
+
+        /*     set seekbar     */
+        nestedScrollView.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
+            val totalScrollLenght = nestedScrollView.getChildAt(0).height - nestedScrollView.height
+            progressBar.apply {
+                max = totalScrollLenght
+                progress = scrollY
             }
         }
+
 
     }
 

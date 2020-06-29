@@ -58,13 +58,7 @@
                 android:layout_height="wrap_content"
                 style="@style/text"
                 android:text="+999"/>
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_toLeftOf="@+id/tedad_bazdid"
-                android:layout_marginRight="5dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_eye"/>
+
         </RelativeLayout>
 
     </LinearLayout>

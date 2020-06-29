@@ -24,60 +24,8 @@
             android:background="@color/toolbar_background"
             android:layoutDirection="rtl"
             app:elevation="0dp"
-            app:title=" ">
+            app:title=" "/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layoutDirection="ltr"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/title_imoteb"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/dephiana_en"
-                        android:text="@string/app_name"
-                        android:textAllCaps="false"
-                        android:textColor="@color/red"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_centerInParent="true"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@+id/title_imoteb"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_splash_screen" />
-                </RelativeLayout>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -95,13 +43,17 @@
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
                 android:layoutDirection="rtl"
-                android:elevation="20dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/main_background"
+                    android:background="@drawable/corner_white_bg"
                     android:layoutDirection="rtl"
                     android:orientation="vertical">
 
@@ -116,8 +68,7 @@
                             style="@style/title_text_large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="15dp"
+                            android:layout_centerInParent="true"
                             android:text="@string/tavajjoh"
                             android:textColor="@color/white" />
                     </RelativeLayout>
@@ -168,28 +119,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="@string/text_motaleye_bishtar_b" />
-                        <!--                        <LinearLayout
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginTop="10dp"
-                                                    android:orientation="horizontal">
-                                                    <View
-                                                        android:layout_width="15dp"
-                                                        android:layout_height="15dp"
-                                                        android:background="@drawable/ic_star"/>
-                                                    <View
-                                                        android:layout_width="15dp"
-                                                        android:layout_height="15dp"
-                                                        android:background="@drawable/ic_star"/>
-                                                    <View
-                                                        android:layout_width="15dp"
-                                                        android:layout_height="15dp"
-                                                        android:background="@drawable/ic_star"/>
-                                                    <View
-                                                        android:layout_width="15dp"
-                                                        android:layout_height="15dp"
-                                                        android:background="@drawable/ic_star"/>
-                                                </LinearLayout>-->
+
                     </LinearLayout>
 
                     <RelativeLayout
@@ -206,7 +136,7 @@
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/more"
-                            android:textColor="@color/text_color_light" />
+                            android:textColor="@color/blue_light" />
 
                         <Button
                             android:id="@+id/btn_bishtar_bekhanid"
@@ -217,6 +147,7 @@
                             android:layout_centerHorizontal="true"
                             android:background="@drawable/ic_arrow_down" />
                     </RelativeLayout>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -224,23 +155,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/main_background"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="16dp"
-                    android:layout_margin="8dp"
-                    android:elevation="5dp"
+                    android:background="@drawable/corner_white_bg"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="6dp"
                     android:layoutDirection="rtl">
 
                     <TextView
                         android:id="@+id/tv_tarikh_tavallod"
-                        style="@style/title_text_large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        style="@style/title_text_large"
                         android:layout_alignParentStart="true"
                         android:text="@string/sen_input"/>
 
@@ -253,7 +186,6 @@
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@color/red"
                         android:backgroundTintMode="screen"
-                        android:layout_margin="4dp"
                         android:divider="@color/blue_light_alpha" />
 
                 </RelativeLayout>
@@ -261,18 +193,20 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:padding="16dp"
-                    android:layout_margin="8dp"
-                    android:elevation="5dp"
+                    android:background="@drawable/corner_white_bg"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="6dp"
                     android:layoutDirection="rtl">
 
                     <TextView
                         android:id="@+id/tv_vaziyyat_tahhol"
-                        style="@style/title_text_large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/title_text_large"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
                         android:text="@string/vaziyat_tahhol" />
 
                     <LinearLayout
@@ -280,7 +214,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_below="@+id/tv_vaziyyat_tahhol"
-                        android:layout_margin="16dp"
+                        android:layout_marginBottom="8dp"
                         android:orientation="horizontal">
 
                         <RadioGroup
@@ -319,18 +253,20 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:layout_marginTop="10dp"
-                    android:padding="16dp"
-                    android:layout_margin="8dp"
-                    android:elevation="5dp"
+                    android:background="@drawable/corner_white_bg"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="6dp"
                     android:layoutDirection="rtl">
 
                     <TextView
                         android:id="@+id/jensiyyat"
-                        style="@style/title_text_large"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        style="@style/title_text_large"
                         android:text="@string/jensiyyat" />
 
                     <LinearLayout
@@ -338,7 +274,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_below="@+id/jensiyyat"
-                        android:layout_margin="16dp">
+                        android:layout_marginBottom="8dp">
 
                         <RadioGroup
                             android:id="@+id/rg_jensiyyat"
@@ -375,7 +311,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="100dp" />
+                    android:layout_height="80dp" />
 
             </LinearLayout>
 
@@ -384,12 +320,12 @@
 
     <Button
         android:id="@+id/btn_marhaleye_baad"
-        style="@style/title_text_large"
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
+        android:elevation="6dp"
+        style="@style/title_text_large"
         android:background="@drawable/bg_button_blue"
         android:text="@string/marhaleye_baad"
         android:textColor="@color/white" />

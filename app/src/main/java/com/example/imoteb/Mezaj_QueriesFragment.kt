@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 
 
@@ -71,6 +73,16 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btn_moshahedeh_natije.setOnClickListener(this)
+
+        /*     set seekbar     */
+        nestedScrollView_fragment_mezaj_queries.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
+            val totalScrollLenght = nestedScrollView_fragment_mezaj_queries.getChildAt(0).height - nestedScrollView_fragment_mezaj_queries.height
+            progressBar_fragment_mezaj_queries.apply {
+                max = totalScrollLenght
+                progress = scrollY
+            }
+        }
+
     }
 
     override fun onClick(v: View?)

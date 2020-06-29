@@ -6,7 +6,7 @@
             <item android:left="0dp" android:top="0dp">
                 <shape>
                     <solid android:color="@color/blue_light_alpha"/>
-                    <corners android:radius="100dp"/>
+                    <corners android:radius="10dp"/>
                     <stroke android:width="0dp"
                         android:color="@color/gray_very_dark_alpha"/>
                 </shape>
@@ -19,7 +19,7 @@
             <item android:left="0dp" android:top="0dp">
                 <shape>
                     <solid android:color="@color/blue_light_alpha" />
-                    <corners android:radius="100dp"/>
+                    <corners android:radius="10dp"/>
                     <stroke android:width="0dp"
                         android:color="@color/gray_very_dark_alpha"/>
                 </shape>

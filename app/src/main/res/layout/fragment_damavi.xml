@@ -98,7 +98,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/card_view_radius_top_left_right"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp">
                     <TextView
@@ -117,7 +116,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/section_1"
-                android:background="@drawable/card_view_radius_bottom_left_right"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp">
                 <RelativeLayout
