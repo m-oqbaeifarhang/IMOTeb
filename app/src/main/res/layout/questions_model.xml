@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/iransans_l"
-                        android:text="@string/rb_Yes"
+                        android:text="@string/rb_No"
                         android:textColor="@color/text_color"
                         android:textSize="17sp"/>
 

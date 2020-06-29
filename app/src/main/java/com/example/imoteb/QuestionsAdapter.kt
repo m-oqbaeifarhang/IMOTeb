@@ -1,5 +1,6 @@
 package com.example.imoteb
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.text.SpannableString
@@ -9,7 +10,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 
 
 class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
@@ -21,7 +24,7 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         var RadioGroupYesNo = itemView.findViewById<RadioGroup>(R.id.radioGroup_two)
         var linearLayout = itemView.findViewById<LinearLayout>(R.id.linearLayout)
         var cardView = itemView.findViewById<CardView>(R.id.cardView)
-var rv=itemView.findViewById<RecyclerView>(R.id.rv_questions)
+        var rv = itemView.findViewById<RecyclerView>(R.id.rv_questions)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -36,6 +39,7 @@ var rv=itemView.findViewById<RecyclerView>(R.id.rv_questions)
         return Model.questionTableList.size
     }
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
@@ -44,11 +48,11 @@ var rv=itemView.findViewById<RecyclerView>(R.id.rv_questions)
             if(!Model.questionTableList[position].Choosed)
             {
                 holder.linearLayout.setBackgroundColor(context!!.resources.getColor(R.color.red_light))
-              // holder.linearLayout.scrollTo (5,6)
-
             }
         }
-        holder.questionTitle.text =(position+1).toString()+"- "+ Model.questionTableList[position].questionTitle
+
+        holder.questionTitle.text =
+            (position + 1).toString() + "- " + Model.questionTableList[position].questionTitle
         val answerType = Model.questionTableList[position].answerType
         if(answerType == Globals.Companion.AnswerType.YesSomeTimeNo)
         {
@@ -75,18 +79,17 @@ var rv=itemView.findViewById<RecyclerView>(R.id.rv_questions)
             }
         }
         holder.RadioGroupYesNo.setOnCheckedChangeListener { group, checkedId ->
-            holder.rv.scrollToPosition(20)
             val rdb = holder.RadioGroupYesNo.findViewById<RadioButton>(group.checkedRadioButtonId)
             SetScoreAndQuestionTitle(position, group, holder, rdb)
         }
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
             SetScoreAndQuestionTitle(position, group, holder, rdb)
-            var radio = holder.radiogroup
         }
     }
 
 
+    @SuppressLint("SetTextI18n")
     private fun SetScoreAndQuestionTitle(position: Int,
         group: RadioGroup,
         holder: ViewHolder,
@@ -96,7 +99,8 @@ var rv=itemView.findViewById<RecyclerView>(R.id.rv_questions)
         Model.questionTableList[position].Choosed = true
         val score = rdb.contentDescription[0].toString()
         Model.questionTableList[position].score = score.toDouble()
-        holder.questionTitle.text =(position+1).toString()+"- "+ Model.questionTableList[position].questionTitle
+        holder.questionTitle.text =
+            (position + 1).toString() + "- " + Model.questionTableList[position].questionTitle
     }
 }
 
