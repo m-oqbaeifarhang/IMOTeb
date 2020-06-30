@@ -46,11 +46,11 @@
     <string name="sen_input">لطفا تاریخ تولد خود را انتخاب کنید</string>
     <string name="edit_txt_hint">کلیک کنید</string>
     <string name="vaziyat_tahhol">وضعیت تاهل ؟</string>
-    <string name="jensiyyat">جنسیت ؟</string>
-    <string name="mojarrad">مجرد</string>
-    <string name="motaahel">متاهل</string>
-    <string name="mard">مرد</string>
-    <string name="zan">زن</string>
+    <string name="gender">جنسیت ؟</string>
+    <string name="single">مجرد</string>
+    <string name="married">متاهل</string>
+    <string name="male">مرد</string>
+    <string name="female">زن</string>
     <string name="text_motaleye_bishtar_a">برای پی بردن به مزاج خود، در پاسخ به سؤالات، گزینه ای را انتخاب کنید که ویژگی ها و شخصیت واقعی شما را توصیف کند و نه ویژگی هایی که می خواهید داشته باشید و یا دیگران از شما توقع دارند.</string>
     <string name="text_motaleye_bishtar_b">پاسخ درست یا غلط وجود ندارد. به هیچ وجه گزینه ای را که در مورد شما صدق نمی کند، به این دلیل که فکر می کنید گزینه بهتری است انتخاب نکنید، چون در این صورت نتیجه بدست آمده مغایر با خود واقعی شما خواهد بود. بنابراین صادقانه پاسخ دهید تا بتوانید به شخصیت واقعی خود پی ببرید.</string>
 

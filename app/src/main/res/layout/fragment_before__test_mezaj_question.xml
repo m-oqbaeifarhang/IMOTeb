@@ -217,24 +217,26 @@
                             android:weightSum="2">
 
                             <RadioButton
-                                android:id="@+id/rb_mojarrad"
+                                android:id="@+id/rb_single"
+                                android:contentDescription="@string/single"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
                                 android:theme="@style/RadioButtonStyle"
                                 android:padding="5dp"
                                 style="@style/title_text_large"
-                                android:text="@string/mojarrad" />
+                                android:text="@string/single" />
 
                             <RadioButton
-                                android:id="@+id/rb_motahhel"
+                                android:id="@+id/rb_married"
+                                android:contentDescription="@string/married"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
                                 android:padding="5dp"
                                 android:theme="@style/RadioButtonStyle"
                                 style="@style/title_text_large"
-                                android:text="@string/motaahel" />
+                                android:text="@string/married" />
 
                         </RadioGroup>
 
@@ -258,10 +260,10 @@
                             android:layout_centerHorizontal="true"
                             style="@style/title_text_large"
                             android:textSize="20sp"
-                            android:text="@string/jensiyyat" />
+                            android:text="@string/gender" />
 
                         <RadioGroup
-                            android:id="@+id/rg_jensiyyat"
+                            android:id="@+id/rg_gender"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
@@ -278,7 +280,7 @@
                                 android:layout_weight="1"
                                 android:padding="5dp"
                                 android:theme="@style/RadioButtonStyle"
-                                android:text="@string/mard" />
+                                android:text="@string/male" />
 
                             <RadioButton
                                 android:id="@+id/rb_zan"
@@ -288,7 +290,7 @@
                                 android:theme="@style/RadioButtonStyle"
                                 android:layout_weight="1"
                                 android:padding="5dp"
-                                android:text="@string/zan" />
+                                android:text="@string/female" />
                         </RadioGroup>
 
                     </RelativeLayout>

@@ -14,8 +14,8 @@ class Model()
 
         var Age: Int = 0
         var KamKhuni = false
-        var Sex = false
-        var Tahol = false
+        var Gender:GenderEnum = GenderEnum.Male
+        var MaritalStatus:MaritalStatusEnum = MaritalStatusEnum.Single
 
         //lateinit var QuestionTitle: MutableList<String>
         var TheHighestScore: Int = 2
@@ -23,9 +23,9 @@ class Model()
         {
             Age = 0
             KamKhuni = false
-            Sex = false
-            Tahol = false
-            if(questionTableList.any()) questionTableList.removeAll{a->!a.Deleted}
+            Gender= GenderEnum.Male
+            MaritalStatus =MaritalStatusEnum.Single
+            if(questionTableList.any()) questionTableList.removeAll { a -> !a.Deleted }
             MakeQueastionTable()
         }
 
@@ -42,29 +42,22 @@ class Model()
             {
                 when(i)
                 {
+
                     in 0..6 ->
                     {
-                        questionTableList.add(
-                            QuestionTable(
-                                questionType = Globals.Companion.MezajhaEnum.dam))
+                        questionTableList.add(QuestionTable(questionType = MezajsEnum.dam))
                     }
                     in 7..15 ->
                     {
-                        questionTableList.add(
-                            QuestionTable(
-                                questionType = Globals.Companion.MezajhaEnum.safra))
+                        questionTableList.add(QuestionTable(questionType = MezajsEnum.safra))
                     }
                     in 16..24 ->
                     {
-                        questionTableList.add(
-                            QuestionTable(
-                                questionType = Globals.Companion.MezajhaEnum.soda))
+                        questionTableList.add(QuestionTable(questionType = MezajsEnum.soda))
                     }
                     in 25..31 ->
                     {
-                        questionTableList.add(
-                            QuestionTable(
-                                questionType = Globals.Companion.MezajhaEnum.balgham))
+                        questionTableList.add(QuestionTable(questionType = MezajsEnum.balgham))
                     }
                 }
             }
@@ -83,27 +76,18 @@ class Model()
             questionTableList[25].coefficient = 2.0
             questionTableList[30].coefficient = 2.0
 
-            questionTableList[1].answerType=
-                Globals.Companion.AnswerType.YesNo
-            questionTableList[2].answerType=
-                Globals.Companion.AnswerType.YesNo
-            questionTableList[4].answerType=
-                Globals.Companion.AnswerType.YesNo
-            questionTableList[7].answerType=
-                Globals.Companion.AnswerType.YesNo
-
-
-
-
+            questionTableList[1].answerType = AnswerTypeEnum.YesNo
+            questionTableList[2].answerType = AnswerTypeEnum.YesNo
+            questionTableList[4].answerType = AnswerTypeEnum.YesNo
+            questionTableList[7].answerType = AnswerTypeEnum.YesNo
         }
     }
 }
-
 data class QuestionTable(var questionTitle: String = "",
-    var questionType: Globals.Companion.MezajhaEnum = Globals.Companion.MezajhaEnum.dam,
-    var answerType: Globals.Companion.AnswerType = Globals.Companion.AnswerType.YesSomeTimeNo,
+    var questionType: MezajsEnum = MezajsEnum.dam,
+    var answerType: AnswerTypeEnum = AnswerTypeEnum.YesSomeTimeNo,
     var score: Double = -1.0,
     var coefficient: Double = 1.0,var Deleted:Boolean=false,var Choosed:Boolean=false)
-{
 
-}
+
+

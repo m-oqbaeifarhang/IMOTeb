@@ -52,21 +52,20 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
 
         rv_questions.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_questions.setItemViewCacheSize(32)
-        val titleQuestionList =
-            ConfigurationQuestionsAndAnswers.ConfigurationQuestionByAge(Model.Age)
+        ConfigurationQuestions.ByAge(Model.Age)
+        ConfigurationQuestions.ByGender(Model.Gender)
+        ConfigurationQuestions.ByMaritalStatus(Model.MaritalStatus)
         questionAapter = QuestionsAdapter(context)
-
-
-       var  mLinearLayoutManager =  LinearLayoutManager(requireContext())
+        var mLinearLayoutManager = LinearLayoutManager(requireContext())
         rv_questions.setLayoutManager(mLinearLayoutManager)
 
 
         rv_questions.adapter = questionAapter
-        mLinearLayoutManager.scrollToPositionWithOffset(25,0)
+        mLinearLayoutManager.scrollToPositionWithOffset(25, 0)
         mLinearLayoutManager.scrollToPosition(25)
         rv_questions.scrollToPosition(25)
         rv_questions.smoothScrollToPosition(25)
-        rv_questions.layoutManager!!.smoothScrollToPosition(rv_questions,RecyclerView.State(),25)
+        rv_questions.layoutManager!!.smoothScrollToPosition(rv_questions, RecyclerView.State(), 25)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
@@ -77,7 +76,8 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
 
         /*     set seekbar     */
         nestedScrollView_fragment_mezaj_queries.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
-            val totalScrollLenght = nestedScrollView_fragment_mezaj_queries.getChildAt(0).height - nestedScrollView_fragment_mezaj_queries.height
+            val totalScrollLenght =
+                nestedScrollView_fragment_mezaj_queries.getChildAt(0).height - nestedScrollView_fragment_mezaj_queries.height
             progressBar_fragment_mezaj_queries.apply {
                 max = totalScrollLenght
                 progress = scrollY

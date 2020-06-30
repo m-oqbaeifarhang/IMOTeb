@@ -11,33 +11,33 @@ class MohasebehMezaj
     {
         fun Calculate(scores: MutableList<QuestionTable>): ComputeMezajsResult
         {
-            val CMR =
-                ComputeMezajsResult()
-            var MaxOfDamAnswerSize = Model.questionTableList.filter {a-> a.questionType== Globals.Companion.MezajhaEnum.dam}
-                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
-            var MaxOfSafraAnswerSize = Model.questionTableList.filter { a-> a.questionType== Globals.Companion.MezajhaEnum.safra}
-                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
-            var MaxOfSodaAnswerSize = Model.questionTableList.filter {a->  a.questionType== Globals.Companion.MezajhaEnum.soda}
-                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
-            var MaxOfBalghamAnswerSize = Model.questionTableList.filter { a-> a.questionType== Globals.Companion.MezajhaEnum.balgham }
-                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
+            val CMR = ComputeMezajsResult()
+            var MaxOfDamAnswerSize =
+                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.dam }
+                    .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
+            var MaxOfSafraAnswerSize =
+                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.safra }
+                    .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
+            var MaxOfSodaAnswerSize =
+                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.soda }
+                    .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
+            var MaxOfBalghamAnswerSize =
+                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.balgham }
+                    .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
 
             //در این قسمت ضریب سوالات به جواب سوالات ضرب میشود و در جواب سوالات قرار میگیرد
-          Model.questionTableList.forEachIndexed { index, questionTable ->
+            Model.questionTableList.forEachIndexed { index, questionTable ->
                 Model.questionTableList[index].score =
                     questionTable.score * questionTable.coefficient
             }
-            CMR.dam =
-                Model.questionTableList.filter { a ->  a.questionType == Globals.Companion.MezajhaEnum.dam }
-                    .sumByDouble { a -> a.score }.toFloat()
-            CMR.safra =
-                Model.questionTableList.filter { a ->  a.questionType == Globals.Companion.MezajhaEnum.safra }
-                    .sumByDouble { a -> a.score }.toFloat()
-            CMR.soda =
-                Model.questionTableList.filter { a ->a.questionType == Globals.Companion.MezajhaEnum.soda }
-                    .sumByDouble { a -> a.score }.toFloat()
+            CMR.dam = Model.questionTableList.filter { a -> a.questionType == MezajsEnum.dam }
+                .sumByDouble { a -> a.score }.toFloat()
+            CMR.safra = Model.questionTableList.filter { a -> a.questionType == MezajsEnum.safra }
+                .sumByDouble { a -> a.score }.toFloat()
+            CMR.soda = Model.questionTableList.filter { a -> a.questionType == MezajsEnum.soda }
+                .sumByDouble { a -> a.score }.toFloat()
             CMR.balgham =
-                Model.questionTableList.filter { a -> a.questionType == Globals.Companion.MezajhaEnum.balgham }
+                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.balgham }
                     .sumByDouble { a -> a.score }.toFloat()
             val age = Model.Age
             when(age)
@@ -77,9 +77,9 @@ class MohasebehMezaj
                 }
 
             }
-            CMR.dam = ((5.25 *CMR.dam) / MaxOfDamAnswerSize).toFloat()
+            CMR.dam = ((5.25 * CMR.dam) / MaxOfDamAnswerSize).toFloat()
             CMR.safra = ((5.25 * CMR.safra) / MaxOfSafraAnswerSize).toFloat()
-            CMR.soda = ((5.25* CMR.soda) / MaxOfSodaAnswerSize).toFloat()
+            CMR.soda = ((5.25 * CMR.soda) / MaxOfSodaAnswerSize).toFloat()
             CMR.balgham = ((5.25 * CMR.balgham) / MaxOfBalghamAnswerSize).toFloat()
 
             CMR.dam += 3f

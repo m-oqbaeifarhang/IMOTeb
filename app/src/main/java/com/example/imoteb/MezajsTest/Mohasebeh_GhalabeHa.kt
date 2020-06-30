@@ -1,6 +1,5 @@
 package com.example.imoteb.MezajsTest
 
-import com.example.imoteb.MezajsTest.Globals.Companion.MezajhaEnum
 
 enum class MezajehGhalebehEnum
 {
@@ -17,11 +16,11 @@ class Mohasebeh_GhalabeHa
 
         fun Mohasebe(dam: Float, safra: Float, soda: Float, balgham: Float): MezajehGhalebehEnum
         {
-            val map = hashMapOf<MezajhaEnum, Float>()
-            map[MezajhaEnum.dam] = dam
-            map[MezajhaEnum.safra] = safra
-            map[MezajhaEnum.soda] = soda
-            map[MezajhaEnum.balgham] = balgham
+            val map = hashMapOf<MezajsEnum, Float>()
+            map[MezajsEnum.dam] = dam
+            map[MezajsEnum.safra] = safra
+            map[MezajsEnum.soda] = soda
+            map[MezajsEnum.balgham] = balgham
             val result = map.toList().sortedByDescending { (_, value) -> value }.toMap()
             val mezajGhalebEnum = result.keys.first()
             val mezajGhalebAdad = result.values.first()
@@ -33,7 +32,7 @@ class Mohasebeh_GhalabeHa
             }
             when(mezajGhalebEnum)
             {
-                MezajhaEnum.dam ->
+                MezajsEnum.dam ->
                 {
                     mizanGhalabe = dam - soda
                     when
@@ -58,7 +57,7 @@ class Mohasebeh_GhalabeHa
                     }
 
                 }
-                MezajhaEnum.safra ->
+                MezajsEnum.safra ->
                 {
                     mizanGhalabe = safra - balgham
                     val rih = mezajGhalebAdad - soda
@@ -87,7 +86,7 @@ class Mohasebeh_GhalabeHa
                         }
                     }
                 }
-                MezajhaEnum.soda ->
+                MezajsEnum.soda ->
                 {
                     mizanGhalabe = soda - dam
                     val rih = soda - safra
@@ -116,7 +115,7 @@ class Mohasebeh_GhalabeHa
                         }
                     }
                 }
-                MezajhaEnum.balgham ->
+                MezajsEnum.balgham ->
                 {
                     mizanGhalabe = balgham - safra
                     when

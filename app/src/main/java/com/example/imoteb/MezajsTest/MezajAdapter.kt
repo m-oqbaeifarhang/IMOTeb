@@ -33,15 +33,6 @@ class MezajAdapter(items: ArrayList<Mezaj_Model> , var clickListener: mezajItemC
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-//        val item = items?.get(position)
-//        holder.title.text = item?.mezaj_title
-//        holder.description.text = item?.mezaj_description
-//        holder.image.setImageResource(item?.image!!)
-
-//        holder.itemView.setOnClickListener {
-//            Toast.makeText(myContext,holder.title.text,Toast.LENGTH_SHORT).show()
-//        }
-
         holder.initialize(items!!.get(position),clickListener)
     }
 

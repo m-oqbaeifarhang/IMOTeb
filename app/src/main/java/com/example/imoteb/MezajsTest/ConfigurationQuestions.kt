@@ -1,11 +1,13 @@
 package com.example.imoteb.MezajsTest
 
-class ConfigurationQuestionsAndAnswers
+
+class ConfigurationQuestions
 {
     companion object
     {
         //در این تابع سن گرفته میشود و مطابق با سن فرد برخی سوالات از لیست عنوان سوالات حذف میشود
-        fun ConfigurationQuestionByAge(age: Int): Unit
+
+        fun ByAge(age: Int): Unit
         {
             if(age > 40)
             {
@@ -21,17 +23,27 @@ class ConfigurationQuestionsAndAnswers
             {
                 Model.questionTableList[26].Deleted = true
             }
-            if(Model.Tahol == false)
-            {
-                Model.questionTableList[12].Deleted = true
-            }
-            if(Model.Sex == false)
-            {
-                Model.questionTableList[24].Deleted = true
-            }
-            Model.questionTableList.removeAll { a->a.Deleted }
+
+            Model.questionTableList.removeAll { a -> a.Deleted }
         }
 
+        fun ByGender(gender: Globals.Companion.Gender): Unit
+        {
+            if(gender == Globals.Companion.Gender.Male)
+            {
+                Model.questionTableList[24].Deleted = true
+                Model.questionTableList.removeAll { a -> a.Deleted }
+            }
+        }
+
+        fun ByMaritalStatus(MaritalStatus: Globals.Companion.MaritalStatus): Unit
+        {
+            if(MaritalStatus == Globals.Companion.MaritalStatus.Single)
+            {
+                Model.questionTableList[12].Deleted = true
+                Model.questionTableList.removeAll { a -> a.Deleted }
+            }
+        }
     }
 
 }

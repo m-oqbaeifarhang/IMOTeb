@@ -45,17 +45,6 @@ class Test_mezaj_resultFragment : Fragment()
         natayejTablayout.tabGravity = TabLayout.GRAVITY_FILL
         natayejViewPager.adapter = natayejViewPagerAdapter
         natayejTablayout.setupWithViewPager(natayejViewPager)
-
-        //        btn_ask_question.setOnClickListener{
-        //            val dialog = BottomSheetDialog(requireContext())
-        //            val dialog_view = layoutInflater.inflate(R.layout.question_dialog_layout,null)
-        //            btn_close.setOnClickListener{
-        //                dialog.dismiss()
-        //            }
-        ////            dialog.setCancelable(false)
-        //            dialog.setContentView(dialog_view)
-        //            dialog.show()
-        //        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
@@ -94,13 +83,6 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.axisLeft.labelCount = 10
         chart1.axisRight.labelCount = 10
         val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
-        //        val miangin=(CMR.dam+CMR.safra+CMR.soda+CMR.balgham)/4f
-        //        val ll = LimitLine(miangin, "خط اعتدال")
-        //        ll.lineColor = Color.RED
-        //        ll.lineWidth = 3f
-        //        ll.textColor = Color.BLACK
-        //        ll.textSize = 15f↓
-        //      chart1.axisLeft.addLimitLine(ll)
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
         val mg = Mohasebeh_GhalabeHa.Mohasebe(CMR.dam, CMR.safra, CMR.soda, CMR.balgham)

@@ -53,7 +53,7 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         holder.questionTitle.text =
             (position + 1).toString() + "- " + Model.questionTableList[position].questionTitle
         val answerType = Model.questionTableList[position].answerType
-        if(answerType == Globals.Companion.AnswerType.YesSomeTimeNo)
+        if(answerType == AnswerTypeEnum.YesSomeTimeNo)
         {
             holder.radiogroup.visibility = View.VISIBLE
             when(Model.questionTableList[position].score)
@@ -65,7 +65,7 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
                 2.0 -> holder.itemView.findViewById<RadioButton>(R.id.rb_0).isChecked =
                     true //contentDescription=2
             }
-        } else if(answerType == Globals.Companion.AnswerType.YesNo)
+        } else if(answerType == AnswerTypeEnum.YesNo)
         {
             holder.RadioGroupYesNo.visibility = View.VISIBLE
             when(Model.questionTableList[position].score)
