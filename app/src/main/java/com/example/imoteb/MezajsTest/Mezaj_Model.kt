@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 class Mezaj_Model (mezaj_title: String , mezaj_description: String , image : Int)
 {

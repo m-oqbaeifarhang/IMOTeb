@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,17 +10,16 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
+import com.example.imoteb.MainActivity
+import com.example.imoteb.R
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
-import kotlinx.android.synthetic.main.question_dialog_layout.*
 
 class Test_mezaj_resultFragment : Fragment()
 {
@@ -68,7 +67,8 @@ class Test_mezaj_resultFragment : Fragment()
         {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
             toolbar_test_mezaj_resultFragmaent.navigationIcon =
-                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+                AppCompatResources.getDrawable(requireContext(),
+                    R.drawable.ic_close)
             //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {

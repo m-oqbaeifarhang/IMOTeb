@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 
 class Globals

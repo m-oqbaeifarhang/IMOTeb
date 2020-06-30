@@ -1,18 +1,16 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
-import android.text.SpannableString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
+import com.example.imoteb.R
 
 
 class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAdapter.ViewHolder>()
@@ -47,7 +45,8 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         {
             if(!Model.questionTableList[position].Choosed)
             {
-                holder.linearLayout.setBackgroundColor(context!!.resources.getColor(R.color.red_light))
+                holder.linearLayout.setBackgroundColor(context!!.resources.getColor(
+                    R.color.red_light))
             }
         }
 

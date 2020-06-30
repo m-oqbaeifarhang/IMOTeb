@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -15,7 +15,8 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.content_main.*
+import com.example.imoteb.MainActivity
+import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 
 

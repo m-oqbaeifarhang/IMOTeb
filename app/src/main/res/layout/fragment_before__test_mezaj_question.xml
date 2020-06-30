@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/main_background"
     android:layoutDirection="rtl"
-    tools:context=".Before_TestMezajQuestionFragment">
+    tools:context=".MezajsTest.Before_TestMezajQuestionFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_fg_before_test_mezaj_question"

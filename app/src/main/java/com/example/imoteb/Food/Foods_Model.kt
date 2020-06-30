@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.Food
 
 class Foods_Model (food_name : String , food_img : Int)
 {

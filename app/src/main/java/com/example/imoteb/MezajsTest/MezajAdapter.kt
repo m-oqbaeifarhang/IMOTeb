@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.imoteb.R
 
 class MezajAdapter(items: ArrayList<Mezaj_Model> , var clickListener: mezajItemClickListener): RecyclerView.Adapter<MezajAdapter.ViewHolder>()
 {
@@ -19,11 +19,11 @@ class MezajAdapter(items: ArrayList<Mezaj_Model> , var clickListener: mezajItemC
         this.items =  items
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MezajAdapter.ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.mezaj_model, parent, false)
         myContext = parent.context
-        return MezajAdapter.ViewHolder(v)
+        return ViewHolder(v)
     }
 
     override fun getItemCount(): Int
@@ -31,7 +31,7 @@ class MezajAdapter(items: ArrayList<Mezaj_Model> , var clickListener: mezajItemC
         return this.items!!.size
     }
 
-    override fun onBindViewHolder(holder: MezajAdapter.ViewHolder, position: Int)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
 //        val item = items?.get(position)
 //        holder.title.text = item?.mezaj_title
@@ -51,7 +51,7 @@ class MezajAdapter(items: ArrayList<Mezaj_Model> , var clickListener: mezajItemC
         var description : TextView = itemView.findViewById(R.id.mezaj_desc)
         var image : ImageView = itemView.findViewById(R.id.img_mezaj)
 
-        fun initialize (item : Mezaj_Model , action : mezajItemClickListener){
+        fun initialize (item : Mezaj_Model, action : mezajItemClickListener){
             title.text = item.mezaj_title
             description.text = item.mezaj_description
             image.setImageResource(item.image)
@@ -63,7 +63,7 @@ class MezajAdapter(items: ArrayList<Mezaj_Model> , var clickListener: mezajItemC
     }
 
     interface mezajItemClickListener{
-        fun onItemClick(items: Mezaj_Model , position: Int)
+        fun onItemClick(items: Mezaj_Model, position: Int)
     }
 
 }

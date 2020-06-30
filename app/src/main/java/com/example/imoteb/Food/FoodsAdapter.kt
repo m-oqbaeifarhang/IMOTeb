@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.Food
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.imoteb.R
 
 class FoodsAdapter (food_items : ArrayList<Foods_Model> ) : RecyclerView.Adapter<FoodsAdapter.ViewHolder>()
 {
@@ -18,11 +19,11 @@ class FoodsAdapter (food_items : ArrayList<Foods_Model> ) : RecyclerView.Adapter
         this.items = food_items
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodsAdapter.ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.food_model,parent,false)
         myContext = parent.context
-        return FoodsAdapter.ViewHolder(v)
+        return ViewHolder(v)
     }
 
     override fun getItemCount(): Int
@@ -30,7 +31,7 @@ class FoodsAdapter (food_items : ArrayList<Foods_Model> ) : RecyclerView.Adapter
         return items!!.size
     }
 
-    override fun onBindViewHolder(holder: FoodsAdapter.ViewHolder, position: Int)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
          val item = items?.get(position)
          holder.title.text = item?.food_name

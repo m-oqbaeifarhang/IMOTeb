@@ -1,9 +1,6 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
-import com.example.imoteb.Globals.Companion.MezajhaEnum
-
-import kotlinx.coroutines.GlobalScope
-import kotlin.contracts.ReturnsNotNull
+import com.example.imoteb.MezajsTest.Globals.Companion.MezajhaEnum
 
 enum class MezajehGhalebehEnum
 {
@@ -32,7 +29,7 @@ class Mohasebeh_GhalabeHa
             val isEtedal=mezajGhalebAdad-result.values.last()<=1f
             if(isEtedal)
             {
-                return  MezajehGhalebehEnum.Etedal
+                return MezajehGhalebehEnum.Etedal
             }
             when(mezajGhalebEnum)
             {

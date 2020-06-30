@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.imoteb.MainActivity
+import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_damavi.*
 
 class MezajDetailFragment : Fragment()

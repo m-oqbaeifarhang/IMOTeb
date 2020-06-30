@@ -1,7 +1,4 @@
-package com.example.imoteb
-
-import android.text.style.ForegroundColorSpan
-import android.view.Display
+package com.example.imoteb.MezajsTest
 
 class MohasebehMezaj
 {
@@ -12,18 +9,18 @@ class MohasebehMezaj
 
     companion object
     {
-
         fun Calculate(scores: MutableList<QuestionTable>): ComputeMezajsResult
         {
-            val CMR = ComputeMezajsResult()
-            var MaxOfDamAnswerSize = Model.questionTableList.filter {a-> a.questionType==Globals.Companion.MezajhaEnum.dam}
-                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
-            var MaxOfSafraAnswerSize = Model.questionTableList.filter { a-> a.questionType==Globals.Companion.MezajhaEnum.safra}
-                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
-            var MaxOfSodaAnswerSize = Model.questionTableList.filter {a->  a.questionType==Globals.Companion.MezajhaEnum.soda}
-                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
-            var MaxOfBalghamAnswerSize = Model.questionTableList.filter { a-> a.questionType==Globals.Companion.MezajhaEnum.balgham }
-                .sumByDouble { a -> a.coefficient } *Model.TheHighestScore
+            val CMR =
+                ComputeMezajsResult()
+            var MaxOfDamAnswerSize = Model.questionTableList.filter {a-> a.questionType== Globals.Companion.MezajhaEnum.dam}
+                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
+            var MaxOfSafraAnswerSize = Model.questionTableList.filter { a-> a.questionType== Globals.Companion.MezajhaEnum.safra}
+                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
+            var MaxOfSodaAnswerSize = Model.questionTableList.filter {a->  a.questionType== Globals.Companion.MezajhaEnum.soda}
+                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
+            var MaxOfBalghamAnswerSize = Model.questionTableList.filter { a-> a.questionType== Globals.Companion.MezajhaEnum.balgham }
+                .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
 
             //در این قسمت ضریب سوالات به جواب سوالات ضرب میشود و در جواب سوالات قرار میگیرد
           Model.questionTableList.forEachIndexed { index, questionTable ->

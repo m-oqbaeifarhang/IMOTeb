@@ -8,7 +8,7 @@
     android:layoutDirection="rtl"
     android:orientation="vertical"
     android:background="@color/main_background"
-    tools:context=".Mezaj_QueriesFragment">
+    tools:context=".MezajsTest.Mezaj_QueriesFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

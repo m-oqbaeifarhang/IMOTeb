@@ -1,27 +1,22 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.NumberPicker
 import android.widget.RadioButton
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
-import com.example.imoteb.MezajsTest.CalculationOfAge
-import kotlinx.android.synthetic.main.content_main.*
+import com.example.imoteb.MainActivity
+import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
-import kotlinx.android.synthetic.main.questions_model.*
 
 class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
 {
@@ -29,7 +24,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
-       Model.MeghadDehiMotaghayerHa()
+        Model.MeghadDehiMotaghayerHa()
         val titleQuestions = resources.getStringArray(R.array.QuestionArrayy).toMutableList()
         Model.SetQuestionTitle(titleQuestions)
         // Inflate the layout for this fragment

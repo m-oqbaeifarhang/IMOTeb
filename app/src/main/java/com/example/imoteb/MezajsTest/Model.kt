@@ -1,4 +1,4 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 class Model()
 {
@@ -44,19 +44,27 @@ class Model()
                 {
                     in 0..6 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.dam))
+                        questionTableList.add(
+                            QuestionTable(
+                                questionType = Globals.Companion.MezajhaEnum.dam))
                     }
                     in 7..15 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.safra))
+                        questionTableList.add(
+                            QuestionTable(
+                                questionType = Globals.Companion.MezajhaEnum.safra))
                     }
                     in 16..24 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.soda))
+                        questionTableList.add(
+                            QuestionTable(
+                                questionType = Globals.Companion.MezajhaEnum.soda))
                     }
                     in 25..31 ->
                     {
-                        questionTableList.add(QuestionTable(questionType = Globals.Companion.MezajhaEnum.balgham))
+                        questionTableList.add(
+                            QuestionTable(
+                                questionType = Globals.Companion.MezajhaEnum.balgham))
                     }
                 }
             }
@@ -75,10 +83,14 @@ class Model()
             questionTableList[25].coefficient = 2.0
             questionTableList[30].coefficient = 2.0
 
-            questionTableList[1].answerType=Globals.Companion.AnswerType.YesNo
-            questionTableList[2].answerType=Globals.Companion.AnswerType.YesNo
-            questionTableList[4].answerType=Globals.Companion.AnswerType.YesNo
-            questionTableList[7].answerType=Globals.Companion.AnswerType.YesNo
+            questionTableList[1].answerType=
+                Globals.Companion.AnswerType.YesNo
+            questionTableList[2].answerType=
+                Globals.Companion.AnswerType.YesNo
+            questionTableList[4].answerType=
+                Globals.Companion.AnswerType.YesNo
+            questionTableList[7].answerType=
+                Globals.Companion.AnswerType.YesNo
 
 
 

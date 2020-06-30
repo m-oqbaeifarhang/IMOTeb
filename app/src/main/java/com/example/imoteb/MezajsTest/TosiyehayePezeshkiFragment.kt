@@ -1,17 +1,19 @@
-package com.example.imoteb
+package com.example.imoteb.MezajsTest
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-class KhususiyatAkhlagiFragment : Fragment()
+import com.example.imoteb.R
+
+class TosiyehayePezeshkiFragment : Fragment()
 {
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View?
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_khususiyat_akhlagi, container, false)
+        return inflater.inflate(R.layout.fragment_tosiyehaye_pezeshki, container, false)
     }
 }

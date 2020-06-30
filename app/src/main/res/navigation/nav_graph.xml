@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/before_TestMezajQuestionFragment"
-        android:name="com.example.imoteb.Before_TestMezajQuestionFragment"
+        android:name="com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment"
         android:label="fragment_before__test_mezaj_question"
         tools:layout="@layout/fragment_before__test_mezaj_question" >
         <action
@@ -43,13 +43,13 @@
 
     <fragment
         android:id="@+id/test_mezaj_resultFragment"
-        android:name="com.example.imoteb.Test_mezaj_resultFragment"
+        android:name="com.example.imoteb.MezajsTest.Test_mezaj_resultFragment"
         android:label="fragment_test_mezaj_result"
         tools:layout="@layout/fragment_test_mezaj_result" />
 
     <fragment
         android:id="@+id/mezaj_QueriesFragment"
-        android:name="com.example.imoteb.Mezaj_QueriesFragment"
+        android:name="com.example.imoteb.MezajsTest.Mezaj_QueriesFragment"
         android:label="fragment_mezaj_queries"
         tools:layout="@layout/fragment_mezaj_queries" >
         <action
@@ -62,7 +62,7 @@
     </fragment>
     <fragment
         android:id="@+id/damaviFragment"
-        android:name="com.example.imoteb.MezajDetailFragment"
+        android:name="com.example.imoteb.MezajsTest.MezajDetailFragment"
         android:label="fragment_damavi"
         tools:layout="@layout/fragment_damavi" />
 
