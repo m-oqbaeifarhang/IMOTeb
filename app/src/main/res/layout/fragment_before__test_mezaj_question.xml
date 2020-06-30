@@ -62,7 +62,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/red_light"
                         android:layoutDirection="rtl"
-                        android:padding="5dp">
+                        android:padding="10dp">
 
                         <TextView
                             style="@style/title_text_large"
@@ -126,11 +126,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_margin="8dp">
+                        android:layout_marginTop="16dp">
 
                         <TextView
                             android:id="@+id/motaleye_bishtar"
-                            style="@style/title_text"
+                            style="@style/text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
@@ -146,6 +146,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:background="@drawable/ic_arrow_down" />
+
                     </RelativeLayout>
 
                 </LinearLayout>
@@ -157,157 +158,142 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/tv_tarikh_tavallod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    style="@style/title_text_large"
+                    android:textSize="20sp"
+                    android:text="@string/sen_input"/>
+
+                <NumberPicker
+                    android:id="@+id/numberPicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/red"
+                    android:backgroundTintMode="screen"
+                    android:divider="@color/blue_light_alpha" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/blue_dark"/>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/corner_white_bg"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:elevation="6dp"
-                    android:layoutDirection="rtl">
+                    android:weightSum="2"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_tarikh_tavallod"
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        style="@style/title_text_large"
-                        android:layout_alignParentStart="true"
-                        android:text="@string/sen_input"/>
+                        android:layout_weight="1">
 
-                    <NumberPicker
-                        android:id="@+id/numberPicker"
-                        style="@style/title_text_large"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_tarikh_tavallod"
-                        android:layout_centerHorizontal="true"
-                        android:backgroundTint="@color/red"
-                        android:backgroundTintMode="screen"
-                        android:divider="@color/blue_light_alpha" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/corner_white_bg"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:elevation="6dp"
-                    android:layoutDirection="rtl">
-
-                    <TextView
-                        android:id="@+id/tv_vaziyyat_tahhol"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/title_text_large"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/vaziyat_tahhol" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_below="@+id/tv_vaziyyat_tahhol"
-                        android:layout_marginBottom="8dp"
-                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_vaziyyat_tahhol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            style="@style/title_text_large"
+                            android:textSize="20sp"
+                            android:text="@string/vaziyat_tahhol" />
 
                         <RadioGroup
                             android:id="@+id/rg_vaziyat_tahhol"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/tv_vaziyyat_tahhol"
+                            android:layout_marginTop="15dp"
                             android:orientation="vertical"
                             android:weightSum="2">
 
                             <RadioButton
                                 android:id="@+id/rb_mojarrad"
-                                android:checked="true"
-                                style="@style/title_text_medium"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
                                 android:theme="@style/RadioButtonStyle"
                                 android:padding="5dp"
+                                style="@style/title_text_large"
                                 android:text="@string/mojarrad" />
 
                             <RadioButton
                                 android:id="@+id/rb_motahhel"
-                                style="@style/title_text_medium"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:theme="@style/RadioButtonStyle"
                                 android:padding="5dp"
+                                android:theme="@style/RadioButtonStyle"
+                                style="@style/title_text_large"
                                 android:text="@string/motaahel" />
+
                         </RadioGroup>
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
-                </RelativeLayout>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/blue_dark"/>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/corner_white_bg"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:elevation="6dp"
-                    android:layoutDirection="rtl">
-
-                    <TextView
-                        android:id="@+id/jensiyyat"
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        style="@style/title_text_large"
-                        android:text="@string/jensiyyat" />
+                        android:layout_weight="1">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_below="@+id/jensiyyat"
-                        android:layout_marginBottom="8dp">
+                        <TextView
+                            android:id="@+id/tv_jensiyyat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            style="@style/title_text_large"
+                            android:textSize="20sp"
+                            android:text="@string/jensiyyat" />
 
                         <RadioGroup
                             android:id="@+id/rg_jensiyyat"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@+id/tv_jensiyyat"
                             android:orientation="vertical"
                             android:weightSum="2">
 
                             <RadioButton
                                 android:id="@+id/rb_mard"
-                                android:checked="true"
-                                style="@style/title_text_medium"
+                                style="@style/title_text_large"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:button="@drawable/custom_radio_button"
                                 android:padding="5dp"
+                                android:theme="@style/RadioButtonStyle"
                                 android:text="@string/mard" />
 
                             <RadioButton
                                 android:id="@+id/rb_zan"
-                                style="@style/title_text_medium"
+                                style="@style/title_text_large"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
+                                android:theme="@style/RadioButtonStyle"
                                 android:layout_weight="1"
-                                android:button="@drawable/custom_radio_button"
                                 android:padding="5dp"
                                 android:text="@string/zan" />
                         </RadioGroup>
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
-                </RelativeLayout>
+                </LinearLayout>
 
                 <Space
                     android:layout_width="match_parent"
@@ -323,7 +309,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         android:elevation="6dp"
         style="@style/title_text_large"
         android:background="@drawable/bg_button_blue"

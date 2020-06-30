@@ -18,10 +18,13 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.transition.AutoTransition
+import androidx.transition.TransitionManager
 import com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigationItemSelectedListener
@@ -122,16 +125,19 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         navController = Navigation.findNavController(view)
         btn_start_TestMazaj.setOnClickListener(this)
 
-
-        /*     set seekbar     */
-        nestedScrollView.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
-            val totalScrollLenght = nestedScrollView.getChildAt(0).height - nestedScrollView.height
-            progressBar.apply {
-                max = totalScrollLenght
-                progress = scrollY
+        btn_bishtar_bekhanid_content_main_layout.setOnClickListener{
+            if(more_information_content_main.visibility == View.GONE) {
+                TransitionManager.beginDelayedTransition(cardView_content_main_layout , AutoTransition())
+                more_information_content_main.visibility = View.VISIBLE
+                btn_bishtar_bekhanid_content_main_layout.setBackgroundResource(R.drawable.ic_arrow_up)
+                motaleye_bishtar_content_main_layout.text = "بستن"
+            } else {
+                TransitionManager.beginDelayedTransition(cardView_content_main_layout , AutoTransition())
+                more_information_content_main.visibility = View.GONE
+                btn_bishtar_bekhanid_content_main_layout.setBackgroundResource(R.drawable.ic_arrow_down)
+                motaleye_bishtar_content_main_layout.text = "مطالعه بیشتر"
             }
         }
-
 
     }
 

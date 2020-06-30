@@ -38,7 +38,7 @@
             android:id="@+id/mezaj_title"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            style="@style/title_text"
+            style="@style/text"
             android:text="@string/name_mezaj"/>
 
         <TextView
