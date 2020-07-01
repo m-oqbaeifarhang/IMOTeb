@@ -27,18 +27,18 @@ class ConfigurationQuestions
             Model.questionTableList.removeAll { a -> a.Deleted }
         }
 
-        fun ByGender(gender: Globals.Companion.Gender): Unit
+        fun ByGender(gender: GenderEnum): Unit
         {
-            if(gender == Globals.Companion.Gender.Male)
+            if(gender == GenderEnum.Male)
             {
                 Model.questionTableList[24].Deleted = true
                 Model.questionTableList.removeAll { a -> a.Deleted }
             }
         }
 
-        fun ByMaritalStatus(MaritalStatus: Globals.Companion.MaritalStatus): Unit
+        fun ByMaritalStatus(MaritalStatus: MaritalStatusEnum): Unit
         {
-            if(MaritalStatus == Globals.Companion.MaritalStatus.Single)
+            if(MaritalStatus == MaritalStatusEnum.Single)
             {
                 Model.questionTableList[12].Deleted = true
                 Model.questionTableList.removeAll { a -> a.Deleted }
