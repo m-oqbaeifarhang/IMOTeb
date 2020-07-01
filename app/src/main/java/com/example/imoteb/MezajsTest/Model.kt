@@ -24,7 +24,7 @@ class Model()
             Age = 0
             KamKhuni = false
             Gender= GenderEnum.Male
-            MaritalStatus =MaritalStatusEnum.Single
+            MaritalStatus = MaritalStatusEnum.Single
             if(questionTableList.any()) questionTableList.removeAll { a -> !a.Deleted }
             MakeQueastionTable()
         }

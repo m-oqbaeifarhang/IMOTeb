@@ -31,8 +31,9 @@
     <ProgressBar
         android:id="@+id/progressBar_fragment_mezaj_queries"
         android:layout_width="match_parent"
-        android:layout_height="8dp"
+        android:layout_height="wrap_content"
         style="?android:attr/progressBarStyleHorizontal"
+        android:scaleY="3"
         android:progressTint="@color/blue_light"/>
 
     <androidx.core.widget.NestedScrollView
@@ -53,15 +54,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
-                android:paddingBottom="10dp"
-
+                android:paddingBottom="8dp"
                 android:background="@color/main_background" />
 
             <Button
                 android:id="@+id/btn_moshahedeh_natije"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:elevation="6dp"
                 android:background="@drawable/bg_button_blue"
                 android:text="@string/moshahede_natijeh"
