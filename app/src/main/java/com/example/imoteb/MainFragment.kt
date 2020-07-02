@@ -32,6 +32,7 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
     var navController : NavController? = null
     private var myContext: FragmentActivity? = null
     lateinit var beforeTestmezajquestionfragment: Before_TestMezajQuestionFragment
+    var aaaa = 1
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
