@@ -19,12 +19,8 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"/>
         <action
-            android:id="@+id/action_mainFragment_to_damaviFragment"
-            app:destination="@id/damaviFragment"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right"/>
+            android:id="@+id/action_mainFragment_to_mezajDetailFragment"
+            app:destination="@id/mezajDetailFragment" />
     </fragment>
 
     <fragment
@@ -61,9 +57,9 @@
             app:exitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
-        android:id="@+id/damaviFragment"
+        android:id="@+id/mezajDetailFragment"
         android:name="com.example.imoteb.MezajsTest.MezajDetailFragment"
-        android:label="fragment_damavi"
-        tools:layout="@layout/fragment_damavi" />
+        android:label="fragment_mezaj_detail"
+        tools:layout="@layout/fragment_mezaj_detail" />
 
 </navigation>

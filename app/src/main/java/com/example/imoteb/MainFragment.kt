@@ -2,8 +2,11 @@ package com.example.imoteb
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.util.Pair
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -21,6 +24,7 @@ import androidx.navigation.Navigation
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment
+import com.example.imoteb.MezajsTest.MezajDetailFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -65,12 +69,12 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         }
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btn_start_TestMazaj.setOnClickListener(this)
+        click.setOnClickListener(this)
 
         btn_bishtar_bekhanid_content_main_layout.setOnClickListener{
             if(more_information_content_main.visibility == View.GONE) {
@@ -93,6 +97,14 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         when(v!!.id)
         {
             R.id.btn_start_TestMazaj -> navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
+            R.id.click -> {
+
+                val pairs: Array<Pair<View, String>?> = arrayOfNulls(1)
+                pairs[0] = Pair<View, String>(iv_shared_element_start, "imageTransition")
+                val options = ActivityOptions.makeSceneTransitionAnimation(context as Activity?, *pairs)
+//                navController!!.navigate(R.id.action_mainFragment_to_mezajDetailFragment,options.toBundle())
+
+            }
         }
     }
 

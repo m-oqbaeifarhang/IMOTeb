@@ -9,7 +9,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imoteb.MainActivity
 import com.example.imoteb.R
-import kotlinx.android.synthetic.main.fragment_damavi.*
+import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
+import kotlinx.android.synthetic.main.fragment_mezaj_detail.*
 
 class MezajDetailFragment : Fragment()
 {
@@ -19,23 +20,22 @@ class MezajDetailFragment : Fragment()
         savedInstanceState: Bundle?): View?
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_damavi, container, false)
+        return inflater.inflate(R.layout.fragment_mezaj_detail, container, false)
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
 
-        /*set Toolbar*/
+    /*        set toolbar       */
         if(activity is AppCompatActivity)
         {
-
-            (activity as AppCompatActivity).setSupportActionBar(toolbar_damavi_fragment)
+            (activity as AppCompatActivity).setSupportActionBar(toolbar_fg_mezaj_detail)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-            //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
-        toolbar_damavi_fragment.setNavigationOnClickListener {
+        toolbar_fg_mezaj_detail.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
