@@ -61,6 +61,12 @@ class Model()
                     }
                 }
             }
+//TestMode
+questionTableList.forEachIndexed { index, questionTable ->
+    questionTableList[index].Choosed=true
+    questionTableList[index].score=1.0
+
+}
             questionTableList[0].coefficient = 2.0
             questionTableList[1].coefficient = 1.5
             questionTableList[4].coefficient = 1.5

@@ -51,6 +51,7 @@
                 android:text="@string/txt_result"
                 android:textSize="16sp"
                 android:textColor="@color/text_color_titr"/>
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/natayejTablayout"
                 android:layout_width="match_parent"

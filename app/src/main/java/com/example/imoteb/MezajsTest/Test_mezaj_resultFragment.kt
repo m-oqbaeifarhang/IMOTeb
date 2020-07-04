@@ -1,7 +1,9 @@
 package com.example.imoteb.MezajsTest
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +12,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
+import com.example.imoteb.IntentShare
 import com.example.imoteb.MainActivity
 import com.example.imoteb.R
 import com.github.mikephil.charting.components.XAxis
@@ -20,6 +23,7 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
+
 
 class Test_mezaj_resultFragment : Fragment()
 {
@@ -45,8 +49,10 @@ class Test_mezaj_resultFragment : Fragment()
         natayejTablayout.tabGravity = TabLayout.GRAVITY_FILL
         natayejViewPager.adapter = natayejViewPagerAdapter
         natayejTablayout.setupWithViewPager(natayejViewPager)
+
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
 
@@ -56,8 +62,7 @@ class Test_mezaj_resultFragment : Fragment()
         {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_test_mezaj_resultFragmaent)
             toolbar_test_mezaj_resultFragmaent.navigationIcon =
-                AppCompatResources.getDrawable(requireContext(),
-                    R.drawable.ic_close)
+                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
             //            (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.my_title_string)
         }
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
@@ -86,8 +91,17 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
         val mg = Mohasebeh_GhalabeHa.Mohasebe(CMR.dam, CMR.safra, CMR.soda, CMR.balgham)
-        setTitle(mg)
-
+       val mezajGhalabeResult= "نتیجه مزاج شناسی: "+ convertMezajGhalabeResultToPersian(mg)
+        title.text = mezajGhalabeResult
+        btn_ask_question.setOnClickListener {
+            Handler().post(Runnable {
+                val intentShare = IntentShare.sharePhotoWithText(context = requireContext(),
+                    bitmap = chart1.chartBitmap,
+                    activity = requireActivity(),
+                    text = mezajGhalabeResult)
+                startActivity(Intent.createChooser(intentShare,"Choose an app"))
+            } )
+        }
     }
 
     private fun getData(questionTable: MutableList<QuestionTable>): ArrayList<BarEntry>
@@ -104,81 +118,83 @@ class Test_mezaj_resultFragment : Fragment()
         return entries
     }
 
-    private fun setTitle(mezajehGhalebehEnum: MezajehGhalebehEnum)
+    private fun convertMezajGhalabeResultToPersian(mezajehGhalebehEnum: MezajehGhalebehEnum):String
     {
+        val result:String
         when(mezajehGhalebehEnum)
         {
             MezajehGhalebehEnum.NaMotabar ->
             {
-                title.setText("نتیحه تست: نا معتبر. پاسخ ها را به درستی جواب دهید.")
+                result="نتیحه تست: نا معتبر. پاسخ ها را به درستی جواب دهید."
             }
             //---------------------------------------------
             MezajehGhalebehEnum.GhalabehKamDam ->
             {
-                title.setText("غلبه کم دم")
+                result="غلبه کم دم"
             }
             MezajehGhalebehEnum.GhalabehMotavasetDam ->
             {
-                title.setText("غلبه متوسط دم")
+                result="غلبه متوسط دم"
             }
             MezajehGhalebehEnum.GhalabehShadidDam ->
             {
-                title.setText("غلبه شدید دم")
+                result="غلبه شدید دم"
             }
             //----------------------------------------------
             MezajehGhalebehEnum.GhalabehKamsafra ->
             {
-                title.setText("غلبه کم صفرا")
+                result="غلبه کم صفرا"
 
             }
             MezajehGhalebehEnum.GhalabehMotavasetsafra ->
             {
-                title.setText("غلبه متوسط صفرا")
+                result="غلبه متوسط صفرا"
 
             }
             MezajehGhalebehEnum.GhalabehShadidsafra ->
             {
-                title.setText("غلبه شدید صفرا")
+                result="غلبه شدید صفرا"
 
             }
             //-----------------------------------------------
             MezajehGhalebehEnum.GhalabehKamsoda ->
             {
-                title.setText("غلبه کم سودا")
+                result="غلبه کم سودا"
             }
             MezajehGhalebehEnum.GhalabehMotavasetsoda ->
             {
-                title.setText("غلبه متوسط سودا")
+                result="غلبه متوسط سودا"
             }
             MezajehGhalebehEnum.GhalabehShadidsoda ->
             {
-                title.setText("غلبه شدید سودا")
+                result="غلبه شدید سودا"
             }
             //-----------------------------------------------
             MezajehGhalebehEnum.GhalabehKambalgham ->
             {
-                title.setText("غلبه کم بلغم")
+                result="غلبه کم بلغم"
             }
             MezajehGhalebehEnum.GhalabehMotavasetbalgham ->
             {
-                title.setText("غلبه متوسط بلغم")
+                result="غلبه متوسط بلغم"
             }
             MezajehGhalebehEnum.GhalabehShadidbalgham ->
             {
-                title.setText("غلبه شدید بلغم")
+                result="غلبه شدید بلغم"
             }
             //-------------------------------------------------
             MezajehGhalebehEnum.Rih ->
             {
-                title.setText("غلبه ریح")
+                result="غلبه ریح"
             }
             //-------------------------------------------------
             MezajehGhalebehEnum.Etedal ->
             {
-                title.setText("مزاج شما تقریبا در اعتدال است.")
+                result="در اعتدال"
             }
 
         }
+        return result
     }
 
 }
