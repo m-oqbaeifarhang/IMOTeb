@@ -1,83 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="rtl"
+    android:fitsSystemWindows="true"
     tools:context=".MezajsTest.Test_mezaj_resultFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_fragment_mezaj_result"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        app:elevation="0dp"
-        android:id="@+id/app_bar_fragment_mezaj_result">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_test_mezaj_resultFragmaent"
+        android:layout_height="350dp"
+        android:fitsSystemWindows="true"
+        tools:ignore="MissingConstraints">
+        
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_alignParentTop="true"
-            android:layoutDirection="rtl"
-            android:background="@color/white"
-            app:title=" "
-            app:elevation="0dp"/>
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:expandedTitleMarginStart="50dp"
+            app:contentScrim="@color/main_background"
+            android:background="@color/main_background"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chart1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/main_background"
+                app:layout_collapseMode="parallax"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_test_mezaj_resultFragmaent"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title=" "/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/btn_ask_question"
-        android:layout_below="@+id/app_bar_fragment_mezaj_result">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:orientation="vertical">
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/chart1"
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_content_main_layout"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="8dp"
-                android:elevation="3dp"/>
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginStart="18dp"
-                android:fontFamily="@font/iransans"
-                android:text="@string/txt_result"
-                android:textSize="16sp"
-                android:textColor="@color/text_color_titr"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                android:layoutDirection="rtl"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="@drawable/corner_white_bg">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_result"
+                        style="@style/title_text_large"
+                        android:textSize="20sp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/natayejTablayout"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:tabIndicatorColor="@color/red"
+                android:layout_marginTop="16dp"
+                app:tabIndicatorColor="@color/green"
                 app:tabTextAppearance="@style/tab_text"/>
+
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/natayejViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
                 android:layoutDirection="rtl"/>
+
+            <Button
+                android:id="@+id/btn_ask_question"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_button_blue"
+                style="@style/title_text_large"
+                android:text="@string/moshahede_natijeh"
+                android:textColor="@color/white"/>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <Button
-        android:id="@+id/btn_ask_question"
-        android:layout_width="130dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/bg_button_blue"
-        android:text="@string/moshahede_natijeh"
-        style="@style/title_text_large"
-        android:textColor="@color/white"/>
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -78,12 +78,14 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
 
         btn_bishtar_bekhanid_content_main_layout.setOnClickListener{
             if(more_information_content_main.visibility == View.GONE) {
-                TransitionManager.beginDelayedTransition(cardView_content_main_layout , AutoTransition())
+                androidx.transition.TransitionManager.beginDelayedTransition(cardView_content_main_layout ,
+                    androidx.transition.AutoTransition())
                 more_information_content_main.visibility = View.VISIBLE
                 btn_bishtar_bekhanid_content_main_layout.setBackgroundResource(R.drawable.ic_arrow_up)
                 motaleye_bishtar_content_main_layout.text = "بستن"
             } else {
-                TransitionManager.beginDelayedTransition(cardView_content_main_layout , AutoTransition())
+                androidx.transition.TransitionManager.beginDelayedTransition(cardView_content_main_layout ,
+                    androidx.transition.AutoTransition())
                 more_information_content_main.visibility = View.GONE
                 btn_bishtar_bekhanid_content_main_layout.setBackgroundResource(R.drawable.ic_arrow_down)
                 motaleye_bishtar_content_main_layout.text = "مطالعه بیشتر"

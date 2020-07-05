@@ -22,11 +22,6 @@
                 android:text="@string/text_motaleye_bishtar_b"
                 android:textSize="15sp"
                 style="@style/title_text_large" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_margin="8dp"
-                android:background="@color/gray_dark"/>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

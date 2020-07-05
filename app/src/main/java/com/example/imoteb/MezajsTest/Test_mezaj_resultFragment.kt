@@ -91,7 +91,7 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
         val mg = Mohasebeh_GhalabeHa.Mohasebe(CMR.dam, CMR.safra, CMR.soda, CMR.balgham)
-       val mezajGhalabeResult= "نتیجه مزاج شناسی: "+ convertMezajGhalabeResultToPersian(mg)
+       val mezajGhalabeResult= "نتیجه مزاج شناسی : "+ convertMezajGhalabeResultToPersian(mg)
         title.text = mezajGhalabeResult
         btn_ask_question.setOnClickListener {
             Handler().post(Runnable {
