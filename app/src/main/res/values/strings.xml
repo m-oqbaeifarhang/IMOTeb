@@ -12,6 +12,7 @@
     <string name="communication_ways">راه های ارتباطی</string>
     <string name="call_us">تماس با ما</string>
     <string name="test_mezaj">تست مزاج</string>
+    <string name="txt_mezaj_records">سوابق تست مزاج شما</string>
     <string name="nav_open">Open Navigation Drawer</string>
     <string name="nav_close">Close Navigation Drawer</string>
 
@@ -72,5 +73,7 @@
     <!--    fragment mezaj result-->
     <string name="txt_question_input">سوال خودتون رو اینجا بنویسید...</string>
     <string name="btn_send_question">ارسال</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

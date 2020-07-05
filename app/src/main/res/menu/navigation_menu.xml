@@ -14,6 +14,10 @@
             android:icon="@drawable/ic_about"
             android:title="@string/test_mezaj"/>
         <item
+            android:id="@+id/nav_mezaj_records"
+            android:icon="@drawable/ic_about"
+            android:title="@string/test_mezaj"/>
+        <item
             android:id="@+id/nav_rate"
             android:icon="@drawable/ic_thumb_up24dp"
             android:title="@string/Rate_the_app" />
