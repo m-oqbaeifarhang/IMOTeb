@@ -19,8 +19,6 @@
             android:id="@+id/toolbar_test_mezajFragment"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_alignParentTop="true"
-            android:layoutDirection="rtl"
             android:background="@color/toolbar_background"
             app:title=" "
             app:elevation="0dp"/>
@@ -32,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:attr/progressBarStyleHorizontal"
-        android:scaleY="3"
+        android:scaleY="2"
         android:progressTint="@color/blue_light"/>
 
     <androidx.core.widget.NestedScrollView

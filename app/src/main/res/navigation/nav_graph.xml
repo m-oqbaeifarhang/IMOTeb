@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_mainFragment_to_mezajDetailFragment"
             app:destination="@id/mezajDetailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mezajRecordsFragment"
+            app:destination="@id/mezajRecordsFragment" />
     </fragment>
 
     <fragment
@@ -61,5 +64,10 @@
         android:name="com.example.imoteb.MezajsTest.MezajDetailFragment"
         android:label="fragment_mezaj_detail"
         tools:layout="@layout/fragment_mezaj_detail" />
+    <fragment
+        android:id="@+id/mezajRecordsFragment"
+        android:name="com.example.imoteb.MezajsTest.MezajRecordsFragment"
+        android:label="fragment_mezaj_records"
+        tools:layout="@layout/fragment_mezaj_records" />
 
 </navigation>
