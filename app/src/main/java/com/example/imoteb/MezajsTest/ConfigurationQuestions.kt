@@ -6,7 +6,6 @@ class ConfigurationQuestions
     companion object
     {
         //در این تابع سن گرفته میشود و مطابق با سن فرد برخی سوالات از لیست عنوان سوالات حذف میشود
-
         fun ByAge(age: Int): Unit
         {
             if(age > 40)
@@ -23,7 +22,6 @@ class ConfigurationQuestions
             {
                 Model.questionTableList[26].Deleted = true
             }
-
             Model.questionTableList.removeAll { a -> a.Deleted }
         }
 
