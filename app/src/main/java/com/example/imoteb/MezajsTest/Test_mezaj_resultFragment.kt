@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
@@ -22,6 +23,7 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 
 
@@ -39,6 +41,16 @@ class Test_mezaj_resultFragment : Fragment()
     {
         super.onViewCreated(view, savedInstanceState)
         super.onCreate(savedInstanceState)
+
+        /*     set seekbar     */
+        nestedScrollView_fragment_test_mezaj_result.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
+            val totalScrollLenght =
+                nestedScrollView_fragment_test_mezaj_result.getChildAt(0).height - nestedScrollView_fragment_test_mezaj_result.height
+            progressBar_fragment_test_mezaj_result.apply {
+                max = totalScrollLenght
+                progress = scrollY
+            }
+        }
 
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
