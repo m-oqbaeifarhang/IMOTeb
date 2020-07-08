@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:attr/progressBarStyleHorizontal"
-        android:scaleY="2"
+        android:scaleY="1.5"
         android:progressTint="@color/blue_light"
         android:layout_below="@+id/app_bar_fragment_mezaj_result"/>
 
@@ -45,8 +45,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:orientation="vertical">
 
             <com.github.mikephil.charting.charts.BarChart
@@ -91,6 +91,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="0.5dp"
+                android:elevation="6dp"
+                android:background="@drawable/tablayout_bg"
                 app:tabIndicatorColor="@color/blue_light"
                 app:tabTextAppearance="@style/tab_text"/>
 
@@ -98,12 +103,17 @@
                 android:id="@+id/natayejViewPager"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginTop="16dp"
+                android:paddingTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="6dp"
+                android:background="@drawable/viewpager_bg"
                 android:layoutDirection="rtl"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="60dp"/>
+                android:layout_height="20dp"/>
 
         </LinearLayout>
 

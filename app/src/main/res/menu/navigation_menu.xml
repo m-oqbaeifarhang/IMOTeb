@@ -11,15 +11,15 @@
             android:title="@string/signup" />
         <item
             android:id="@+id/nav_test"
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_test_mezaj"
             android:title="@string/test_mezaj"/>
         <item
             android:id="@+id/nav_mezaj_records"
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_record"
             android:title="@string/txt_mezaj_records"/>
         <item
             android:id="@+id/nav_rate"
-            android:icon="@drawable/ic_thumb_up24dp"
+            android:icon="@drawable/ic_star"
             android:title="@string/Rate_the_app" />
     </group>
 
@@ -38,6 +38,10 @@
                 android:id="@+id/call_us"
                 android:icon="@drawable/ic_phone"
                 android:title="@string/call_us" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="@string/about" />
         </menu>
     </item>
 

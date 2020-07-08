@@ -27,7 +27,7 @@
         <item name="fontFamily">@font/iransans</item>
         <item name="android:textSize">14sp</item><!-- text size in menu-->
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/text_color_titr</item>
+        <item name="android:textColor">@color/text_color_titr_dark</item>
     </style>
 
     <style name="title_text_large">
