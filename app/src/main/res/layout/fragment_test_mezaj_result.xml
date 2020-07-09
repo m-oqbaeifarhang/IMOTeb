@@ -126,7 +126,7 @@
         app:backgroundTint="@color/blue_light"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="25dp"
+        android:layout_margin="30dp"
         app:elevation="6dp"
         app:srcCompat="@drawable/ic_share"/>
 
