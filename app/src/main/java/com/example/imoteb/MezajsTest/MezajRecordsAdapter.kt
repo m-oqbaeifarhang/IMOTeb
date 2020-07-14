@@ -1,22 +1,21 @@
 package com.example.imoteb.MezajsTest
 
+import android.content.ClipData
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.imoteb.Model.MezajResult
 import com.example.imoteb.R
+import io.realm.RealmQuery
+import io.realm.RealmResults
 
-class MezajRecordsAdapter(items: ArrayList<Mezaj_Records_Model> , var clickListener: mezajRecordsItemClickListener): RecyclerView.Adapter<MezajRecordsAdapter.ViewHolder>()
+class MezajRecordsAdapter(var items: RealmResults<MezajResult> , var clickListener: mezajRecordsItemClickListener): RecyclerView.Adapter<MezajRecordsAdapter.ViewHolder>()
 {
     lateinit var myContext : Context
-    var myItems: ArrayList<Mezaj_Records_Model>? = null
 
-    init
-    {
-        this.myItems =  items
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
@@ -27,12 +26,12 @@ class MezajRecordsAdapter(items: ArrayList<Mezaj_Records_Model> , var clickListe
 
     override fun getItemCount(): Int
     {
-        return this.myItems!!.size
+        return items.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        holder.initialize(myItems!![position],clickListener)
+       // holder.initialize(items[position],clickListener)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -41,19 +40,19 @@ class MezajRecordsAdapter(items: ArrayList<Mezaj_Records_Model> , var clickListe
         var hour : TextView = itemView.findViewById(R.id.tv_hour)
         var am_pm : TextView = itemView.findViewById(R.id.tv_am_pm)
 
-        fun initialize (item : Mezaj_Records_Model, action : mezajRecordsItemClickListener){
-            day.text = item.day
-            hour.text = item.hour
-            am_pm.text = item.am_pm
-
+        fun initialize (item : MezajResult, action : mezajRecordsItemClickListener){
+            day.text = "day"
+            hour.text = "hour"
+            am_pm.text = "AM"
             itemView.setOnClickListener {
                 action.onItemClick(item,adapterPosition)
+
             }
         }
     }
 
     interface mezajRecordsItemClickListener{
-        fun onItemClick(items: Mezaj_Records_Model, position: Int)
+        fun onItemClick(items: MezajResult, position: Int)
     }
 
 }

@@ -14,18 +14,15 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.imoteb.MainActivity
+import com.example.imoteb.Model.MezajResult
 import com.example.imoteb.R
-import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
-import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
+import io.realm.Realm
 import kotlinx.android.synthetic.main.fragment_mezaj_records.*
-import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 
 @Suppress("UNREACHABLE_CODE")
 class MezajRecordsFragment : Fragment(),MezajRecordsAdapter.mezajRecordsItemClickListener
 {
-    var mezajRecordsModel: ArrayList<Mezaj_Records_Model>? = null
     var mezajRecordsAdapter: MezajRecordsAdapter? = null
-
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View?
@@ -67,22 +64,13 @@ class MezajRecordsFragment : Fragment(),MezajRecordsAdapter.mezajRecordsItemClic
 
         rv_mezaj_records.setHasFixedSize(true)
         rv_mezaj_records.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL,false)
-        mezajRecordsModel = ArrayList()
-        mezajRecordsModel?.add(Mezaj_Records_Model("شنبه","16","بعد از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("یکشنبه","07","قبل از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("دوشنبه","17","بعد از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("سه شنبه","22","بعد از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("چهارشنبه","13","بعد از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("پنجشنبه","14","بعد از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("جمعه","08","قبل از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("جمعه","08","قبل از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("جمعه","08","قبل از ظهر"))
-        mezajRecordsModel?.add(Mezaj_Records_Model("جمعه","08","قبل از ظهر"))
-        mezajRecordsAdapter = MezajRecordsAdapter(mezajRecordsModel!!,this)
+var realm=Realm.getDefaultInstance()
+      var  MezajResultList=realm.where(MezajResult::class.java).findAll()
+        mezajRecordsAdapter = MezajRecordsAdapter(MezajResultList,this)
         rv_mezaj_records.adapter = mezajRecordsAdapter
 
     }
-    override fun onItemClick(items: Mezaj_Records_Model, position: Int)
+    override fun onItemClick(items: MezajResult, position: Int)
     {
         Toast.makeText(context,position.toString(), Toast.LENGTH_SHORT).show()
     }

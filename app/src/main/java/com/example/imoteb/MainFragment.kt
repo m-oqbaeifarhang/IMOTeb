@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityOptions
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Pair
 import androidx.fragment.app.Fragment
@@ -12,29 +11,19 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.transition.AutoTransition
-import androidx.transition.TransitionManager
 import com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment
-import com.example.imoteb.MezajsTest.MezajDetailFragment
-import com.example.imoteb.MezajsTest.MezajRecordsAdapter
-import com.example.imoteb.MezajsTest.Mezaj_Records_Model
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
 import kotlinx.android.synthetic.main.fragment_main.*
-import kotlinx.android.synthetic.main.fragment_mezaj_records.*
 
 class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigationItemSelectedListener
 {

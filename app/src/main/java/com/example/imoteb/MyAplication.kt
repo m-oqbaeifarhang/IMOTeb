@@ -13,7 +13,7 @@ class MyAplication: Application()
         var realmConfiguration:RealmConfiguration=RealmConfiguration.Builder()
             .name("IMOTebDb.realm")
             .schemaVersion(1)
-            .deleteRealmIfMigrationNeeded()
+           .deleteRealmIfMigrationNeeded()
             .build()
         Realm.setDefaultConfiguration(realmConfiguration)
     }
