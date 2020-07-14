@@ -16,6 +16,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imoteb.MainActivity
+import com.example.imoteb.Model.MezajResult
 import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 
@@ -103,13 +104,18 @@ class Mezaj_QueriesFragment : Fragment(), View.OnClickListener
                     Toast.makeText(context, "لطفا به سوالات پاسخ دهید.", Toast.LENGTH_SHORT).show()
                 }
                 rv_questions.adapter = questionAapter
-
-
             } else
             {
+                val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
+                Model.Dam=CMR.dam
+                Model.Safra=CMR.safra
+                Model.Soda=CMR.soda
+                Model.Balgham=CMR.balgham
+                var mezajResult: MezajResult =
+                    MezajResult(Dam = CMR.dam, Safra = CMR.safra, Soda = CMR.soda, Balgham = CMR.balgham)
+                mezajResult.SaveData()
                 navController!!.navigate(R.id.action_mezaj_QueriesFragment_to_test_mezaj_resultFragment)
             }
         }
     }
-
 }

@@ -2,32 +2,27 @@ package com.example.imoteb.MezajsTest
 
 class MohasebehMezaj
 {
-    enum class Mezajha
-    {
-        dam, safra, soda, balgham
-    }
-
     companion object
     {
-        fun Calculate(scores: MutableList<QuestionTable>): ComputeMezajsResult
+        fun Calculate(questionTableList: MutableList<QuestionTable>): ComputeMezajsResult
         {
             val CMR = ComputeMezajsResult()
             var MaxOfDamAnswerSize =
-                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.dam }
+                questionTableList.filter { a -> a.questionType == MezajsEnum.dam }
                     .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
             var MaxOfSafraAnswerSize =
-                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.safra }
+                questionTableList.filter { a -> a.questionType == MezajsEnum.safra }
                     .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
             var MaxOfSodaAnswerSize =
-                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.soda }
+                questionTableList.filter { a -> a.questionType == MezajsEnum.soda }
                     .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
             var MaxOfBalghamAnswerSize =
-                Model.questionTableList.filter { a -> a.questionType == MezajsEnum.balgham }
+                questionTableList.filter { a -> a.questionType == MezajsEnum.balgham }
                     .sumByDouble { a -> a.coefficient } * Model.TheHighestScore
 
             //در این قسمت ضریب سوالات به جواب سوالات ضرب میشود و در جواب سوالات قرار میگیرد
-            Model.questionTableList.forEachIndexed { index, questionTable ->
-                Model.questionTableList[index].score =
+            questionTableList.forEachIndexed { index, questionTable ->
+                questionTableList[index].score =
                     questionTable.score * questionTable.coefficient
             }
             CMR.dam = Model.questionTableList.filter { a -> a.questionType == MezajsEnum.dam }
@@ -75,7 +70,6 @@ class MohasebehMezaj
                     CMR.balgham += 2f
                     MaxOfBalghamAnswerSize += 2.0
                 }
-
             }
             CMR.dam = ((5.25 * CMR.dam) / MaxOfDamAnswerSize).toFloat()
             CMR.safra = ((5.25 * CMR.safra) / MaxOfSafraAnswerSize).toFloat()

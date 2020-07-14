@@ -20,7 +20,7 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.fragment_mezaj_records.*
 
 @Suppress("UNREACHABLE_CODE")
-class MezajRecordsFragment : Fragment(),MezajRecordsAdapter.mezajRecordsItemClickListener
+class MezajRecordsFragment : Fragment()
 {
     var mezajRecordsAdapter: MezajRecordsAdapter? = null
     override fun onCreateView(inflater: LayoutInflater,
@@ -30,7 +30,6 @@ class MezajRecordsFragment : Fragment(),MezajRecordsAdapter.mezajRecordsItemClic
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mezaj_records, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
@@ -45,7 +44,6 @@ class MezajRecordsFragment : Fragment(),MezajRecordsAdapter.mezajRecordsItemClic
             }
         }
     }
-
     @SuppressLint("WrongConstant")
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
@@ -56,23 +54,19 @@ class MezajRecordsFragment : Fragment(),MezajRecordsAdapter.mezajRecordsItemClic
             (activity as AppCompatActivity).setSupportActionBar(toolbar_fg_mezaj_records)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-            toolbar_fg_mezaj_records.navigationIcon = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+            toolbar_fg_mezaj_records.navigationIcon =
+                AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
         }
         toolbar_fg_mezaj_records.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
         rv_mezaj_records.setHasFixedSize(true)
-        rv_mezaj_records.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL,false)
-var realm=Realm.getDefaultInstance()
-      var  MezajResultList=realm.where(MezajResult::class.java).findAll()
-        mezajRecordsAdapter = MezajRecordsAdapter(MezajResultList,this)
+        rv_mezaj_records.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+        var realm = Realm.getDefaultInstance()
+        var MezajResultList = realm.where(MezajResult::class.java).findAll()
+        mezajRecordsAdapter = MezajRecordsAdapter(MezajResultList)
         rv_mezaj_records.adapter = mezajRecordsAdapter
 
     }
-    override fun onItemClick(items: MezajResult, position: Int)
-    {
-        Toast.makeText(context,position.toString(), Toast.LENGTH_SHORT).show()
-    }
-
 }

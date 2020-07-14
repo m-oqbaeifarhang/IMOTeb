@@ -68,6 +68,10 @@
         android:id="@+id/mezajRecordsFragment"
         android:name="com.example.imoteb.MezajsTest.MezajRecordsFragment"
         android:label="fragment_mezaj_records"
-        tools:layout="@layout/fragment_mezaj_records" />
+        tools:layout="@layout/fragment_mezaj_records" >
+        <action
+            android:id="@+id/action_mezajRecordsFragment_to_test_mezaj_resultFragment"
+            app:destination="@id/test_mezaj_resultFragment" />
+    </fragment>
 
 </navigation>
