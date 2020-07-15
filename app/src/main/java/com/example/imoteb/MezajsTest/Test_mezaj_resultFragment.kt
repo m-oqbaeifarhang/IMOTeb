@@ -30,7 +30,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class Test_mezaj_resultFragment : Fragment()
+class Test_mezaj_resultFragment() : Fragment()
 {
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -99,17 +99,14 @@ class Test_mezaj_resultFragment : Fragment()
         chart1.axisLeft.axisMaximum = 10f
         chart1.axisLeft.labelCount = 10
         chart1.axisRight.labelCount = 10
-        val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
+       // val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
-        val mg = Mohasebeh_GhalabeHa.Mohasebe(CMR.dam, CMR.safra, CMR.soda, CMR.balgham)
+        val mg = Mohasebeh_GhalabeHa.Mohasebe(Model.Dam, Model.Safra, Model.Soda, Model.Balgham)
         val mezajGhalabeResult = "نتیجه مزاج شناسی : " + convertMezajGhalabeResultToPersian(mg)
         title.text = mezajGhalabeResult
         var date:Date
 
-        var mezajResult: MezajResult =
-            MezajResult(Dam = CMR.dam, Safra = CMR.safra, Soda = CMR.soda, Balgham = CMR.balgham)
-        mezajResult.SaveData()
         btn_ask_question.setOnClickListener {
             Handler().post(Runnable {
                 val intentShare = IntentShare.sharePhotoWithText(context = requireContext(),
@@ -125,13 +122,10 @@ class Test_mezaj_resultFragment : Fragment()
     {
         var counter = 0
         val entries: ArrayList<BarEntry> = ArrayList()
-        //val CMR = answer?.let { ComputeMezajs(it) }
-        val CMR = MohasebehMezaj.Calculate(questionTable)
-        entries.add(BarEntry(0f, CMR.balgham))
-        entries.add(BarEntry(1f, CMR.soda))
-        entries.add(BarEntry(2f, CMR.safra))
-        entries.add(BarEntry(3f, CMR.dam))
-        //  Model.Answers = null
+        entries.add(BarEntry(0f, Model.Balgham))
+        entries.add(BarEntry(1f, Model.Soda))
+        entries.add(BarEntry(2f, Model.Safra))
+        entries.add(BarEntry(3f, Model.Dam))
         return entries
     }
 
@@ -161,17 +155,14 @@ class Test_mezaj_resultFragment : Fragment()
             MezajehGhalebehEnum.GhalabehKamsafra ->
             {
                 result = "غلبه کم صفرا"
-
             }
             MezajehGhalebehEnum.GhalabehMotavasetsafra ->
             {
                 result = "غلبه متوسط صفرا"
-
             }
             MezajehGhalebehEnum.GhalabehShadidsafra ->
             {
                 result = "غلبه شدید صفرا"
-
             }
             //-----------------------------------------------
             MezajehGhalebehEnum.GhalabehKamsoda ->
@@ -209,7 +200,6 @@ class Test_mezaj_resultFragment : Fragment()
             {
                 result = "در اعتدال"
             }
-
         }
         return result
     }

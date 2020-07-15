@@ -21,13 +21,10 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         var radiogroup = itemView.findViewById<RadioGroup>(R.id.radioGroup)
         var RadioGroupYesNo = itemView.findViewById<RadioGroup>(R.id.radioGroup_two)
         var linearLayout = itemView.findViewById<LinearLayout>(R.id.linearLayout)
-        var cardView = itemView.findViewById<CardView>(R.id.cardView)
-        var rv = itemView.findViewById<RecyclerView>(R.id.rv_questions)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
-
         val v = LayoutInflater.from(context).inflate(R.layout.questions_model, parent, false)
         return ViewHolder(v)
     }
@@ -36,7 +33,6 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
     {
         return Model.questionTableList.size
     }
-
     @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
@@ -49,7 +45,6 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
                     R.color.red_light))
             }
         }
-
         holder.questionTitle.text =
             (position + 1).toString() + "- " + Model.questionTableList[position].questionTitle
         val answerType = Model.questionTableList[position].answerType
@@ -79,18 +74,16 @@ class QuestionsAdapter(var context: Context?) : RecyclerView.Adapter<QuestionsAd
         }
         holder.RadioGroupYesNo.setOnCheckedChangeListener { group, checkedId ->
             val rdb = holder.RadioGroupYesNo.findViewById<RadioButton>(group.checkedRadioButtonId)
-            SetScoreAndQuestionTitle(position, group, holder, rdb)
+            SetScoreAndQuestionTitle(position, holder, rdb)
         }
         holder.radiogroup.setOnCheckedChangeListener { group, checkedId ->
             val rdb = holder.radiogroup.findViewById<RadioButton>(group.checkedRadioButtonId)
-            SetScoreAndQuestionTitle(position, group, holder, rdb)
+            SetScoreAndQuestionTitle(position, holder, rdb)
         }
     }
 
-
     @SuppressLint("SetTextI18n")
     private fun SetScoreAndQuestionTitle(position: Int,
-        group: RadioGroup,
         holder: ViewHolder,
         rdb: RadioButton): Unit
     {

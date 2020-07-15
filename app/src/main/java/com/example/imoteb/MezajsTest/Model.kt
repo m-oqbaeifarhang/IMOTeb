@@ -16,6 +16,13 @@ class Model()
         var KamKhuni = false
         var Gender:GenderEnum = GenderEnum.Male
         var MaritalStatus:MaritalStatusEnum = MaritalStatusEnum.Single
+//این ها موقتی هست و باید در آنیده تغعییر کند.
+        var Dam:Float=0f
+        var Safra:Float=0f
+        var Soda:Float=0f
+        var Balgham:Float=0f
+
+
 
         //lateinit var QuestionTitle: MutableList<String>
         var TheHighestScore: Int = 2
@@ -62,11 +69,11 @@ class Model()
                 }
             }
 //TestMode
-questionTableList.forEachIndexed { index, questionTable ->
-    questionTableList[index].Choosed=true
-    questionTableList[index].score=1.0
-
-}
+//questionTableList.forEachIndexed { index, questionTable ->
+//    questionTableList[index].Choosed=true
+//    questionTableList[index].score=1.0
+//
+//}
             questionTableList[0].coefficient = 2.0
             questionTableList[1].coefficient = 1.5
             questionTableList[4].coefficient = 1.5

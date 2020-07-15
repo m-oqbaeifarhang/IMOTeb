@@ -5,21 +5,33 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imoteb.Model.MezajResult
 import com.example.imoteb.R
 import io.realm.RealmQuery
 import io.realm.RealmResults
 
-class MezajRecordsAdapter(var items: RealmResults<MezajResult> , var clickListener: mezajRecordsItemClickListener): RecyclerView.Adapter<MezajRecordsAdapter.ViewHolder>()
+class MezajRecordsAdapter(var items: RealmResults<MezajResult>) :
+    RecyclerView.Adapter<MezajRecordsAdapter.ViewHolder>()
 {
-    lateinit var myContext : Context
+    lateinit var myContext: Context
 
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    {
+        var day: TextView = itemView.findViewById(R.id.tv_day)
+        var hour: TextView = itemView.findViewById(R.id.tv_hour)
+        var am_pm: TextView = itemView.findViewById(R.id.tv_am_pm)
+        var linearLayout: LinearLayout = itemView.findViewById(R.id.linearLayout)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.mezaj_records_model, parent, false)
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.mezaj_records_model, parent, false)
         myContext = parent.context
         return ViewHolder(v)
     }
@@ -31,30 +43,19 @@ class MezajRecordsAdapter(var items: RealmResults<MezajResult> , var clickListen
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-       // holder.initialize(items[position],clickListener)
-    }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
-    {
-        var day : TextView = itemView.findViewById(R.id.tv_day)
-        var hour : TextView = itemView.findViewById(R.id.tv_hour)
-        var am_pm : TextView = itemView.findViewById(R.id.tv_am_pm)
-
-        fun initialize (item : MezajResult, action : mezajRecordsItemClickListener){
-            day.text = "day"
-            hour.text = "hour"
-            am_pm.text = "AM"
-            itemView.setOnClickListener {
-                action.onItemClick(item,adapterPosition)
-
-            }
+        holder.day.setText(items[position]!!.Dam.toString()+" SSS")
+        holder.am_pm.setText("AM")
+        holder.hour.setText("01:23")
+        holder.linearLayout.setOnClickListener {
+           var navController = Navigation.findNavController(it)
+            Model.Dam = items[position]!!.Dam
+            Model.Safra = items[position]!!.Safra
+            Model.Soda = items[position]!!.Soda
+            Model.Balgham = items[position]!!.Balgham
+            navController!!.navigate(R.id.action_mezajRecordsFragment_to_test_mezaj_resultFragment)
         }
     }
-
-    interface mezajRecordsItemClickListener{
-        fun onItemClick(items: MezajResult, position: Int)
-    }
-
 }
 
 

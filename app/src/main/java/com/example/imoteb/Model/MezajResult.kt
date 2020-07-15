@@ -3,6 +3,7 @@ package com.example.imoteb.Model
 import android.util.Log
 import io.realm.Realm
 import io.realm.RealmObject
+import io.realm.RealmResults
 import io.realm.annotations.Ignore
 import java.sql.Time
 import java.time.Year
@@ -16,7 +17,6 @@ open class MezajResult(var Dam: Float = 0f,
 {
     fun SaveData(): Unit
     {
-
         var realm = Realm.getDefaultInstance()
         realm.executeTransactionAsync({
             val mezajResultObg = it.createObject(MezajResult::class.java)
@@ -30,5 +30,6 @@ open class MezajResult(var Dam: Float = 0f,
             Log.d("Tag", "On Error: Error in saving Data!")
         })
     }
+
 }
 
