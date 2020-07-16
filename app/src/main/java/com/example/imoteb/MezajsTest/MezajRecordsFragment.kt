@@ -64,7 +64,7 @@ class MezajRecordsFragment : Fragment()
         rv_mezaj_records.setHasFixedSize(true)
         rv_mezaj_records.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         var realm = Realm.getDefaultInstance()
-        var MezajResultList = realm.where(MezajResult::class.java).findAll()
+        var MezajResultList = realm.where(MezajResult::class.java).findAll().toList().sortedByDescending { a->a.Date }
         mezajRecordsAdapter = MezajRecordsAdapter(MezajResultList)
         rv_mezaj_records.adapter = mezajRecordsAdapter
 

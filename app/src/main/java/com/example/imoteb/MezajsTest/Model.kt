@@ -1,5 +1,8 @@
 package com.example.imoteb.MezajsTest
 
+import org.joda.time.DateTime
+import java.util.*
+
 class Model()
 {
     companion object
@@ -14,14 +17,15 @@ class Model()
 
         var Age: Int = 0
         var KamKhuni = false
-        var Gender:GenderEnum = GenderEnum.Male
-        var MaritalStatus:MaritalStatusEnum = MaritalStatusEnum.Single
-//این ها موقتی هست و باید در آنیده تغعییر کند.
-        var Dam:Float=0f
-        var Safra:Float=0f
-        var Soda:Float=0f
-        var Balgham:Float=0f
+        var Gender: GenderEnum = GenderEnum.Male
+        var MaritalStatus: MaritalStatusEnum = MaritalStatusEnum.Single
 
+        //این ها موقتی هست و باید در آنیده تغعییر کند.
+        var Dam: Float = 0f
+        var Safra: Float = 0f
+        var Soda: Float = 0f
+        var Balgham: Float = 0f
+//        var Date: Date = DateTime.now().toDate()
 
 
         //lateinit var QuestionTitle: MutableList<String>
@@ -30,7 +34,7 @@ class Model()
         {
             Age = 0
             KamKhuni = false
-            Gender= GenderEnum.Male
+            Gender = GenderEnum.Male
             MaritalStatus = MaritalStatusEnum.Single
             if(questionTableList.any()) questionTableList.removeAll { a -> !a.Deleted }
             MakeQueastionTable()
@@ -68,12 +72,12 @@ class Model()
                     }
                 }
             }
-//TestMode
-//questionTableList.forEachIndexed { index, questionTable ->
-//    questionTableList[index].Choosed=true
-//    questionTableList[index].score=1.0
-//
-//}
+           // TestMode
+            questionTableList.forEachIndexed { index, questionTable ->
+                questionTableList[index].Choosed=true
+                questionTableList[index].score=1.0
+
+            }
             questionTableList[0].coefficient = 2.0
             questionTableList[1].coefficient = 1.5
             questionTableList[4].coefficient = 1.5
@@ -96,11 +100,14 @@ class Model()
         }
     }
 }
+
 data class QuestionTable(var questionTitle: String = "",
     var questionType: MezajsEnum = MezajsEnum.dam,
     var answerType: AnswerTypeEnum = AnswerTypeEnum.YesSomeTimeNo,
     var score: Double = -1.0,
-    var coefficient: Double = 1.0,var Deleted:Boolean=false,var Choosed:Boolean=false)
+    var coefficient: Double = 1.0,
+    var Deleted: Boolean = false,
+    var Choosed: Boolean = false)
 
 
 

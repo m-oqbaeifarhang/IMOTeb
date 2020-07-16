@@ -5,6 +5,7 @@ import io.realm.Realm
 import io.realm.RealmObject
 import io.realm.RealmResults
 import io.realm.annotations.Ignore
+import org.joda.time.DateTime
 import java.sql.Time
 import java.time.Year
 import java.util.*
@@ -13,7 +14,7 @@ import kotlin.time.days
 open class MezajResult(var Dam: Float = 0f,
     var Safra: Float = 0f,
     var Soda: Float = 0f,
-    var Balgham: Float = 0f) : RealmObject()
+    var Balgham: Float = 0f,var Date:Date=DateTime.now().toDate()) : RealmObject()
 {
     fun SaveData(): Unit
     {
