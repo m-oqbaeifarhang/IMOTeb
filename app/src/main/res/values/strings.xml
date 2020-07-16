@@ -17,7 +17,7 @@
     <string name="nav_close">Close Navigation Drawer</string>
 
     <!--    content main titles-->
-    <string name="darbareye_mazaj">درباره مزاج ها</string>
+    <string name="darbareye_mazaj">چکیده ای در مورد طبایع</string>
     <string name="txt_tozihat">توضیحات</string>
     <string name="text_mezaj_chist">مزاج چیست ؟ و مزاج شناسی چگونه انجام میگیرد</string>
     <string name="txt_result"> نتیجه تست مزاج شما :</string>
