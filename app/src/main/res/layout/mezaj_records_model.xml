@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:textStyle="normal"
-                    android:text="ساعت:"
+                    android:text="ساعت :"
                     style="@style/title_text_large"/>
 
                 <TextView
