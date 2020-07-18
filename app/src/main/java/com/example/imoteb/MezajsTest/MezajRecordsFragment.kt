@@ -33,7 +33,6 @@ class MezajRecordsFragment : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
-
         /*     set seekbar     */
         nestedScrollView_fragment_mezaj_records.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
             val totalScrollLenght =

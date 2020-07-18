@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.imoteb.Model.MezajResult
 import com.example.imoteb.R
 import io.realm.RealmResults
+import org.joda.time.DateTime
 import saman.zamani.persiandate.PersianDate
 import saman.zamani.persiandate.PersianDateFormat
 import java.time.format.DateTimeFormatter
@@ -25,8 +26,9 @@ class MezajRecordsAdapter(var items: List<MezajResult>) :
         var day: TextView = itemView.findViewById(R.id.tv_day)
         var hour: TextView = itemView.findViewById(R.id.tv_hour)
         var Date: TextView = itemView.findViewById(R.id.tv_date)
-        var am_pm: TextView = itemView.findViewById(R.id.tv_am_pm)
+        var Title:TextView=itemView.findViewById(R.id.rv_title)
         var linearLayout: LinearLayout = itemView.findViewById(R.id.linearLayout)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -45,20 +47,29 @@ class MezajRecordsAdapter(var items: List<MezajResult>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        val pdate = PersianDate(items[position]!!.Date)
+        var Dam=items[position].Dam
+        var Safra=items[position].Safra
+        var Soda=items[position].Soda
+        var Balgham=items[position].Balgham
+        var Date=items[position].Date
+        val pdate = PersianDate(Date)
         val pdformaterDate: PersianDateFormat = PersianDateFormat("Y/m/d")
         val pDFormatterTime:PersianDateFormat=PersianDateFormat("g:i")
         val pfDate = pdformaterDate.format(pdate) //1396/05/20
         var pfTime=pDFormatterTime.format(pdate)
+
         holder.day.setText(pdate.dayName()+" -")
         holder.hour.setText(pfTime)
         holder.Date.setText(pfDate)
+    var mezajGhaleb=    Mohasebeh_GhalabeHa.Mohasebe(dam = Dam,safra = Safra,soda = Soda,balgham = Balgham)
+        val PersianmezajGhalabe = Mohasebeh_GhalabeHa.convertMezajGhalebToPersianText(mezajGhaleb)
+        holder.Title.setText(PersianmezajGhalabe)
         holder.linearLayout.setOnClickListener {
             var navController = Navigation.findNavController(it)
-            Model.Dam = items[position]!!.Dam
-            Model.Safra = items[position]!!.Safra
-            Model.Soda = items[position]!!.Soda
-            Model.Balgham = items[position]!!.Balgham
+            Model.Dam = Dam
+            Model.Safra = Safra
+            Model.Soda = Soda
+            Model.Balgham = Balgham
             navController!!.navigate(R.id.action_mezajRecordsFragment_to_test_mezaj_resultFragment)
         }
     }

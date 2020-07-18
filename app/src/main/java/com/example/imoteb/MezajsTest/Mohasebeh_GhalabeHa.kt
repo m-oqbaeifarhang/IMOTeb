@@ -12,8 +12,6 @@ class Mohasebeh_GhalabeHa
 {
     companion object
     {
-
-
         fun Mohasebe(dam: Float, safra: Float, soda: Float, balgham: Float): MezajehGhalebehEnum
         {
             val map = hashMapOf<MezajsEnum, Float>()
@@ -141,6 +139,81 @@ class Mohasebeh_GhalabeHa
                 }
             }
 
+        }
+
+        public fun convertMezajGhalebToPersianText(mezajehGhalebehEnum: MezajehGhalebehEnum): String
+        {
+            val result: String
+            when(mezajehGhalebehEnum)
+            {
+                MezajehGhalebehEnum.NaMotabar ->
+                {
+                    result = "نتیحه تست: نا معتبر. پاسخ ها را به درستی جواب دهید."
+                }
+                //---------------------------------------------
+                MezajehGhalebehEnum.GhalabehKamDam ->
+                {
+                    result = "غلبه کم دم"
+                }
+                MezajehGhalebehEnum.GhalabehMotavasetDam ->
+                {
+                    result = "غلبه متوسط دم"
+                }
+                MezajehGhalebehEnum.GhalabehShadidDam ->
+                {
+                    result = "غلبه شدید دم"
+                }
+                //----------------------------------------------
+                MezajehGhalebehEnum.GhalabehKamsafra ->
+                {
+                    result = "غلبه کم صفرا"
+                }
+                MezajehGhalebehEnum.GhalabehMotavasetsafra ->
+                {
+                    result = "غلبه متوسط صفرا"
+                }
+                MezajehGhalebehEnum.GhalabehShadidsafra ->
+                {
+                    result = "غلبه شدید صفرا"
+                }
+                //-----------------------------------------------
+                MezajehGhalebehEnum.GhalabehKamsoda ->
+                {
+                    result = "غلبه کم سودا"
+                }
+                MezajehGhalebehEnum.GhalabehMotavasetsoda ->
+                {
+                    result = "غلبه متوسط سودا"
+                }
+                MezajehGhalebehEnum.GhalabehShadidsoda ->
+                {
+                    result = "غلبه شدید سودا"
+                }
+                //-----------------------------------------------
+                MezajehGhalebehEnum.GhalabehKambalgham ->
+                {
+                    result = "غلبه کم بلغم"
+                }
+                MezajehGhalebehEnum.GhalabehMotavasetbalgham ->
+                {
+                    result = "غلبه متوسط بلغم"
+                }
+                MezajehGhalebehEnum.GhalabehShadidbalgham ->
+                {
+                    result = "غلبه شدید بلغم"
+                }
+                //-------------------------------------------------
+                MezajehGhalebehEnum.Rih ->
+                {
+                    result = "غلبه ریح"
+                }
+                //-------------------------------------------------
+                MezajehGhalebehEnum.Etedal ->
+                {
+                    result = "در اعتدال"
+                }
+            }
+            return result
         }
     }
 }

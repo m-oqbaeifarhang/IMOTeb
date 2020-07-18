@@ -15,7 +15,7 @@ import androidx.viewpager.widget.ViewPager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
 import com.example.imoteb.IntentShare
 import com.example.imoteb.MainActivity
-import com.example.imoteb.Model.MezajResult
+import com.example.imoteb.MezajsTest.Mohasebeh_GhalabeHa.Companion.convertMezajGhalebToPersianText
 import com.example.imoteb.R
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -24,7 +24,6 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.fragment_mezaj_queries.*
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -103,7 +102,7 @@ class Test_mezaj_resultFragment() : Fragment()
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
         val mg = Mohasebeh_GhalabeHa.Mohasebe(Model.Dam, Model.Safra, Model.Soda, Model.Balgham)
-        val mezajGhalabeResult = "نتیجه مزاج شناسی : " + convertMezajGhalabeResultToPersian(mg)
+        val mezajGhalabeResult = "نتیجه مزاج شناسی : " + convertMezajGhalebToPersianText(mg)
         title.text = mezajGhalabeResult
         var date:Date
 
@@ -129,79 +128,6 @@ class Test_mezaj_resultFragment() : Fragment()
         return entries
     }
 
-    private fun convertMezajGhalabeResultToPersian(mezajehGhalebehEnum: MezajehGhalebehEnum): String
-    {
-        val result: String
-        when(mezajehGhalebehEnum)
-        {
-            MezajehGhalebehEnum.NaMotabar ->
-            {
-                result = "نتیحه تست: نا معتبر. پاسخ ها را به درستی جواب دهید."
-            }
-            //---------------------------------------------
-            MezajehGhalebehEnum.GhalabehKamDam ->
-            {
-                result = "غلبه کم دم"
-            }
-            MezajehGhalebehEnum.GhalabehMotavasetDam ->
-            {
-                result = "غلبه متوسط دم"
-            }
-            MezajehGhalebehEnum.GhalabehShadidDam ->
-            {
-                result = "غلبه شدید دم"
-            }
-            //----------------------------------------------
-            MezajehGhalebehEnum.GhalabehKamsafra ->
-            {
-                result = "غلبه کم صفرا"
-            }
-            MezajehGhalebehEnum.GhalabehMotavasetsafra ->
-            {
-                result = "غلبه متوسط صفرا"
-            }
-            MezajehGhalebehEnum.GhalabehShadidsafra ->
-            {
-                result = "غلبه شدید صفرا"
-            }
-            //-----------------------------------------------
-            MezajehGhalebehEnum.GhalabehKamsoda ->
-            {
-                result = "غلبه کم سودا"
-            }
-            MezajehGhalebehEnum.GhalabehMotavasetsoda ->
-            {
-                result = "غلبه متوسط سودا"
-            }
-            MezajehGhalebehEnum.GhalabehShadidsoda ->
-            {
-                result = "غلبه شدید سودا"
-            }
-            //-----------------------------------------------
-            MezajehGhalebehEnum.GhalabehKambalgham ->
-            {
-                result = "غلبه کم بلغم"
-            }
-            MezajehGhalebehEnum.GhalabehMotavasetbalgham ->
-            {
-                result = "غلبه متوسط بلغم"
-            }
-            MezajehGhalebehEnum.GhalabehShadidbalgham ->
-            {
-                result = "غلبه شدید بلغم"
-            }
-            //-------------------------------------------------
-            MezajehGhalebehEnum.Rih ->
-            {
-                result = "غلبه ریح"
-            }
-            //-------------------------------------------------
-            MezajehGhalebehEnum.Etedal ->
-            {
-                result = "در اعتدال"
-            }
-        }
-        return result
-    }
+
 
 }
