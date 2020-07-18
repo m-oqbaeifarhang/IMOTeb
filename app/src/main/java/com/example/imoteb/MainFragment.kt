@@ -98,7 +98,7 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
                 val pairs: Array<Pair<View, String>?> = arrayOfNulls(1)
                 pairs[0] = Pair<View, String>(iv_shared_element_start, "imageTransition")
                 val options = ActivityOptions.makeSceneTransitionAnimation(context as Activity?, *pairs)
-//                navController!!.navigate(R.id.action_mainFragment_to_mezajDetailFragment,options.toBundle())
+                navController!!.navigate(R.id.action_mainFragment_to_mezajDetailFragment,options.toBundle())
             }
         }
     }
