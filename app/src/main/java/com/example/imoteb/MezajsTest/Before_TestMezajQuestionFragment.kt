@@ -39,6 +39,9 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
     {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
+        btn_marhaleye_baad.setOnClickListener(this)
+
         btn_bishtar_bekhanid.setOnClickListener {
             if(more_information_view.visibility == View.GONE)
             {
@@ -57,8 +60,6 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
         numberPicker.minValue = 1320
         numberPicker.maxValue = 1388
         numberPicker.wrapSelectorWheel = true
-        navController = Navigation.findNavController(view)
-        btn_marhaleye_baad.setOnClickListener(this)
     }
 
     //    @RequiresApi(Build.VERSION_CODES.O)

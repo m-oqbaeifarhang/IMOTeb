@@ -19,13 +19,14 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigationItemSelectedListener
+class MainFragment : Fragment() ,  View.OnClickListener ,  NavigationView.OnNavigationItemSelectedListener
 {
     var navController : NavController? = null
     private var myContext: FragmentActivity? = null
@@ -68,7 +69,10 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btn_start_TestMazaj.setOnClickListener(this)
-        click.setOnClickListener(this)
+        rl_dam.setOnClickListener(this)
+        rl_safra.setOnClickListener(this)
+        rl_soda.setOnClickListener(this)
+        rl_balgham.setOnClickListener(this)
 
         btn_bishtar_bekhanid_content_main_layout.setOnClickListener{
             if(more_information_content_main.visibility == View.GONE) {
@@ -85,7 +89,6 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
                 motaleye_bishtar_content_main_layout.text = "مطالعه بیشتر"
             }
         }
-
     }
 
     override fun onClick(v: View?)
@@ -93,13 +96,10 @@ class MainFragment : Fragment() , View.OnClickListener ,NavigationView.OnNavigat
         when(v!!.id)
         {
             R.id.btn_start_TestMazaj -> navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
-            R.id.click -> {
-
-                val pairs: Array<Pair<View, String>?> = arrayOfNulls(1)
-                pairs[0] = Pair<View, String>(iv_shared_element_start, "imageTransition")
-                val options = ActivityOptions.makeSceneTransitionAnimation(context as Activity?, *pairs)
-                navController!!.navigate(R.id.action_mainFragment_to_mezajDetailFragment,options.toBundle())
-            }
+            R.id.rl_dam -> navController!!.navigate(R.id.action_mainFragment_to_damMezajDetailFragment)
+            R.id.rl_safra -> navController!!.navigate(R.id.action_mainFragment_to_safraMezajDetailFragment)
+            R.id.rl_soda -> navController!!.navigate(R.id.action_mainFragment_to_sodaMezajDetailFragment)
+            R.id.rl_balgham -> navController!!.navigate(R.id.action_mainFragment_to_balghamMezajDetailFragment)
         }
     }
 
