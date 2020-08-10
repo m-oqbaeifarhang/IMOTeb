@@ -35,7 +35,7 @@
     <item android:title="@string/communication_ways">
         <menu>
             <item
-                android:id="@+id/call_us"
+                android:id="@+id/nav_call_us"
                 android:icon="@drawable/ic_phone"
                 android:title="@string/call_us" />
             <item

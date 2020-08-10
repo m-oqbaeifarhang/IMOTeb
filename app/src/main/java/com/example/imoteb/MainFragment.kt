@@ -1,11 +1,8 @@
 package com.example.imoteb
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.app.ActivityOptions
 import android.content.Context
 import android.os.Bundle
-import android.util.Pair
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -13,13 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -31,6 +27,7 @@ class MainFragment : Fragment() ,  View.OnClickListener ,  NavigationView.OnNavi
     var navController : NavController? = null
     private var myContext: FragmentActivity? = null
     lateinit var beforeTestmezajquestionfragment: Before_TestMezajQuestionFragment
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -57,11 +54,11 @@ class MainFragment : Fragment() ,  View.OnClickListener ,  NavigationView.OnNavi
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
-        if(activity is AppCompatActivity){
-            (activity as AppCompatActivity).setSupportActionBar(toolbar)
-            initDrawer()
-        }
-
+//        if(activity is AppCompatActivity){
+//            (activity as AppCompatActivity).setSupportActionBar(main_toolbar)
+//            initDrawer()
+//        }
+            navigationDrawer()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
@@ -103,14 +100,46 @@ class MainFragment : Fragment() ,  View.OnClickListener ,  NavigationView.OnNavi
         }
     }
 
-    private fun initDrawer(){
-        val toggle = ActionBarDrawerToggle(Activity(),drawer,toolbar,R.string.nav_open,R.string.nav_close)
+/*    private fun initDrawer(){
+        val toggle = ActionBarDrawerToggle(Activity(),drawer,main_toolbar,R.string.nav_open,R.string.nav_close)
         drawer.addDrawerListener(toggle)
         toggle.syncState()
         navigation_view.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
             onNavigationItemSelected(it)
         })
+    }*/
+
+    private fun navigationDrawer() {
+        navigation_view.bringToFront()
+        navigation_view.setNavigationItemSelectedListener(this)
+        navigation_view.setCheckedItem(R.id.nav_signup)
+
+        btn_menu.setOnClickListener {
+            if (drawer_layout.isDrawerVisible(GravityCompat.START)) {
+                drawer_layout.closeDrawer(GravityCompat.START)
+            } else
+                drawer_layout.openDrawer(GravityCompat.START)
+        }
+        animateNavigationDrawer()
     }
+
+    private fun animateNavigationDrawer() {
+        val endScale = 0.7f
+        //        drawer_layout.setScrimColor(resources.getColor(android.R.color.darker_gray))
+        drawer_layout.addDrawerListener(object : DrawerLayout.SimpleDrawerListener() {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float)
+            {
+                val diffScaledOffset = slideOffset * (1 - endScale)
+                val offsetScale = 1 - diffScaledOffset
+                contentView.scaleX = offsetScale
+                contentView.scaleY = offsetScale
+                val xOffset = drawerView.width * slideOffset
+                val xOffsetDiff = contentView.width * diffScaledOffset / 2
+                val xTranslation =  xOffsetDiff - xOffset
+                contentView.translationX = xTranslation
+            }
+        }
+        )}
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean
     {
@@ -119,18 +148,32 @@ class MainFragment : Fragment() ,  View.OnClickListener ,  NavigationView.OnNavi
         {
             R.id.nav_test ->
             {
-                beforeTestmezajquestionfragment =
-                    Before_TestMezajQuestionFragment()
+                beforeTestmezajquestionfragment = Before_TestMezajQuestionFragment()
                 navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
             }
             R.id.nav_mezaj_records ->
             {
-                beforeTestmezajquestionfragment =
-                    Before_TestMezajQuestionFragment()
+                beforeTestmezajquestionfragment = Before_TestMezajQuestionFragment()
                 navController!!.navigate(R.id.action_mainFragment_to_mezajRecordsFragment)
             }
+            R.id.nav_rate ->
+            {
+                Toast.makeText(requireContext(),"rate clicked",Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_share ->
+            {
+                Toast.makeText(requireContext(),"share clicked",Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_call_us ->
+            {
+                Toast.makeText(requireContext(),"nav_call_us clicked",Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_about ->
+            {
+                Toast.makeText(requireContext(),"nav_about clicked",Toast.LENGTH_SHORT).show()
+            }
         }
-        drawer.closeDrawer(GravityCompat.START)
+        drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
 

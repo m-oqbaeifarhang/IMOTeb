@@ -64,5 +64,10 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="navigationTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/balgham_bg_color</item>
+    </style>
+
 
 </resources>

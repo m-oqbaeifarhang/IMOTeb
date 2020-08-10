@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:id="@+id/drawer"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
     tools:openDrawer="start"
     android:background="@color/main_background">
 
-    <include
-        layout="@layout/app_bar_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
@@ -25,7 +21,14 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:itemTextAppearance="@style/IranSansFont"
+        android:theme="@style/navigationTheme"
         app:menu="@menu/navigation_menu"
         app:itemIconTint="@color/itemIconTint_color"/>
+
+    <include
+        android:id="@+id/contentView"
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

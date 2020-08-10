@@ -10,20 +10,27 @@
     app:elevation="0dp"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layoutDirection="rtl"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/toolbar_background"
-        app:elevation="0dp"
-        app:title=" "
-        android:layout_alignParentTop="true"/>
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/main_toolbar"-->
+<!--        android:layoutDirection="rtl"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/toolbar_background"-->
+<!--        app:elevation="0dp"-->
+<!--        app:title=" "-->
+<!--        android:layout_alignParentTop="true"/>-->
+
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/ic_menu"/>
 
     <include
         layout="@layout/content_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:layout_below="@+id/btn_menu"/>
 
 </com.google.android.material.appbar.AppBarLayout>
