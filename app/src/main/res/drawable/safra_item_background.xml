@@ -4,8 +4,8 @@
 
     <gradient
         android:angle="0"
-        android:endColor="@color/safra_color_start"
-        android:startColor="@color/safra_color_end"/>
+        android:endColor="@color/safra_color_end"
+        android:startColor="@color/safra_color_start"/>
 
     <corners
         android:radius="10dp"/>

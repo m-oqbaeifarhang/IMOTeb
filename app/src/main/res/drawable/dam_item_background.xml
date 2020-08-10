@@ -4,8 +4,8 @@
 
     <gradient
         android:angle="0"
-        android:endColor="@color/dam_color_start"
-        android:startColor="@color/dam_color_end"/>
+        android:endColor="@color/dam_color_end"
+        android:startColor="@color/dam_color_start"/>
 
     <corners
         android:radius="10dp"/>
