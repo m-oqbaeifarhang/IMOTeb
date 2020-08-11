@@ -20,7 +20,7 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.fragment_mezaj_records.*
 
 @Suppress("UNREACHABLE_CODE")
-class MezajRecordsFragment : Fragment()
+class MezajRecords_Fragment : Fragment()
 {
     var mezajRecordsAdapter: MezajRecordsAdapter? = null
     override fun onCreateView(inflater: LayoutInflater,

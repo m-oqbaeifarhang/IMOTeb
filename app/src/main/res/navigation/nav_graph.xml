@@ -22,25 +22,8 @@
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right" />
         <action
-            android:id="@+id/action_mainFragment_to_damMezajDetailFragment"
-            app:destination="@id/damMezajDetailFragment"
-            app:enterAnim="@anim/from_left"
-            app:exitAnim="@anim/to_right" />
-        <action
-            android:id="@+id/action_mainFragment_to_safraMezajDetailFragment"
-            app:destination="@id/safraMezajDetailFragment"
-            app:enterAnim="@anim/from_left"
-            app:exitAnim="@anim/to_right" />
-        <action
-            android:id="@+id/action_mainFragment_to_balghamMezajDetailFragment"
-            app:destination="@id/balghamMezajDetailFragment"
-            app:enterAnim="@anim/from_left"
-            app:exitAnim="@anim/to_right" />
-        <action
-            android:id="@+id/action_mainFragment_to_sodaMezajDetailFragment"
-            app:destination="@id/sodaMezajDetailFragment"
-            app:enterAnim="@anim/from_left"
-            app:exitAnim="@anim/to_right" />
+            android:id="@+id/action_mainFragment_to_mezajsDetails_Fragment"
+            app:destination="@id/mezajsDetails_Fragment" />
     </fragment>
 
     <fragment
@@ -84,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/mezajRecordsFragment"
-        android:name="com.example.imoteb.MezajsTest.MezajRecordsFragment"
+        android:name="com.example.imoteb.MezajsTest.MezajRecords_Fragment"
         android:label="fragment_mezaj_records"
         tools:layout="@layout/fragment_mezaj_records" >
         <action
@@ -99,48 +82,16 @@
             app:exitAnim="@anim/to_left" />
     </fragment>
     <fragment
-        android:id="@+id/damMezajDetailFragment"
-        android:name="com.example.imoteb.MezajsTest.DamMezajDetailFragment"
-        android:label="fragment_dam_mezaj_detail"
-        tools:layout="@layout/fragment_dam_mezaj_detail" >
+        android:id="@+id/mezajsDetails_Fragment"
+        android:name="com.example.imoteb.MezajsTest.MezajsDetails_Fragment"
+        android:label="fragment_mezajs_details"
+        tools:layout="@layout/fragment_mezajs_details" >
         <action
-            android:id="@+id/action_damMezajDetailFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left" />
-    </fragment>
-    <fragment
-        android:id="@+id/balghamMezajDetailFragment"
-        android:name="com.example.imoteb.MezajsTest.BalghamMezajDetailFragment"
-        android:label="fragment_balgham_mezaj_detail"
-        tools:layout="@layout/fragment_balgham_mezaj_detail" >
-        <action
-            android:id="@+id/action_balghamMezajDetailFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left" />
-    </fragment>
-    <fragment
-        android:id="@+id/safraMezajDetailFragment"
-        android:name="com.example.imoteb.MezajsTest.SafraMezajDetailFragment"
-        android:label="fragment_safra_mezaj_detail"
-        tools:layout="@layout/fragment_safra_mezaj_detail" >
-        <action
-            android:id="@+id/action_safraMezajDetailFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left" />
-    </fragment>
-    <fragment
-        android:id="@+id/sodaMezajDetailFragment"
-        android:name="com.example.imoteb.MezajsTest.SodaMezajDetailFragment"
-        android:label="fragment_soda_mezaj_detail"
-        tools:layout="@layout/fragment_soda_mezaj_detail" >
-        <action
-            android:id="@+id/action_sodaMezajDetailFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left" />
+            android:id="@+id/action_mezajsDetails_Fragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="mezaj"
+            app:argType="string" />
     </fragment>
 
 </navigation>

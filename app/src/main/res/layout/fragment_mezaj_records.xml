@@ -8,7 +8,7 @@
     android:layoutDirection="rtl"
     android:orientation="vertical"
     android:background="@color/main_background"
-    tools:context=".MezajsTest.MezajRecordsFragment">
+    tools:context=".MezajsTest.MezajRecords_Fragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_fg_mezaj_records"

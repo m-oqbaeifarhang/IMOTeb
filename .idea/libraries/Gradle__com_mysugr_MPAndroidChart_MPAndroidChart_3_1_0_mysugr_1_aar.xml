@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: com.mysugr.MPAndroidChart:MPAndroidChart:3.1.0-mysugr-1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e6994f7c851a06b3501f66097a99b63f/jetified-MPAndroidChart-3.1.0-mysugr-1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e6994f7c851a06b3501f66097a99b63f/jetified-MPAndroidChart-3.1.0-mysugr-1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e6994f7c851a06b3501f66097a99b63f/jetified-MPAndroidChart-3.1.0-mysugr-1/res" />
     </CLASSES>

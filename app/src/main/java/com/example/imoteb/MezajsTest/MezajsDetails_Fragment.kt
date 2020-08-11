@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imoteb.MainActivity
 import com.example.imoteb.R
-import kotlinx.android.synthetic.main.fragment_dam_mezaj_detail.*
-import kotlinx.android.synthetic.main.fragment_safra_mezaj_detail.*
+import kotlinx.android.synthetic.main.fragment_mezajs_details.*
 
-class SafraMezajDetailFragment : Fragment()
+class MezajsDetails_Fragment : Fragment()
 {
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -24,24 +24,26 @@ class SafraMezajDetailFragment : Fragment()
         savedInstanceState: Bundle?): View?
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_safra_mezaj_detail, container, false)
+        return inflater.inflate(R.layout.fragment_mezajs_details, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
         super.onActivityCreated(savedInstanceState)
 
-        /*        set toolbar       */
+
+
         if(activity is AppCompatActivity)
         {
-            (activity as AppCompatActivity).setSupportActionBar(toolbar_fg_safra_mezaj_detail)
+            (activity as AppCompatActivity).setSupportActionBar(toolbar_fg_mezaj_detail)
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
             (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
         }
-        toolbar_fg_safra_mezaj_detail.setNavigationOnClickListener {
+        toolbar_fg_mezaj_detail.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
-
+//        mezaj_name.setText("dam")
+//        descerption.setText()
     }
 
 }

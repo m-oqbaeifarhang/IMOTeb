@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.samanzamani.persiandate:PersianDate:0.8@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a78836ddb33e07db49205c77ee413a69/jetified-PersianDate-0.8/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a78836ddb33e07db49205c77ee413a69/jetified-PersianDate-0.8/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a78836ddb33e07db49205c77ee413a69/jetified-PersianDate-0.8/res" />
     </CLASSES>

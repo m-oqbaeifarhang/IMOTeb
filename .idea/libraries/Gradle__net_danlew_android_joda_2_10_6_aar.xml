@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: net.danlew:android.joda:2.10.6@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66295736dd839fc05237486000ac1ef5/jetified-android.joda-2.10.6/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66295736dd839fc05237486000ac1ef5/jetified-android.joda-2.10.6/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66295736dd839fc05237486000ac1ef5/jetified-android.joda-2.10.6/res" />
     </CLASSES>

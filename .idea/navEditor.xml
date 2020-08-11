@@ -8,27 +8,6 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="balghamMezajDetailFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-547" />
-                            <option name="y" value="571" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_balghamMezajDetailFragment_to_mainFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="before_TestMezajQuestionFragment">
                     <value>
                       <LayoutPositions>
@@ -55,27 +34,6 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="damMezajDetailFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-508" />
-                            <option name="y" value="-274" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_damMezajDetailFragment_to_mainFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="mainFragment">
                     <value>
                       <LayoutPositions>
@@ -87,17 +45,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_mainFragment_to_balghamMezajDetailFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
                             <entry key="action_mainFragment_to_before_TestMezajQuestionFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_mainFragment_to_damMezajDetailFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -107,12 +55,7 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_mainFragment_to_safraMezajDetailFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_mainFragment_to_sodaMezajDetailFragment">
+                            <entry key="action_mainFragment_to_mezajsDetails_Fragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -133,6 +76,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_mezajRecordsFragment_to_mainFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_mezajRecordsFragment_to_test_mezaj_resultFragment">
                               <value>
                                 <LayoutPositions />
@@ -154,6 +102,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_mezaj_QueriesFragment_to_before_TestMezajQuestionFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_mezaj_QueriesFragment_to_test_mezaj_resultFragment">
                               <value>
                                 <LayoutPositions />
@@ -164,39 +117,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="safraMezajDetailFragment">
+                  <entry key="mezajsDetails_Fragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-867" />
-                            <option name="y" value="-279" />
+                            <option name="x" value="-864" />
+                            <option name="y" value="-322" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_safraMezajDetailFragment_to_mainFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="sodaMezajDetailFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-873" />
-                            <option name="y" value="568" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_sodaMezajDetailFragment_to_mainFragment">
+                            <entry key="action_mezajsDetails_Fragment_to_mainFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
