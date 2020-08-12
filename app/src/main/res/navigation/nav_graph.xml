@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_mainFragment_to_mezajsDetails_Fragment"
             app:destination="@id/mezajsDetails_Fragment" />
+        <argument
+            android:name="mezajURL"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -90,7 +93,7 @@
             android:id="@+id/action_mezajsDetails_Fragment_to_mainFragment"
             app:destination="@id/mainFragment" />
         <argument
-            android:name="mezaj"
+            android:name="mezajURL"
             app:argType="string" />
     </fragment>
 

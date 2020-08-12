@@ -2,11 +2,11 @@ package com.example.imoteb.MezajsTest
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.imoteb.MainActivity
 import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_mezajs_details.*
@@ -42,7 +42,15 @@ class MezajsDetails_Fragment : Fragment()
         toolbar_fg_mezaj_detail.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
-//        mezaj_name.setText("dam")
+
+        if(arguments != null)
+        {
+            // The getPrivacyPolicyLink() method will be created automatically.
+//            val url: String = mezajURL.fromBundle(arguments).mezaj_name()
+        }
+
+        val title = (requireArguments().get("safra"))as String
+        mezaj_name.text = title
 //        descerption.setText()
     }
 

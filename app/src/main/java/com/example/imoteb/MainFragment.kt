@@ -96,7 +96,7 @@ class MainFragment : Fragment(), View.OnClickListener,
 
     override fun onClick(v: View?)
     {
-        var bundel = Bundle()
+        val bundel = Bundle()
         bundel.putString("dam", "dam description")
         when(v!!.id)
         {
@@ -106,14 +106,10 @@ class MainFragment : Fragment(), View.OnClickListener,
             R.id.rl_balgham -> bundel.putString("balgham", "balgham description")
 
         }
-        when(v!!.id)
+        when(v.id)
         {
-            R.id.btn_start_TestMazaj ->
-            {
-                navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
-            }
-            R.id.rl_dam, R.id.rl_safra, R.id.rl_soda, R.id.rl_balgham -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,
-                bundel)
+            R.id.btn_start_TestMazaj -> navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
+            R.id.rl_dam, R.id.rl_safra, R.id.rl_soda, R.id.rl_balgham -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundel)
         }
     }
 
