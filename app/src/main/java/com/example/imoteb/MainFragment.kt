@@ -28,7 +28,10 @@ class MainFragment : Fragment(), View.OnClickListener,
     var navController: NavController? = null
     private var myContext: FragmentActivity? = null
     lateinit var beforeTestmezajquestionfragment: Before_TestMezajQuestionFragment
-
+    var bundle_mezaj_dam : Bundle ?=null
+    var bundle_mezaj_safra : Bundle ?=null
+    var bundle_mezaj_soda : Bundle ?=null
+    var bundle_mezaj_balgham : Bundle ?=null
 
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -92,24 +95,80 @@ class MainFragment : Fragment(), View.OnClickListener,
                 motaleye_bishtar_content_main_layout.text = "مطالعه بیشتر"
             }
         }
+
+        bundle_mezaj_dam = Bundle()
+        bundle_mezaj_safra = Bundle()
+        bundle_mezaj_soda = Bundle()
+        bundle_mezaj_balgham = Bundle()
+
+        val dam_title = requireActivity().getString(R.string.txt_dam_title) as String
+        val dam_mezaj_tab = requireActivity().getString(R.string.txt_dam_mezaj_tab) as String
+        val english_dam_title = requireActivity().getString(R.string.txt_dam_title_english) as String
+        val dam_desc = requireActivity().getString(R.string.txt_dam_desc) as String
+        val dam_neshaneha = requireActivity().getString(R.string.txt_dam_neshaneha) as String
+
+        val safra_title = requireActivity().getString(R.string.txt_safra_title) as String
+        val safra_mezaj_tab = requireActivity().getString(R.string.txt_safra_mezaj_tab) as String
+        val english_safra_title = requireActivity().getString(R.string.txt_safra_title_english) as String
+        val safra_desc = requireActivity().getString(R.string.txt_safra_desc) as String
+        val safra_neshaneha = requireActivity().getString(R.string.txt_safra_neshaneha) as String
+
+        val soda_title = requireActivity().getString(R.string.txt_soda_title) as String
+        val soda_mezaj_tab = requireActivity().getString(R.string.txt_soda_mezaj_tab) as String
+        val english_soda_title = requireActivity().getString(R.string.txt_soda_title_english) as String
+        val soda_desc = requireActivity().getString(R.string.txt_soda_desc) as String
+        val soda_neshaneha = requireActivity().getString(R.string.txt_soda_neshaneha) as String
+
+        val balgham_title = requireActivity().getString(R.string.txt_balgham_title) as String
+        val balgham_mezaj_tab = requireActivity().getString(R.string.txt_balgham_mezaj_tab) as String
+        val english_balgham_title = requireActivity().getString(R.string.txt_balgham_title_english) as String
+        val balgham_desc = requireActivity().getString(R.string.txt_balgham_desc) as String
+        val balgham_neshaneha = requireActivity().getString(R.string.txt_balgham_neshaneha) as String
+
+
+        bundle_mezaj_dam!!.putString("mezaj_title", dam_title)
+        bundle_mezaj_dam!!.putString("english_mezaj_title", english_dam_title)
+        bundle_mezaj_dam!!.putString("mezaj_tab", dam_mezaj_tab)
+        bundle_mezaj_dam!!.putInt("cv_mezaj_logo", R.drawable.dam_cv_logo)
+        bundle_mezaj_dam!!.putInt("mezaj_english_logo", R.drawable.dam_logo)
+        bundle_mezaj_dam!!.putString("mezaj_desc",dam_desc)
+        bundle_mezaj_dam!!.putString("neshaneha",dam_neshaneha)
+
+        bundle_mezaj_safra!!.putString("mezaj_title",safra_title)
+        bundle_mezaj_safra!!.putString("english_mezaj_title", english_safra_title)
+        bundle_mezaj_safra!!.putString("mezaj_tab", safra_mezaj_tab)
+        bundle_mezaj_safra!!.putInt("cv_mezaj_logo", R.drawable.safra_cv_logo)
+        bundle_mezaj_safra!!.putInt("mezaj_english_logo", R.drawable.safra_logo)
+        bundle_mezaj_safra!!.putString("mezaj_desc",safra_desc)
+        bundle_mezaj_safra!!.putString("neshaneha",safra_neshaneha)
+
+        bundle_mezaj_soda!!.putString("mezaj_title",soda_title)
+        bundle_mezaj_soda!!.putString("english_mezaj_title", english_soda_title)
+        bundle_mezaj_soda!!.putString("mezaj_tab", soda_mezaj_tab)
+        bundle_mezaj_soda!!.putInt("cv_mezaj_logo", R.drawable.soda_cv_logo)
+        bundle_mezaj_soda!!.putInt("mezaj_english_logo", R.drawable.soda_logo)
+        bundle_mezaj_soda!!.putString("mezaj_desc",soda_desc)
+        bundle_mezaj_soda!!.putString("neshaneha",soda_neshaneha)
+
+        bundle_mezaj_balgham!!.putString("mezaj_title",balgham_title)
+        bundle_mezaj_balgham!!.putString("english_mezaj_title", english_balgham_title)
+        bundle_mezaj_balgham!!.putString("mezaj_tab", balgham_mezaj_tab)
+        bundle_mezaj_balgham!!.putInt("cv_mezaj_logo", R.drawable.balgham_cv_logo)
+        bundle_mezaj_balgham!!.putInt("mezaj_english_logo", R.drawable.balgham_logo)
+        bundle_mezaj_balgham!!.putString("mezaj_desc",balgham_desc)
+        bundle_mezaj_balgham!!.putString("neshaneha",balgham_neshaneha)
+
     }
 
     override fun onClick(v: View?)
     {
-        val bundel = Bundle()
-        bundel.putString("dam", "dam description")
         when(v!!.id)
         {
-            R.id.rl_dam -> bundel.putString("dam", "dam description")
-            R.id.rl_safra -> bundel.putString("safra", "safra description")
-            R.id.rl_soda -> bundel.putString("soda", "soda description")
-            R.id.rl_balgham -> bundel.putString("balgham", "balgham description")
-
-        }
-        when(v.id)
-        {
             R.id.btn_start_TestMazaj -> navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
-            R.id.rl_dam, R.id.rl_safra, R.id.rl_soda, R.id.rl_balgham -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundel)
+            R.id.rl_dam -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_dam)
+            R.id.rl_safra -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_safra)
+            R.id.rl_soda -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_soda)
+            R.id.rl_balgham -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_balgham)
         }
     }
 

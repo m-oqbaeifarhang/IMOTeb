@@ -18,32 +18,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-<!--            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="ltr">
-
-                <TextView
-                    android:id="@+id/txt_app_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/app_name"
-                    android:fontFamily="@font/dephiana_en"
-                    android:textColor="@color/red"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
-
-                <ImageView
-                    android:id="@+id/iv_app_logo"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_centerVertical="true"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/ic_splash_screen"
-                    android:layout_toEndOf="@+id/txt_app_name"/>
-
-            </RelativeLayout>-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,579 +140,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/main_background"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="8dp">
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/dam_item_background">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_icon1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_dam"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItemTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_dam"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_icon1"
-                            app:layout_constraintTop_toTopOf="@id/image_icon1"/>
-
-                        <TextView
-                            android:id="@+id/textItem1Description"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItemTitle"
-                            app:layout_constraintStart_toStartOf="@+id/textItemTitle"
-                            app:layout_constraintTop_toBottomOf="@+id/textItemTitle"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="8dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/safra_item_background">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_icon2"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_safra"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItem2Title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_safra"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_icon2"
-                            app:layout_constraintTop_toTopOf="@id/image_icon2"/>
-
-                        <TextView
-                            android:id="@+id/textItem2Description"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItem2Title"
-                            app:layout_constraintStart_toStartOf="@+id/textItem2Title"
-                            app:layout_constraintTop_toBottomOf="@+id/textItem2Title"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="8dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/soda_item_background">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_icon3"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_soda"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItem3Title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_soda"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_icon3"
-                            app:layout_constraintTop_toTopOf="@id/image_icon3"/>
-
-                        <TextView
-                            android:id="@+id/textItem3Description"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItem3Title"
-                            app:layout_constraintStart_toStartOf="@+id/textItem3Title"
-                            app:layout_constraintTop_toBottomOf="@+id/textItem3Title"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="8dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/balgham_item_background">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_icon4"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_balgham"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItem4Title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_soda"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_icon4"
-                            app:layout_constraintTop_toTopOf="@id/image_icon4"/>
-
-                        <TextView
-                            android:id="@+id/textItem4Description"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItem4Title"
-                            app:layout_constraintStart_toStartOf="@+id/textItem4Title"
-                            app:layout_constraintTop_toBottomOf="@+id/textItem4Title"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/main_background"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    app:cardElevation="8dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/dam_bg_color">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_icona"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_dam"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItemaTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_dam"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_icona"
-                            app:layout_constraintTop_toTopOf="@id/image_icona"/>
-
-                        <TextView
-                            android:id="@+id/textItemaDescription"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItemaTitle"
-                            app:layout_constraintStart_toStartOf="@+id/textItemaTitle"
-                            app:layout_constraintTop_toBottomOf="@+id/textItemaTitle"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    app:cardElevation="8dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/safra_bg_color">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_iconb"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_safra"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItembTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_safra"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_iconb"
-                            app:layout_constraintTop_toTopOf="@id/image_iconb"/>
-
-                        <TextView
-                            android:id="@+id/textItembDescription"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItembTitle"
-                            app:layout_constraintStart_toStartOf="@+id/textItembTitle"
-                            app:layout_constraintTop_toBottomOf="@+id/textItembTitle"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    app:cardElevation="8dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/soda_bg_color">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_iconc"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_soda"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItemcTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_soda"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_iconc"
-                            app:layout_constraintTop_toTopOf="@id/image_iconc"/>
-
-                        <TextView
-                            android:id="@+id/textItemcDescription"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItemcTitle"
-                            app:layout_constraintStart_toStartOf="@+id/textItemcTitle"
-                            app:layout_constraintTop_toBottomOf="@+id/textItemcTitle"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:cardElevation="8dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/balgham_bg_color">
-
-                        <View
-                            android:layout_width="80dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/end_view_background"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <ImageView
-                            android:id="@+id/image_icond"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:background="@drawable/icon_background"
-                            android:contentDescription="@string/app_name"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_balgham"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
-
-                        <TextView
-                            android:id="@+id/textItemdTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="@string/txt_mezaj_soda"
-                            style="@style/title_text_large"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/image_icond"
-                            app:layout_constraintTop_toTopOf="@id/image_icond"/>
-
-                        <TextView
-                            android:id="@+id/textItemdDescription"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="@string/tavajjoh"
-                            style="@style/title_text_large"
-                            android:textSize="12sp"
-                            android:textColor="@color/colorLightText"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/textItemdTitle"
-                            app:layout_constraintStart_toStartOf="@+id/textItemdTitle"
-                            app:layout_constraintTop_toBottomOf="@+id/textItemdTitle"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:weightSum="2"
                 android:background="@color/main_background"
                 android:layout_marginTop="8dp"
-                android:paddingTop="@dimen/fragment_padding_top"
+                android:paddingTop="20dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -750,281 +155,6 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/rl_dama"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4"
-                            android:background="@color/dam_bg_color">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:id="@+id/iv_dam_mezaja"
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:padding="15dp"
-                                    android:background="@drawable/icon_background"
-                                    android:transitionName="imageTransition"
-                                    android:src="@drawable/ic_dam" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1">
-
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_dam"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
-
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/rl_safraa"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4"
-                            android:background="@color/safra_bg_color">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:padding="15dp"
-                                    android:background="@drawable/icon_background"
-                                    android:src="@drawable/ic_safra"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="center">
-
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_safra"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
-
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/rl_sodaa"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4"
-                            android:background="@color/soda_bg_color">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:id="@+id/iv_soda_mezaja"
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:padding="15dp"
-                                    android:background="@drawable/icon_background"
-                                    android:src="@drawable/ic_soda"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1">
-
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_soda"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
-
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/rl_balghama"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        app:cardCornerRadius="10dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4"
-                            android:background="@color/balgham_bg_color">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:id="@+id/iv_balgham_mezaja"
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:padding="15dp"
-                                    android:background="@drawable/icon_background"
-                                    android:src="@drawable/ic_balgham"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1">
-
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_balgham"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
-
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2"
-                android:background="@color/main_background"
-                android:layout_marginTop="8dp"
-                android:paddingTop="@dimen/fragment_padding_top"
-                android:orientation="vertical">
-
-                <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="0dp"
-                     android:layout_weight="1"
-                     android:layout_marginBottom="10dp"
-                     android:gravity="center"
-                     android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
                         android:id="@+id/rl_dam"
                         android:layout_width="130dp"
                         android:layout_height="150dp"
@@ -1032,55 +162,55 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
+                        android:layout_marginBottom="20dp"
+                        app:cardElevation="10dp">
 
-                        <LinearLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4">
+                            android:background="@drawable/dam_item_background">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
+                            <View
+                                android:id="@+id/view"
+                                android:layout_width="80dp"
                                 android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
+                                android:background="@drawable/end_view_background"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <ImageView
-                                    android:id="@+id/iv_dam_mezaj"
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:transitionName="imageTransition"
-                                    android:src="@drawable/ic_dam_xml" />
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/icon_background"
+                                android:contentDescription="@string/app_name"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_dam"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.228" />
 
-                            </LinearLayout>
-
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1">
-
-                                <RelativeLayout
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:background="@color/black">
+                                <TextView
+                                    style="@style/title_text_large"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/dam_color_start">
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_mezaj_dam"
+                                    android:padding="4dp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_dam"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
 
@@ -1092,54 +222,53 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
+                        android:layout_marginBottom="20dp"
+                        app:cardElevation="10dp">
 
-                        <LinearLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4">
+                            android:background="@drawable/safra_item_background">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
+                            <View
+                                android:layout_width="80dp"
                                 android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
+                                android:background="@drawable/end_view_background"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_safra_xml"/>
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/icon_background"
+                                android:contentDescription="@string/app_name"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_safra"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.228" />
 
-                        </LinearLayout>
-
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:gravity="center">
-
-                                <RelativeLayout
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:background="@color/black">
+                                <TextView
+                                    style="@style/title_text_large"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/safra_color_start">
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_mezaj_safra"
+                                    android:padding="4dp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_safra"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
-
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.cardview.widget.CardView>
 
@@ -1160,54 +289,53 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
+                        android:layout_marginBottom="15dp"
+                        app:cardElevation="10dp">
 
-                        <LinearLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4">
+                            android:background="@drawable/soda_item_background">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
+                            <View
+                                android:layout_width="80dp"
                                 android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
+                                android:background="@drawable/end_view_background"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <ImageView
-                                    android:id="@+id/iv_soda_mezaj"
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:src="@drawable/ic_soda_xml"/>
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/icon_background"
+                                android:contentDescription="@string/app_name"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_soda"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.228" />
 
-                            </LinearLayout>
-
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1">
-
-                                <RelativeLayout
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:background="@color/black">
+                                <TextView
+                                    style="@style/title_text_large"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/soda_color_start">
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_mezaj_soda"
+                                    android:padding="4dp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_soda"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
-
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.cardview.widget.CardView>
 
@@ -1219,54 +347,53 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardElevation="6dp">
+                        android:layout_marginBottom="15dp"
+                        app:cardElevation="10dp">
 
-                        <LinearLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:weightSum="4">
+                            android:background="@drawable/balgham_item_background">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
+                            <View
+                                android:layout_width="80dp"
                                 android:layout_height="0dp"
-                                android:layout_weight="3"
-                                android:gravity="center">
+                                android:background="@drawable/end_view_background"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <ImageView
-                                    android:id="@+id/iv_balgham_mezaj"
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:src="@drawable/ic_balgham_xml"/>
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/icon_background"
+                                android:contentDescription="@string/app_name"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_balgham"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.228" />
 
-                            </LinearLayout>
-
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1">
-
-                                <RelativeLayout
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:background="@color/black">
+                                <TextView
+                                    style="@style/title_text_large"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/balgham_color_start">
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_mezaj_balgham"
+                                    android:padding="4dp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/txt_mezaj_balgham"
-                                        style="@style/title_text_large"
-                                        android:textSize="15sp"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/white"
-                                        android:layout_centerInParent="true"/>
-
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.cardview.widget.CardView>
 
@@ -1275,7 +402,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
                     android:background="@color/gray_dark"/>

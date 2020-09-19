@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#4D4E4E</color>
     <color name="colorAccent">#ED5D5A</color>
 
-    <color name="main_background">#F9FBFD</color>
+<!--    <color name="main_background">#F9FBFD</color>-->
+    <color name="main_background">#FBFDFF</color>
+<!--    <color name="toolbar_background">#F9FBFD</color>-->
+    <color name="toolbar_background">#FBFDFF</color>
     <color name="main_background_master">#E5E7EA</color>
-    <color name="toolbar_background">#F9FBFD</color><!--f2f5f8-->
     <color name="text_color_titr">#6C6C6C</color>
     <color name="text_color_titr_dark">#606060</color>
     <color name="text_color">#7C7C7C</color>
@@ -17,6 +19,7 @@
     <color name="edit_text_hint">#9A9A9A</color>
     <color name="itemIconTint_color">#9C9C9C</color>
     <color name="gray_alpha">#994D4E4E</color>
+    <color name="black">#22000000</color>
 
 <!--    mezajs items colors-->
     <color name="dam_color_start">#78C67C</color>
@@ -52,7 +55,7 @@
     <color name="colorLightText">#ECECEC</color>
     <color name="gray_very_light">#FAFAFA</color>
     <color name="gray_light">#F4F4F4</color>
-    <color name="gray_dark">#DCDCDC</color>
+    <color name="gray_dark">#D6D6D6</color>
     <color name="gray_very_dark">#7E7E7E</color>
     <color name="gray_very_dark_alpha">#997E7E7E</color>
     <color name="blue_dark">#0CB3E8</color>
