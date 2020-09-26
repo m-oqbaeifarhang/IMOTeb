@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.imoteb.R
 
-class TosiyehayePezeshkiFragment : Fragment()
+class TosiyehayeDarmaniFragment : Fragment()
 {
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View?
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tosiyehaye_pezeshki, container, false)
+        return inflater.inflate(R.layout.fragment_tosiyehaye_darmani, container, false)
     }
 }
