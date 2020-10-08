@@ -2,11 +2,13 @@ package com.example.imoteb.MezajsTest
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.icu.text.Transliterator
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.widget.NestedScrollView
@@ -24,7 +26,9 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
+import kotlinx.android.synthetic.main.fragment_test_mezaj_result.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -55,10 +59,12 @@ class Test_mezaj_resultFragment() : Fragment()
         }
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
-        val natayejViewPagerAdapter = NatayejViewPagerAdapter(requireActivity().supportFragmentManager)
-        natayejViewPagerAdapter.addFragment(TosiyehayeDarmaniFragment(), "توصیه های درمانی")
-        natayejViewPagerAdapter.addFragment(KhususiyatAkhlagiFragment(), "خصوصیات اخلاقی")
-        natayejViewPagerAdapter.addFragment(AvarezGhalabeyeMezajFragment(),"عوارض غلبه")
+        val natayejViewPagerAdapter =
+            NatayejViewPagerAdapter(requireActivity().supportFragmentManager)
+        natayejViewPagerAdapter.addFragment(TestMezajResultsTextFragment(), "توصیه های درمانی")
+        natayejViewPagerAdapter.addFragment(TestMezajResultsTextFragment(), "خصوصیات اخلاقی")
+        natayejViewPagerAdapter.addFragment(TestMezajResultsTextFragment(), "عوارض غلبه")
+        natayejViewPagerAdapter.addFragment(TestMezajResultsTextFragment(), "عوامل غلبه")
         natayejTablayout.tabGravity = TabLayout.GRAVITY_FILL
         natayejViewPager.adapter = natayejViewPagerAdapter
         natayejTablayout.setupWithViewPager(natayejViewPager)
@@ -79,7 +85,6 @@ class Test_mezaj_resultFragment() : Fragment()
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
-
         val barDataSet: BarDataSet = BarDataSet(getData(Model.questionTableList), "راهنما")
         barDataSet.barBorderWidth = 0f
         barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
@@ -98,13 +103,13 @@ class Test_mezaj_resultFragment() : Fragment()
         chart1.axisLeft.axisMaximum = 10f
         chart1.axisLeft.labelCount = 10
         chart1.axisRight.labelCount = 10
-       // val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
+        // val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
         val mg = Mohasebeh_GhalabeHa.Mohasebe(Model.Dam, Model.Safra, Model.Soda, Model.Balgham)
         val mezajGhalabeResult = "نتیجه مزاج شناسی : " + convertMezajGhalebToPersianText(mg)
         title.text = mezajGhalabeResult
-        var date:Date
+        var date: Date
 
         btn_ask_question.setOnClickListener {
             Handler().post(Runnable {
@@ -128,6 +133,6 @@ class Test_mezaj_resultFragment() : Fragment()
         return entries
     }
 
-
-
 }
+
+
