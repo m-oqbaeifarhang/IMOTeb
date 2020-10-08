@@ -1,15 +1,18 @@
 package com.example.imoteb.Adapter
 
+import android.graphics.ColorSpace
+import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.imoteb.MezajsTest.Model
+import com.example.imoteb.MezajsTest.TestMezajResultsTextFragment
 
-internal class NatayejViewPagerAdapter( fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager)
+internal class NatayejViewPagerAdapter(fragmentManager: FragmentManager) :
+    FragmentPagerAdapter(fragmentManager)
 {
-
-    private val fragments : ArrayList<Fragment>
-    private  val titles : ArrayList<String>
-
+    private val fragments: ArrayList<Fragment>
+    private val titles: ArrayList<String>
     init
     {
         fragments = ArrayList<Fragment>()
@@ -18,7 +21,7 @@ internal class NatayejViewPagerAdapter( fragmentManager: FragmentManager) : Frag
 
     override fun getItem(position: Int): Fragment
     {
-        return fragments[position]
+         return TestMezajResultsTextFragment.newInstance(position)
     }
 
     override fun getCount(): Int
@@ -26,7 +29,7 @@ internal class NatayejViewPagerAdapter( fragmentManager: FragmentManager) : Frag
         return fragments.size
     }
 
-    fun addFragment(fragment: Fragment , title: String)
+    fun addFragment(fragment: Fragment, title: String)
     {
         fragments.add(fragment)
         titles.add(title)

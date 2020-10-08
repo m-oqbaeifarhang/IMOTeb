@@ -15,6 +15,7 @@ class Model()
             MakeQueastionTable()
         }
 
+        var test: Int = 0
         var Age: Int = 0
         var KamKhuni = false
         var Gender: GenderEnum = GenderEnum.Male
@@ -25,7 +26,7 @@ class Model()
         var Safra: Float = 0f
         var Soda: Float = 0f
         var Balgham: Float = 0f
-//        var Date: Date = DateTime.now().toDate()
+        //        var Date: Date = DateTime.now().toDate()
 
 
         //lateinit var QuestionTitle: MutableList<String>
@@ -72,10 +73,10 @@ class Model()
                     }
                 }
             }
-           // TestMode
+            // TestMode
             questionTableList.forEachIndexed { index, questionTable ->
-                questionTableList[index].Choosed=true
-                questionTableList[index].score=1.0
+                questionTableList[index].Choosed = true
+                questionTableList[index].score = 1.0
 
             }
             questionTableList[0].coefficient = 2.0
