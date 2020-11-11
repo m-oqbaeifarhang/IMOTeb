@@ -49,14 +49,14 @@ class Test_mezaj_resultFragment() : Fragment()
         super.onCreate(savedInstanceState)
 
         /*     set seekbar     */
-        nestedScrollView_fragment_test_mezaj_result.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
+/*        nestedScrollView_fragment_test_mezaj_result.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
             val totalScrollLenght =
                 nestedScrollView_fragment_test_mezaj_result.getChildAt(0).height - nestedScrollView_fragment_test_mezaj_result.height
             progressBar_fragment_test_mezaj_result.apply {
                 max = totalScrollLenght
                 progress = scrollY
             }
-        }
+        }*/
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
         val natayejViewPagerAdapter =

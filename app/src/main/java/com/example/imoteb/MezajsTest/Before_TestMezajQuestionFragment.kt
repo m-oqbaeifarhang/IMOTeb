@@ -60,6 +60,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
         numberPicker.minValue = 1320
         numberPicker.maxValue = 1388
         numberPicker.wrapSelectorWheel = true
+
     }
 
     //    @RequiresApi(Build.VERSION_CODES.O)

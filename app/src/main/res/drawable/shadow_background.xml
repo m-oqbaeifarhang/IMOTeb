@@ -4,7 +4,7 @@
         <layer-list>
             <item android:left="0.5dp" android:top="0.5dp">
                 <shape>
-                    <solid android:color="@color/blue_b" />
+                    <solid android:color="@color/blue_dark" />
                     <corners android:radius="8dp"/>
                 </shape>
             </item>
@@ -14,16 +14,19 @@
         <layer-list>
             <item android:left="0dp" android:top="0dp">
                 <shape>
-                    <solid android:color="@color/blue_a" />
+                    <solid android:color="@color/blue_light" />
                     <corners android:radius="8dp"/>
                 </shape>
             </item>
             <item android:bottom="0.5dp" android:right="0.5dp">
                 <shape>
-                    <solid android:color="@color/blue_c" />
+                    <solid android:color="@color/blue_light_alpha" />
                     <corners android:radius="8dp"/>
                 </shape>
             </item>
         </layer-list>
     </item>
 </selector>
+<!--    blue_b-->
+<!--    blue_a-->
+<!--    blue_c-->

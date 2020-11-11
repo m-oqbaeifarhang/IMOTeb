@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499">
+
         <TextView
             android:id="@+id/title_splash_screen"
             android:layout_width="wrap_content"
@@ -41,12 +42,13 @@
             android:layout_height="35dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_splash_screen" />
+
     </LinearLayout>
 
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="60dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +57,6 @@
         app:lottie_autoPlay="true"
         app:lottie_colorFilter="#56A2DD"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/loading_r" />
+        app:lottie_rawRes="@raw/loading_circle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

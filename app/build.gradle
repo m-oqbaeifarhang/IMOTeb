@@ -54,5 +54,6 @@ dependencies {
     //noinspection GradleDependency
     implementation "com.google.android.material:material:$material_version"
 
+    implementation 'com.michaelmuenzer.android:ScrollableNumberPicker:0.2.2'
 
 }

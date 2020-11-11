@@ -17,21 +17,31 @@
     <string name="nav_close">Close Navigation Drawer</string>
 
     <!--    content main titles-->
-    <string name="darbareye_mazaj">چکیده ای در مورد طبایع</string>
     <string name="txt_tozihat">توضیحات</string>
     <string name="text_mezaj_chist">مزاج چیست ؟ و مزاج شناسی چگونه انجام میگیرد</string>
     <string name="txt_result"> نتیجه تست مزاج شما :</string>
-    <string name="txt_share">از این قسمت نتیجه را به اشتراک بزارید</string>
     <string name="text_btn_start">شروع تست مزاج</string>
-    <string name="title_card_dam">بهار دم گرم وتر</string>
     <string name="name_mezaj">نام مزاج</string>
     <string name="desc_mezaj">توضیحات مزاج</string>
-    <string name="name_daroo">نام دارو</string>
     <string name="foods">غذاها و خوراکی ها</string>
     <string name="txt_mezaj_dam">دم - گرم و تر</string>
     <string name="txt_mezaj_safra">صفرا - گرم و خشک</string>
     <string name="txt_mezaj_soda">سودا - سرد و خشک</string>
     <string name="txt_mezaj_balgham">بلغم - سرد و تر</string>
+
+    <!--    **************************************************************************************************************-->
+    <string name="dam">دم</string>
+    <string name="tab_dam">گرم و تر</string>
+
+    <string name="safra">صفرا</string>
+    <string name="tab_safra">گرم و خشک</string>
+
+    <string name="soda">سودا</string>
+    <string name="tab_soda">سرد و خشک</string>
+
+    <string name="balgham">بلغم</string>
+    <string name="tab_balgham">سرد و تر</string>
+    <!--    **************************************************************************************************************-->
 
     <!--    Radio Button-->
     <string name="rb_Yes">بله</string>
@@ -39,16 +49,15 @@
     <string name="rb_SomeTimes">گاهی</string>
 
     <!--fragment before test mezaj-->
-    <string name="tavajjoh">توجه به نکات زیر بسیار مهم است !</string>
+    <string name="tavajjoh">توجه!</string>
     <string name="text_bardar">این تست برای بانوان باردار صادق نیست . </string>
     <string name="text_feshar_khoon">این تست برای افرادی که دچار فشار خون هستند صادق نیست .</string>
-    <string name="sale_tavallod">سال تولد شما</string>
+<!--    <string name="sale_tavallod">سال تولد شما</string>-->
     <string name="marhaleye_baad">مرحله بعد</string>
     <string name="more">مطالعه بیشتر</string>
     <string name="sen_input">لطفا تاریخ تولد خود را انتخاب کنید</string>
-    <string name="edit_txt_hint">کلیک کنید</string>
-    <string name="vaziyat_tahhol">وضعیت تاهل ؟</string>
-    <string name="gender">جنسیت ؟</string>
+    <string name="marital_status">وضعیت تاهل :</string>
+    <string name="gender">جنسیت :</string>
     <string name="single">مجرد</string>
     <string name="married">متاهل</string>
     <string name="male">مرد</string>
