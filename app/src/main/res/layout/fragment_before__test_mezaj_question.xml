@@ -122,7 +122,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="@string/text_motaleye_bishtar_a" />
+                            android:text="@string/txt_mezaj_chist" />
 
                         <TextView
                             style="@style/title_text_medium"
@@ -252,7 +252,7 @@
                     <View
                         android:id="@+id/view_insert"
                         android:layout_width="10dp"
-                        android:layout_height="80dp"
+                        android:layout_height="60dp"
                         android:layout_margin="15dp"
                         android:layout_gravity="start"
                         android:background="@color/green"/>
@@ -282,25 +282,60 @@
                                 android:textColor="@color/green"
                                 android:text="@string/sen_input"/>
 
-                            <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
-                                android:id="@+id/snp_vertical"
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:orientation="horizontal"
                                 android:layout_below="@+id/txt_insert"
-                                android:layout_centerHorizontal="true"
-                                android:background="@drawable/number_picker_bg"
-                                app:snp_buttonIconUp="@drawable/ic_up"
-                                app:snp_buttonIconDown="@drawable/ic_down"
-                                app:snp_maxValue="9"
-                                app:snp_minValue="0"
-                                app:snp_value="0"
-                                app:snp_stepSize="1"
-                                app:snp_updateInterval="10"
-                                app:snp_orientation="vertical"
-                                app:snp_scrollEnabled="true"
-                                app:snp_valueMarginStart="1dp"
-                                app:snp_valueMarginEnd="1dp"
-                                app:snp_value_text_appearance="@style/NumberPickerText_b"/>
+                                android:gravity="center"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginBottom="6dp"
+                                android:layoutDirection="ltr">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/NumberPickerText_b"
+                                    android:text="13" />
+
+                                <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                                    android:id="@+id/snp_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    app:snp_buttonIconUp="@drawable/ic_up"
+                                    app:snp_buttonIconDown="@drawable/ic_down"
+                                    app:snp_buttonPaddingBottom="0dp"
+                                    app:snp_buttonPaddingTop="0dp"
+                                    app:snp_maxValue="9"
+                                    app:snp_minValue="0"
+                                    app:snp_value="0"
+                                    app:snp_stepSize="1"
+                                    app:snp_updateInterval="10"
+                                    app:snp_orientation="vertical"
+                                    app:snp_scrollEnabled="true"
+                                    app:snp_valueMarginStart="0dp"
+                                    app:snp_valueMarginEnd="0dp"
+                                    app:snp_value_text_appearance="@style/NumberPickerText_b"/>
+
+                                <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                                    android:id="@+id/snp_vertical2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:snp_buttonIconUp="@drawable/ic_up"
+                                    app:snp_buttonIconDown="@drawable/ic_down"
+                                    app:snp_maxValue="9"
+                                    app:snp_minValue="0"
+                                    app:snp_value="0"
+                                    app:snp_stepSize="1"
+                                    app:snp_orientation="vertical"
+                                    app:snp_scrollEnabled="true"
+                                    app:snp_valueMarginStart="0dp"
+                                    app:snp_valueMarginEnd="0dp"
+                                    app:snp_value_text_appearance="@style/NumberPickerText_b"/>
+
+                            </LinearLayout>
 
                         </RelativeLayout>
 

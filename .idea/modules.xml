@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IMOTeb.iml" filepath="$PROJECT_DIR$/IMOTeb.iml" group="IMOTeb" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="IMOTeb/app" />
+      <module fileurl="file://$PROJECT_DIR$/IMOTeb.iml" filepath="$PROJECT_DIR$/IMOTeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/IMOTeb.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/IMOTeb.app.iml" />
     </modules>
   </component>
 </project>

@@ -15,11 +15,6 @@ class MezajsDetailsFragment : Fragment(),View.OnClickListener
 {
     var navController: NavController? = null
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View?
@@ -50,20 +45,25 @@ class MezajsDetailsFragment : Fragment(),View.OnClickListener
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         iv_back.setOnClickListener(this)
-        
+
         go_to_up.setOnClickListener{
             my_nested.fullScroll(NestedScrollView.FIND_VIEWS_WITH_CONTENT_DESCRIPTION)
+//            my_nested.scrollTo(0, my_nested.maxScrollAmount)
+//            my_nested.smoothScrollBy(0,10)
+//            my_nested.scrollY
         }
 
         /*        get mezaj information*/
         mezaj_name.text = arguments?.getString("mezaj_title")
-        mezaj_descerption.text = arguments?.getString("mezaj_desc")
-//        val imgs = arguments?.getInt("cv_mezaj_logo")
+        tabe_mezaj.text = arguments?.getString("mezaj_tab")
         cv_mezaj_logo.setImageResource(arguments?.getInt("cv_mezaj_logo")!!)
         mezaj_english_logo.setImageResource(arguments?.getInt("mezaj_english_logo")!!)
         mezaj_english_name.text = arguments?.getString("english_mezaj_title")
-        mezaj_neshaneha.text = arguments?.getString("neshaneha")
-        tabe_mezaj.text = arguments?.getString("mezaj_tab")
+//        val imgs = arguments?.getInt("cv_mezaj_logo")
+        tv_mezaj_neshaneha.text = arguments?.getString("neshaneha")
+        tv_mezaj_kholgokhoo.text = arguments?.getString("kolgokhoo")
+        tv_mezaj_bimariha.text = arguments?.getString("bimariha")
+
 
     }
 

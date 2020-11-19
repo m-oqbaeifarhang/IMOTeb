@@ -50,10 +50,10 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="140dp"
                     app:cardCornerRadius="10dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     app:cardElevation="6dp">
@@ -111,7 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/black"
-                        android:alpha="0.5"
+                        android:alpha="0.7"
                         android:layout_gravity="bottom">
 
                         <TextView
@@ -121,7 +121,6 @@
                             android:layout_margin="6dp"
                             android:text="@string/text_mezaj_chist"
                             style="@style/title_text_large"
-                            android:textSize="16sp"
                             android:textColor="@color/white"/>
 
                     </RelativeLayout>
@@ -141,14 +140,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/main_background"
-                    android:paddingTop="@dimen/fragment_padding_top"
+                    android:paddingTop="5dp"
                     android:paddingStart="@dimen/fragment_padding_start"
                     android:paddingEnd="@dimen/fragment_padding_end"
                     android:paddingBottom="10dp"
                     android:layoutDirection="rtl"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+<!--                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -161,35 +160,32 @@
                             android:layout_height="wrap_content"
                             android:text="@string/text_mezaj_chist" />
 
-                    </RelativeLayout>
+                    </RelativeLayout>-->
 
                     <LinearLayout
                         android:id="@+id/more_information_content_main"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingStart="1dp"
+                        android:paddingEnd="1dp"
                         android:layoutDirection="rtl"
                         android:orientation="vertical"
                         android:visibility="gone">
 
-                        <View
+<!--                        <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginBottom="20dp"
-                            android:background="@color/gray_dark"/>
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/gray_dark"/>-->
 
                         <TextView
                             style="@style/title_text_medium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_motaleye_bishtar_a" />
-
-                        <TextView
-                            style="@style/title_text_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/text_motaleye_bishtar_b" />
+                            android:text="@string/txt_mezaj_chist"
+                            android:lineSpacingExtra="6dp"
+                            android:justificationMode="inter_word"/>
 
                     </LinearLayout>
 
@@ -197,7 +193,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="8dp">
+                        android:layout_marginTop="1dp">
 
                         <TextView
                             android:id="@+id/motaleye_bishtar_content_main_layout"
@@ -207,15 +203,25 @@
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/more"
-                            android:textColor="@color/blue_light" />
+                            android:textColor="@color/purple" />
 
                         <Button
-                            android:id="@+id/btn_bishtar_bekhanid_content_main_layout"
+                            android:id="@+id/btn_bishtar_bekhanid"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_below="@+id/motaleye_bishtar_content_main_layout"
                             android:layout_centerHorizontal="true"
                             android:background="@drawable/ic_arrow_down" />
+
+<!--                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/btn_bishtar_bekhanid"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_below="@+id/motaleye_bishtar_content_main_layout"
+                            android:layout_centerHorizontal="true"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/arrow_down" />-->
 
                     </RelativeLayout>
 
@@ -228,15 +234,129 @@
                 android:layout_height="wrap_content"
                 android:weightSum="2"
                 android:background="@color/main_background"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="1dp"
                 android:paddingTop="5dp"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="16dp"
+                        android:background="@color/gray_dark"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="10dp"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="25dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/blue_dark">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_ques_ans"
+                                    android:layout_centerInParent="true"/>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:layout_marginTop="8dp"
+                            android:text="سوالات متداول"
+                            android:fontFamily="@font/iransans"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="16dp"
+                        android:background="@color/gray_dark"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_bishtar_bekhanid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="10dp"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="25dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#784212">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_study"
+                                    android:layout_centerInParent="true"/>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/txt_read_more"
+                            android:fontFamily="@font/iransans"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="16dp"
+                        android:background="@color/gray_dark"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_dark"/>
 
                 <RelativeLayout
                     android:id="@+id/rl_dam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layoutDirection="rtl"
+                    android:layout_marginTop="8dp"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="0dp">
@@ -935,7 +1055,8 @@
                                             android:layout_width="14dp"
                                             android:layout_height="14dp"
                                             android:scaleType="centerCrop"
-                                            android:src="@drawable/ic_season_winter" />
+                                            android:src="@drawable/ic_season_winter"
+                                            android:contentDescription="TODO" />
 
                                     </LinearLayout>
 
@@ -1434,13 +1555,13 @@
 
                 </LinearLayout>-->
 
-                <View
+<!--                <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
-                    android:background="@color/gray_dark"/>
+                    android:background="@color/gray_dark"/>-->
 
                 <Button
                     android:id="@+id/btn_start_TestMazaj"

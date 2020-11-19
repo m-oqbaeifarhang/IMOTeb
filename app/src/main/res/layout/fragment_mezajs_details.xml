@@ -33,7 +33,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/main_background">
-<!--        android:layout_below="@+id/iv_back"-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +46,8 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_back"
+                android:contentDescription="TODO" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -157,7 +157,7 @@
                         android:layout_marginTop="30dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="6dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="8dp">
 
@@ -199,6 +199,7 @@
                                 android:weightSum="3">
 
                                 <RelativeLayout
+                                    android:id="@+id/rl_neshaneha"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -261,67 +262,82 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginStart="30dp"
-                style="@style/title_text_large"
-                android:textSize="22sp"
-                android:text="@string/txt_koliiat"/>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp">
 
                 <TextView
-                    android:id="@+id/mezaj_descerption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     style="@style/title_text_large"
-                    android:textColor="@color/gray_very_dark"/>
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/title_text_large"
-                android:textSize="22sp"
-                android:text="@string/txt_neshaneha"
-                android:layout_gravity="start"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:contentDescription="appp">
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/txt_neshaneha"/>
 
                 <TextView
-                    android:id="@+id/mezaj_neshaneha"
+                    android:id="@+id/tv_mezaj_neshaneha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="10dp"
+                    style="@style/title_text_medium"
+                    android:textColor="@color/gray_very_dark"
+                    android:lineSpacingExtra="6dp"
+                    android:justificationMode="inter_word"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     style="@style/title_text_large"
-                    android:textColor="@color/gray_very_dark"/>
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/txt_raftar" />
 
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_mezaj_kholgokhoo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/title_text_medium"
+                    android:textColor="@color/gray_very_dark"
+                    android:lineSpacingExtra="6dp"
+                    android:justificationMode="inter_word"/>
 
-            <Button
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/title_text_large"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/txt_bimariha" />
+
+                <TextView
+                    android:id="@+id/tv_mezaj_bimariha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/title_text_medium"
+                    android:textColor="@color/gray_very_dark"
+                    android:lineSpacingExtra="6dp"
+                    android:justificationMode="inter_word"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="16dp"
+                android:background="@color/gray_dark"/>
+
+            <ImageView
                 android:id="@+id/go_to_up"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/ic_arrow_up"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/ic_go_to_up"/>
 
         </LinearLayout>
 
