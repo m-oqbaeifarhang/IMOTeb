@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
-abstract class MainFragment : Fragment(), View.OnClickListener,
+ class MainFragment : Fragment(), View.OnClickListener,
     NavigationView.OnNavigationItemSelectedListener
 {
     var navController: NavController? = null
@@ -57,7 +57,6 @@ abstract class MainFragment : Fragment(), View.OnClickListener,
         super.onAttach(context)
         myContext = context as FragmentActivity
     }
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
@@ -161,6 +160,7 @@ abstract class MainFragment : Fragment(), View.OnClickListener,
         bundle_mezaj_balgham!!.putString("bimariha",balgham_bimariha)
 
     }
+
     @SuppressLint("WrongConstant")
     override fun onActivityCreated(savedInstanceState: Bundle?)
     {
@@ -171,6 +171,7 @@ abstract class MainFragment : Fragment(), View.OnClickListener,
         //        }
         navigationDrawer()
     }
+
     override fun onClick(v: View?)
     {
         when(v!!.id)
@@ -229,7 +230,7 @@ abstract class MainFragment : Fragment(), View.OnClickListener,
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean
     {
-//        val fragManager = myContext!!.supportFragmentManager
+        val fragManager = myContext!!.supportFragmentManager
         when(menuItem.itemId)
         {
             R.id.nav_test ->
