@@ -57,16 +57,7 @@ abstract class MainFragment : Fragment(), View.OnClickListener,
         myContext = context as FragmentActivity
     }
 
-    @SuppressLint("WrongConstant")
-    override fun onActivityCreated(savedInstanceState: Bundle?)
-    {
-        super.onActivityCreated(savedInstanceState)
-        //        if(activity is AppCompatActivity){
-        //            (activity as AppCompatActivity).setSupportActionBar(main_toolbar)
-        //            initDrawer()
-        //        }
-        navigationDrawer()
-    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
@@ -169,7 +160,16 @@ abstract class MainFragment : Fragment(), View.OnClickListener,
         bundle_mezaj_balgham!!.putString("bimariha",balgham_bimariha)
 
     }
-
+    @SuppressLint("WrongConstant")
+    override fun onActivityCreated(savedInstanceState: Bundle?)
+    {
+        super.onActivityCreated(savedInstanceState)
+        //        if(activity is AppCompatActivity){
+        //            (activity as AppCompatActivity).setSupportActionBar(main_toolbar)
+        //            initDrawer()
+        //        }
+        navigationDrawer()
+    }
     override fun onClick(v: View?)
     {
         when(v!!.id)

@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: net.danlew:android.joda:2.10.6@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6eedb642b6d268227dca5e2dbc283086/jetified-android.joda-2.10.6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6eedb642b6d268227dca5e2dbc283086/jetified-android.joda-2.10.6/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6eedb642b6d268227dca5e2dbc283086/jetified-android.joda-2.10.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7978fd38f035423ddf013c8476dd4a2a/jetified-android.joda-2.10.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7978fd38f035423ddf013c8476dd4a2a/jetified-android.joda-2.10.6/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7978fd38f035423ddf013c8476dd4a2a/jetified-android.joda-2.10.6/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.danlew/android.joda/2.10.6/25e8cbeae197b9d9eaaeb48e63cf285ef4e0de43/android.joda-2.10.6-javadoc.jar!/" />
