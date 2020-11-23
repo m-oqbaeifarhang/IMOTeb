@@ -35,6 +35,7 @@ abstract class MainFragment : Fragment(), View.OnClickListener,
     var bundle_mezaj_soda : Bundle ?=null
     var bundle_mezaj_balgham : Bundle ?=null
 
+
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View?
