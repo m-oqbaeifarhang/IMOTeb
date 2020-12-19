@@ -35,7 +35,6 @@ class MezajsDetailsFragment : Fragment(),View.OnClickListener
         }
         toolbar_fg_mezaj_detail.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
-
         }*/
 
     }

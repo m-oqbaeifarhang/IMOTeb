@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.imoteb.R
-import kotlinx.android.synthetic.main.fragment_mezajs_details.*
 import kotlinx.android.synthetic.main.fragment_test_mezaj_results_text.*
 
 class TestMezajResultsTextFragment : Fragment()
@@ -65,21 +64,21 @@ class TestMezajResultsTextFragment : Fragment()
             }
             MezajehGhalebehEnum.GhalabehShadidsafra, MezajehGhalebehEnum.GhalabehMotavasetsafra, MezajehGhalebehEnum.GhalabehKamsafra ->
             {
-                avarez_Ghalabeh = "وجود ندارد"
+                avarez_Ghalabeh = getString(R.string.avarez_ghalabeh_safra)
                 avamel_Ghalabeh = getString(R.string.avamel_ghalabeh_safra)
                 tusiyehhaye_Darmani = getString(R.string.darman_ghalabeh_safra)
                 khususiyat_Akhlaghi = getString(R.string.khususiyyat_Akhlaghi_safra)
             }
             MezajehGhalebehEnum.GhalabehShadidsoda, MezajehGhalebehEnum.GhalabehMotavasetsoda, MezajehGhalebehEnum.GhalabehKamsoda ->
             {
-                avarez_Ghalabeh = "وجود ندارد"
+                avarez_Ghalabeh = getString(R.string.avarez_ghalabeh_soda)
                 avamel_Ghalabeh = getString(R.string.avamel_ghalabeh_soda)
                 tusiyehhaye_Darmani = getString(R.string.darman_ghalabeh_soda)
                 khususiyat_Akhlaghi = getString(R.string.khususiyyat_akhtalaghi_soda)
             }
             MezajehGhalebehEnum.GhalabehShadidbalgham, MezajehGhalebehEnum.GhalabehMotavasetbalgham, MezajehGhalebehEnum.GhalabehKambalgham ->
             {
-                avarez_Ghalabeh = "وجود ندارد"
+                avarez_Ghalabeh = getString(R.string.avarez_ghalabeh_balgham)
                 avamel_Ghalabeh =    getString( R.string.avamel_ghalabeh_balgham)
                 tusiyehhaye_Darmani =getString(R.string.darman_ghalabeh_balgham)
                 khususiyat_Akhlaghi =getString(R.string.khususiyyat_akhtalaghi_balgham)
@@ -89,19 +88,19 @@ class TestMezajResultsTextFragment : Fragment()
         {
             0 ->
             {
-                tv_tosiyehaye_darmani.text = tusiyehhaye_Darmani
+                tv_natayej_mezaj.text = tusiyehhaye_Darmani
             }
             1 ->
             {
-                tv_tosiyehaye_darmani.text = khususiyat_Akhlaghi
+                tv_natayej_mezaj.text = khususiyat_Akhlaghi
             }
             2 ->
             {
-                tv_tosiyehaye_darmani.text = avarez_Ghalabeh
+                tv_natayej_mezaj.text = avarez_Ghalabeh
             }
             3 ->
             {
-                tv_tosiyehaye_darmani.text = avamel_Ghalabeh
+                tv_natayej_mezaj.text = avamel_Ghalabeh
             }
         }
     }

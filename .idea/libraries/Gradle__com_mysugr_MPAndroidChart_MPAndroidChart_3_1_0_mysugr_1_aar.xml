@@ -1,10 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.mysugr.MPAndroidChart:MPAndroidChart:3.1.0-mysugr-1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fc4f275efe64bd827e036228daf3c246/jetified-MPAndroidChart-3.1.0-mysugr-1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a91f4811f0f8b80d376e36a91e93f9f5/jetified-MPAndroidChart-3.1.0-mysugr-1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a91f4811f0f8b80d376e36a91e93f9f5/jetified-MPAndroidChart-3.1.0-mysugr-1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a91f4811f0f8b80d376e36a91e93f9f5/jetified-MPAndroidChart-3.1.0-mysugr-1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a91f4811f0f8b80d376e36a91e93f9f5/jetified-MPAndroidChart-3.1.0-mysugr-1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mysugr.MPAndroidChart/MPAndroidChart/3.1.0-mysugr-1/55c90290d73db25e6548919b599b8a5dfc21ac42/MPAndroidChart-3.1.0-mysugr-1-javadoc.jar!/" />

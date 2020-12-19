@@ -30,8 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:attr/progressBarStyleHorizontal"
-        android:scaleY="1.5"
-        android:progressTint="@color/blue_light"/>
+        android:scaleY="1"
+        android:progressTint="@color/blue_dark"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView_fragment_mezaj_queries"

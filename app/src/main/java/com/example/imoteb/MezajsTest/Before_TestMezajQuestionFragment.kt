@@ -13,8 +13,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.transition.AutoTransition
-import androidx.transition.TransitionManager
 import com.example.imoteb.MainActivity
 import com.example.imoteb.R
 import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
@@ -42,7 +40,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
         navController = Navigation.findNavController(view)
         btn_marhaleye_baad.setOnClickListener(this)
 
-        btn_bishtar_bekhanid.setOnClickListener {
+/*        btn_bishtar_bekhanid.setOnClickListener {
             if(more_information_view.visibility == View.GONE)
             {
                 TransitionManager.beginDelayedTransition(cardView, AutoTransition())
@@ -56,7 +54,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
                 btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_down)
                 motaleye_bishtar.text = "مطالعه بیشتر"
             }
-        }
+        }*/
         numberPicker.minValue = 1320
         numberPicker.maxValue = 1388
         numberPicker.wrapSelectorWheel = true
@@ -102,7 +100,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
             val rdb = rg_gender.findViewById<RadioButton>(group.checkedRadioButtonId)
             Model.Gender = when(rdb.contentDescription.toString())
             {
-                R.string.male.toString() -> GenderEnum.Male
+                R.string.txt_male.toString() -> GenderEnum.Male
                 else -> GenderEnum.Female
             }
             GenderFlag = true

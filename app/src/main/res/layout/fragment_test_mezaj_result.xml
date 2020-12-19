@@ -97,24 +97,25 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/main_background_master"/>
+                    android:background="@color/gray_dark"/>
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/natayejTablayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
                     app:tabMode="scrollable"
                     android:alpha="1"
+                    app:tabRippleColor="@color/gray_very_dark"
                     app:tabBackground="@drawable/tablayout_background"
-                    app:tabRippleColor="@color/gray_dark"
-                    app:tabSelectedTextColor="@color/red"
-                    app:tabIndicatorColor="@color/red"
+                    app:tabSelectedTextColor="#F9613C"
+                    app:tabIndicatorColor="#F9613C"
                     app:tabTextAppearance="@style/tab_text" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/main_background_master"/>
+                    android:background="@color/gray_dark"/>
 
             </LinearLayout>
 
@@ -125,21 +126,20 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="16dp">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:padding="16dp"
             android:background="@color/main_background">
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/natayejViewPager"
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
+                android:rotationY="180"
                 android:background="@color/main_background"
                 android:layoutDirection="rtl" />
 
@@ -151,12 +151,13 @@
         android:id="@+id/btn_ask_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/blue_light"
-        app:rippleColor="@color/dam_color_start"
+        app:backgroundTint="@color/white"
+        app:rippleColor="@color/gray_dark"
         android:layout_gravity="bottom|end"
         android:layout_margin="30dp"
         app:elevation="6dp"
-        app:srcCompat="@drawable/ic_share"/>
+        app:srcCompat="@drawable/ic_share"
+        android:contentDescription="TODO" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

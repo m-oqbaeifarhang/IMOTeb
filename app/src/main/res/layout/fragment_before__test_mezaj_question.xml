@@ -9,34 +9,35 @@
     android:layoutDirection="rtl"
     tools:context=".MezajsTest.Before_TestMezajQuestionFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_fg_before_test_mezaj_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_before_test_mezaj_question"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@color/toolbar_background"
+            android:layoutDirection="rtl"
+            app:elevation="0dp"
+            app:title=" "/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true">
+        android:layout_below="@+id/app_bar_fg_before_test_mezaj_question">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/main_background">
-
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/app_bar_fg_before_test_mezaj_question"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:elevation="0dp">
-
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar_before_test_mezaj_question"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:layout_alignParentTop="true"
-                    android:background="@color/toolbar_background"
-                    android:layoutDirection="rtl"
-                    app:elevation="0dp"
-                    app:title=" "/>
-
-            </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -47,126 +48,475 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="8dp"
-                app:cardElevation="8dp">
+                app:cardElevation="4dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                <View
-                    android:id="@+id/view_attention"
-                    android:layout_width="10dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="15dp"
-                    android:layout_gravity="start"
-                    android:background="@color/red_light"/>
+                    <!--<View
+                        android:id="@+id/view_attention"
+                        android:layout_width="10dp"
+                        android:layout_height="120dp"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="start"
+                        android:background="@color/red_light"/>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:orientation="vertical"
-                    android:layout_toEndOf="@+id/view_attention">
+                    <ImageView
+                        android:id="@+id/view_attention"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="start"
+                        android:src="@drawable/ic_taajjob"/>
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:paddingTop="10dp"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="4dp"
-                        android:layoutDirection="rtl">
+                        android:layoutDirection="rtl"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_toEndOf="@+id/view_attention">
 
                         <TextView
                             android:id="@+id/txt_attention"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tavajjoh"
+                            android:text="@string/txt_tavajjoh"
                             style="@style/title_text_large"
-                            android:textSize="20sp"
+                            android:textSize="25sp"
                             android:textColor="@color/red_light"/>
 
                         <TextView
-                            android:id="@+id/txt_bardar"
                             style="@style/title_text_medium"
+                            android:alpha="0.8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/txt_attention"
+                            android:justificationMode="inter_word"
                             android:layout_marginTop="6dp"
-                            android:textSize="14sp"
-                            android:text="@string/text_bardar" />
+                            android:textColor="@color/red_light"
+                            android:text="@string/txt_tavajjoh_a" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="16dp"
+                            android:background="@color/gray_dark"/>
 
                         <TextView
-                            android:id="@+id/feshrKhoon"
-                            style="@style/title_text_medium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/txt_bardar"
-                            android:layout_marginTop="2dp"
-                            android:textSize="14sp"
-                            android:text="@string/text_feshar_khoon" />
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:id="@+id/more_information_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="4dp"
-                        android:layoutDirection="rtl"
-                        android:orientation="vertical"
-                        android:visibility="gone">
-
-                        <TextView
+                            android:justificationMode="inter_word"
                             style="@style/title_text_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:text="@string/txt_mezaj_chist" />
-
-                        <TextView
-                            style="@style/title_text_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:textSize="14sp"
-                            android:text="@string/text_motaleye_bishtar_b" />
+                            android:alpha="0.7"
+                            android:lineSpacingExtra="3dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/txt_nokat" />
 
                     </LinearLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="10dp">
-
-                        <TextView
-                            android:id="@+id/motaleye_bishtar"
-                            style="@style/text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_centerHorizontal="true"
-                            android:text="@string/more"
-                            android:textColor="@color/blue_light" />
-
-                        <Button
-                            android:id="@+id/btn_bishtar_bekhanid"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_below="@+id/motaleye_bishtar"
-                            android:layout_alignParentBottom="true"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/ic_arrow_down" />
-
-                    </RelativeLayout>
-
-                </LinearLayout>
 
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_age"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="6dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:id="@+id/view_insert_agee"
+                                android:layout_width="10dp"
+                                android:layout_height="80dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_margin="15dp"
+                                android:background="@color/green"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_toEndOf="@+id/view_insert_agee"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/title_text_medium"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/green"
+                                    android:text="@string/txt_tarikh_tavallod_input"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center"
+                                    android:padding="20dp"
+                                    android:layoutDirection="ltr">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/NumberPickerText_b"
+                                        android:textColor="@color/gray_dark"
+                                        android:text="13" />
+
+                                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                                        android:id="@+id/snp_vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        app:snp_buttonIconUp="@drawable/ic_up"
+                                        app:snp_buttonIconDown="@drawable/ic_down"
+                                        app:snp_buttonPaddingBottom="0dp"
+                                        app:snp_buttonPaddingTop="0dp"
+                                        app:snp_maxValue="9"
+                                        app:snp_minValue="0"
+                                        app:snp_value="0"
+                                        app:snp_stepSize="1"
+                                        app:snp_updateInterval="10"
+                                        app:snp_orientation="vertical"
+                                        app:snp_scrollEnabled="true"
+                                        app:snp_valueMarginStart="0dp"
+                                        app:snp_valueMarginEnd="0dp"
+                                        app:snp_value_text_appearance="@style/NumberPickerText_b"/>
+
+                                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                                        android:id="@+id/snp_vertical2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        app:snp_buttonIconUp="@drawable/ic_up"
+                                        app:snp_buttonIconDown="@drawable/ic_down"
+                                        app:snp_maxValue="9"
+                                        app:snp_minValue="0"
+                                        app:snp_value="0"
+                                        app:snp_stepSize="1"
+                                        app:snp_orientation="vertical"
+                                        app:snp_scrollEnabled="true"
+                                        app:snp_valueMarginStart="0dp"
+                                        app:snp_valueMarginEnd="0dp"
+                                        app:snp_value_text_appearance="@style/NumberPickerText_b"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_marital_satatus"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="6dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:id="@+id/view_material_status"
+                                android:layout_width="10dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_margin="15dp"
+                                android:background="@color/blue_dark"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_toEndOf="@+id/view_material_status"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/title_text_large"
+                                    android:textSize="16sp"
+                                    android:layout_gravity="start"
+                                    android:textColor="@color/blue_dark"
+                                    android:text="@string/txt_marital_status" />
+
+                                <View
+                                    android:layout_width="150dp"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="start"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/gray_dark"/>
+
+                                <RadioGroup
+                                    android:id="@+id/rg_vaziyat_tahhol"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="start"
+                                    android:layout_marginTop="24dp"
+                                    android:weightSum="3">
+
+                                    <Space
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"/>
+
+                                    <RadioButton
+                                        android:id="@+id/rb_single"
+                                        android:contentDescription="@string/single"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:theme="@style/RadioButtonStyle"
+                                        style="@style/title_text_medium"
+                                        android:text="@string/single" />
+
+                                    <RadioButton
+                                        android:id="@+id/rb_married"
+                                        android:contentDescription="@string/married"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:theme="@style/RadioButtonStyle"
+                                        style="@style/title_text_medium"
+                                        android:text="@string/married" />
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_gender"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="6dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:id="@+id/view_genderr"
+                                android:layout_width="10dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_margin="15dp"
+                                android:background="@color/purple"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_toEndOf="@+id/view_genderr"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/title_text_large"
+                                    android:textSize="16sp"
+                                    android:layout_gravity="start"
+                                    android:textColor="@color/purple"
+                                    android:text="@string/txt_gender" />
+
+                                <View
+                                    android:layout_width="150dp"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="start"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/gray_dark"/>
+
+                                <RadioGroup
+                                    android:id="@+id/rg_gender"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="start"
+                                    android:layout_marginTop="24dp"
+                                    android:weightSum="3">
+
+                                    <Space
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"/>
+
+                                    <RadioButton
+                                        android:id="@+id/rb_mard"
+                                        android:contentDescription="@string/single"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:theme="@style/RadioButtonStyle"
+                                        style="@style/title_text_medium"
+                                        android:text="@string/txt_male" />
+
+                                    <RadioButton
+                                        android:id="@+id/rb_zan"
+                                        android:contentDescription="@string/married"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:theme="@style/RadioButtonStyle"
+                                        style="@style/title_text_medium"
+                                        android:text="@string/txt_female" />
+
+                                </RadioGroup>
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_marhaleye_baad"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                style="@style/title_text_large"
+                android:background="@drawable/bg_button_blue"
+                android:text="@string/marhaleye_baad"
+                android:textColor="@color/white" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView_b"
@@ -177,7 +527,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                app:cardElevation="8dp">
+                app:cardElevation="4dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -196,16 +546,9 @@
                         android:layout_height="wrap_content"
                         android:layoutDirection="rtl"
                         android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
                         android:layout_toEndOf="@+id/view_insert_age">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:paddingTop="10dp"
-                            android:paddingStart="5dp"
-                            android:paddingEnd="4dp"
-                            android:layoutDirection="rtl">
 
                             <TextView
                                 android:id="@+id/txt_insert_age"
@@ -214,317 +557,28 @@
                                 style="@style/title_text_medium"
                                 android:textSize="16sp"
                                 android:textColor="@color/green"
-                                android:text="@string/sen_input"/>
+                                android:text="@string/txt_tarikh_tavallod_input"/>
 
                             <NumberPicker
                                 android:id="@+id/numberPicker"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="vertical"
                                 android:theme="@style/NumberPickerText_a"
                                 android:backgroundTint="@color/red"
                                 android:backgroundTintMode="screen"
-                                android:layout_centerHorizontal="true"
                                 android:divider="@color/blue_light_alpha" />
 
-                        </RelativeLayout>
-
                     </LinearLayout>
 
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardVi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                app:cardCornerRadius="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="8dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <View
-                        android:id="@+id/view_insert"
-                        android:layout_width="10dp"
-                        android:layout_height="60dp"
-                        android:layout_margin="15dp"
-                        android:layout_gravity="start"
-                        android:background="@color/green"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layoutDirection="rtl"
-                        android:orientation="vertical"
-                        android:layout_toEndOf="@+id/view_insert">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:paddingTop="10dp"
-                            android:paddingStart="5dp"
-                            android:paddingEnd="4dp"
-                            android:layoutDirection="rtl">
-
-                            <TextView
-                                android:id="@+id/txt_insert"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/title_text_medium"
-                                android:textSize="16sp"
-                                android:textColor="@color/green"
-                                android:text="@string/sen_input"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_below="@+id/txt_insert"
-                                android:gravity="center"
-                                android:layout_marginTop="6dp"
-                                android:layout_marginBottom="6dp"
-                                android:layoutDirection="ltr">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/NumberPickerText_b"
-                                    android:text="13" />
-
-                                <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
-                                    android:id="@+id/snp_vertical"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="4dp"
-                                    app:snp_buttonIconUp="@drawable/ic_up"
-                                    app:snp_buttonIconDown="@drawable/ic_down"
-                                    app:snp_buttonPaddingBottom="0dp"
-                                    app:snp_buttonPaddingTop="0dp"
-                                    app:snp_maxValue="9"
-                                    app:snp_minValue="0"
-                                    app:snp_value="0"
-                                    app:snp_stepSize="1"
-                                    app:snp_updateInterval="10"
-                                    app:snp_orientation="vertical"
-                                    app:snp_scrollEnabled="true"
-                                    app:snp_valueMarginStart="0dp"
-                                    app:snp_valueMarginEnd="0dp"
-                                    app:snp_value_text_appearance="@style/NumberPickerText_b"/>
-
-                                <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
-                                    android:id="@+id/snp_vertical2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="6dp"
-                                    app:snp_buttonIconUp="@drawable/ic_up"
-                                    app:snp_buttonIconDown="@drawable/ic_down"
-                                    app:snp_maxValue="9"
-                                    app:snp_minValue="0"
-                                    app:snp_value="0"
-                                    app:snp_stepSize="1"
-                                    app:snp_orientation="vertical"
-                                    app:snp_scrollEnabled="true"
-                                    app:snp_valueMarginStart="0dp"
-                                    app:snp_valueMarginEnd="0dp"
-                                    app:snp_value_text_appearance="@style/NumberPickerText_b"/>
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                app:cardCornerRadius="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="6dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <View
-                        android:id="@+id/view_marital_status"
-                        android:layout_width="10dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="15dp"
-                        android:layout_gravity="start"
-                        android:background="@color/blue_dark"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="3"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@+id/view_marital_status">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            style="@style/title_text_large"
-                            android:textSize="16sp"
-                            android:layout_gravity="top"
-                            android:textColor="@color/blue_dark"
-                            android:text="@string/marital_status" />
-
-                        <RadioGroup
-                            android:id="@+id/rg_vaziyat_tahhol"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="32dp"
-                            android:weightSum="2">
-
-                            <RadioButton
-                                android:id="@+id/rb_single"
-                                android:contentDescription="@string/single"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:theme="@style/RadioButtonStyle"
-                                style="@style/title_text_medium"
-                                android:text="@string/single" />
-
-                            <RadioButton
-                                android:id="@+id/rb_married"
-                                android:contentDescription="@string/married"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:theme="@style/RadioButtonStyle"
-                                style="@style/title_text_medium"
-                                android:text="@string/married" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                app:cardCornerRadius="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="6dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <View
-                        android:id="@+id/view_gender"
-                        android:layout_width="10dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="15dp"
-                        android:layout_gravity="start"
-                        android:background="@color/purple"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="3"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@+id/view_gender">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            style="@style/title_text_large"
-                            android:textSize="16sp"
-                            android:textColor="@color/purple"
-                            android:layout_gravity="top"
-                            android:text="@string/gender" />
-
-                        <RadioGroup
-                            android:id="@+id/rg_gender"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="32dp"
-                            android:weightSum="2">
-
-                            <RadioButton
-                                android:id="@+id/rb_mard"
-                                android:contentDescription="@string/single"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:theme="@style/RadioButtonStyle"
-                                style="@style/title_text_medium"
-                                android:text="@string/male" />
-
-                            <RadioButton
-                                android:id="@+id/rb_zan"
-                                android:contentDescription="@string/married"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:theme="@style/RadioButtonStyle"
-                                style="@style/title_text_medium"
-                                android:text="@string/female" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="70dp" />
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-    <Button
-        android:id="@+id/btn_marhaleye_baad"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="@dimen/button_top_margin"
-        android:layout_marginStart="@dimen/button_start_margin"
-        android:layout_marginEnd="@dimen/button_end_margin"
-        android:layout_marginBottom="@dimen/button_bottom_margin"
-        android:elevation="6dp"
-        style="@style/title_text_large"
-        android:background="@drawable/bg_button_blue"
-        android:text="@string/marhaleye_baad"
-        android:textColor="@color/white" />
 
 </RelativeLayout>
 

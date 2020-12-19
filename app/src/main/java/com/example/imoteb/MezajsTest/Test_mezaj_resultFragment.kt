@@ -59,8 +59,7 @@ class Test_mezaj_resultFragment() : Fragment()
         }*/
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
-        val natayejViewPagerAdapter =
-            NatayejViewPagerAdapter(requireActivity().supportFragmentManager)
+        val natayejViewPagerAdapter = NatayejViewPagerAdapter(requireActivity().supportFragmentManager)
         natayejViewPagerAdapter.addFragment(TestMezajResultsTextFragment(), "توصیه های درمانی")
         natayejViewPagerAdapter.addFragment(TestMezajResultsTextFragment(), "خصوصیات اخلاقی")
         natayejViewPagerAdapter.addFragment(TestMezajResultsTextFragment(), "عوارض غلبه")

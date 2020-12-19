@@ -2,9 +2,7 @@ package com.example.imoteb
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,9 +17,12 @@ import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment
+import com.example.imoteb.MezajsTest.MezajRecords_Fragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.dialog_layout_general_quetion.view.*
+import kotlinx.android.synthetic.main.dialog_layout_read_more.view.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
  class MainFragment : Fragment(), View.OnClickListener,
@@ -30,6 +31,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
     var navController: NavController? = null
     private var myContext: FragmentActivity? = null
     lateinit var beforeTestmezajquestionfragment: Before_TestMezajQuestionFragment
+    lateinit var mezajrecordsFragment: MezajRecords_Fragment
     var bundle_mezaj_dam : Bundle ?=null
     var bundle_mezaj_safra : Bundle ?=null
     var bundle_mezaj_soda : Bundle ?=null
@@ -68,26 +70,6 @@ import kotlinx.android.synthetic.main.fragment_main.*
         rl_safra.setOnClickListener(this)
         rl_soda.setOnClickListener(this)
         rl_balgham.setOnClickListener(this)
-
-        btn_bishtar_bekhanid.setOnClickListener {
-            if(more_information_content_main.visibility == View.GONE)
-            {
-                androidx.transition.TransitionManager.beginDelayedTransition(
-                    cardView_content_main_layout,
-                    androidx.transition.AutoTransition())
-                more_information_content_main.visibility = View.VISIBLE
-                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_up)
-                motaleye_bishtar_content_main_layout.text = "بستن"
-            } else
-            {
-                androidx.transition.TransitionManager.beginDelayedTransition(
-                    cardView_content_main_layout,
-                    androidx.transition.AutoTransition())
-                more_information_content_main.visibility = View.GONE
-                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_down)
-                motaleye_bishtar_content_main_layout.text = "بیشتر"
-            }
-        }
 
         bundle_mezaj_dam = Bundle()
         bundle_mezaj_safra = Bundle()
@@ -158,6 +140,44 @@ import kotlinx.android.synthetic.main.fragment_main.*
         bundle_mezaj_balgham!!.putString("neshaneha",balgham_neshaneha)
         bundle_mezaj_balgham!!.putString("kolgokhoo",balgham_kholgokhoo)
         bundle_mezaj_balgham!!.putString("bimariha",balgham_bimariha)
+
+        btn_bishtar_bekhanid.setOnClickListener {
+            if(more_information_content_main.visibility == View.GONE)
+            {
+                androidx.transition.TransitionManager.beginDelayedTransition(
+                    cardView_content_main_layout,
+                    androidx.transition.AutoTransition())
+                more_information_content_main.visibility = View.VISIBLE
+                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_up)
+                motaleye_bishtar_content_main_layout.text = "بستن"
+            } else
+            {
+                androidx.transition.TransitionManager.beginDelayedTransition(
+                    cardView_content_main_layout,
+                    androidx.transition.AutoTransition())
+                more_information_content_main.visibility = View.GONE
+                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_down)
+                motaleye_bishtar_content_main_layout.text = "بیشتر"
+            }
+        }
+
+        ll_bishtar_bekhanid.setOnClickListener{
+            val readMoreDialogView = layoutInflater.inflate(R.layout.dialog_layout_read_more,null)
+            val readMoreBuilder = AlertDialog.Builder(requireContext()).setView(readMoreDialogView)
+            val readMoreAlert = readMoreBuilder.show()
+            readMoreDialogView.iv_close_dialog_layout_read_more.setOnClickListener{
+                readMoreAlert.dismiss()
+            }
+        }
+
+        ll_general_question.setOnClickListener{
+            val generalQuestionDialogView = layoutInflater.inflate(R.layout.dialog_layout_general_quetion,null)
+            val generalQuestionBuilder = AlertDialog.Builder(requireContext()).setView(generalQuestionDialogView)
+            val generalQuestionAlert = generalQuestionBuilder.show()
+            generalQuestionDialogView.iv_close_dialog_layout_general_question.setOnClickListener{
+                generalQuestionAlert.dismiss()
+            }
+        }
 
     }
 
@@ -238,11 +258,11 @@ import kotlinx.android.synthetic.main.fragment_main.*
                 beforeTestmezajquestionfragment = Before_TestMezajQuestionFragment()
                 navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
             }
-/*            R.id.nav_mezaj_records ->
+            R.id.nav_mezaj_records ->
             {
-                beforeTestmezajquestionfragment = Before_TestMezajQuestionFragment()
+                mezajrecordsFragment = MezajRecords_Fragment()
                 navController!!.navigate(R.id.action_mainFragment_to_mezajRecordsFragment)
-            }*/
+            }
             R.id.nav_rate ->
             {
                 Toast.makeText(requireContext(), "rate clicked", Toast.LENGTH_SHORT).show()

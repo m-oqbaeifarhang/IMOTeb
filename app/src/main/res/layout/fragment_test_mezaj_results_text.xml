@@ -18,11 +18,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_tosiyehaye_darmani"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_natayej_mezaj"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/text_motaleye_bishtar_b"
+                android:justificationMode="inter_word"
+                android:rotationY="180"
+                android:lineSpacingExtra="4dp"
                 style="@style/title_text_large" />
+<!--            android:text="@string/text_motaleye_bishtar_b"-->
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="70dp"/>
 
         </LinearLayout>
 
