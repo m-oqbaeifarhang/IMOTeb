@@ -11,7 +11,6 @@
     tools:openDrawer="start"
     android:background="@color/main_background">
 
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="230dp"
