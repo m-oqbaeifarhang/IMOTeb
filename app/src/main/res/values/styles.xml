@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
 <!--    style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"-->
@@ -16,6 +16,28 @@
 <!--        <item name="android:enforceStatusBarContrast">true</item>-->
 <!--        <item name="statusBarBackground">@color/red</item>-->
     </style>
+
+    <style name="imotebTextStyle">
+        <item name="fontFamily">@font/nasaliza</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="title_text_large">
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_color_titr</item>
+        <item name="fontFamily">@font/iransans</item>
+    </style>
+
+    <style name="title_text_medium">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_color_titr_dark</item>
+        <item name="fontFamily">@font/iransans</item>
+    </style>
     
     <style name="RadioButtonStyle" parent="Theme.AppCompat.Light">
         <!--color of radio button-->
@@ -31,20 +53,6 @@
         <item name="android:textColor">@color/text_color_titr_dark</item>
     </style>
 
-    <style name="title_text_large">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/text_color_titr</item>
-        <item name="fontFamily">@font/iransans</item>
-    </style>
-
-    <style name="title_text_medium">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/text_color_titr_dark</item>
-        <item name="fontFamily">@font/iransans</item>
-    </style>
-
     <style name="NumberPickerText_a">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#673AB7</item>
@@ -52,16 +60,9 @@
         <item name="android:colorActivatedHighlight">#FFC107</item>
     </style>
 
-    <style name="NumberPickerText_b">
-        <item name="android:textSize">45sp</item>
-        <item name="android:textColor">@color/gray_very_dark</item>
-    </style>
-
-    <style name="text">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/text_color</item>
-        <item name="fontFamily">@font/iransans</item>
-        <item name="android:textStyle">bold</item>
+    <style name="NumberPickerInputAge">
+        <item name="android:textSize">56sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">

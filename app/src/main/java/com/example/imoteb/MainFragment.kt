@@ -19,7 +19,6 @@ import androidx.navigation.Navigation
 import com.example.imoteb.MezajsTest.Before_TestMezajQuestionFragment
 import com.example.imoteb.MezajsTest.MezajRecords_Fragment
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.dialog_layout_general_quetion.view.*
 import kotlinx.android.synthetic.main.dialog_layout_read_more.view.*
@@ -66,10 +65,11 @@ import kotlinx.android.synthetic.main.fragment_main.*
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btn_start_TestMazaj.setOnClickListener(this)
-        rl_dam.setOnClickListener(this)
-        rl_safra.setOnClickListener(this)
-        rl_soda.setOnClickListener(this)
-        rl_balgham.setOnClickListener(this)
+
+        cl_dam.setOnClickListener(this)
+        cl_safra.setOnClickListener(this)
+        cl_soda.setOnClickListener(this)
+        cl_balgham.setOnClickListener(this)
 
         bundle_mezaj_dam = Bundle()
         bundle_mezaj_safra = Bundle()
@@ -78,28 +78,28 @@ import kotlinx.android.synthetic.main.fragment_main.*
 
         val dam_title = requireActivity().getString(R.string.txt_dam_title) as String
         val dam_mezaj_tab = requireActivity().getString(R.string.txt_dam_mezaj_tab) as String
-        val english_dam_title = requireActivity().getString(R.string.txt_dam_title_english) as String
+        val english_dam_title = requireActivity().getString(R.string.txt_dam_english) as String
         val dam_neshaneha = requireActivity().getString(R.string.txt_dam_neshaneha) as String
         val dam_kholgokhoo = requireActivity().getString(R.string.txt_dam_kholgokhoo) as String
         val dam_bimariha = requireActivity().getString(R.string.txt_dam_bimariha) as String
 
         val safra_title = requireActivity().getString(R.string.txt_safra_title) as String
         val safra_mezaj_tab = requireActivity().getString(R.string.txt_safra_mezaj_tab) as String
-        val english_safra_title = requireActivity().getString(R.string.txt_safra_title_english) as String
+        val english_safra_title = requireActivity().getString(R.string.txt_safra_english) as String
         val safra_neshaneha = requireActivity().getString(R.string.txt_safra_neshaneha) as String
         val safra_kholgokhoo = requireActivity().getString(R.string.txt_safra_kholgokhoo) as String
         val safra_bimariha = requireActivity().getString(R.string.txt_safra_bimariha) as String
 
         val soda_title = requireActivity().getString(R.string.txt_soda_title) as String
         val soda_mezaj_tab = requireActivity().getString(R.string.txt_soda_mezaj_tab) as String
-        val english_soda_title = requireActivity().getString(R.string.txt_soda_title_english) as String
+        val english_soda_title = requireActivity().getString(R.string.txt_soda_english) as String
         val soda_neshaneha = requireActivity().getString(R.string.txt_soda_neshaneha) as String
         val soda_kholgokhoo = requireActivity().getString(R.string.txt_soda_kholgokhoo) as String
         val soda_bimariha = requireActivity().getString(R.string.txt_soda_bimariha) as String
 
         val balgham_title = requireActivity().getString(R.string.txt_balgham_title) as String
         val balgham_mezaj_tab = requireActivity().getString(R.string.txt_balgham_mezaj_tab) as String
-        val english_balgham_title = requireActivity().getString(R.string.txt_balgham_title_english) as String
+        val english_balgham_title = requireActivity().getString(R.string.txt_balgham_english) as String
         val balgham_neshaneha = requireActivity().getString(R.string.txt_balgham_neshaneha) as String
         val balgham_kholgokhoo = requireActivity().getString(R.string.txt_balgham_kholgokhoo) as String
         val balgham_bimariha = requireActivity().getString(R.string.txt_balgham_bimariha) as String
@@ -144,24 +144,20 @@ import kotlinx.android.synthetic.main.fragment_main.*
         btn_bishtar_bekhanid.setOnClickListener {
             if(more_information_content_main.visibility == View.GONE)
             {
-                androidx.transition.TransitionManager.beginDelayedTransition(
-                    cardView_content_main_layout,
-                    androidx.transition.AutoTransition())
+                androidx.transition.TransitionManager.beginDelayedTransition(more_information_content_main, androidx.transition.AutoTransition())
                 more_information_content_main.visibility = View.VISIBLE
-                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_up)
+                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_up_direction)
                 motaleye_bishtar_content_main_layout.text = "بستن"
             } else
             {
-                androidx.transition.TransitionManager.beginDelayedTransition(
-                    cardView_content_main_layout,
-                    androidx.transition.AutoTransition())
+                androidx.transition.TransitionManager.beginDelayedTransition(more_information_content_main, androidx.transition.AutoTransition())
                 more_information_content_main.visibility = View.GONE
-                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_arrow_down)
-                motaleye_bishtar_content_main_layout.text = "بیشتر"
+                btn_bishtar_bekhanid.setBackgroundResource(R.drawable.ic_down_direction)
+                motaleye_bishtar_content_main_layout.text = resources.getString(R.string.more)
             }
         }
 
-        ll_bishtar_bekhanid.setOnClickListener{
+        cv_read_more.setOnClickListener{
             val readMoreDialogView = layoutInflater.inflate(R.layout.dialog_layout_read_more,null)
             val readMoreBuilder = AlertDialog.Builder(requireContext()).setView(readMoreDialogView)
             val readMoreAlert = readMoreBuilder.show()
@@ -170,7 +166,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
             }
         }
 
-        ll_general_question.setOnClickListener{
+        cv_general_question.setOnClickListener{
             val generalQuestionDialogView = layoutInflater.inflate(R.layout.dialog_layout_general_quetion,null)
             val generalQuestionBuilder = AlertDialog.Builder(requireContext()).setView(generalQuestionDialogView)
             val generalQuestionAlert = generalQuestionBuilder.show()
@@ -197,10 +193,10 @@ import kotlinx.android.synthetic.main.fragment_main.*
         when(v!!.id)
         {
             R.id.btn_start_TestMazaj -> navController!!.navigate(R.id.action_mainFragment_to_before_TestMezajQuestionFragment)
-            R.id.rl_dam -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_dam)
-            R.id.rl_safra -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_safra)
-            R.id.rl_soda -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_soda)
-            R.id.rl_balgham -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_balgham)
+            R.id.cl_dam -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_dam)
+            R.id.cl_safra -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_safra)
+            R.id.cl_soda -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_soda)
+            R.id.cl_balgham -> navController!!.navigate(R.id.action_mainFragment_to_mezajsDetails_Fragment,bundle_mezaj_balgham)
         }
     }
 
@@ -219,7 +215,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         navigation_view.setNavigationItemSelectedListener(this)
         navigation_view.setCheckedItem(R.id.nav_signup)
 
-        btn_menu.setOnClickListener {
+        acbtn_menu.setOnClickListener {
             if(drawer_layout.isDrawerVisible(GravityCompat.START))
             {
                 drawer_layout.closeDrawer(GravityCompat.START)

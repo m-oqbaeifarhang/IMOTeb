@@ -25,12 +25,11 @@
     <color name="gray_alpha">#994D4E4E</color>
     <color name="black_alpha">#22000000</color>
     <color name="black">#000000</color>
-    <color name="aaaaaa">#032539</color>
-    <color name="bbbbb">#88032539</color>
+    <color name="indigo">#032539</color>
+    <color name="light_indigo">#88032539</color>
 
 <!--    mezajs items colors-->
-    <color name="dam_color_start">#78C67C</color>
-    <color name="dam_color_end">#95C897</color>
+    <color name="dam_color">#95C897</color>
     <color name="safra_color_start">#ED6967</color>
     <color name="safra_color_end">#F3A09F</color>
     <color name="soda_color_start">#FDC53A</color>
@@ -39,16 +38,16 @@
     <color name="balgham_color_end">#71D0DC</color>
     <color name="colorEndBackground">#30FFFFFF</color>
 
-    <color name="dam_bg_color">#7adccf</color>
-    <color name="safra_bg_color">#f7c59f</color>
-    <color name="soda_bg_color">#d4cbe5</color>
-    <color name="balgham_bg_color">#b8d7f5</color>
+<!--    <color name="dam_bg_color">#7adccf</color>-->
+<!--    <color name="safra_bg_color">#f7c59f</color>-->
+<!--    <color name="soda_bg_color">#d4cbe5</color>-->
+<!--    <color name="balgham_bg_color">#b8d7f5</color>-->
 
     <color name="white">#FFFFFF</color>
     <color name="colorLightText">#ECECEC</color>
     <color name="gray_very_light">#FAFAFA</color>
     <color name="gray_light">#F1F1F1</color>
-    <color name="gray_dark">#D6D6D6</color>
+    <color name="gray_dark">#D3D3D3</color>
     <color name="gray_very_dark">#919191</color>
     <color name="gray_very_dark_alpha">#997E7E7E</color>
     <color name="blue_dark">#0CB3E8</color>
@@ -57,6 +56,12 @@
     <color name="red">#F1514F</color>
     <color name="red_light">#ED706F</color>
     <color name="red_dark">#EA4C48</color>
+
+    <color name="orange">#FB7F22</color>
+    <color name="light_black">#212121</color>
+    <color name="very_light_black">#414952</color>
+    <color name="very_very_light_black">#555A66</color>
+    <color name="dark_white">#c2c2c2</color>
 
 
 

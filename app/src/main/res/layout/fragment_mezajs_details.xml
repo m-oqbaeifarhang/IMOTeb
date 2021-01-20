@@ -112,7 +112,7 @@
                                         android:fontFamily="@font/dephiana_en"
                                         android:layout_marginStart="8dp"
                                         android:textAllCaps="false"
-                                        android:text="@string/txt_dam_title_english"
+                                        android:text="@string/txt_dam_english"
                                         android:textSize="16sp"
                                         android:textColor="@color/gray_very_dark"/>
 
@@ -180,7 +180,7 @@
                                 android:id="@+id/tabe_mezaj"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/text"
+                                style="@style/title_text_medium"
                                 android:textSize="15sp"
                                 android:textColor="@color/gray_very_dark"
                                 android:layout_below="@+id/mezaj_name"

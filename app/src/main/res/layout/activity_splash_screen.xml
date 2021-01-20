@@ -26,22 +26,17 @@
             android:id="@+id/title_splash_screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nasaliza"
+            style="@style/imotebTextStyle"
             android:text="@string/app_name"
-            android:textAllCaps="true"
-            android:textColor="@color/red"
-            android:textSize="50sp"
-            android:textStyle="bold"
+            android:textSize="@dimen/_40sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_splash_screen"
@@ -52,7 +47,7 @@
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="40dp"
+        android:layout_width="@dimen/_40sdp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
