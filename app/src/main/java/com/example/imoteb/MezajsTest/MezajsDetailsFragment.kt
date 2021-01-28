@@ -43,9 +43,9 @@ class MezajsDetailsFragment : Fragment(),View.OnClickListener
     {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        iv_back.setOnClickListener(this)
+        aciv_back_fragment_mezajs_details.setOnClickListener(this)
 
-        go_to_up.setOnClickListener{
+        aciv_go_to_up.setOnClickListener{
             my_nested.fullScroll(NestedScrollView.FIND_VIEWS_WITH_CONTENT_DESCRIPTION)
 //            my_nested.scrollTo(0, my_nested.maxScrollAmount)
 //            my_nested.smoothScrollBy(0,10)
@@ -53,15 +53,15 @@ class MezajsDetailsFragment : Fragment(),View.OnClickListener
         }
 
         /*        get mezaj information*/
-        mezaj_name.text = arguments?.getString("mezaj_title")
-        tabe_mezaj.text = arguments?.getString("mezaj_tab")
-        cv_mezaj_logo.setImageResource(arguments?.getInt("cv_mezaj_logo")!!)
+        actv_title_mezaj.text = arguments?.getString("mezaj_title")
+        actv_tabe_mezaj.text = arguments?.getString("mezaj_tab")
+        aciv_mezaj_logo.setImageResource(arguments?.getInt("cv_mezaj_logo")!!)
         mezaj_english_logo.setImageResource(arguments?.getInt("mezaj_english_logo")!!)
         mezaj_english_name.text = arguments?.getString("english_mezaj_title")
 //        val imgs = arguments?.getInt("cv_mezaj_logo")
-        tv_mezaj_neshaneha.text = arguments?.getString("neshaneha")
-        tv_mezaj_kholgokhoo.text = arguments?.getString("kolgokhoo")
-        tv_mezaj_bimariha.text = arguments?.getString("bimariha")
+        actv_desc_naeshanehaye_mezaj.text = arguments?.getString("neshaneha")
+        actv_desc_kholgokhuye_mezaj.text = arguments?.getString("kolgokhoo")
+        actv_desc_bimarihaye_mezaj.text = arguments?.getString("bimariha")
 
 
     }
@@ -70,7 +70,7 @@ class MezajsDetailsFragment : Fragment(),View.OnClickListener
     {
         when(v!!.id)
         {
-            R.id.iv_back -> navController!!.navigate(R.id.action_mezajsDetails_Fragment_to_mainFragment)
+            R.id.aciv_back_fragment_mezajs_details -> navController!!.navigate(R.id.action_mezajsDetails_Fragment_to_mainFragment)
         }
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/main_background"
+    android:background="@color/white"
     android:layoutDirection="rtl"
     tools:context=".MezajsTest.TestMezajResultsTextFragment">
 
@@ -24,7 +24,8 @@
                 android:justificationMode="inter_word"
                 android:rotationY="180"
                 android:lineSpacingExtra="4dp"
-                style="@style/title_text_large" />
+                style="@style/title_text_large"
+                tools:targetApi="o" />
 <!--            android:text="@string/text_motaleye_bishtar_b"-->
 
             <Space

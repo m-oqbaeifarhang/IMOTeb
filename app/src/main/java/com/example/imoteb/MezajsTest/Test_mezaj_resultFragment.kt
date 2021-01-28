@@ -8,9 +8,14 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -57,6 +62,23 @@ class Test_mezaj_resultFragment() : Fragment()
                 progress = scrollY
             }
         }*/
+
+        val rvResultShow : CardView = requireView().findViewById(R.id.cl_result_show)
+        val cvChartShow : CardView = requireView().findViewById(R.id.cv_chart_show)
+        val acivCloseChart : AppCompatImageView = requireView().findViewById(R.id.aciv_close_chart)
+
+        cvChartShow.setOnClickListener {
+            val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.translate_anim)
+            rvResultShow.visibility = View.VISIBLE
+            rvResultShow.startAnimation(animation)
+        }
+
+        acivCloseChart.setOnClickListener {
+            val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.reverse_translate_anim)
+            rvResultShow.visibility = View.GONE
+            rvResultShow.startAnimation(animation)
+        }
+
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager
         val natayejViewPagerAdapter = NatayejViewPagerAdapter(requireActivity().supportFragmentManager)

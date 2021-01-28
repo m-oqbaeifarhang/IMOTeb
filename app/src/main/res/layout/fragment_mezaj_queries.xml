@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
-    android:orientation="vertical"
     android:background="@color/main_background"
     tools:context=".MezajsTest.Mezaj_QueriesFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_fg_test_mezaj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:elevation="0dp"
-        android:id="@+id/app_bar_fg_test_mezaj">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:elevation="0dp">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_test_mezajFragment"
             android:layout_width="match_parent"
@@ -29,21 +32,26 @@
         android:id="@+id/progressBar_fragment_mezaj_queries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_fg_test_mezaj"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         style="?android:attr/progressBarStyleHorizontal"
         android:scaleY="1"
         android:progressTint="@color/blue_dark"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView_fragment_mezaj_queries"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar_fragment_mezaj_queries"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/main_background">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_below="@+id/app_bar_fg_test_mezaj"
+            android:layout_height="wrap_content"
             android:background="@color/main_background">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -52,23 +60,30 @@
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingBottom="8dp"
-                android:background="@color/main_background" />
+                android:background="@color/main_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_moshahedeh_natije"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/button_top_margin"
+                android:layout_marginEnd="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_top_margin"
                 android:elevation="6dp"
                 android:background="@drawable/bg_button_blue"
-                android:text="@string/moshahede_natijeh"
+                android:text="@string/txt_moshahede_natijeh"
                 style="@style/title_text_large"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/rv_questions"
+                app:layout_constraintStart_toStartOf="@+id/rv_questions"
+                app:layout_constraintEnd_toEndOf="@+id/rv_questions"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -322,7 +322,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/horizontal_rule/baseline_horizontal_rule_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/bar_chart/baseline_bar_chart_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -332,10 +332,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_wedding_ring" />
-                            <entry key="sourceFile" value="C:\Users\Nader\Downloads\wedding-ring.svg" />
+                            <entry key="color" value="5f5f5f" />
+                            <entry key="outputName" value="ic_chart" />
+                            <entry key="sourceFile" value="C:\Users\Nader\Desktop\balgham_logo.svg" />
                           </map>
                         </option>
                       </PersistentState>

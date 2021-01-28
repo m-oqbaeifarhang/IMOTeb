@@ -40,12 +40,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
             android:paddingTop="8dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/blue_light_alpha"
+                app:cardBackgroundColor="@color/gray_light"
                 android:alpha="0.8"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
@@ -65,7 +66,6 @@
                         android:lineSpacingExtra="2dp"
                         style="@style/title_text_large"
                         android:textStyle="normal"
-                        android:textColor="@color/white"
                         android:justificationMode="inter_word"
                         android:text="@string/txt_question_a"
                         tools:targetApi="o"/>
@@ -77,7 +77,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 
@@ -88,7 +87,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/blue_light_alpha"
+                app:cardBackgroundColor="@color/gray_light"
                 android:alpha="0.8"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
@@ -108,7 +107,6 @@
                         android:lineSpacingExtra="2dp"
                         style="@style/title_text_large"
                         android:textStyle="normal"
-                        android:textColor="@color/white"
                         android:justificationMode="inter_word"
                         android:text="@string/txt_question_a"
                         tools:targetApi="o"/>
@@ -120,7 +118,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 
@@ -131,7 +128,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 
@@ -142,7 +138,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 
@@ -153,7 +148,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/blue_light_alpha"
+                app:cardBackgroundColor="@color/gray_light"
                 android:alpha="0.8"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
@@ -173,7 +168,6 @@
                         android:lineSpacingExtra="2dp"
                         style="@style/title_text_large"
                         android:textStyle="normal"
-                        android:textColor="@color/white"
                         android:justificationMode="inter_word"
                         android:text="@string/txt_question_a"
                         tools:targetApi="o"/>
@@ -185,7 +179,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 
@@ -196,7 +189,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 
@@ -207,7 +199,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/blue_light_alpha"
+                app:cardBackgroundColor="@color/gray_light"
                 android:alpha="0.8"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
@@ -227,7 +219,6 @@
                         android:lineSpacingExtra="2dp"
                         style="@style/title_text_large"
                         android:textStyle="normal"
-                        android:textColor="@color/white"
                         android:justificationMode="inter_word"
                         android:text="@string/txt_question_a"
                         tools:targetApi="o"/>
@@ -239,7 +230,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 
@@ -250,7 +240,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/blue_light_alpha"
+                app:cardBackgroundColor="@color/gray_light"
                 android:alpha="0.8"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
@@ -271,7 +261,6 @@
                         android:lineSpacingExtra="2dp"
                         style="@style/title_text_large"
                         android:textStyle="normal"
-                        android:textColor="@color/white"
                         android:justificationMode="inter_word"
                         android:text="@string/txt_question_a"
                         tools:targetApi="o"/>
@@ -283,7 +272,6 @@
                         android:layout_margin="8dp"
                         style="@style/title_text_medium"
                         android:justificationMode="inter_word"
-                        android:textColor="@color/white"
                         android:text="@string/txt_answer_a"
                         tools:targetApi="o"/>
 

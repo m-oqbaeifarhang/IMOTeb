@@ -1,346 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MezajsTest.MezajsDetailsFragment"
     android:layoutDirection="rtl"
+    tools:context=".MezajsTest.MezajsDetailsFragment"
     android:background="@color/main_background">
 
-<!--    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_fg_mezaj_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        app:elevation="0dp">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_fg_mezaj_detail"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_alignParentTop="true"
-            android:background="@color/toolbar_background"
-            android:layoutDirection="rtl"
-            app:elevation="0dp"
-            app:title=" "/>
-
-    </com.google.android.material.appbar.AppBarLayout>-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aciv_back_fragment_mezajs_details"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        app:srcCompat="@drawable/ic_back"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/my_nested"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/main_background">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/aciv_back_fragment_mezajs_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@color/main_background">
 
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/ic_back"
-                android:contentDescription="TODO" />
-
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_mezaj_logo"
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@color/main_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="110dp"
-                    android:layout_height="170dp"
-                    android:layout_alignParentEnd="true"
-                    app:cardCornerRadius="6dp"
-                    app:cardElevation="8dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="40dp">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:layoutDirection="rtl">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/actv_title_mezaj"
+                            style="@style/title_text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="24dp"
+                            android:textColor="@color/light_indigo"
+                            android:textSize="25sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/actv_tabe_mezaj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/title_text_medium"
+                            android:layout_margin="32dp"
+                            android:alpha="0.8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/actv_title_mezaj"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintTop_toBottomOf="@+id/actv_tabe_mezaj"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/actv_txt_neshaneha"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/title_text_large"
+                                android:alpha="0.7"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:layout_margin="16dp"
+                                android:text="@string/txt_neshaneha"
+                                android:background="@drawable/btn_bg_white"
+                                android:padding="8dp"
+                                android:layout_marginBottom="16dp"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/actv_txt_raftar"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/title_text_large"
+                                android:alpha="0.7"
+                                android:textSize="14sp"
+                                android:layout_margin="16dp"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:text="@string/txt_raftar"
+                                android:background="@drawable/btn_bg_white"
+                                android:padding="8dp"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/actv_txt_bimariha"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/title_text_large"
+                                android:alpha="0.7"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_margin="16dp"
+                                android:textStyle="normal"
+                                android:text="@string/txt_bimariha"
+                                android:background="@drawable/btn_bg_white"
+                                android:padding="8dp"/>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_mezaj_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintVertical_bias="0.01"
+                    app:layout_constraintHorizontal_bias="0.80"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="120dp"
+                        android:layout_height="160dp"
                         android:orientation="vertical"
                         android:background="@color/white"
                         android:weightSum="2">
 
-                        <RelativeLayout
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/aciv_mezaj_logo"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/dam_cv_logo"
+                            android:scaleType="centerCrop"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1">
 
-                            <ImageView
-                                android:id="@+id/cv_mezaj_logo"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/dam_cv_logo"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/mezaj_english_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/dephiana_en"
+                                android:textAllCaps="false"
+                                android:layout_margin="6dp"
+                                android:textSize="20sp"
+                                android:text="@string/txt_dam_english"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toTopOf="@+id/actv_temperament"/>
 
-                        </RelativeLayout>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/actv_temperament"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/dephiana_en"
+                                android:textAllCaps="false"
+                                android:layout_margin="6dp"
+                                android:textSize="18sp"
+                                android:text="@string/txt_temperament"
+                                app:layout_constraintTop_toBottomOf="@+id/mezaj_english_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/mezaj_english_logo"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_margin="6dp"
+                                app:layout_constraintEnd_toStartOf="@+id/mezaj_english_name"
+                                app:layout_constraintTop_toTopOf="@+id/mezaj_english_name"
+                                app:layout_constraintBottom_toBottomOf="@+id/mezaj_english_name"
+                                app:srcCompat="@drawable/dam_logo"/>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                android:layoutDirection="ltr"
-                                android:gravity="center_vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:weightSum="3"
-                                    android:gravity="center_vertical">
-
-                                    <TextView
-                                        android:id="@+id/mezaj_english_name"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="2"
-                                        android:fontFamily="@font/dephiana_en"
-                                        android:layout_marginStart="8dp"
-                                        android:textAllCaps="false"
-                                        android:text="@string/txt_dam_english"
-                                        android:textSize="16sp"
-                                        android:textColor="@color/gray_very_dark"/>
-
-                                    <ImageView
-                                        android:id="@+id/mezaj_english_logo"
-                                        android:layout_width="0dp"
-                                        android:layout_height="25dp"
-                                        android:layout_weight="1"
-                                        android:layout_gravity="top"
-                                        android:layout_marginEnd="6dp"
-                                        android:src="@drawable/dam_logo"/>
-
-                                </LinearLayout>
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/dephiana_en"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginEnd="6dp"
-                                    android:textAllCaps="false"
-                                    android:layout_marginTop="6dp"
-                                    android:text="Temperament"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/gray_very_dark"/>
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="6dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/mezaj_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentStart="true"
-                                android:text="@string/txt_dam_title"
-                                android:textSize="25sp"
-                                style="@style/title_text_large"
-                                android:padding="25dp"/>
-
-                            <TextView
-                                android:id="@+id/tabe_mezaj"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/title_text_medium"
-                                android:textSize="15sp"
-                                android:textColor="@color/gray_very_dark"
-                                android:layout_below="@+id/mezaj_name"
-                                android:layout_marginStart="25dp"
-                                android:layout_marginTop="10dp"
-                                android:text="طبع گرم و مرطوب"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="12dp"
-                                android:weightSum="3">
-
-                                <RelativeLayout
-                                    android:id="@+id/rl_neshaneha"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:layout_margin="8dp"
-                                    android:background="@drawable/btn_bg_white">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_centerInParent="true"
-                                        style="@style/title_text_large"
-                                        android:textSize="14sp"
-                                        android:textStyle="normal"
-                                        android:text="@string/txt_neshaneha"
-                                        android:padding="6dp"/>
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:layout_margin="8dp"
-                                    android:background="@drawable/btn_bg_white">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_centerInParent="true"
-                                        style="@style/title_text_large"
-                                        android:textSize="14sp"
-                                        android:textStyle="normal"
-                                        android:text="@string/txt_raftar"
-                                        android:padding="6dp"/>
-
-                                </RelativeLayout>
-
-                                <RelativeLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:layout_margin="8dp"
-                                    android:background="@drawable/btn_bg_white">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_centerInParent="true"
-                                        style="@style/title_text_large"
-                                        android:textSize="14sp"
-                                        android:textStyle="normal"
-                                        android:text="@string/txt_bimariha"
-                                        android:padding="6dp"/>
-                                </RelativeLayout>
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </RelativeLayout>
-
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:id="@+id/ll_description"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/cl_mezaj_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:orientation="vertical"
-                android:layout_marginTop="6dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp">
+                android:padding="24dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/title_text_large"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="4dp"
-                    android:text="@string/txt_neshaneha"/>
+                    android:text="@string/txt_neshaneha"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"/>
 
-                <TextView
-                    android:id="@+id/tv_mezaj_neshaneha"
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/actv_desc_naeshanehaye_mezaj"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/title_text_medium"
-                    android:textColor="@color/gray_very_dark"
                     android:lineSpacingExtra="6dp"
-                    android:justificationMode="inter_word"/>
+                    android:layout_marginTop="8dp"
+                    android:justificationMode="inter_word"
+                    tools:targetApi="o" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/title_text_large"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
                     android:text="@string/txt_raftar" />
 
-                <TextView
-                    android:id="@+id/tv_mezaj_kholgokhoo"
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/actv_desc_kholgokhuye_mezaj"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/title_text_medium"
-                    android:textColor="@color/gray_very_dark"
                     android:lineSpacingExtra="6dp"
-                    android:justificationMode="inter_word"/>
+                    android:layout_marginTop="8dp"
+                    android:justificationMode="inter_word"
+                    tools:targetApi="o"/>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/title_text_large"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
                     android:text="@string/txt_bimariha" />
 
-                <TextView
-                    android:id="@+id/tv_mezaj_bimariha"
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/actv_desc_bimarihaye_mezaj"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/title_text_medium"
-                    android:textColor="@color/gray_very_dark"
                     android:lineSpacingExtra="6dp"
-                    android:justificationMode="inter_word"/>
+                    android:layout_marginTop="8dp"
+                    android:justificationMode="inter_word"
+                    tools:targetApi="o"/>
 
             </LinearLayout>
 
             <View
+                android:id="@+id/view_fragment_mezajs_details"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_margin="16dp"
-                android:background="@color/gray_dark"/>
+                app:layout_constraintTop_toBottomOf="@+id/ll_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/gray_dark"
+                android:layout_margin="16dp"/>
 
-            <ImageView
-                android:id="@+id/go_to_up"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aciv_go_to_up"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/ic_go_to_up"/>
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/view_fragment_mezajs_details"
+                app:layout_constraintStart_toStartOf="@+id/ll_description"
+                app:layout_constraintEnd_toEndOf="@+id/ll_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/ic_go_to_up"/>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

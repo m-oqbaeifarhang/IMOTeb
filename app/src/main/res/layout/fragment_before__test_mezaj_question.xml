@@ -29,10 +29,11 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar_fg_before_test_mezaj_question">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -499,11 +500,8 @@
                 android:id="@+id/btn_marhaleye_baad"
                 style="@style/title_text_large"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/button_top_margin"
                 android:background="@drawable/bg_button_blue"
                 android:elevation="6dp"
                 android:text="@string/marhaleye_baad"
@@ -518,6 +516,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
                 android:layoutDirection="rtl"
                 app:cardCornerRadius="10dp"
