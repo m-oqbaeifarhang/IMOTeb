@@ -74,7 +74,7 @@
 
     <style name="navigationTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorControlHighlight">@color/blue_light_alpha</item>
+        <item name="colorControlHighlight">@color/gray_very_light</item>
     </style>
 
 

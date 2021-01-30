@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="ltr"
-    android:gravity="center"
+    android:background="#03a9f4"
     tools:ignore="UseCompoundDrawables">
 
-        <TextView
-            android:id="@+id/title_splash_screen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layoutDirection="rtl"
-            android:fontFamily="@font/nasaliza"
-            android:text="@string/app_name"
-            android:textAllCaps="false"
-            android:textColor="@color/red"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_splash_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="40sp"
+        style="@style/imotebTextStyle"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/aciv_splash_screen_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
 
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_splash_screen" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aciv_splash_screen_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_splash_screen"
+        app:layout_constraintStart_toEndOf="@+id/title_splash_screen"
+        app:layout_constraintTop_toTopOf="@+id/title_splash_screen"
+        app:layout_constraintBottom_toBottomOf="@+id/title_splash_screen"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
