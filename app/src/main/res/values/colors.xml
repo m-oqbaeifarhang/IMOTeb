@@ -26,7 +26,7 @@
     <color name="black_alpha">#22000000</color>
     <color name="black">#000000</color>
     <color name="indigo">#032539</color>
-    <color name="light_indigo">#88032539</color>
+    <color name="light_indigo">#43545E</color>
 
 <!--    mezajs items colors-->
     <color name="dam_color">#95C897</color>
@@ -62,7 +62,7 @@
     <color name="very_light_black">#414952</color>
     <color name="very_very_light_black">#555A66</color>
     <color name="dark_white">#c2c2c2</color>
-
+    <color name="primary_blue">#1DB3F6</color>
 
 
 </resources>

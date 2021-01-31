@@ -122,6 +122,9 @@
     <string name="txt_13">13</string>
     <string name="txt_temperament">Temperament</string>
     <string name="txt_nomayeshe_nomudar">نمایش نمودار</string>
+    <string name="txt_imo">imo</string>
+    <string name="txt_teb">teb</string>
+    <string name="txt_hour">ساعت :</string>
 
 
 </resources>

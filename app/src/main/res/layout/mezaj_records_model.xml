@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,78 +12,123 @@
     app:cardElevation="6dp"
     app:cardCornerRadius="15dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:background="@color/white"
-        android:layoutDirection="rtl">
+        android:layoutDirection="rtl"
+        android:background="@color/white">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/rv_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/title_text_large"
-                android:textSize="18sp"
-                android:text="@string/txt_result"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_result_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:weightSum="3"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_result_time"
+            android:padding="16dp">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_txt_mezaj_result"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_day"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    style="@style/title_text_large"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:textStyle="normal"
-                    android:text="ساعت :"
-                    style="@style/title_text_large"/>
-
-                <TextView
-                    android:id="@+id/tv_hour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:textStyle="normal"
-                    style="@style/title_text_large"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 style="@style/title_text_large"
-                android:textStyle="normal"/>
+                android:textStyle="normal"
+                android:text="@string/txt_result"
+                android:textColor="@color/light_indigo"
+                android:alpha="0.7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-        </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_mezaj_result_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title_text_large"
+                app:layout_constraintStart_toEndOf="@+id/actv_txt_mezaj_result"
+                app:layout_constraintTop_toTopOf="@+id/actv_txt_mezaj_result"
+                app:layout_constraintBottom_toBottomOf="@+id/actv_txt_mezaj_result"
+                android:layout_marginStart="8dp"/>
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_chart"
+                app:tint="@color/primary_blue"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_result_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_light"
+            android:layoutDirection="rtl"
+            app:layout_constraintTop_toBottomOf="@+id/cl_result_title"
+            app:layout_constraintStart_toStartOf="@+id/cl_result_title"
+            app:layout_constraintEnd_toEndOf="@+id/cl_result_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingTop="8dp"
+            android:paddingStart="16dp"
+            android:paddingBottom="8dp"
+            android:paddingEnd="16dp"
+            tools:ignore="RtlSymmetry">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                style="@style/title_text_large"
+                android:alpha="0.8"
+                android:textColor="@color/light_indigo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_txt_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:text="@string/txt_hour"
+                style="@style/title_text_large"
+                android:alpha="0.8"
+                android:textColor="@color/light_indigo"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/actv_day"
+                app:layout_constraintTop_toTopOf="@+id/actv_day"
+                app:layout_constraintBottom_toBottomOf="@+id/actv_day" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                style="@style/title_text_large"
+                android:alpha="0.8"
+                android:textColor="@color/light_indigo"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/actv_txt_hour"
+                app:layout_constraintTop_toTopOf="@+id/actv_txt_hour"
+                app:layout_constraintBottom_toBottomOf="@+id/actv_txt_hour"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title_text_large"
+                android:textStyle="normal"
+                android:alpha="0.8"
+                android:textColor="@color/light_indigo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

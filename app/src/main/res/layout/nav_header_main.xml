@@ -5,22 +5,34 @@
     android:layout_height="150dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="ltr"
-    android:background="#03a9f4"
+    android:background="@color/primary_blue"
     tools:ignore="UseCompoundDrawables">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/title_splash_screen"
+        android:id="@+id/title_imo_splash_screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/txt_imo"
         android:textSize="40sp"
         style="@style/imotebTextStyle"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/aciv_splash_screen_logo"
+        app:layout_constraintEnd_toStartOf="@+id/title_splash_screen2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_splash_screen2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_teb"
+        android:textSize="40sp"
+        style="@style/imotebTextStyle"
+        android:textColor="@color/light_indigo"
+        app:layout_constraintStart_toEndOf="@+id/title_imo_splash_screen"
+        app:layout_constraintTop_toTopOf="@+id/title_imo_splash_screen"
+        app:layout_constraintEnd_toStartOf="@+id/aciv_splash_screen_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/title_imo_splash_screen"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/aciv_splash_screen_logo"
@@ -28,9 +40,9 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/ic_splash_screen"
-        app:layout_constraintStart_toEndOf="@+id/title_splash_screen"
-        app:layout_constraintTop_toTopOf="@+id/title_splash_screen"
-        app:layout_constraintBottom_toBottomOf="@+id/title_splash_screen"
+        app:layout_constraintStart_toEndOf="@+id/title_splash_screen2"
+        app:layout_constraintTop_toTopOf="@+id/title_splash_screen2"
+        app:layout_constraintBottom_toBottomOf="@+id/title_splash_screen2"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

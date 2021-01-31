@@ -4,17 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imoteb.Model.MezajResult
 import com.example.imoteb.R
-import io.realm.RealmResults
-import org.joda.time.DateTime
 import saman.zamani.persiandate.PersianDate
 import saman.zamani.persiandate.PersianDateFormat
-import java.time.format.DateTimeFormatter
 
 class MezajRecordsAdapter(var items: List<MezajResult>) :
     RecyclerView.Adapter<MezajRecordsAdapter.ViewHolder>()
@@ -23,18 +20,17 @@ class MezajRecordsAdapter(var items: List<MezajResult>) :
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        var day: TextView = itemView.findViewById(R.id.tv_day)
-        var hour: TextView = itemView.findViewById(R.id.tv_hour)
-        var Date: TextView = itemView.findViewById(R.id.tv_date)
-        var Title:TextView=itemView.findViewById(R.id.rv_title)
-        var linearLayout: LinearLayout = itemView.findViewById(R.id.linearLayout)
+        var day: TextView = itemView.findViewById(R.id.actv_day)
+        var hour: TextView = itemView.findViewById(R.id.actv_hour)
+        var Date: TextView = itemView.findViewById(R.id.actv_date)
+        var Title:TextView=itemView.findViewById(R.id.actv_mezaj_result_title)
+        var constraintLayout: ConstraintLayout = itemView.findViewById(R.id.cl_all)
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
-        val v =
-            LayoutInflater.from(parent.context).inflate(R.layout.mezaj_records_model, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.mezaj_records_model, parent, false)
         myContext = parent.context
         return ViewHolder(v)
     }
@@ -61,10 +57,10 @@ class MezajRecordsAdapter(var items: List<MezajResult>) :
         holder.day.setText(pdate.dayName()+" -")
         holder.hour.setText(pfTime)
         holder.Date.setText(pfDate)
-    var mezajGhaleb=    Mohasebeh_GhalabeHa.Mohasebe(dam = Dam,safra = Safra,soda = Soda,balgham = Balgham)
+    var mezajGhaleb = Mohasebeh_GhalabeHa.Mohasebe(dam = Dam,safra = Safra,soda = Soda,balgham = Balgham)
         val PersianmezajGhalabe = Mohasebeh_GhalabeHa.convertMezajGhalebToPersianText(mezajGhaleb)
         holder.Title.setText(PersianmezajGhalabe)
-        holder.linearLayout.setOnClickListener {
+        holder.constraintLayout.setOnClickListener {
             var navController = Navigation.findNavController(it)
             Model.Dam = Dam
             Model.Safra = Safra

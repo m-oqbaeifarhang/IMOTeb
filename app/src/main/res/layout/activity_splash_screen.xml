@@ -8,57 +8,57 @@
     android:layoutDirection="ltr"
     tools:context=".SplashScreenActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_imo_splash_screen"
+        style="@style/imotebTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layoutDirection="ltr"
-        android:orientation="horizontal"
+        android:text="@string/txt_imo"
+        android:textSize="@dimen/_40sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/title_teb_splash_screen"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        tools:ignore="UseCompoundDrawables">
+        app:layout_constraintVertical_bias="0.4"/>
 
-        <TextView
-            android:id="@+id/title_splash_screen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/imotebTextStyle"
-            android:text="@string/app_name"
-            android:textSize="@dimen/_40sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_teb_splash_screen"
+        style="@style/imotebTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_teb"
+        android:textColor="@color/light_indigo"
+        android:textSize="@dimen/_40sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/title_imo_splash_screen"
+        app:layout_constraintEnd_toStartOf="@+id/aciv_splash_screen"
+        app:layout_constraintStart_toEndOf="@+id/title_imo_splash_screen"
+        app:layout_constraintTop_toTopOf="@+id/title_imo_splash_screen" />
 
-        <ImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_splash_screen"
-            app:layout_constraintBottom_toBottomOf="@id/title_splash_screen"
-            app:layout_constraintStart_toEndOf="@id/title_splash_screen"
-            app:layout_constraintTop_toTopOf="@id/title_splash_screen" />
-
-    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aciv_splash_screen"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_splash_screen"
+        app:layout_constraintBottom_toBottomOf="@id/title_teb_splash_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/title_teb_splash_screen"
+        app:layout_constraintTop_toTopOf="@id/title_teb_splash_screen" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="@dimen/_40sdp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/aciv_splash_screen"
+        app:layout_constraintStart_toStartOf="@+id/title_imo_splash_screen"
+        app:layout_constraintTop_toBottomOf="@+id/title_teb_splash_screen"
         app:layout_constraintVertical_bias="0.9"
         app:lottie_autoPlay="true"
         app:lottie_colorFilter="#56A2DD"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/loading_circle" />
+        app:lottie_rawRes="@raw/loading_circle"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
