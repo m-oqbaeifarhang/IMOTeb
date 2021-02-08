@@ -157,7 +157,7 @@
                             android:layout_width="10dp"
                             android:layout_height="80dp"
                             android:layout_margin="16dp"
-                            android:background="@color/blue_dark"
+                            android:background="@color/blue"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -193,7 +193,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
-                            android:background="@drawable/number_piicker_bg"
+                            android:background="@drawable/number_picker_bg"
                             android:padding="12dp"
                             app:layout_constraintBottom_toBottomOf="@+id/actv_txt_13"
                             app:layout_constraintEnd_toStartOf="@+id/actv_txt_13"
@@ -223,7 +223,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="8dp"
                             android:layout_marginBottom="16dp"
-                            android:background="@drawable/number_piicker_bg"
+                            android:background="@drawable/number_picker_bg"
                             android:padding="12dp"
                             app:layout_constraintBottom_toBottomOf="@+id/snp_vertical_dahgan"
                             app:layout_constraintEnd_toStartOf="@+id/snp_vertical_dahgan"
@@ -302,7 +302,7 @@
                             android:layout_width="10dp"
                             android:layout_height="40dp"
                             android:layout_margin="16dp"
-                            android:background="#fdbf00"
+                            android:background="@color/gold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -328,6 +328,8 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             android:layout_margin="16dp"
                             android:orientation="horizontal"
+                            android:background="@color/gray_very_light"
+                            android:padding="8dp"
                             android:weightSum="3">
 
                             <Space
@@ -441,6 +443,8 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             android:layout_margin="16dp"
+                            android:background="@color/gray_very_light"
+                            android:padding="8dp"
                             android:orientation="horizontal"
                             android:weightSum="3">
 
@@ -535,7 +539,7 @@
                         android:layout_height="80dp"
                         android:layout_gravity="start"
                         android:layout_margin="15dp"
-                        android:background="@color/green" />
+                        android:background="@color/blue" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -552,7 +556,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/txt_tarikh_tavallod_input"
-                            android:textColor="@color/green"
+                            android:textColor="@color/blue"
                             android:textSize="16sp" />
 
                         <NumberPicker
@@ -562,7 +566,7 @@
                             android:layout_gravity="center_horizontal"
                             android:backgroundTint="@color/red"
                             android:backgroundTintMode="screen"
-                            android:divider="@color/blue_light_alpha"
+                            android:divider="@color/blue"
                             android:orientation="vertical"
                             android:theme="@style/NumberPickerText_a" />
 

@@ -1,15 +1,11 @@
 package com.example.imoteb.Adapter
 
-import android.graphics.ColorSpace
-import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.imoteb.MezajsTest.Model
 import com.example.imoteb.MezajsTest.TestMezajResultsTextFragment
 
-internal class NatayejViewPagerAdapter(fragmentManager: FragmentManager) :
-    FragmentPagerAdapter(fragmentManager)
+internal class NatayejViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager)
 {
     private val fragments: ArrayList<Fragment>
     private val titles: ArrayList<String>

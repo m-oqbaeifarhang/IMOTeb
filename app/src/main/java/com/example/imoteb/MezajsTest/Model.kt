@@ -21,7 +21,7 @@ class Model()
         var Gender: GenderEnum = GenderEnum.Male
         var MaritalStatus: MaritalStatusEnum = MaritalStatusEnum.Single
 
-        //این ها موقتی هست و باید در آنیده تغعییر کند.
+        //این ها موقتی هست و باید در آینده تغعییر کند.
         var Dam: Float = 0f
         var Safra: Float = 0f
         var Soda: Float = 0f

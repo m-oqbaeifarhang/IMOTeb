@@ -23,7 +23,7 @@ class MezajRecordsAdapter(var items: List<MezajResult>) :
         var day: TextView = itemView.findViewById(R.id.actv_day)
         var hour: TextView = itemView.findViewById(R.id.actv_hour)
         var Date: TextView = itemView.findViewById(R.id.actv_date)
-        var Title:TextView=itemView.findViewById(R.id.actv_mezaj_result_title)
+        var Title:TextView=itemView.findViewById(R.id.actv_mezaj_result_title_records)
         var constraintLayout: ConstraintLayout = itemView.findViewById(R.id.cl_all)
 
     }

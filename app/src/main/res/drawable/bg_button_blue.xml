@@ -5,10 +5,10 @@
         <layer-list>
             <item android:left="0dp" android:top="0dp">
                 <shape>
-                    <solid android:color="@color/blue_light_alpha"/>
+                    <solid android:color="@color/blue"/>
                     <corners android:radius="10dp"/>
                     <stroke android:width="0dp"
-                        android:color="@color/gray_very_dark_alpha"/>
+                        android:color="@color/gray_dark"/>
                 </shape>
             </item>
         </layer-list>
@@ -18,10 +18,10 @@
         <layer-list>
             <item android:left="0dp" android:top="0dp">
                 <shape>
-                    <solid android:color="@color/blue_light_alpha" />
+                    <solid android:color="@color/blue" />
                     <corners android:radius="10dp"/>
                     <stroke android:width="0dp"
-                        android:color="@color/gray_very_dark_alpha"/>
+                        android:color="@color/gray_dark"/>
                 </shape>
             </item>
 

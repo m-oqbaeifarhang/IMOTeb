@@ -28,7 +28,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ProgressBar
+    <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progressBar_fragment_mezaj_queries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="?android:attr/progressBarStyleHorizontal"
         android:scaleY="1"
-        android:progressTint="@color/blue_dark"/>
+        android:progressTint="@color/blue"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView_fragment_mezaj_queries"

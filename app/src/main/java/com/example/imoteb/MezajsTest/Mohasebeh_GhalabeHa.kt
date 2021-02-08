@@ -148,7 +148,7 @@ class Mohasebeh_GhalabeHa
             {
                 MezajehGhalebehEnum.NaMotabar ->
                 {
-                    result = "نتیحه تست: نا معتبر. پاسخ ها را به درستی جواب دهید."
+                    result = "نا معتبر . پاسخ ها را به درستی جواب دهید."
                 }
                 //---------------------------------------------
                 MezajehGhalebehEnum.GhalabehKamDam ->

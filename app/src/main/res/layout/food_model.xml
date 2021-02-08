@@ -23,7 +23,7 @@
             android:layout_height="30dp"
             android:layoutDirection="rtl"
             android:layout_alignParentBottom="true"
-            android:background="@color/gray_alpha">
+            android:background="@color/gray_dark">
             <TextView
                 android:id="@+id/food_name"
                 android:layout_width="wrap_content"

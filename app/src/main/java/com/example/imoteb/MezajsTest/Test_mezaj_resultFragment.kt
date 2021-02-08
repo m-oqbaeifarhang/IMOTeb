@@ -2,21 +2,16 @@ package com.example.imoteb.MezajsTest
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.icu.text.Transliterator
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.RelativeLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
@@ -31,9 +26,7 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
-import kotlinx.android.synthetic.main.fragment_test_mezaj_result.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -129,7 +122,7 @@ class Test_mezaj_resultFragment() : Fragment()
         chart1.invalidate()
         val mg = Mohasebeh_GhalabeHa.Mohasebe(Model.Dam, Model.Safra, Model.Soda, Model.Balgham)
         val mezajGhalabeResult = "نتیجه مزاج شناسی : " + convertMezajGhalebToPersianText(mg)
-        title.text = mezajGhalabeResult
+        actv_mezaj_result_title.text = mezajGhalabeResult
         var date: Date
 
         btn_ask_question.setOnClickListener {

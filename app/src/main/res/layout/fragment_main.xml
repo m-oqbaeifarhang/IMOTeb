@@ -22,7 +22,7 @@
         app:itemTextAppearance="@style/IranSansFont"
         android:theme="@style/navigationTheme"
         app:menu="@menu/navigation_menu"
-        app:itemIconTint="@color/itemIconTint_color"/>
+        app:itemIconTint="@color/navigationIconTint_color"/>
 
     <include
         android:id="@+id/contentView"

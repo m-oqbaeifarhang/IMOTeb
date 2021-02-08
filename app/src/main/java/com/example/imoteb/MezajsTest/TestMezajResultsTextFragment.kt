@@ -88,19 +88,19 @@ class TestMezajResultsTextFragment : Fragment()
         {
             0 ->
             {
-                tv_natayej_mezaj.text = tusiyehhaye_Darmani
+                actv_natayej_mezaj.text = tusiyehhaye_Darmani
             }
             1 ->
             {
-                tv_natayej_mezaj.text = khususiyat_Akhlaghi
+                actv_natayej_mezaj.text = khususiyat_Akhlaghi
             }
             2 ->
             {
-                tv_natayej_mezaj.text = avarez_Ghalabeh
+                actv_natayej_mezaj.text = avarez_Ghalabeh
             }
             3 ->
             {
-                tv_natayej_mezaj.text = avamel_Ghalabeh
+                actv_natayej_mezaj.text = avamel_Ghalabeh
             }
         }
     }
