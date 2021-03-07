@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_before__test_mezaj_question.*
 class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
 {
     var navController: NavController? = null
+    var AgeFlag=false
     var GenderFlag = false
     var MaritalStatusFlag = false
     override fun onCreateView(inflater: LayoutInflater,
@@ -55,9 +56,6 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
                 motaleye_bishtar.text = "مطالعه بیشتر"
             }
         }*/
-        numberPicker.minValue = 1320
-        numberPicker.maxValue = 1388
-        numberPicker.wrapSelectorWheel = true
 
     }
 
@@ -69,9 +67,23 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
         {
             R.id.btn_marhaleye_baad ->
             {
-                Model.Age = CalculationOfAge.Calculate(numberPicker.value)
+                var numberOfPicher =
+                    ("13" + snp_vertical_dahgan.value.toString() + snp_vertical_yekan.value.toString()).toInt();
+                Model.Age = CalculationOfAge.Calculate(numberOfPicher)
                 when
                 {
+                    numberOfPicher==1300->
+                    {
+                        Toast.makeText(requireContext(),
+                            "تاریخ تولد نمی تواند 1300 باشد.",
+                            Toast.LENGTH_SHORT).show()
+                    }
+                    Model.Age<15->
+                    {
+                        Toast.makeText(requireContext(),
+                            "این تست برای افراد زیر 15 سال صادق نمی باشد.",
+                            Toast.LENGTH_SHORT).show()
+                    }
                     MaritalStatusFlag == false ->
                     {
                         Toast.makeText(requireContext(),
@@ -114,6 +126,7 @@ class Before_TestMezajQuestionFragment : Fragment(), View.OnClickListener
             }
             MaritalStatusFlag = true
         }
+
         if(activity is AppCompatActivity)
         {
             (activity as AppCompatActivity).setSupportActionBar(toolbar_before_test_mezaj_question)

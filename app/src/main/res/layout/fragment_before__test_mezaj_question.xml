@@ -529,50 +529,50 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_marhaleye_baad">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
 
-                    <View
-                        android:id="@+id/view_insert_age"
-                        android:layout_width="10dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="start"
-                        android:layout_margin="15dp"
-                        android:background="@color/blue" />
+<!--                    <View-->
+<!--                        android:id="@+id/view_insert_age"-->
+<!--                        android:layout_width="10dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:layout_gravity="start"-->
+<!--                        android:layout_margin="15dp"-->
+<!--                        android:background="@color/blue" />-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:layout_toEndOf="@+id/view_insert_age"
-                        android:layoutDirection="rtl"
-                        android:orientation="vertical">
+<!--&lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginTop="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginBottom="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_toEndOf="@+id/view_insert_age"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layoutDirection="rtl"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:orientation="vertical">&ndash;&gt;-->
 
-                        <TextView
-                            android:id="@+id/txt_insert_age"
-                            style="@style/title_text_medium"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_tarikh_tavallod_input"
-                            android:textColor="@color/blue"
-                            android:textSize="16sp" />
+<!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:id="@+id/txt_insert_age"&ndash;&gt;-->
+<!--&lt;!&ndash;                            style="@style/title_text_medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:text="@string/txt_tarikh_tavallod_input"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:textColor="@color/blue"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:textSize="16sp" />&ndash;&gt;-->
 
-                        <NumberPicker
-                            android:id="@+id/numberPicker"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:backgroundTint="@color/red"
-                            android:backgroundTintMode="screen"
-                            android:divider="@color/blue"
-                            android:orientation="vertical"
-                            android:theme="@style/NumberPickerText_a" />
+<!--&lt;!&ndash;&lt;!&ndash;                        <NumberPicker&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:id="@+id/numberPicker"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:layout_gravity="center_horizontal"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:backgroundTint="@color/red"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:backgroundTintMode="screen"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:divider="@color/blue"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:orientation="vertical"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                            android:theme="@style/NumberPickerText_a" />&ndash;&gt;&ndash;&gt;-->
 
-                    </LinearLayout>
+<!--&lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
 
-                </RelativeLayout>
+<!--                </RelativeLayout>-->
 
             </androidx.cardview.widget.CardView>
 
