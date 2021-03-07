@@ -56,21 +56,21 @@ class Test_mezaj_resultFragment() : Fragment()
             }
         }*/
 
-        val rvResultShow : CardView = requireView().findViewById(R.id.cl_result_show)
-        val cvChartShow : CardView = requireView().findViewById(R.id.cv_chart_show)
-        val acivCloseChart : AppCompatImageView = requireView().findViewById(R.id.aciv_close_chart)
+//        val rvResultShow : CardView = requireView().findViewById(R.id.cl_result_show)
+//        val cvChartShow : CardView = requireView().findViewById(R.id.cv_chart_show)
+//        val acivCloseChart : AppCompatImageView = requireView().findViewById(R.id.aciv_close_chart)
 
-        cvChartShow.setOnClickListener {
-            val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.translate_anim)
-            rvResultShow.visibility = View.VISIBLE
-            rvResultShow.startAnimation(animation)
-        }
-
-        acivCloseChart.setOnClickListener {
-            val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.reverse_translate_anim)
-            rvResultShow.visibility = View.GONE
-            rvResultShow.startAnimation(animation)
-        }
+//        cvChartShow.setOnClickListener {
+//            val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.translate_anim)
+//            rvResultShow.visibility = View.VISIBLE
+//            rvResultShow.startAnimation(animation)
+//        }
+//
+//        acivCloseChart.setOnClickListener {
+//            val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.reverse_translate_anim)
+//            rvResultShow.visibility = View.GONE
+//            rvResultShow.startAnimation(animation)
+//        }
 
         val natayejTablayout = requireView().findViewById(R.id.natayejTablayout) as TabLayout
         val natayejViewPager = requireView().findViewById(R.id.natayejViewPager) as ViewPager

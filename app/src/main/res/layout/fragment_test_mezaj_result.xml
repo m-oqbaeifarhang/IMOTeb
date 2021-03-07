@@ -1,5 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:layoutDirection="rtl">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleEnabled="false"
+            app:contentScrim="@color/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_test_mezaj_resultFragmaent"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="top"
+                app:title=" " />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_mezaj_result_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/actv_mezaj_result_title"
+                        style="@style/title_text_large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:alpha="0.85"
+                        android:padding="8dp"
+                        android:text="@string/txt_result"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/main_background"
+                    android:layout_margin="16dp" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/natayejTablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:alpha="1"
+                    android:layoutDirection="rtl"
+                    app:tabMode="scrollable"
+                    android:layout_gravity="bottom"
+                    app:tabIndicatorColor="@color/light_indigo"
+                    app:tabSelectedTextColor="@color/light_indigo"
+                    app:tabTextAppearance="@style/title_text_medium"
+                    app:tabTextColor="@color/gray_dark"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_margin="8dp">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/natayejViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/white"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layoutDirection="rtl"
+                android:rotationY="180"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_ask_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:contentDescription="TODO"
+        app:backgroundTint="@color/blue"
+        app:elevation="6dp"
+        android:layout_gravity="bottom|end"
+        app:rippleColor="@color/gray_dark"
+        android:tint="@color/white"
+        app:srcCompat="@drawable/ic_share" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -81,7 +226,7 @@
         app:tabTextAppearance="@style/title_text_medium"
         app:tabTextColor="@color/gray_dark"/>
 
-<!--    app:tabBackground="@drawable/tablayout_background"-->
+&lt;!&ndash;    app:tabBackground="@drawable/tablayout_background"&ndash;&gt;
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cl_result_show"
@@ -167,4 +312,4 @@
         android:tint="@color/white"
         app:srcCompat="@drawable/ic_share" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>-->
