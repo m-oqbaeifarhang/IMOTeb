@@ -2,16 +2,16 @@ package com.example.imoteb.MezajsTest
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
+import android.provider.CalendarContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.cardview.widget.CardView
+import androidx.core.graphics.toColor
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
@@ -100,8 +100,11 @@ class Test_mezaj_resultFragment() : Fragment()
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
         val barDataSet: BarDataSet = BarDataSet(getData(Model.questionTableList), "راهنما")
-        barDataSet.barBorderWidth = 0f
-        barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
+        barDataSet.barBorderWidth = 6f
+        //barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
+        barDataSet.setColors(Color.RED,Color.WHITE,Color.WHITE,Color.WHITE)
+        barDataSet.barBorderColor = Color.rgb(86,201,236)
+
         val bardata: BarData = BarData(barDataSet)
         val xAxis: XAxis = chart1.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM_INSIDE
@@ -117,9 +120,12 @@ class Test_mezaj_resultFragment() : Fragment()
         chart1.axisLeft.axisMaximum = 10f
         chart1.axisLeft.labelCount = 10
         chart1.axisRight.labelCount = 10
+
+//        chart1.setBackgroundResource(R.drawable.dam_cv_logo)
         // val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
+        chart1.setScaleEnabled(false)
         val mg = Mohasebeh_GhalabeHa.Mohasebe(Model.Dam, Model.Safra, Model.Soda, Model.Balgham)
         val mezajGhalabeResult = "نتیجه مزاج شناسی : " + convertMezajGhalebToPersianText(mg)
         actv_mezaj_result_title.text = mezajGhalabeResult

@@ -60,7 +60,6 @@
                     android:id="@+id/chart1"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:background="@color/main_background"
                     android:layout_margin="16dp" />
 
                 <com.google.android.material.tabs.TabLayout
