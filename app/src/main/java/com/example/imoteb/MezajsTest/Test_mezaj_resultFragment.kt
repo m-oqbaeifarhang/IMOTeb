@@ -141,7 +141,6 @@ class Test_mezaj_resultFragment() : Fragment()
             })
         }
     }
-
     private fun getData(questionTable: MutableList<QuestionTable>): ArrayList<BarEntry>
     {
         var counter = 0
