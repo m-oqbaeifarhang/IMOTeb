@@ -59,8 +59,14 @@
                 <com.github.mikephil.charting.charts.BarChart
                     android:id="@+id/chart1"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="250dp"
                     android:layout_margin="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/light_indigo"
+                    android:alpha="0.5"/>
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/natayejTablayout"
@@ -70,10 +76,10 @@
                     android:layoutDirection="rtl"
                     app:tabMode="scrollable"
                     android:layout_gravity="bottom"
-                    app:tabIndicatorColor="@color/light_indigo"
-                    app:tabSelectedTextColor="@color/light_indigo"
+                    app:tabIndicatorColor="@color/red"
+                    app:tabSelectedTextColor="@color/red"
                     app:tabTextAppearance="@style/title_text_medium"
-                    app:tabTextColor="@color/gray_dark"/>
+                    app:tabTextColor="@color/gray_very_dark"/>
 
             </LinearLayout>
 
@@ -90,15 +96,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:layout_margin="8dp">
+            android:padding="8dp">
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/natayejViewPager"
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
                 android:background="@color/white"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
                 android:layoutDirection="rtl"
                 android:rotationY="180"
                 tools:ignore="MissingConstraints" />

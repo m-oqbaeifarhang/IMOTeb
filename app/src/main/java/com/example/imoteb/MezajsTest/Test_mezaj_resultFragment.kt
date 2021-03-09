@@ -5,13 +5,12 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
-import android.provider.CalendarContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.graphics.toColor
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.imoteb.Adapter.NatayejViewPagerAdapter
@@ -24,7 +23,6 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
-import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_test_mezaj_result.*
 import java.util.*
@@ -99,12 +97,13 @@ class Test_mezaj_resultFragment() : Fragment()
         toolbar_test_mezaj_resultFragmaent.setNavigationOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
-        val barDataSet: BarDataSet = BarDataSet(getData(Model.questionTableList), "راهنما")
+        val barDataSet: BarDataSet = BarDataSet(getData(Model.questionTableList), "")
+        chart1.description.isEnabled = false
         barDataSet.barBorderWidth = 6f
-        //barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
-        barDataSet.setColors(Color.RED,Color.WHITE,Color.WHITE,Color.WHITE)
-        barDataSet.barBorderColor = Color.rgb(86,201,236)
+        barDataSet.barBorderColor = Color.rgb(140, 214, 237)
 
+        //barDataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
+        barDataSet.setColors(Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE)
         val bardata: BarData = BarData(barDataSet)
         val xAxis: XAxis = chart1.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM_INSIDE
@@ -121,7 +120,7 @@ class Test_mezaj_resultFragment() : Fragment()
         chart1.axisLeft.labelCount = 10
         chart1.axisRight.labelCount = 10
 
-//        chart1.setBackgroundResource(R.drawable.dam_cv_logo)
+        //        chart1.setBackgroundResource(R.drawable.dam_cv_logo)
         // val CMR = MohasebehMezaj.Calculate(Model.questionTableList)
         chart1.animateXY(2000, 2000);
         chart1.invalidate()
