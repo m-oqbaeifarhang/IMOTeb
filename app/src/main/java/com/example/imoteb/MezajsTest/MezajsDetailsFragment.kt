@@ -62,6 +62,7 @@ class MezajsDetailsFragment : Fragment(),View.OnClickListener
         actv_desc_naeshanehaye_mezaj.text = arguments?.getString("neshaneha")
         actv_desc_kholgokhuye_mezaj.text = arguments?.getString("kolgokhoo")
         actv_desc_bimarihaye_mezaj.text = arguments?.getString("bimariha")
+        actv_desc_darman_mezaj.text = arguments?.getString("darman")
 
 
     }

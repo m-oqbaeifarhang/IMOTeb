@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background"
+    android:orientation="vertical"
     android:layoutDirection="rtl">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -20,18 +21,12 @@
             app:contentScrim="@color/colorPrimaryDark"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_test_mezaj_resultFragmaent"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="top"
-                app:title=" " />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:layout_marginTop="45dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_mezaj_result_title"
@@ -60,28 +55,37 @@
                     android:id="@+id/chart1"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:layout_margin="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/light_indigo"
-                    android:alpha="0.5"/>
-
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/natayejTablayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:alpha="1"
-                    android:layoutDirection="rtl"
-                    app:tabMode="scrollable"
-                    android:layout_gravity="bottom"
-                    app:tabIndicatorColor="@color/red"
-                    app:tabSelectedTextColor="@color/red"
-                    app:tabTextAppearance="@style/title_text_medium"
-                    app:tabTextColor="@color/gray_very_dark"/>
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="55dp"/>
 
             </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_test_mezaj_resultFragmaent"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="top"
+                android:layout_marginBottom="45dp"
+                android:background="@color/white"
+                app:layout_collapseMode="pin"
+                app:title=" " />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/natayejTablayout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:alpha="1"
+                android:layoutDirection="rtl"
+                app:tabMode="scrollable"
+                android:layout_gravity="bottom"
+                app:tabIndicatorColor="@color/red"
+                app:tabSelectedTextColor="@color/red"
+                app:tabTextAppearance="@style/title_text_medium"
+                app:layout_collapseMode="pin"
+                app:tabBackground="@color/white"
+                app:tabTextColor="@color/gray_very_dark"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -96,7 +100,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:padding="8dp">
+            android:paddingTop="2dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/natayejViewPager"

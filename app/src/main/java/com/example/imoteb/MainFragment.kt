@@ -82,6 +82,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         val dam_neshaneha = requireActivity().getString(R.string.txt_dam_neshaneha) as String
         val dam_kholgokhoo = requireActivity().getString(R.string.txt_dam_kholgokhoo) as String
         val dam_bimariha = requireActivity().getString(R.string.txt_dam_bimariha) as String
+        val dam_darman_ghalabeh = requireActivity().getString(R.string.txt_dam_darman)
 
         val safra_title = requireActivity().getString(R.string.txt_safra_title) as String
         val safra_mezaj_tab = requireActivity().getString(R.string.txt_safra_mezaj_tab) as String
@@ -89,6 +90,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         val safra_neshaneha = requireActivity().getString(R.string.txt_safra_neshaneha) as String
         val safra_kholgokhoo = requireActivity().getString(R.string.txt_safra_kholgokhoo) as String
         val safra_bimariha = requireActivity().getString(R.string.txt_safra_bimariha) as String
+        val safra_darman_ghalabeh = requireActivity().getString(R.string.txt_safra_darmen)
 
         val soda_title = requireActivity().getString(R.string.txt_soda_title) as String
         val soda_mezaj_tab = requireActivity().getString(R.string.txt_soda_mezaj_tab) as String
@@ -96,6 +98,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         val soda_neshaneha = requireActivity().getString(R.string.txt_soda_neshaneha) as String
         val soda_kholgokhoo = requireActivity().getString(R.string.txt_soda_kholgokhoo) as String
         val soda_bimariha = requireActivity().getString(R.string.txt_soda_bimariha) as String
+        val soda_darman_ghalabeh = requireActivity().getString(R.string.txt_soda_darman)
 
         val balgham_title = requireActivity().getString(R.string.txt_balgham_title) as String
         val balgham_mezaj_tab = requireActivity().getString(R.string.txt_balgham_mezaj_tab) as String
@@ -103,6 +106,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         val balgham_neshaneha = requireActivity().getString(R.string.txt_balgham_neshaneha) as String
         val balgham_kholgokhoo = requireActivity().getString(R.string.txt_balgham_kholgokhoo) as String
         val balgham_bimariha = requireActivity().getString(R.string.txt_balgham_bimariha) as String
+        val balgham_darman_ghalabeh = requireActivity().getString(R.string.txt_balgham_darman)
 
 
         bundle_mezaj_dam!!.putString("mezaj_title", dam_title)
@@ -113,6 +117,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         bundle_mezaj_dam!!.putString("neshaneha",dam_neshaneha)
         bundle_mezaj_dam!!.putString("kolgokhoo",dam_kholgokhoo)
         bundle_mezaj_dam!!.putString("bimariha",dam_bimariha)
+        bundle_mezaj_dam!!.putString("darman",dam_darman_ghalabeh)
 
         bundle_mezaj_safra!!.putString("mezaj_title",safra_title)
         bundle_mezaj_safra!!.putString("english_mezaj_title", english_safra_title)
@@ -122,6 +127,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         bundle_mezaj_safra!!.putString("neshaneha",safra_neshaneha)
         bundle_mezaj_safra!!.putString("kolgokhoo",safra_kholgokhoo)
         bundle_mezaj_safra!!.putString("bimariha",safra_bimariha)
+        bundle_mezaj_safra!!.putString("darman",safra_darman_ghalabeh)
 
         bundle_mezaj_soda!!.putString("mezaj_title",soda_title)
         bundle_mezaj_soda!!.putString("english_mezaj_title", english_soda_title)
@@ -131,6 +137,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         bundle_mezaj_soda!!.putString("neshaneha",soda_neshaneha)
         bundle_mezaj_soda!!.putString("kolgokhoo",soda_kholgokhoo)
         bundle_mezaj_soda!!.putString("bimariha",soda_bimariha)
+        bundle_mezaj_soda!!.putString("darman",soda_darman_ghalabeh)
 
         bundle_mezaj_balgham!!.putString("mezaj_title",balgham_title)
         bundle_mezaj_balgham!!.putString("english_mezaj_title", english_balgham_title)
@@ -140,6 +147,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
         bundle_mezaj_balgham!!.putString("neshaneha",balgham_neshaneha)
         bundle_mezaj_balgham!!.putString("kolgokhoo",balgham_kholgokhoo)
         bundle_mezaj_balgham!!.putString("bimariha",balgham_bimariha)
+        bundle_mezaj_balgham!!.putString("darman",balgham_darman_ghalabeh)
 
         btn_bishtar_bekhanid.setOnClickListener {
             if(more_information_content_main.visibility == View.GONE)
